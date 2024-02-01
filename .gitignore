@@ -40,3 +40,9 @@ build/
 
 # Local development settings
 .vscode/
+
+# FS files
+healthcare_management.fs
+healthcare_management.fs.index
+healthcare_management.fs.lock
+healthcare_management.fs.tmp
