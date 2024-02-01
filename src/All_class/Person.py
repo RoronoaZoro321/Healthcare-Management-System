@@ -1,6 +1,8 @@
 import hashlib
+import persistent
+from persistent.list import PersistentList
 
-class Person:
+class Person(persistent.Persistent):
     def __init__(self, fname: str, lname: str, address: str, 
                  phone_number: str, photo: str, password: str):
         self.fname = fname
@@ -9,7 +11,10 @@ class Person:
         self.phone_number = phone_number
         self.photo = photo
         self.password = password
-
+    def update_detail(self, new_address: str, new_phone_number: str):
+        self.phone_number = new_phone_number
+        self.address = new_address
+    
     def get_fname(self):
         return self.fname
     
@@ -30,20 +35,6 @@ class Person:
 
     def get_detail(self):
         return self.fname, self.lname, self.address, self.phone_number
-
-class Patient(Person):
-    def __init__(self, fname: str, lname: str, address: str, 
-                 phone_number: str, photo: str, password: str, 
-                 patient_id: int, medical_history: str):
-        super().__init__(fname, lname, address, phone_number, photo, password)
-        self.patient_id = patient_id
-        self.medical_history = {}
-
-    def schedule_appointment(self):
-        pass
-
-    def update_medical_history(self):
-        pass
 
 
 

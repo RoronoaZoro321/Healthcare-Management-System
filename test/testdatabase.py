@@ -1,4 +1,3 @@
-
 from ZODB import FileStorage, DB
 import transaction
 from persistent import Persistent
