@@ -29,8 +29,8 @@ def get_patient_by_id(patient_id):
     return root.patients[patient_id]
 
 if __name__ == "__main__":
-    add_patient("John", "123 Main St", "555-1234", "None")
-    add_patient("Alice", "145 wow St", "088-6910328", "None")
+    # add_patient("John", "123 Main St", "555-1234", "None")
+    # add_patient("Alice", "145 wow St", "088-6910328", "None")
     
     print(get_patient_by_id(1).name)
 
