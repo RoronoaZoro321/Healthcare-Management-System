@@ -7,16 +7,11 @@
     <x>0</x>
     <y>0</y>
     <width>491</width>
-    <height>361</height>
+    <height>540</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
-  </property>
-  <property name="styleSheet">
-   <string notr="true">font: 700 11pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(2, 164, 153);
-background-color: rgb(248, 250, 252);</string>
   </property>
   <widget class="QWidget" name="widget" native="true">
    <property name="geometry">
@@ -24,11 +19,13 @@ background-color: rgb(248, 250, 252);</string>
      <x>0</x>
      <y>0</y>
      <width>491</width>
-     <height>361</height>
+     <height>541</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">font: 700 11pt &quot;Microsoft YaHei UI&quot;;
+color: rgb(2, 164, 153);
+background-color: rgb(248, 250, 252);</string>
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="5" column="0">
@@ -49,7 +46,7 @@ QPushButton:hover {
 </string>
       </property>
       <property name="text">
-       <string>SignUp</string>
+       <string>Login</string>
       </property>
      </widget>
     </item>
@@ -69,7 +66,7 @@ margin: 30px;
 color:  #353535;</string>
       </property>
       <property name="text">
-       <string>Login</string>
+       <string>Sign Up</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -128,6 +125,88 @@ QLineEdit:focus {
        </item>
        <item>
         <widget class="QLineEdit" name="lineEdit_2">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+	background-color: rgb(211, 237, 237);
+	border: 2px solid #353535;
+	border-radius: 20px;
+}
+
+QLineEdit:focus {
+	border: 2px solid #02A499;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Last Name</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_3">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+	background-color: rgb(211, 237, 237);
+	border: 2px solid #353535;
+	border-radius: 20px;
+}
+
+QLineEdit:focus {
+	border: 2px solid #02A499;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Address</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_4">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+	background-color: rgb(211, 237, 237);
+	border: 2px solid #353535;
+	border-radius: 20px;
+}
+
+QLineEdit:focus {
+	border: 2px solid #02A499;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Phone Number</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox">
+         <item>
+          <property name="text">
+           <string>Patient</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Doctor</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Nurse</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_5">
          <property name="styleSheet">
           <string notr="true">QLineEdit {
 	background-color: rgb(211, 237, 237);

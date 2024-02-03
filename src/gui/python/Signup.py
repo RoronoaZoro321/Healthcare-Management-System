@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Login.ui'
+## Form generated from reading UI file 'Signup.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -15,22 +15,21 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QGridLayout, QLabel, QLineEdit,
-    QPushButton, QSizePolicy, QSpacerItem, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QGridLayout, QLabel,
+    QLineEdit, QPushButton, QSizePolicy, QSpacerItem,
+    QVBoxLayout, QWidget)
 
-class Login(object):
+class Signup(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(491, 361)
-        Form.setStyleSheet(u"font: 700 11pt \"Microsoft YaHei UI\";\n"
-"color: rgb(2, 164, 153);\n"
-"background-color: rgb(248, 250, 252);")
+        Form.resize(491, 540)
         self.widget = QWidget(Form)
         self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(0, 0, 491, 361))
-        self.widget.setStyleSheet(u"")
+        self.widget.setGeometry(QRect(0, 0, 491, 541))
+        self.widget.setStyleSheet(u"font: 700 11pt \"Microsoft YaHei UI\";\n"
+"color: rgb(2, 164, 153);\n"
+"background-color: rgb(248, 250, 252);")
         self.gridLayout = QGridLayout(self.widget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.pushButton_2 = QPushButton(self.widget)
@@ -117,6 +116,56 @@ class Login(object):
 
         self.verticalLayout.addWidget(self.lineEdit_2)
 
+        self.lineEdit_3 = QLineEdit(self.widget_2)
+        self.lineEdit_3.setObjectName(u"lineEdit_3")
+        self.lineEdit_3.setStyleSheet(u"QLineEdit {\n"
+"	background-color: rgb(211, 237, 237);\n"
+"	border: 2px solid #353535;\n"
+"	border-radius: 20px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"	border: 2px solid #02A499;\n"
+"}")
+
+        self.verticalLayout.addWidget(self.lineEdit_3)
+
+        self.lineEdit_4 = QLineEdit(self.widget_2)
+        self.lineEdit_4.setObjectName(u"lineEdit_4")
+        self.lineEdit_4.setStyleSheet(u"QLineEdit {\n"
+"	background-color: rgb(211, 237, 237);\n"
+"	border: 2px solid #353535;\n"
+"	border-radius: 20px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"	border: 2px solid #02A499;\n"
+"}")
+
+        self.verticalLayout.addWidget(self.lineEdit_4)
+
+        self.comboBox = QComboBox(self.widget_2)
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.setObjectName(u"comboBox")
+
+        self.verticalLayout.addWidget(self.comboBox)
+
+        self.lineEdit_5 = QLineEdit(self.widget_2)
+        self.lineEdit_5.setObjectName(u"lineEdit_5")
+        self.lineEdit_5.setStyleSheet(u"QLineEdit {\n"
+"	background-color: rgb(211, 237, 237);\n"
+"	border: 2px solid #353535;\n"
+"	border-radius: 20px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"	border: 2px solid #02A499;\n"
+"}")
+
+        self.verticalLayout.addWidget(self.lineEdit_5)
+
 
         self.gridLayout.addWidget(self.widget_2, 1, 0, 1, 1)
 
@@ -132,12 +181,22 @@ class Login(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
-        self.pushButton_2.setText(QCoreApplication.translate("Form", u"SignUp", None))
-        self.label.setText(QCoreApplication.translate("Form", u"Login", None))
+        self.pushButton_2.setText(QCoreApplication.translate("Form", u"Login", None))
+        self.label.setText(QCoreApplication.translate("Form", u"Sign Up", None))
         self.pushButton.setText(QCoreApplication.translate("Form", u"Done", None))
         self.lineEdit.setText("")
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("Form", u"First Name", None))
         self.lineEdit_2.setText("")
-        self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("Form", u"Password", None))
+        self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("Form", u"Last Name", None))
+        self.lineEdit_3.setText("")
+        self.lineEdit_3.setPlaceholderText(QCoreApplication.translate("Form", u"Address", None))
+        self.lineEdit_4.setText("")
+        self.lineEdit_4.setPlaceholderText(QCoreApplication.translate("Form", u"Phone Number", None))
+        self.comboBox.setItemText(0, QCoreApplication.translate("Form", u"Patient", None))
+        self.comboBox.setItemText(1, QCoreApplication.translate("Form", u"Doctor", None))
+        self.comboBox.setItemText(2, QCoreApplication.translate("Form", u"Nurse", None))
+
+        self.lineEdit_5.setText("")
+        self.lineEdit_5.setPlaceholderText(QCoreApplication.translate("Form", u"Password", None))
     # retranslateUi
 
