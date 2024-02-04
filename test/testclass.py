@@ -70,7 +70,6 @@ class TestClass:
         assert a.end_time == "2021-10-10 11:00"
         print("Appointment test passed")
 
-  
 
 
 if __name__ == "__main__":
