@@ -8,9 +8,11 @@ from All_class.Patient import Patient
 import sys
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
+
 from gui.python.Login import Ui_Form as Login
 from gui.python.Signup import Ui_Form as Signup
-from gui.python.Add_User import Ui_Form as Add_User
+# from gui.python.Add_User import Ui_Form as Add_User
+from gui.python.MainWindow import Ui_MainWindow as MainWindow
 
 storage = FileStorage.FileStorage('healthcare_management.fs')
 db = DB(storage)
@@ -25,7 +27,8 @@ print("patience id count: ", hasattr(root, "patient_id_count"))
 if not hasattr(root, "patient_id_count"):
     root.patient_id_count = 0
 
-print(root.patients[1].get_detail())
+for patient in root.patients.values():
+    print(patient.fname, patient.password)
 
 class LoginUI(QMainWindow):
     def __init__(self):
@@ -41,7 +44,18 @@ class LoginUI(QMainWindow):
         self.hide()
 
     def login(self):
-        pass
+        username = self.ui.lineEdit.text()
+        password = self.ui.lineEdit_2.text()
+        for i in root.patients:
+            if root.patients[i].get_fname() == username and root.patients[i].get_password() == password:
+                patient = root.patients[i]
+                self.main_window = QMainWindow()
+                self.ui = MainWindow()
+                self.ui.setupUi(self.main_window)
+                self.main_window.show()
+                self.hide()
+                return
+        QMessageBox.warning(self, "Login Failed", "Invalid username or password")
 
 class SignupUI(QMainWindow):
     def __init__(self):
@@ -62,48 +76,35 @@ class SignupUI(QMainWindow):
         address = self.ui.lineEdit_3.text()
         phone_number = self.ui.lineEdit_4.text()
         password = self.ui.lineEdit_5.text()
+
         root.patient_id_count += 1
         patient = Patient(fname, lname, address, phone_number, password, root.patient_id_count)
         root.patients[root.patient_id_count] = patient
         transaction.commit()
-        print(root.patients)
+        
+        self.main_window = QMainWindow()
+        self.ui = MainWindow()
+        self.ui.setupUi(self.main_window)
+        self.main_window.show()
+        self.hide()
+        # print(root.patients)
+
+
+class MainWindowUI(QMainWindow):
+    def __init__(self):
+        super(MainWindowUI, self).__init__()
+        self.ui = MainWindow()
+        self.ui.setupUi(self)
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = LoginUI()
     window.show()
-    
+
+    # transaction.commit()
+    # db.close()
     sys.exit(app.exec())
 
-    transaction.commit()
-    db.close()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# def add_patient(name: str, address: str, phone_number: str, medical_history: str):
-#     root.patient_id_count += 1
-#     patient_id = root.patient_id_count
-#     patient = Patient(name, address, phone_number, patient_id, medical_history)
-#     root.patients[patient_id] = patient
-#     transaction.commit()
-
-# def get_patient_by_id(patient_id):
-#     return root.patients[patient_id]
