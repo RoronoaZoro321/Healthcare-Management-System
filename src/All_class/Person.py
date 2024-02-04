@@ -4,7 +4,7 @@ from persistent.list import PersistentList
 
 class Person(persistent.Persistent):
     def __init__(self, fname: str, lname: str, address: str, 
-                 phone_number: str, photo: str, password: str):
+                 phone_number: str,password: str, photo: str = None):
         self.fname = fname
         self.lname = lname
         self.address = address
@@ -14,6 +14,7 @@ class Person(persistent.Persistent):
     def update_detail(self, new_address: str, new_phone_number: str):
         self.phone_number = new_phone_number
         self.address = new_address
+        return True
     
     def get_fname(self):
         return self.fname

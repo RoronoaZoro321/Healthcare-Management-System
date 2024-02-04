@@ -15,11 +15,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QGridLayout, QLabel,
-    QLineEdit, QPushButton, QSizePolicy, QSpacerItem,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QGridLayout, QLabel, QLineEdit,
+    QPushButton, QSizePolicy, QSpacerItem, QVBoxLayout,
+    QWidget)
 
-class Signup(object):
+class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
@@ -144,14 +144,6 @@ class Signup(object):
 
         self.verticalLayout.addWidget(self.lineEdit_4)
 
-        self.comboBox = QComboBox(self.widget_2)
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.setObjectName(u"comboBox")
-
-        self.verticalLayout.addWidget(self.comboBox)
-
         self.lineEdit_5 = QLineEdit(self.widget_2)
         self.lineEdit_5.setObjectName(u"lineEdit_5")
         self.lineEdit_5.setStyleSheet(u"QLineEdit {\n"
@@ -182,7 +174,7 @@ class Signup(object):
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
         self.pushButton_2.setText(QCoreApplication.translate("Form", u"Login", None))
-        self.label.setText(QCoreApplication.translate("Form", u"Sign Up", None))
+        self.label.setText(QCoreApplication.translate("Form", u"Sign Up as Patient", None))
         self.pushButton.setText(QCoreApplication.translate("Form", u"Done", None))
         self.lineEdit.setText("")
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("Form", u"First Name", None))
@@ -192,10 +184,6 @@ class Signup(object):
         self.lineEdit_3.setPlaceholderText(QCoreApplication.translate("Form", u"Address", None))
         self.lineEdit_4.setText("")
         self.lineEdit_4.setPlaceholderText(QCoreApplication.translate("Form", u"Phone Number", None))
-        self.comboBox.setItemText(0, QCoreApplication.translate("Form", u"Patient", None))
-        self.comboBox.setItemText(1, QCoreApplication.translate("Form", u"Doctor", None))
-        self.comboBox.setItemText(2, QCoreApplication.translate("Form", u"Nurse", None))
-
         self.lineEdit_5.setText("")
         self.lineEdit_5.setPlaceholderText(QCoreApplication.translate("Form", u"Password", None))
     # retranslateUi

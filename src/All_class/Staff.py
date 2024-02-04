@@ -1,4 +1,4 @@
-import Person
+from .Person import Person
 from abc import ABC, abstractmethod
 
 class Staff(Person, ABC):

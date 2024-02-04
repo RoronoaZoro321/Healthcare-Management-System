@@ -66,7 +66,7 @@ margin: 30px;
 color:  #353535;</string>
       </property>
       <property name="text">
-       <string>Sign Up as Patient</string>
+       <string>Add User</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -184,6 +184,30 @@ QLineEdit:focus {
          <property name="placeholderText">
           <string>Phone Number</string>
          </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox">
+         <item>
+          <property name="text">
+           <string>Patient</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Doctor</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Nurse</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Admin</string>
+          </property>
+         </item>
         </widget>
        </item>
        <item>
