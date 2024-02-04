@@ -2,8 +2,8 @@ from .Person import Person
 from abc import ABC, abstractmethod
 
 class Staff(Person, ABC):
-    def __init__(self, name: str, address: str, phone_number: str, employee_id: str, department: list[str], role: str):
-        super().__init__(name, address, phone_number)
+    def __init__(self, fname: str, lname:str, address: str, phone_number: str, password: str, employee_id: int, department: list[str], role: str):
+        super().__init__(fname, lname, address, phone_number, password)
         self.employee_id = employee_id
         self.department = department
         self.role = role

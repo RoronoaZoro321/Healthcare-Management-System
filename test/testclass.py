@@ -23,7 +23,8 @@ class TestClass:
     
     def test_staff(self):
         s = Staff("John", "Doe", "1234 Main St.", "123-456-7890", "password", 1234, ["dept1", "dept2"], "role")
-        assert s.employee_id == "1234"
+        print(s.employee_id, type(s.employee_id))
+        assert s.employee_id == 1234
         assert s.department == ["dept1", "dept2"]
         assert s.role == "role"
         assert s.fname == "John"
