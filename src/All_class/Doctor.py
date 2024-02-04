@@ -1,4 +1,4 @@
-import Staff
+from .Staff import Staff
 
 class Doctor(Staff):
     def __init__(self, name: str, address: str, phone_number: str, employee_id: str, department: str, role: str, specialty: list[str], qualifications: str):

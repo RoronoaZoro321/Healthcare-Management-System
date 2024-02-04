@@ -1,5 +1,5 @@
-import Staff
-import Log
+from .Staff import Staff
+# from .Log import Log
 
 class Admin(Staff):
     def __init__(self, name: str, address: str, phone_number: str, employee_id: str, department: str, role: str):

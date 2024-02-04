@@ -19,6 +19,9 @@ db = DB(storage)
 connection = db.open()
 root = connection.root()
 
+
+current_user = None
+
 print("has attr patients: ", hasattr(root, "patients"))
 if not hasattr(root, "patients"):
     root.patients = BTrees.OOBTree.BTree()
@@ -44,16 +47,18 @@ class LoginUI(QMainWindow):
         self.hide()
 
     def login(self):
+        global current_user
         username = self.ui.lineEdit.text()
         password = self.ui.lineEdit_2.text()
         for i in root.patients:
             if root.patients[i].get_fname() == username and root.patients[i].get_password() == password:
                 patient = root.patients[i]
-                self.main_window = QMainWindow()
-                self.ui = MainWindow()
-                self.ui.setupUi(self.main_window)
+                current_user = patient
+
+                self.main_window = MainWindowUI()
                 self.main_window.show()
                 self.hide()
+
                 return
         QMessageBox.warning(self, "Login Failed", "Invalid username or password")
 
@@ -81,21 +86,32 @@ class SignupUI(QMainWindow):
         patient = Patient(fname, lname, address, phone_number, password, root.patient_id_count)
         root.patients[root.patient_id_count] = patient
         transaction.commit()
-        
-        self.main_window = QMainWindow()
-        self.ui = MainWindow()
-        self.ui.setupUi(self.main_window)
+
+        global current_user
+        current_user = patient
+        self.main_window = MainWindowUI()
         self.main_window.show()
         self.hide()
-        # print(root.patients)
 
 
 class MainWindowUI(QMainWindow):
     def __init__(self):
-        super(MainWindowUI, self).__init__()
+        # super(QMainWindow, self).__init__()
+        QMainWindow.__init__(self, None)
         self.ui = MainWindow()
         self.ui.setupUi(self)
+        self.ui.pushButton_3.clicked.connect(self.display_username)
+        self.ui.pushButton_4.clicked.connect(self.logout)
 
+    def display_username(self):
+        print("clicked")
+        # display current user's class name too
+        self.ui.label_2.setText(current_user.__class__.__name__ + " " + current_user.get_fname())
+
+    def logout(self):
+        self.login = LoginUI()
+        self.login.show()
+        self.hide()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
