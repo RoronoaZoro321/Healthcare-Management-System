@@ -13,7 +13,7 @@ from gui.python.Login import Ui_Form as Login
 from gui.python.Signup import Ui_Form as Signup
 # from gui.python.Add_User import Ui_Form as Add_User
 # from gui.python.MainWindow import Ui_MainWindow as MainWindow
-from gui.python.designer import Ui_MainWindow as MainWindow
+from gui.python.designer2 import Ui_MainWindow as MainWindow
 
 storage = FileStorage.FileStorage('healthcare_management.fs')
 db = DB(storage)
@@ -100,6 +100,9 @@ class MainWindowUI(QMainWindow):
         self.ui.setupUi(self)
         # self.ui.pushButton_3.clicked.connect(self.display_username)
         self.ui.pushButton_4.clicked.connect(self.logout)
+        self.ui.pushButton_2.clicked.connect(self.showProfilePage)
+        self.ui.pushButton_3.clicked.connect(self.showAppointmentPage)
+        self.ui.pushButton.clicked.connect(self.showHistoryPage)
 
     def display_username(self):
         print("clicked")
@@ -110,10 +113,19 @@ class MainWindowUI(QMainWindow):
         self.login = LoginUI()
         self.login.show()
         self.hide()
+    
+    def showProfilePage(self):
+        self.ui.stackedWidget.setCurrentIndex(0)
+
+    def showAppointmentPage(self):
+        self.ui.stackedWidget.setCurrentIndex(1)
+
+    def showHistoryPage(self):
+        self.ui.stackedWidget.setCurrentIndex(2)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = LoginUI()
+    window = MainWindowUI()
     window.show()
 
     # transaction.commit()
