@@ -4,6 +4,7 @@ from persistent import Persistent
 from persistent.list import PersistentList
 import BTrees.OOBTree
 from All_class.Patient import Patient
+from All_class.Doctor import Doctor
 
 import sys
 from PySide6.QtWidgets import *
@@ -26,9 +27,9 @@ print("has attr users: ", hasattr(root, "users"))
 if not hasattr(root, "users"):
     root.users = BTrees.OOBTree.BTree()
 
-print("patience id count: ", hasattr(root, "patient_id_count"))
-if not hasattr(root, "patient_id_count"):
-    root.patient_id_count = 0
+print("user id count: ", hasattr(root, "user_id_count"))
+if not hasattr(root, "user_id_count"):
+    root.user_id_count = 0
 
 for user in root.users.values():
     print(user.fname, user.password)
@@ -79,9 +80,14 @@ class SignupUI(QMainWindow):
         phone_number = self.ui.lineEdit_4.text()
         password = self.ui.lineEdit_5.text()
 
-        root.patient_id_count += 1
-        patient = Patient(fname, lname, address, phone_number, password, root.patient_id_count)
-        root.users[root.patient_id_count] = patient
+        for i in root.users:
+            if root.users[i].get_fname() == fname:
+                QMessageBox.warning(self, "Signup Failed", "User already exists")
+                return
+
+        root.user_id_count += 1
+        patient = Patient(fname, lname, address, phone_number, password, root.user_id_count)
+        root.users[root.user_id_count] = patient
         transaction.commit()
 
         global current_user

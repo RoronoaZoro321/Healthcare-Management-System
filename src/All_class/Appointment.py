@@ -1,4 +1,6 @@
-class Appointment:
+import persistent
+
+class Appointment(persistent.Persistent):
     def __init__(self, id, patient, doctor, nurse, confirm, start_time, end_time):
         self.id = id
         self.patient = patient
