@@ -1,6 +1,6 @@
 # run this file to convert the .ui file to .py file
 # Enter the UI file name here
-file_name = "designer.ui"
+file_name = "MainWindow.ui"
 
 # pyside6-uic ./src/gui/ui/Login.ui -o "src\gui\python\Login.py"
 import subprocess
