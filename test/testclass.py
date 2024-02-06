@@ -40,18 +40,21 @@ class TestClass:
                    ["specialty1", "specialty2"], "qualification", 100000)
         assert d.employee_id == 1234
         assert d.salary == 100000
+        print("Doctor test passed")
 
     def test_nurse(self):
         n = Nurse("John", "Doe", "1234 Main St.", "123-456-7890", "password", 1234, ["dept1", "dept2"], "role", 
                    ["specialty1", "specialty2"], "qualification", 100000)
         assert n.employee_id == 1234
         assert n.salary == 100000
+        print("Nurse test passed")
 
     def test_admin(self):
         a = Admin("John", "Doe", "1234 Main St.", "123-456-7890", "password", 1234, ["dept1", "dept2"], "role", 
                    ["specialty1", "specialty2"], "qualification", 100000)
         assert a.employee_id == 1234
         assert a.salary == 100000
+        print("Admin test passed")
     
     def test_appointment(self):
         p = Patient("John", "Doe", "1234 Main St.", "123-456-7890", "password", 1)
@@ -70,13 +73,15 @@ class TestClass:
         assert a.end_time == "2021-10-10 11:00"
         print("Appointment test passed")
 
-
-
 if __name__ == "__main__":
     tc = TestClass()
     tc.test_person()
     tc.test_patient()
     tc.test_staff()
+    tc.test_doctor()
+    tc.test_nurse()
+    tc.test_admin()
+    tc.test_appointment()
     from datetime import datetime
     print(datetime.now())
     print("Everything passed")  

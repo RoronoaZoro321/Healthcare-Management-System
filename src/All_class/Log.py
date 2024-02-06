@@ -1,4 +1,4 @@
-import Person
+from .Person import Person
 import persistent
 from persistent.list import PersistentList
 
