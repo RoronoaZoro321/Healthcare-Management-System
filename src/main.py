@@ -13,6 +13,7 @@ from gui.python.Login import Ui_Form as Login
 from gui.python.Signup import Ui_Form as Signup
 # from gui.python.Add_User import Ui_Form as Add_User
 from gui.python.MainWindow import Ui_MainWindow as MainWindow
+from gui.python.designer import Ui_MainWindow as Designer
 
 storage = FileStorage.FileStorage('healthcare_management.fs')
 db = DB(storage)
@@ -22,16 +23,16 @@ root = connection.root()
 
 current_user = None
 
-print("has attr patients: ", hasattr(root, "patients"))
-if not hasattr(root, "patients"):
-    root.patients = BTrees.OOBTree.BTree()
+print("has attr users: ", hasattr(root, "users"))
+if not hasattr(root, "users"):
+    root.users = BTrees.OOBTree.BTree()
 
 print("patience id count: ", hasattr(root, "patient_id_count"))
 if not hasattr(root, "patient_id_count"):
     root.patient_id_count = 0
 
-for patient in root.patients.values():
-    print(patient.fname, patient.password)
+for user in root.users.values():
+    print(user.fname, user.password)
 
 class LoginUI(QMainWindow):
     def __init__(self):
@@ -50,15 +51,12 @@ class LoginUI(QMainWindow):
         global current_user
         username = self.ui.lineEdit.text()
         password = self.ui.lineEdit_2.text()
-        for i in root.patients:
-            if root.patients[i].get_fname() == username and root.patients[i].get_password() == password:
-                patient = root.patients[i]
-                current_user = patient
-
+        for i in root.users:
+            if root.users[i].get_fname() == username and root.users[i].get_password() == password:
+                current_user = root.users[i]
                 self.main_window = MainWindowUI()
                 self.main_window.show()
                 self.hide()
-
                 return
         QMessageBox.warning(self, "Login Failed", "Invalid username or password")
 
@@ -84,7 +82,7 @@ class SignupUI(QMainWindow):
 
         root.patient_id_count += 1
         patient = Patient(fname, lname, address, phone_number, password, root.patient_id_count)
-        root.patients[root.patient_id_count] = patient
+        root.users[root.patient_id_count] = patient
         transaction.commit()
 
         global current_user
@@ -115,7 +113,7 @@ class MainWindowUI(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = LoginUI()
+    window = Designer()
     window.show()
 
     # transaction.commit()
