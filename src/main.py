@@ -12,8 +12,8 @@ from PySide6.QtCore import *
 from gui.python.Login import Ui_Form as Login
 from gui.python.Signup import Ui_Form as Signup
 # from gui.python.Add_User import Ui_Form as Add_User
-from gui.python.MainWindow import Ui_MainWindow as MainWindow
-from gui.python.designer import Ui_MainWindow as Designer
+# from gui.python.MainWindow import Ui_MainWindow as MainWindow
+from gui.python.designer import Ui_MainWindow as MainWindow
 
 storage = FileStorage.FileStorage('healthcare_management.fs')
 db = DB(storage)
@@ -98,7 +98,7 @@ class MainWindowUI(QMainWindow):
         QMainWindow.__init__(self, None)
         self.ui = MainWindow()
         self.ui.setupUi(self)
-        self.ui.pushButton_3.clicked.connect(self.display_username)
+        # self.ui.pushButton_3.clicked.connect(self.display_username)
         self.ui.pushButton_4.clicked.connect(self.logout)
 
     def display_username(self):
@@ -113,7 +113,7 @@ class MainWindowUI(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = Designer()
+    window = LoginUI()
     window.show()
 
     # transaction.commit()
