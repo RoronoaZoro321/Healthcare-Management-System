@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainWindow.ui'
+## Form generated from reading UI file 'MainWindow2.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -27,11 +27,12 @@ class Ui_MainWindow(object):
         MainWindow.resize(1280, 720)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.centralwidget.setStyleSheet(u"font: 95 12pt \"MS Shell Dlg 2\";")
+        self.centralwidget.setStyleSheet(u"font: 13pt \"Osaka\";")
         self.widget_2 = QWidget(self.centralwidget)
         self.widget_2.setObjectName(u"widget_2")
-        self.widget_2.setGeometry(QRect(230, 0, 1050, 721))
-        self.widget_2.setStyleSheet(u"background-color: #F8FAFC;")
+        self.widget_2.setGeometry(QRect(230, 0, 1051, 721))
+        self.widget_2.setStyleSheet(u"background-color: #F8FAFC;\n"
+"color: #353535;")
         self.gridLayout_2 = QGridLayout(self.widget_2)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.stackedWidget = QStackedWidget(self.widget_2)
@@ -40,12 +41,53 @@ class Ui_MainWindow(object):
         self.page.setObjectName(u"page")
         self.gridLayout = QGridLayout(self.page)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.profile_page = QLabel(self.page)
-        self.profile_page.setObjectName(u"profile_page")
-        self.profile_page.setStyleSheet(u"color: black;")
-        self.profile_page.setAlignment(Qt.AlignCenter)
+        self.widget_3 = QWidget(self.page)
+        self.widget_3.setObjectName(u"widget_3")
+        self.widget_3.setStyleSheet(u"")
+        self.profile_widget = QWidget(self.widget_3)
+        self.profile_widget.setObjectName(u"profile_widget")
+        self.profile_widget.setGeometry(QRect(100, 90, 781, 461))
+        self.profile_widget.setStyleSheet(u"QWidget {\n"
+"	border: 3px solid #353535;\n"
+"	border-radius: 15px;\n"
+"	font: 18px;\n"
+"	padding: 20px;\n"
+"}\n"
+"")
+        self.verticalLayout = QVBoxLayout(self.profile_widget)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.profile_label = QLabel(self.profile_widget)
+        self.profile_label.setObjectName(u"profile_label")
+        self.profile_label.setStyleSheet(u"border-style: none;")
 
-        self.gridLayout.addWidget(self.profile_page, 0, 0, 1, 1)
+        self.verticalLayout.addWidget(self.profile_label)
+
+        self.profile_label_2 = QLabel(self.profile_widget)
+        self.profile_label_2.setObjectName(u"profile_label_2")
+        self.profile_label_2.setStyleSheet(u"border-style: none;")
+
+        self.verticalLayout.addWidget(self.profile_label_2)
+
+        self.profile_label_3 = QLabel(self.profile_widget)
+        self.profile_label_3.setObjectName(u"profile_label_3")
+        self.profile_label_3.setStyleSheet(u"border-style: none;")
+
+        self.verticalLayout.addWidget(self.profile_label_3)
+
+        self.profile_label_4 = QLabel(self.profile_widget)
+        self.profile_label_4.setObjectName(u"profile_label_4")
+        self.profile_label_4.setStyleSheet(u"border-style: none;")
+
+        self.verticalLayout.addWidget(self.profile_label_4)
+
+        self.profile_label_5 = QLabel(self.profile_widget)
+        self.profile_label_5.setObjectName(u"profile_label_5")
+        self.profile_label_5.setStyleSheet(u"border-style: none;")
+
+        self.verticalLayout.addWidget(self.profile_label_5)
+
+
+        self.gridLayout.addWidget(self.widget_3, 0, 0, 1, 1)
 
         self.stackedWidget.addWidget(self.page)
         self.page_2 = QWidget()
@@ -71,8 +113,6 @@ class Ui_MainWindow(object):
         self.widget.setObjectName(u"widget")
         self.widget.setGeometry(QRect(0, 0, 231, 721))
         self.widget.setStyleSheet(u"background-color: #02A499;\n"
-"font: 75 11pt \"MS Shell Dlg 2\";\n"
-"\n"
 "\n"
 "")
         self.verticalLayout_2 = QVBoxLayout(self.widget)
@@ -192,7 +232,11 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.profile_page.setText(QCoreApplication.translate("MainWindow", u"Profittle", None))
+        self.profile_label.setText(QCoreApplication.translate("MainWindow", u"Name: ", None))
+        self.profile_label_2.setText(QCoreApplication.translate("MainWindow", u"Last name:", None))
+        self.profile_label_3.setText(QCoreApplication.translate("MainWindow", u"Role:", None))
+        self.profile_label_4.setText(QCoreApplication.translate("MainWindow", u"Address:", None))
+        self.profile_label_5.setText(QCoreApplication.translate("MainWindow", u"Phone number:", None))
         self.appointment_page.setText(QCoreApplication.translate("MainWindow", u"Appointment", None))
         self.history_page.setText(QCoreApplication.translate("MainWindow", u"Medical History", None))
         self.label.setText("")

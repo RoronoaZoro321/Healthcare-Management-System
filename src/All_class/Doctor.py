@@ -8,6 +8,9 @@ class Doctor(Staff):
         self.specialty = specialty
         self.qualifications = qualifications
         self.salary = salary
+    
+    def get_id(self):
+        return self.employee_id
         
     def update_schedule(self):
         pass

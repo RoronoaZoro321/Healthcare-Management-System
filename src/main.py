@@ -13,7 +13,7 @@ from PySide6.QtCore import *
 from gui.python.Login import Ui_Form as Login
 from gui.python.Signup import Ui_Form as Signup
 # from gui.python.Add_User import Ui_Form as Add_User
-from gui.python.MainWindow import Ui_MainWindow as MainWindow
+from gui.python.MainWindow2 import Ui_MainWindow as MainWindow
 
 storage = FileStorage.FileStorage('healthcare_management.fs')
 db = DB(storage)
@@ -31,8 +31,12 @@ print("user id count: ", hasattr(root, "user_id_count"))
 if not hasattr(root, "user_id_count"):
     root.user_id_count = 0
 
+print("employee id list: ", hasattr(root, "employee_id_list"))
+if not hasattr(root, "employee_id_list"):
+    root.employee_id_list = []
+
 for user in root.users.values():
-    print(user.fname, user.password)
+    print(user.get_id(), user.fname, user.password)
 
 class LoginUI(QMainWindow):
     def __init__(self):
@@ -103,16 +107,12 @@ class MainWindowUI(QMainWindow):
         QMainWindow.__init__(self, None)
         self.ui = MainWindow()
         self.ui.setupUi(self)
+        self.showProfilePage()
         # self.ui.pushButton_3.clicked.connect(self.display_username)
-        self.ui.pushButton_4.clicked.connect(self.logout)
         self.ui.pushButton_2.clicked.connect(self.showProfilePage)
         self.ui.pushButton_3.clicked.connect(self.showAppointmentPage)
+        self.ui.pushButton_4.clicked.connect(self.logout)
         self.ui.pushButton.clicked.connect(self.showHistoryPage)
-
-    def display_username(self):
-        print("clicked")
-        # display current user's class name too
-        self.ui.label_2.setText(current_user.__class__.__name__ + " " + current_user.get_fname())
 
     def logout(self):
         self.login = LoginUI()
@@ -121,6 +121,16 @@ class MainWindowUI(QMainWindow):
     
     def showProfilePage(self):
         self.ui.stackedWidget.setCurrentIndex(0)
+        
+        self.ui.profile_label.setText(f"Name:{current_user.get_fname().rjust(20)}")
+        self.ui.profile_label_2.setText(f"Lastname:{current_user.get_lname().rjust(20)}")
+        self.ui.profile_label_3.setText(f"Role:{current_user.__class__.__name__.rjust(20)}")
+        self.ui.profile_label_4.setText(f"Address:{current_user.get_address().rjust(20)}")
+        self.ui.profile_label_5.setText(f"Phone:{current_user.get_phone_number().rjust(20)}")
+        # if self.ui.__class__.__name__ == "Doctor":
+        #     self.ui.profile_label_6.setText("Specialty: " + current_user.get_specialty())
+        #     self.ui.profile_label_7.setText("Qualifications: " + current_user.get_qualifications())
+        #     self.ui.profile_label_8.setText("Salary: " + current_user.get_salary())
 
     def showAppointmentPage(self):
         self.ui.stackedWidget.setCurrentIndex(1)
@@ -128,10 +138,18 @@ class MainWindowUI(QMainWindow):
     def showHistoryPage(self):
         self.ui.stackedWidget.setCurrentIndex(2)
 
+def add_doctor():
+        root.user_id_count += 1
+        doctor = Doctor("John", "Doe", "123 Main St", "123-456-7890", "password", root.user_id_count, "Cardiology", "Doctor", ["Cardiology"], "MD", 100000)
+        root.users[root.user_id_count] = doctor
+        root.employee_id_list.append(root.user_id_count)
+        transaction.commit()
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = LoginUI()
     window.show()
+    # add_doctor()
 
     # transaction.commit()
     # db.close()
