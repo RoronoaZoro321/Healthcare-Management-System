@@ -112,6 +112,7 @@ class Add_UserUI(QMainWindow):
         self.ui = Add_User()
         self.ui.setupUi(self)
         self.ui.pushButton.clicked.connect(self.add_user)
+        self.ui.pushButton_2.clicked.connect(self.cancel)
         self.ui.comboBox.currentTextChanged.connect(self.show_fields)
         self.ui.lineEdit_6.hide()
         self.ui.lineEdit_7.hide()
@@ -120,28 +121,23 @@ class Add_UserUI(QMainWindow):
 
     def show_fields(self):
         role = self.ui.comboBox.currentText()
-        print(role)
         if role == "Doctor":
-            print("True doctor")
             self.ui.lineEdit_6.show()
             self.ui.lineEdit_7.show()
             self.ui.lineEdit_8.show()
             self.ui.lineEdit_9.show()
         elif role == "Nurse":
-            print("True Nurse")
             self.ui.lineEdit_6.show()
             self.ui.lineEdit_7.placeholderText = "Assigned Wards"
             self.ui.lineEdit_7.show()
             self.ui.lineEdit_8.show()
             self.ui.lineEdit_9.show()
         elif role == "Admin":
-            print("True Admin")
             self.ui.lineEdit_6.show()
             self.ui.lineEdit_7.hide()
             self.ui.lineEdit_8.hide()
             self.ui.lineEdit_9.hide()
         else:
-            print("True Patient")
             self.ui.lineEdit_6.hide()
             self.ui.lineEdit_7.hide()
             self.ui.lineEdit_8.hide()
@@ -194,6 +190,11 @@ class Add_UserUI(QMainWindow):
         self.main_window.show()
         self.hide()
 
+    def cancel(self):
+        self.main_window = MainWindowAdminUI()
+        self.main_window.show()
+        self.hide()
+
 class MainWindowAdminUI(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self, None)
@@ -233,7 +234,26 @@ class MainWindowAdminUI(QMainWindow):
 
     def showListDoctorPage(self):
         self.ui.stackedWidget.setCurrentIndex(1)
-    
+
+        for i in root.employee_id_list:
+            if root.users[i].role == "Doctor":
+                self.ui.tableWidget.insertRow(self.ui.tableWidget.rowCount())
+                self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount()-1, 1, QTableWidgetItem(root.users[i].get_id()))
+                self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount()-1, 1, QTableWidgetItem(root.users[i].get_fname()))
+                self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount()-1, 2, QTableWidgetItem(root.users[i].get_lname()))
+                self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount()-1, 3, QTableWidgetItem(root.users[i].get_address()))
+                self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount()-1, 4, QTableWidgetItem(root.users[i].get_phone_number()))
+                self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount()-1, 5, QTableWidgetItem(root.users[i].department))
+                self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount()-1, 6, QTableWidgetItem(root.users[i].qualifications))
+                self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount()-1, 7, QTableWidgetItem(root.users[i].salary))    
+                self.delete_button = QPushButton("Delete")
+                self.delete_button.clicked.connect(self.delete_user)
+                self.ui.tableWidget.setCellWidget(self.ui.tableWidget.rowCount()-1, 8, self.delete_button)
+                # self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount()-1, 7, QTableWidgetItem())    
+                      
+    def delete_user(self):
+        print("delete user")
+
     def showListNursePage(self):
         self.ui.stackedWidget.setCurrentIndex(4)
 
@@ -246,6 +266,7 @@ class MainWindowAdminUI(QMainWindow):
     def addUser(self):
         self.add_user = Add_UserUI()
         self.add_user.show()
+        self.hide()
 
 
 class MainWindowUI(QMainWindow):

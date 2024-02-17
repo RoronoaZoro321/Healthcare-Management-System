@@ -23,7 +23,7 @@ class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(491, 675)
+        Form.resize(491, 674)
         self.widget = QWidget(Form)
         self.widget.setObjectName(u"widget")
         self.widget.setGeometry(QRect(0, 0, 491, 671))
@@ -32,6 +32,39 @@ class Ui_Form(object):
 "background-color: rgb(248, 250, 252);")
         self.gridLayout = QGridLayout(self.widget)
         self.gridLayout.setObjectName(u"gridLayout")
+        self.label = QLabel(self.widget)
+        self.label.setObjectName(u"label")
+        font = QFont()
+        font.setFamilies([u"Microsoft YaHei UI"])
+        font.setBold(True)
+        font.setItalic(False)
+        self.label.setFont(font)
+        self.label.setStyleSheet(u"font-size: 30px;\n"
+"margin: 30px;\n"
+"color:  #353535;")
+        self.label.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
+
+        self.pushButton = QPushButton(self.widget)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setStyleSheet(u"QPushButton {\n"
+"	background-color: rgb(2, 164, 153);\n"
+"	color: #F8FAFC;\n"
+"	margin: 10px 160px;\n"
+"	padding: 10px;\n"
+"	border-radius: none;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(2, 131, 107);\n"
+"}\n"
+"\n"
+"\n"
+"")
+
+        self.gridLayout.addWidget(self.pushButton, 3, 0, 1, 1)
+
         self.widget_2 = QWidget(self.widget)
         self.widget_2.setObjectName(u"widget_2")
         self.widget_2.setStyleSheet(u"padding: 7px;")
@@ -175,42 +208,14 @@ class Ui_Form(object):
 
         self.gridLayout.addWidget(self.widget_2, 1, 0, 1, 1)
 
-        self.label = QLabel(self.widget)
-        self.label.setObjectName(u"label")
-        font = QFont()
-        font.setFamilies([u"Microsoft YaHei UI"])
-        font.setBold(True)
-        font.setItalic(False)
-        self.label.setFont(font)
-        self.label.setStyleSheet(u"font-size: 30px;\n"
-"margin: 30px;\n"
-"color:  #353535;")
-        self.label.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
-
         self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.gridLayout.addItem(self.verticalSpacer, 4, 0, 1, 1)
 
-        self.pushButton = QPushButton(self.widget)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setStyleSheet(u"QPushButton {\n"
-"	background-color: rgb(2, 164, 153);\n"
-"	color: #F8FAFC;\n"
-"	margin: 10px 160px;\n"
-"	padding: 10px;\n"
-"	border-radius: none;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(2, 131, 107);\n"
-"}\n"
-"\n"
-"\n"
-"")
+        self.pushButton_2 = QPushButton(self.widget)
+        self.pushButton_2.setObjectName(u"pushButton_2")
 
-        self.gridLayout.addWidget(self.pushButton, 3, 0, 1, 1)
+        self.gridLayout.addWidget(self.pushButton_2, 5, 0, 1, 1)
 
 
         self.retranslateUi(Form)
@@ -220,6 +225,8 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
+        self.label.setText(QCoreApplication.translate("Form", u"Add User", None))
+        self.pushButton.setText(QCoreApplication.translate("Form", u"Done", None))
         self.lineEdit.setText("")
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("Form", u"First Name", None))
         self.lineEdit_2.setText("")
@@ -243,7 +250,6 @@ class Ui_Form(object):
         self.lineEdit_8.setPlaceholderText(QCoreApplication.translate("Form", u"Qualifications", None))
         self.lineEdit_9.setText("")
         self.lineEdit_9.setPlaceholderText(QCoreApplication.translate("Form", u"Salary", None))
-        self.label.setText(QCoreApplication.translate("Form", u"Add User", None))
-        self.pushButton.setText(QCoreApplication.translate("Form", u"Done", None))
+        self.pushButton_2.setText(QCoreApplication.translate("Form", u"Cancel", None))
     # retranslateUi
 

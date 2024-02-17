@@ -34,7 +34,7 @@ color: #353535;</string>
      <item row="0" column="0">
       <widget class="QStackedWidget" name="stackedWidget">
        <property name="currentIndex">
-        <number>5</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="page">
         <layout class="QGridLayout" name="gridLayout">
@@ -172,7 +172,17 @@ color: #353535;</string>
           </column>
           <column>
            <property name="text">
+            <string>Degree</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
             <string>Salary</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Delete User</string>
            </property>
           </column>
          </widget>
