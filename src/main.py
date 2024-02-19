@@ -36,10 +36,13 @@ if not hasattr(root, "user_id_count"):
 
 print("employee id list: ", hasattr(root, "employee_id_list"))
 if not hasattr(root, "employee_id_list"):
-    root.employee_id_list = []
+    root.employee_id_list = PersistentList()
 
-for user in root.users.values():
-    print(user.get_id(), user.__class__.__name__ ,user.fname, user.password)
+def printInfo():
+    print("user id count: ", root.user_id_count)
+    print("employee id list: ", root.employee_id_list)
+    for user in root.users.values():
+        print(user.get_id(), user.__class__.__name__ ,user.fname, user.password)
 
 class LoginUI(QMainWindow):
     def __init__(self):
@@ -162,6 +165,7 @@ class Add_UserUI(QMainWindow):
             root.users[root.user_id_count] = doctor
             root.employee_id_list.append(root.user_id_count)
             transaction.commit()
+            print("doctor added")
         elif role == "Admin":
             department = self.ui.lineEdit_6.text()
             root.user_id_count += 1
@@ -169,6 +173,7 @@ class Add_UserUI(QMainWindow):
             root.users[root.user_id_count] = admin
             root.employee_id_list.append(root.user_id_count)
             transaction.commit()
+            print("admin added")
         elif role == "Nurse":
             department = self.ui.lineEdit_6.text()
             assigned_wards = self.ui.lineEdit_7.text()
@@ -180,11 +185,13 @@ class Add_UserUI(QMainWindow):
             root.users[root.user_id_count] = nurse
             root.employee_id_list.append(root.user_id_count)
             transaction.commit()
+            print("nurse added")
         else:
             root.user_id_count += 1
             patient = Patient(fname, lname, address, phone_number, password, root.user_id_count)
             root.users[root.user_id_count] = patient
             transaction.commit()
+            print("patient added")
 
         self.main_window = MainWindowAdminUI()
         self.main_window.show()
@@ -235,34 +242,61 @@ class MainWindowAdminUI(QMainWindow):
     def showListDoctorPage(self):
         self.ui.stackedWidget.setCurrentIndex(1)
 
-        for i in root.employee_id_list:
-            if root.users[i].role == "Doctor":
-                self.ui.tableWidget.insertRow(self.ui.tableWidget.rowCount())
-                self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount()-1, 1, QTableWidgetItem(root.users[i].get_id()))
-                self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount()-1, 1, QTableWidgetItem(root.users[i].get_fname()))
-                self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount()-1, 2, QTableWidgetItem(root.users[i].get_lname()))
-                self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount()-1, 3, QTableWidgetItem(root.users[i].get_address()))
-                self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount()-1, 4, QTableWidgetItem(root.users[i].get_phone_number()))
-                self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount()-1, 5, QTableWidgetItem(root.users[i].department))
-                self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount()-1, 6, QTableWidgetItem(root.users[i].qualifications))
-                self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount()-1, 7, QTableWidgetItem(root.users[i].salary))    
-                self.delete_button = QPushButton("Delete")
-                self.delete_button.clicked.connect(self.delete_user)
-                self.ui.tableWidget.setCellWidget(self.ui.tableWidget.rowCount()-1, 8, self.delete_button)
-                # self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount()-1, 7, QTableWidgetItem())    
-                      
+        # with textEdit serch the doctor with similar name
+        self.ui.textEdit.textChanged.connect(self.search_doctor)
+        self.search_doctor()
+        
     def delete_user(self):
         print("delete user")
+        # delete the row reated to the button clicked
+        button = self.sender()
+        index = self.ui.tableWidget.indexAt(button.pos())
+        if index.isValid():
+            row = index.row()
+            user_id = int(self.ui.tableWidget.item(row, 0).text())
+            print("user id: ", user_id)
+            del root.users[user_id]
+            root.employee_id_list.remove(user_id)
+            root.employee_id_list._p_changed = True
+            transaction.commit()
+            self.showListDoctorPage()
+
+    def search_doctor(self):
+        self.ui.tableWidget.setRowCount(0)  # Clear the current table
+        search_text = self.ui.textEdit.toPlainText().strip().lower()
+        count = 0
+
+        for i in root.employee_id_list:
+            if root.users[i].role == "Doctor" and search_text in root.users[i].get_fname().lower():
+                count += 1
+                row_position = self.ui.tableWidget.rowCount()
+                self.ui.tableWidget.insertRow(row_position)
+
+                self.ui.tableWidget.setItem(row_position, 0, QTableWidgetItem(str(root.users[i].get_id())))
+                self.ui.tableWidget.setItem(row_position, 1, QTableWidgetItem(root.users[i].get_fname()))
+                self.ui.tableWidget.setItem(row_position, 2, QTableWidgetItem(root.users[i].get_lname()))
+                self.ui.tableWidget.setItem(row_position, 3, QTableWidgetItem(root.users[i].get_address()))
+                self.ui.tableWidget.setItem(row_position, 4, QTableWidgetItem(root.users[i].get_phone_number()))
+                self.ui.tableWidget.setItem(row_position, 5, QTableWidgetItem(root.users[i].department))
+                self.ui.tableWidget.setItem(row_position, 6, QTableWidgetItem(root.users[i].qualifications))
+                self.ui.tableWidget.setItem(row_position, 7, QTableWidgetItem(str(root.users[i].salary)))
+ 
+                delete_button = QPushButton("Delete")
+                delete_button.setStyleSheet("QPushButton{background-color: #b51919; color: white;} QPushButton:hover{background-color: #4f0c0c;}")
+                delete_button.clicked.connect(self.delete_user)
+                self.ui.tableWidget.setCellWidget(row_position, 8, delete_button)
+
+        self.ui.label_2.setText(f"Total Doctors: {count}")
 
     def showListNursePage(self):
         self.ui.stackedWidget.setCurrentIndex(4)
 
     def showListPatientPage(self):
         self.ui.stackedWidget.setCurrentIndex(5)
-    
+
     # def showPaymentPage(self):
     #     self.ui.stackedWidget.setCurrentIndex(6)
-        
+
     def addUser(self):
         self.add_user = Add_UserUI()
         self.add_user.show()
@@ -300,9 +334,9 @@ class MainWindowUI(QMainWindow):
     def showHistoryPage(self):
         self.ui.stackedWidget.setCurrentIndex(2)
 
-def add_doctor():
+def add_doctor(name):
     root.user_id_count += 1
-    doctor = Doctor("John", "Doe", "123 Main St", "123-456-7890", "password", root.user_id_count, "Cardiology", "Doctor", ["Cardiology"], "MD", 100000)
+    doctor = Doctor(name, "lname", "123 Main St", "123-456-7890", "password", root.user_id_count, "Cardiology", "Doctor", ["Cardiology"], "MD", 100000)
     root.users[root.user_id_count] = doctor
     root.employee_id_list.append(root.user_id_count)
     transaction.commit()
@@ -315,11 +349,16 @@ def add_admin():
     transaction.commit()
 
 if __name__ == "__main__":
+    
+    # add_doctor("doctor1")
+    # add_doctor("doctor2")
+    # add_doctor("doctor3")
+    # add_admin()
+    printInfo()
+
     app = QApplication(sys.argv)
     window = LoginUI()
     window.show()
-    # add_doctor()
-    # add_admin()
 
     # transaction.commit()
     # db.close()

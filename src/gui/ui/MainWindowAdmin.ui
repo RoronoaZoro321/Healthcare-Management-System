@@ -138,7 +138,38 @@ color: #353535;</string>
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">font-size: 13px;</string>
+           <string notr="true">            QTableWidget {
+                background-color: #f8f9fa;
+                border: 2px solid #dee2e6;
+                border-radius: 8px;
+                selection-background-color: #007bff;
+            }
+
+            QTableWidget::item {
+                color: #495057;
+                border-bottom: 1px solid #dee2e6;
+            }
+
+            QTableWidget::item:selected {
+                background-color: #007bff;
+                color: #ffffff;
+            }
+
+            QTableWidget::item:hover {
+                background-color: #e0e0e0;
+            }
+
+            QHeaderView::section {
+                background-color: #343a40;
+                color: #ffffff;
+                border: 1px solid #343a40;
+                border-radius: 4px;
+                padding: 8px;
+            }
+
+            QHeaderView::section:hover {
+                background-color: #495057;
+            }</string>
           </property>
           <column>
            <property name="text">
@@ -182,7 +213,7 @@ color: #353535;</string>
           </column>
           <column>
            <property name="text">
-            <string>Delete User</string>
+            <string>Action</string>
            </property>
           </column>
          </widget>
@@ -283,7 +314,39 @@ li.checked::marker { content: &quot;\2612&quot;; }
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">font-size: 13px;</string>
+           <string notr="true">            QTableWidget {
+                background-color: #f8f9fa;
+                border: 2px solid #dee2e6;
+                border-radius: 8px;
+                selection-background-color: #007bff;
+            }
+
+            QTableWidget::item {
+                padding: 10px;
+                color: #495057;
+                border-bottom: 1px solid #dee2e6;
+            }
+
+            QTableWidget::item:selected {
+                background-color: #007bff;
+                color: #ffffff;
+            }
+
+            QTableWidget::item:hover {
+                background-color: #e0e0e0;
+            }
+
+            QHeaderView::section {
+                background-color: #343a40;
+                color: #ffffff;
+                border: 1px solid #343a40;
+                border-radius: 4px;
+                padding: 8px;
+            }
+
+            QHeaderView::section:hover {
+                background-color: #495057;
+            }</string>
           </property>
           <column>
            <property name="text">
@@ -318,6 +381,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
           <column>
            <property name="text">
             <string>Salary</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Action</string>
            </property>
           </column>
          </widget>

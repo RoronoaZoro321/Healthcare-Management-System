@@ -7,6 +7,9 @@ class Staff(Person, ABC):
         self.employee_id = employee_id
         self.department = department
         self.role = role
+
+    def get_id(self):
+        return self.employee_id
         
     @abstractmethod
     def update_schedule(self):
