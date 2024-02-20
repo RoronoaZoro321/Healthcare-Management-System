@@ -8,4 +8,4 @@ subprocess.run(["pyside6-uic", f"./src/gui/ui/{file_name}", "-o", f"src/gui/pyth
 
 # for resource file
 # pyside6-rcc resource.qrc -o resource_rc.py
-# from . import resource_rc
+# change import resource_rc to from . import resource_rc
