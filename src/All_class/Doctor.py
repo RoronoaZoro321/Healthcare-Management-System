@@ -9,9 +9,34 @@ class Doctor(Staff):
         self.qualifications = qualifications
         self.salary = salary
     
-    def get_id(self):
-        return self.employee_id
-        
+    def get_specialty(self):
+        return self.specialty
+    
+    def get_qualifications(self):
+        return self.qualifications
+    
+    def get_salary(self):
+        return self.salary
+
+    def set_specialty(self, specialty):
+        self.specialty = specialty
+    
+    def set_qualifications(self, qualifications):
+        self.qualifications = qualifications
+
+    def set_salary(self, salary):
+        self.salary = salary
+
+    def update_attributes(self, new_data):
+        # ['doctor1', 'lname', '123 Main St', '123-456-7890', 'Cardiology', 'MDu', '80000']
+        self.set_fname(new_data[0])
+        self.set_lname(new_data[1])
+        self.set_address(new_data[2])
+        self.set_phone_number(new_data[3])
+        self.set_department(new_data[4])
+        self.set_qualifications(new_data[5])
+        self.set_salary(int(new_data[6]))
+    
     def update_schedule(self):
         pass
     
@@ -20,23 +45,3 @@ class Doctor(Staff):
     
     def patient_report(self):
         pass
-
-    def update_attributes(self, new_data):
-        """
-        Updates the Doctor object's attributes with the provided data.
-
-        Args:
-            new_data (list): A list of new values corresponding to the Doctor's attributes.
-                The order and meaning of the values should match your specific data structure.
-
-        Raises:
-            ValueError: If the number of provided values doesn't match the expected number of attributes.
-        """
-        
-        if len(new_data) != len(self.__dict__) - 2:  # Adjust for inherited attributes
-            raise ValueError("Number of provided values doesn't match expected number of attributes.")
-
-        # Update attributes based on their position in the list and your data structure
-        for i, value in enumerate(new_data):
-            attribute_name = list(self.__dict__.keys())[i + 2]  # Skip inherited attributes
-            setattr(self, attribute_name, value)

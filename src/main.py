@@ -23,7 +23,6 @@ db = DB(storage)
 connection = db.open()
 root = connection.root()
 
-
 current_user = None
 
 print("has attr users: ", hasattr(root, "users"))
@@ -284,7 +283,10 @@ class MainWindowAdminUI(QMainWindow):
         # Sorting the doctors based on the chosen attribute
         if sort_attribute:
             reverse_sort = (sort_attribute_by == "Descending")
-            doctors_to_display = sorted(doctors_to_display, key=lambda x: getattr(x, sort_attribute), reverse=reverse_sort)
+            if sort_attribute == "salary":
+                doctors_to_display = sorted(doctors_to_display, key=lambda x: float(getattr(x, sort_attribute)), reverse=reverse_sort)
+            else:
+                doctors_to_display = sorted(doctors_to_display, key=lambda x: getattr(x, sort_attribute), reverse=reverse_sort)
 
         for doctor in doctors_to_display:
             row_position = self.ui.tableWidget.rowCount()
@@ -363,9 +365,11 @@ class MainWindowAdminUI(QMainWindow):
         # Refresh the table to reflect the changes
         self.showListDoctorPage()
 
-        # Remove the "Save" button
-        self.ui.tableWidget.removeItemWidget(row, self.ui.tableWidget.columnCount() - 1)
-
+        # change the save button back to edit
+        edit_button = QPushButton("Edit")
+        edit_button.setStyleSheet("QPushButton{background-color: #1f8b4c; color: white;} QPushButton:hover{background-color: #0e3d21;}")
+        edit_button.clicked.connect(self.edit_user)
+        self.ui.tableWidget.setCellWidget(row, self.ui.tableWidget.columnCount() - 1, edit_button)
 
     def showListNursePage(self):
         self.ui.stackedWidget.setCurrentIndex(4)
@@ -432,6 +436,8 @@ if __name__ == "__main__":
     # add_doctor("doctor1")
     # add_doctor("doctor2")
     # add_doctor("doctor3")
+    # add_doctor("doggo")
+    # add_doctor("cat")
     # add_admin()
     printInfo()
 

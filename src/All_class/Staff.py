@@ -10,6 +10,21 @@ class Staff(Person, ABC):
 
     def get_id(self):
         return self.employee_id
+    
+    def get_department(self):
+        return self.department
+    
+    def get_role(self):
+        return self.role
+    
+    def set_id(self, id):
+        self.employee_id = id
+
+    def set_department(self, department):
+        self.department = department
+    
+    def set_role(self, role):
+        self.role = role        
         
     @abstractmethod
     def update_schedule(self):
