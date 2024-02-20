@@ -43,8 +43,8 @@ def printInfo():
     print("employee id list: ", root.employee_id_list)
     for user in root.users.values():
         print(user.get_id(), user.__class__.__name__ ,user.fname, user.password)
-        if user.role == "Doctor":
-            print(type(user.salary))
+        # if user.role == "Doctor":
+        #     print(type(user.salary))
 
 class LoginUI(QMainWindow):
     def __init__(self):
@@ -304,7 +304,67 @@ class MainWindowAdminUI(QMainWindow):
             delete_button.clicked.connect(self.delete_user)
             self.ui.tableWidget.setCellWidget(row_position, 8, delete_button)
 
+            # Add Edit button for each row
+            edit_button = QPushButton("Edit")
+            edit_button.setStyleSheet("QPushButton{background-color: #1f8b4c; color: white;} QPushButton:hover{background-color: #0e3d21;}")
+            edit_button.clicked.connect(self.edit_user)
+            self.ui.tableWidget.setCellWidget(row_position, 9, edit_button)
+
         self.ui.label_2.setText(f"Total Doctors: {count}")
+
+    def edit_user(self):
+        button = self.sender()
+        index = self.ui.tableWidget.indexAt(button.pos())
+        if index.isValid():
+            row = index.row()
+            user_id = int(self.ui.tableWidget.item(row, 0).text())
+
+            editable_columns = range(1, self.ui.tableWidget.columnCount() - 2)  # Exclude buttons
+
+            # Store references to editable widgets for efficiency
+            editable_widgets = []
+            for column in editable_columns:
+                item = self.ui.tableWidget.item(row, column)
+                widget = None
+                if isinstance(item, QTableWidgetItem):
+                    widget = QLineEdit(item.text())
+                elif isinstance(item, QComboBox):
+                    widget = QComboBox()
+                    widget.addItems(item.currentText())  # Copy existing options
+                else:
+                    # Handle other widget types if needed
+                    pass
+
+                if widget:
+                    editable_widgets.append(widget)
+                    self.ui.tableWidget.setCellWidget(row, column, widget)
+
+            # Add a "Save" button
+            save_button = QPushButton("Save")
+            save_button.clicked.connect(lambda: self.save_edited_user(row, user_id, editable_widgets))
+            self.ui.tableWidget.setCellWidget(row, self.ui.tableWidget.columnCount() - 1, save_button)
+
+    def save_edited_user(self, row, user_id, editable_widgets):
+        # Retrieve edited values from the widgets
+        data = []
+        for widget in editable_widgets:
+            value = None
+            if isinstance(widget, QLineEdit):
+                value = widget.text()
+            elif isinstance(widget, QComboBox):
+                value = widget.currentText()
+            data.append(value)
+
+        # Update the user object and database
+        print(data)
+        root.users[user_id].update_attributes(data)  # Assuming a method to update attributes
+        transaction.commit()
+
+        # Refresh the table to reflect the changes
+        self.showListDoctorPage()
+
+        # Remove the "Save" button
+        self.ui.tableWidget.removeItemWidget(row, self.ui.tableWidget.columnCount() - 1)
 
 
     def showListNursePage(self):

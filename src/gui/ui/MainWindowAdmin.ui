@@ -216,6 +216,11 @@ color: #353535;</string>
             <string>Action</string>
            </property>
           </column>
+          <column>
+           <property name="text">
+            <string>Edit</string>
+           </property>
+          </column>
          </widget>
          <widget class="QLabel" name="label_2">
           <property name="geometry">
