@@ -248,9 +248,13 @@ class MainWindowAdminUI(QMainWindow):
         self.ui.comboBox_2.currentTextChanged.connect(self.search_doctor)
         self.ui.comboBox_3.currentTextChanged.connect(self.search_doctor)
         self.search_doctor()
+    
+    def delete_doctor(self):
+        self.delete_user()
+        print("delete doctor")
+        self.showListDoctorPage()
         
     def delete_user(self):
-        print("delete user")
         # delete the row reated to the button clicked
         button = self.sender()
         index = self.ui.tableWidget.indexAt(button.pos())
@@ -262,7 +266,6 @@ class MainWindowAdminUI(QMainWindow):
             root.employee_id_list.remove(user_id)
             root.employee_id_list._p_changed = True
             transaction.commit()
-            self.showListDoctorPage()
 
 
     def search_doctor(self):
@@ -303,7 +306,7 @@ class MainWindowAdminUI(QMainWindow):
 
             delete_button = QPushButton("Delete")
             delete_button.setStyleSheet("QPushButton{background-color: #b51919; color: white;} QPushButton:hover{background-color: #4f0c0c;}")
-            delete_button.clicked.connect(self.delete_user)
+            delete_button.clicked.connect(self.delete_doctor)
             self.ui.tableWidget.setCellWidget(row_position, 8, delete_button)
 
             # Add Edit button for each row

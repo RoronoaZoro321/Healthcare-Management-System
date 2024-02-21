@@ -3,21 +3,10 @@
 |-- requirements.txt
 |-- structure.txt
 |-- src
-|   |-- __init__.py
 |   |-- main.py
 |   |-- gui
-|   |   |-- __init__.py
-|   |   |-- main_window.py
-|   |   |-- other_gui_modules.py
-|   |-- database
-|       |-- __init__.py
-|       |-- database_module.py
-|-- tests
-|   |-- __init__.py
-|   |-- test_main.py
-|   |-- test_gui.py
-|   |-- test_database.py
-|-- docs
-|   |-- requirements.md
-|   |-- design.md
-|-- README.md
+|   |   |-- _ui
+|   |   |-- python
+|   |-- All_class
+|       |-- Admin.py
+|       |-- Doctor.py and etc.  
