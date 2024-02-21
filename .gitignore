@@ -39,7 +39,10 @@ build/
 .vscode/
 
 # FS files
-healthcare_management.fs
-healthcare_management.fs.index
-healthcare_management.fs.lock
-healthcare_management.fs.tmp
+src/database/healthcare_management.fs
+src/database/healthcare_management.fs.index
+src/database/healthcare_management.fs.lock
+src/database/healthcare_management.fs.tmp
+
+# Ignore ds_store
+.DS_Store

@@ -1,14 +1,7 @@
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
-
 from gui.python.Signup import Ui_Form as Signup
-
-from window.LoginUI import LoginUI
-from MainWindowUI import MainWindowUI
-
-from database.db import root, transaction
-
-from All_class.Patient import Patient
+from database.db import register_user_db
 
 class SignupUI(QMainWindow):
     def __init__(self):
@@ -16,12 +9,7 @@ class SignupUI(QMainWindow):
         self.ui = Signup()
         self.ui.setupUi(self)
         self.ui.pushButton.clicked.connect(self.signup)
-        self.ui.pushButton_2.clicked.connect(self.login)
-    
-    def login(self):
-        self.login = LoginUI()
-        self.login.show()
-        self.hide()
+        self.ui.pushButton_2.clicked.connect(self.show_login)
 
     def signup(self):
         fname = self.ui.lineEdit.text()
@@ -30,18 +18,19 @@ class SignupUI(QMainWindow):
         phone_number = self.ui.lineEdit_4.text()
         password = self.ui.lineEdit_5.text()
 
-        for i in root.users:
-            if root.users[i].get_fname() == fname:
-                QMessageBox.warning(self, "Signup Failed", "User already exists")
-                return
+        current_user = register_user_db(fname, lname, address, phone_number, password)
+        if not current_user:
+            QMessageBox.warning(self, "Signup Failed", "Username already exists")
+        else:
+            self.hide()
+            from window.MainWindowUI import MainWindowUI
+            self.main_window = MainWindowUI(current_user)
+            self.main_window.show()
+            self.hide()
 
-        root.user_id_count += 1
-        patient = Patient(fname, lname, address, phone_number, password, root.user_id_count)
-        root.users[root.user_id_count] = patient
-        transaction.commit()
-
-        global current_user
-        current_user = patient
-        self.main_window = MainWindowUI()
-        self.main_window.show()
+    def show_login(self):
         self.hide()
+        from window.LoginUI import LoginUI
+        self.login_window = LoginUI()
+        self.login_window.show()
+    

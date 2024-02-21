@@ -1,39 +1,40 @@
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
-
 from gui.python.Login import Ui_Form as Login
-from window.SignupUI import SignupUI
-
-from window.MainWindowUI import MainWindowUI
-from window.MainWindowAdminUI import MainWindowAdminUI
-
-from database.db import root, transaction
+from database.db import *
 
 class LoginUI(QMainWindow):
     def __init__(self):
         super(LoginUI, self).__init__()
         self.ui = Login()
         self.ui.setupUi(self)
-        self.ui.pushButton.clicked.connect(self.login)
-        self.ui.pushButton_2.clicked.connect(self.signup)
+        self.ui.pushButton.clicked.connect(self.authenticate_user)
+        self.ui.pushButton_2.clicked.connect(self.show_signup)
 
-    def signup(self):
-        self.signup = SignupUI()
-        self.signup.show()
+    def show_signup(self):
         self.hide()
+        from window.SignupUI import SignupUI
+        self.signup_window = SignupUI()
+        self.signup_window.show()
 
-    def login(self):
-        global current_user
+    def authenticate_user(self):
         username = self.ui.lineEdit.text()
         password = self.ui.lineEdit_2.text()
-        for i in root.users:
-            if root.users[i].get_fname() == username and root.users[i].get_password() == password:
-                current_user = root.users[i]
-                if current_user.__class__.__name__ == "Admin":
-                    self.main_window = MainWindowAdminUI()
-                else:
-                    self.main_window = MainWindowUI()
-                self.main_window.show()
-                self.hide()
-                return
-        QMessageBox.warning(self, "Login Failed", "Invalid username or password")
+        print("username: ", username)
+        print("password: ", password)
+
+        current_user = authenticate_user_db(username, password)
+
+        if not current_user:
+            QMessageBox.warning(self, "Authentication Failed", "Invalid username or password.")
+        elif current_user.__class__.__name__ == "Admin":
+            self.hide()
+            from window.MainWindowAdminUI import MainWindowAdminUI
+            self.main_window_admin = MainWindowAdminUI(current_user)
+            self.main_window_admin.show()
+        else:
+            self.hide()
+            from window.MainWindowUI import MainWindowUI
+            self.main_window = MainWindowUI(current_user)
+            self.main_window.show()
+

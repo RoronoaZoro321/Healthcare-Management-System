@@ -3,8 +3,6 @@ from PySide6.QtCore import *
 
 from gui.python.Add_User import Ui_Form as Add_User
 
-from window.MainWindowAdminUI import MainWindowAdminUI
-
 from database.db import root, transaction
 
 from All_class.Doctor import Doctor
@@ -14,8 +12,9 @@ from All_class.Patient import Patient
 
 
 class Add_UserUI(QMainWindow):
-    def __init__(self):
+    def __init__(self, current_user):
         super(Add_UserUI, self).__init__()
+        self.current_user = current_user
         self.ui = Add_User()
         self.ui.setupUi(self)
         self.ui.pushButton.clicked.connect(self.add_user)
@@ -97,11 +96,13 @@ class Add_UserUI(QMainWindow):
             transaction.commit()
             print("patient added")
 
-        self.main_window = MainWindowAdminUI()
+        from window.MainWindowAdminUI import MainWindowAdminUI
+        self.main_window = MainWindowAdminUI(self.current_user)
         self.main_window.show()
         self.hide()
 
     def cancel(self):
-        self.main_window = MainWindowAdminUI()
+        from window.MainWindowAdminUI import MainWindowAdminUI
+        self.main_window = MainWindowAdminUI(self.current_user)
         self.main_window.show()
         self.hide()

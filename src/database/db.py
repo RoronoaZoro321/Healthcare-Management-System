@@ -6,6 +6,7 @@ import BTrees.OOBTree
 
 from All_class.Admin import Admin
 from All_class.Doctor import Doctor
+from All_class.Patient import Patient
 
 storage = FileStorage.FileStorage('src/database/healthcare_management.fs')
 db = DB(storage)
@@ -61,6 +62,25 @@ def add_doctor_if_no_doctor():
         add_doctor("Doctor1")
         add_doctor("Doctor2")
         add_doctor("Doctor3")
+
+def authenticate_user_db(username, password):
+    for user in root.users.values():
+        if user.get_fname() == username and user.get_password() == password:
+            current_user = user
+            return current_user
+    return None
+
+def register_user_db(fname, lname, address, phone_number, password):
+    for i in root.users:
+        if root.users[i].get_fname() == fname:
+            return False
+    root.user_id_count += 1
+    patient = Patient(fname, lname, address, phone_number, password, root.user_id_count)
+    root.users[root.user_id_count] = patient
+    transaction.commit()
+    current_user = patient
+    return current_user
+
 
 def addAdminAndDoctor():
     add_admin_if_no_admin()

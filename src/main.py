@@ -14,4 +14,18 @@ if __name__ == "__main__":
     window.show()
 
     sys.exit(app.exec())
+    
+
+
+
+# if __name__ == "__main__":
+#     initialize_database()
+#     addAdminAndDoctor()
+#     printInfo()
+
+#     app = QApplication(sys.argv)
+#     window = LoginUI()
+#     window.show()
+
+#     sys.exit(app.exec())
 
