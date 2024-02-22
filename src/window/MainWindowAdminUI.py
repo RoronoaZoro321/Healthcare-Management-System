@@ -124,8 +124,8 @@ class MainWindowAdminUI(QMainWindow):
 
             delete_button, edit_button = self.addDeleteandEditButton(self.ui.tableWidget)
             delete_button.clicked.connect(self.delete_doctor)
-            edit_button.clicked.connect(self.edit_doctor)
             self.ui.tableWidget.setCellWidget(row_position, 8, delete_button)
+            edit_button.clicked.connect(self.edit_doctor)
             self.ui.tableWidget.setCellWidget(row_position, 9, edit_button)
     
     def search_nurse(self):
@@ -167,20 +167,7 @@ class MainWindowAdminUI(QMainWindow):
     def delete_nurse(self):
         self.delete_user(self.ui.tableWidget_3)
         self.showListNursePage()
-    
-    # def delete_patient(self):
-    #     self.delete_user(self.ui.tableWidget_4)
-    #     print("delete patient")
-    #     self.showListPatientPage()
-    
-    def edit_doctor(self):
-        self.edit_user(self.ui.tableWidget)
-        self.showListDoctorPage()
-    
-    def edit_nurse(self):
-        self.edit_user(self.ui.tableWidget_3)
-        self.showListNursePage()
-        
+
     def delete_user(self, tableWidget):
         # delete the row reated to the button clicked
         button = self.sender()
@@ -191,23 +178,19 @@ class MainWindowAdminUI(QMainWindow):
             delete_user_db_by_id(user_id)
 
 
-    def edit_user(self, tableWidget):
-        print("edit user")
+    def edit_doctor(self):
         button = self.sender()
-        print(button)
-        index = tableWidget.indexAt(button.pos())
-        print(index)
+        index = self.ui.tableWidget.indexAt(button.pos())
         if index.isValid():
             row = index.row()
-            user_id = int(tableWidget.item(row, 0).text())
-            print(user_id)
+            user_id = int(self.ui.tableWidget.item(row, 0).text())
 
-            editable_columns = range(1, tableWidget.columnCount() - 2)  # Exclude buttons
+            editable_columns = range(1, self.ui.tableWidget.columnCount() - 2)  # Exclude buttons
 
             # Store references to editable widgets for efficiency
             editable_widgets = []
             for column in editable_columns:
-                item = tableWidget.item(row, column)
+                item = self.ui.tableWidget.item(row, column)
                 widget = None
                 if isinstance(item, QTableWidgetItem):
                     widget = QLineEdit(item.text())
@@ -220,15 +203,14 @@ class MainWindowAdminUI(QMainWindow):
 
                 if widget:
                     editable_widgets.append(widget)
-                    tableWidget.setCellWidget(row, column, widget)
-            print("editable_widgets")
+                    self.ui.tableWidget.setCellWidget(row, column, widget)
 
             # Add a "Save" button
             save_button = QPushButton("Save")
-            save_button.clicked.connect(lambda: self.save_edited_user(row, user_id, editable_widgets, tableWidget))
-            tableWidget.setCellWidget(row, tableWidget.columnCount() - 1, save_button)
+            save_button.clicked.connect(lambda: self.save_edited_doctor(row, user_id, editable_widgets))
+            self.ui.tableWidget.setCellWidget(row, self.ui.tableWidget.columnCount() - 1, save_button)
 
-    def save_edited_user(self, row, user_id, editable_widgets, tableWidget):
+    def save_edited_doctor(self, row, user_id, editable_widgets):
         # Retrieve edited values from the widgets
         data = []
         for widget in editable_widgets:
@@ -245,15 +227,72 @@ class MainWindowAdminUI(QMainWindow):
         transaction.commit()
 
         # Refresh the table to reflect the changes
-        # self.showListDoctorPage()
+        self.showListDoctorPage()
 
         # change the save button back to edit
         edit_button = QPushButton("Edit")
         edit_button.setStyleSheet("QPushButton{background-color: #1f8b4c; color: white;} QPushButton:hover{background-color: #0e3d21;}")
-        edit_button.clicked.connect(self.edit_user)
-        tableWidget.setCellWidget(row, tableWidget.columnCount() - 1, edit_button)
+        edit_button.clicked.connect(self.edit_doctor)
+        self.ui.tableWidget.setCellWidget(row, self.ui.tableWidget.columnCount() - 1, edit_button)
 
+    def edit_nurse(self):
+        button = self.sender()
+        index = self.ui.tableWidget_3.indexAt(button.pos())
+        if index.isValid():
+            row = index.row()
+            user_id = int(self.ui.tableWidget_3.item(row, 0).text())
 
+            editable_columns = range(1, self.ui.tableWidget_3.columnCount() - 2)  # Exclude buttons
+
+            # Store references to editable widgets for efficiency
+            editable_widgets = []
+            for column in editable_columns:
+                item = self.ui.tableWidget_3.item(row, column)
+                widget = None
+                if isinstance(item, QTableWidgetItem):
+                    widget = QLineEdit(item.text())
+                elif isinstance(item, QComboBox):
+                    widget = QComboBox()
+                    widget.addItems(item.currentText())  # Copy existing options
+                else:
+                    # Handle other widget types if needed
+                    pass
+
+                if widget:
+                    editable_widgets.append(widget)
+                    self.ui.tableWidget_3.setCellWidget(row, column, widget)
+
+            # Add a "Save" button
+            save_button = QPushButton("Save")
+            save_button.clicked.connect(lambda: self.save_edited_nurse(row, user_id, editable_widgets))
+            self.ui.tableWidget_3.setCellWidget(row, self.ui.tableWidget_3.columnCount() - 1, save_button)
+    
+    def save_edited_nurse(self, row, user_id, editable_widgets):
+        # Retrieve edited values from the widgets
+        data = []
+        for widget in editable_widgets:
+            value = None
+            if isinstance(widget, QLineEdit):
+                value = widget.text()
+            elif isinstance(widget, QComboBox):
+                value = widget.currentText()
+            data.append(value)
+
+        # Update the user object and database
+        print(data)
+        root.users[user_id].update_attributes(data)  # Assuming a method to update attributes
+        transaction.commit()
+
+        # Refresh the table to reflect the changes
+        self.showListNursePage()
+
+        # change the save button back to edit
+        edit_button = QPushButton("Edit")
+        edit_button.setStyleSheet("QPushButton{background-color: #1f8b4c; color: white;} QPushButton:hover{background-color: #0e3d21;}")
+        edit_button.clicked.connect(self.edit_doctor)
+        self.ui.tableWidget_3.setCellWidget(row, self.ui.tableWidget_3.columnCount() - 1, edit_button)
+
+    
     # def showPaymentPage(self):
     #     self.ui.stackedWidget.setCurrentIndex(6)
 

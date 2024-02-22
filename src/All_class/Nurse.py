@@ -14,4 +14,25 @@ class Nurse(Staff):
     
     def patient_report(self):
         pass
+
+    def set_qualifications(self, qualifications):
+        self.qualifications = qualifications
     
+    def get_qualifications(self):
+        return self.qualifications
+    
+    def set_salary(self, salary):
+        self.salary = salary
+    
+    def get_salary(self):
+        return self.salary
+    
+    def update_attributes(self, new_data):
+        # ['Nurse1', 'lname', '123 Main St', '123-456-7890', 'Cardiology', 'BD', '40000']
+        self.set_fname(new_data[0])
+        self.set_lname(new_data[1])
+        self.set_address(new_data[2])
+        self.set_phone_number(new_data[3])
+        self.set_department(new_data[4])
+        self.set_qualifications(new_data[5])
+        self.set_salary(int(new_data[6]))
