@@ -31,10 +31,10 @@
 color: #353535;</string>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
-     <item row="0" column="0">
+     <item row="0" column="1">
       <widget class="QStackedWidget" name="stackedWidget">
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="page">
         <layout class="QGridLayout" name="gridLayout">
@@ -119,24 +119,173 @@ color: #353535;</string>
         </layout>
        </widget>
        <widget class="QWidget" name="page_2">
-        <widget class="QLabel" name="appointment_page">
+        <widget class="QWidget" name="widget_5" native="true">
          <property name="geometry">
           <rect>
-           <x>7</x>
-           <y>35</y>
-           <width>1011</width>
-           <height>611</height>
+           <x>20</x>
+           <y>20</y>
+           <width>1001</width>
+           <height>671</height>
           </rect>
          </property>
-         <property name="styleSheet">
-          <string notr="true">color: black;</string>
+         <property name="locale">
+          <locale language="English" country="UnitedStates"/>
          </property>
-         <property name="text">
-          <string>Appointment</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
+         <widget class="QTableWidget" name="tableWidget">
+          <property name="geometry">
+           <rect>
+            <x>700</x>
+            <y>10</y>
+            <width>256</width>
+            <height>192</height>
+           </rect>
+          </property>
+          <row>
+           <property name="text">
+            <string>Appointment</string>
+           </property>
+          </row>
+         </widget>
+         <widget class="QWidget" name="verticalLayoutWidget_3">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>460</y>
+            <width>281</width>
+            <height>101</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <widget class="QCheckBox" name="checkBox">
+               <property name="text">
+                <string>6:00 am.- 12:00 pm.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="checkBox_2">
+               <property name="text">
+                <string>13:00 pm.- 18:00 pm.</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="verticalLayoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>30</y>
+            <width>277</width>
+            <height>158</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Speciality</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="Speciality">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="editable">
+              <bool>false</bool>
+             </property>
+             <property name="currentText">
+              <string>Dentist</string>
+             </property>
+             <item>
+              <property name="text">
+               <string>Dentist</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Cardiology</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Pediatrics</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Surgery</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Obsterics and Gynaecology</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Doctor</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="Doctor"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QCalendarWidget" name="Calendar">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>250</y>
+            <width>312</width>
+            <height>181</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid black
+</string>
+          </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="Submit">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>600</y>
+            <width>75</width>
+            <height>24</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Submit</string>
+          </property>
+         </widget>
         </widget>
        </widget>
        <widget class="QWidget" name="page_3">

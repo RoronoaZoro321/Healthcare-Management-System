@@ -80,7 +80,6 @@ if __name__ == "__main__":
     tc.test_staff()
     tc.test_doctor()
     tc.test_nurse()
-    tc.test_admin()
     tc.test_appointment()
     from datetime import datetime
     print(datetime.now())

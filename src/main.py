@@ -7,6 +7,7 @@ from All_class.Patient import Patient
 from All_class.Doctor import Doctor
 from All_class.Admin import Admin
 from All_class.Nurse import Nurse
+from All_class.Appointment import Appointment
 
 import sys
 from PySide6.QtWidgets import *
@@ -18,6 +19,7 @@ from gui.python.Add_User import Ui_Form as Add_User
 from gui.python.MainWindow2 import Ui_MainWindow as MainWindow
 from gui.python.MainWindowAdmin import Ui_MainWindow as MainWindowAdmin
 
+from datetime import datetime, timedelta
 storage = FileStorage.FileStorage('healthcare_management.fs')
 db = DB(storage)
 connection = db.open()
@@ -37,9 +39,22 @@ print("employee id list: ", hasattr(root, "employee_id_list"))
 if not hasattr(root, "employee_id_list"):
     root.employee_id_list = PersistentList()
 
+print("has attr appointment", hasattr(root, "appointments"))
+if not hasattr(root, 'appointments'):
+    root.appointments = BTrees.OOBTree.BTree()
+
+print("appointment id count", hasattr(root, "last_appointment_id"))
+if not hasattr(root, 'last_appointment_id'):
+    root.last_appointment_id = 0 
+    
+print("appointment id list: ", hasattr(root, "appointment_id_list"))
+if not hasattr(root, "appointment_id_list"):
+    root.appointment_id_list = PersistentList()
+    
 def printInfo():
     print("user id count: ", root.user_id_count)
     print("employee id list: ", root.employee_id_list)
+    print("appointment list: ", root.appointment_id_list)
     for user in root.users.values():
         print(user.get_id(), user.__class__.__name__ ,user.fname, user.password)
         # if user.role == "Doctor":
@@ -218,8 +233,7 @@ class MainWindowAdminUI(QMainWindow):
         self.ui.pushButton_8.clicked.connect(self.addUser)
         # self.ui.pushButton_9.clicked.connect(self.showPaymentPage)
         self.ui.pushButton_4.clicked.connect(self.logout)
-
-
+        
     def logout(self):
         self.login = LoginUI()
         self.login.show()
@@ -233,7 +247,7 @@ class MainWindowAdminUI(QMainWindow):
         self.ui.profile_label_3.setText(f"Role:".ljust(20) + f"{current_user.__class__.__name__}")
         self.ui.profile_label_4.setText(f"Address:".ljust(20) + f"{current_user.get_address()}")
         self.ui.profile_label_5.setText(f"Phone:".ljust(20) + f"{current_user.get_phone_number()}")
-
+    
     def showAppointmentPage(self):
         self.ui.stackedWidget.setCurrentIndex(2)
 
@@ -396,7 +410,11 @@ class MainWindowUI(QMainWindow):
         self.ui.pushButton_3.clicked.connect(self.showAppointmentPage)
         self.ui.pushButton_4.clicked.connect(self.logout)
         self.ui.pushButton.clicked.connect(self.showHistoryPage)
-
+        
+        self.ui.Calendar.selectionChanged.connect(self.onDateChanged)
+        self.ui.checkBox.stateChanged.connect(lambda: self.onCheckboxStateChanged(self.ui.checkBox))
+        self.ui.checkBox_2.stateChanged.connect(lambda: self.onCheckboxStateChanged(self.ui.checkBox_2))
+        self.ui.Submit.clicked.connect(self.handleSubmit)
     def logout(self):
         self.login = LoginUI()
         self.login.show()
@@ -413,13 +431,87 @@ class MainWindowUI(QMainWindow):
 
     def showAppointmentPage(self):
         self.ui.stackedWidget.setCurrentIndex(1)
+        #Doctor
+        self.ui.Speciality.currentIndexChanged.connect(self.updateDoctorList)
+        self.updateDoctorList(self.ui.Speciality.currentIndex())
+        
+        
+    def updateDoctorList(self, index):
+        print("triggered")
+        self.ui.Doctor.clear()
+        selected_specialty = self.ui.Speciality.currentText()
 
+        for user_id, user in root.users.items():
+            if isinstance(user, Doctor) and selected_specialty in user.specialty:
+                self.ui.Doctor.addItem(f"{user.fname} {user.lname}", user_id)
+    
+    def onDateChanged(self):
+        selected_date = self.ui.Calendar.selectedDate().toPython()
+        today = datetime.now().date()
+        tomorrow = today + timedelta(days=1)
+        
+        if selected_date < tomorrow:
+            self.ui.checkBox.setEnabled(False)
+            self.ui.checkBox_2.setEnabled(False)
+        else:
+            self.ui.checkBox.setEnabled(True)
+            self.ui.checkBox_2.setEnabled(True)
+            self.ui.checkBox.stateChanged.connect(lambda: self.onCheckboxStateChanged(self.ui.checkBox))
+            self.ui.checkBox_2.stateChanged.connect(lambda: self.onCheckboxStateChanged(self.ui.checkBox_2))
+
+    def onCheckboxStateChanged(self, changedCheckbox):
+        if changedCheckbox.isChecked():
+            if changedCheckbox == self.ui.checkBox:
+                self.ui.checkBox_2.setChecked(False)
+            elif changedCheckbox == self.ui.checkBox_2:
+                self.ui.checkBox.setChecked(False)
+                
+    def handleSubmit(self):
+        selected_date = self.ui.Calendar.selectedDate().toString(Qt.ISODate)
+        start_time = "6:00 am" if self.ui.checkBox.isChecked() else "13:00 pm"
+        end_time = "12:00 pm" if self.ui.checkBox.isChecked() else "18:00 pm"
+        doctor_id = self.ui.Doctor.currentData()
+        specialty = self.ui.Speciality.currentText()
+        patient_id = current_user.get_id()
+
+        if self.has_conflicting_appointment(patient_id, selected_date, start_time, end_time):
+            QMessageBox.warning(self, "Appointment Conflict", "You already have an appointment at this time.")
+            return
+
+        appointment_id = self.create_and_store_appointment(selected_date, start_time, end_time, doctor_id, specialty, patient_id)
+        print(f"Appointment {appointment_id} created successfully.")
+   
+    def create_and_store_appointment(self, date, start_time, end_time, doctor_id, specialty, patient_id):
+        print("create and store appointment")
+        appointment_id = self.generate_new_appointment_id()
+        new_appointment = Appointment(appointment_id, date, start_time, end_time, doctor_id, specialty, patient_id, False)
+        root.appointments[appointment_id] = new_appointment
+        root.appointment_id_list.append(appointment_id)
+        transaction.commit()
+        return appointment_id
+    
+    def has_conflicting_appointment(self, patient_id, date, start_time, end_time):
+        for appointment_id, appointment in root.appointments.items():
+            if (appointment.patient_id == patient_id and
+                appointment.date == date and
+                (appointment.start_time == start_time or appointment.end_time == end_time)):
+                return True
+        return False
+
+    
+    def generate_new_appointment_id(self):
+        print("generate appointment id")
+        root.last_appointment_id += 1
+        transaction.commit()
+
+        return root.last_appointment_id
+            
     def showHistoryPage(self):
         self.ui.stackedWidget.setCurrentIndex(2)
 
 def add_doctor(name):
     root.user_id_count += 1
-    doctor = Doctor(name, "lname", "123 Main St", "123-456-7890", "password", root.user_id_count, "Cardiology", "Doctor", ["Cardiology"], "MD", 80000)
+    doctor = Doctor(name, "lname", "123 Main St", "123-456-7890", "password", root.user_id_count, "Surgery", "Doctor", ["Surgery"], "MD", 80000)
     root.users[root.user_id_count] = doctor
     root.employee_id_list.append(root.user_id_count)
     transaction.commit()
@@ -431,16 +523,42 @@ def add_admin():
     root.employee_id_list.append(root.user_id_count)
     transaction.commit()
 
-if __name__ == "__main__":
+def add_nurse(name):
+    root.user_id_count += 1
+    nurse = Nurse(name,"lname","123 Main St", "123-456-7890", "password", root.user_id_count, "Surgery", "Nurse", ["Surgery"], "MD", 40000)
+    root.users[root.user_id_count] = nurse
+    root.employee_id_list.append(root.user_id_count)
+    transaction.commit()
     
+def print_appointment_info():
+    for appointment_id, appointment in root.appointments.items():
+        print(f"Appointment ID: {appointment_id}")
+        print(f"Date: {appointment.date}")
+        print(f"Start Time: {appointment.start_time}")
+        print(f"End Time: {appointment.end_time}")
+        print(f"Doctor ID: {appointment.doctor_id}")
+        if appointment.doctor_id in root.users:
+            doctor = root.users[appointment.doctor_id]
+            print(f"Doctor Name: {doctor.fname} {doctor.lname}")
+        else:
+            print("Doctor ID not found in users")
+        print(f"Specialty: {appointment.specialty}")
+        print(f"Patient ID: {appointment.patient_id} \n")
+if __name__ == "__main__":
+
     # add_doctor("doctor1")
     # add_doctor("doctor2")
     # add_doctor("doctor3")
     # add_doctor("doggo")
     # add_doctor("cat")
+
     # add_admin()
+    # add_nurse("nurse1")
+
+    print_appointment_info()
     printInfo()
 
+    print("All appointments deleted successfully.")
     app = QApplication(sys.argv)
     window = LoginUI()
     window.show()

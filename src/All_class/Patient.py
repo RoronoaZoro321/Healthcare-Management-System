@@ -12,7 +12,7 @@ class Patient(Person):
     
     def get_id(self):
         return self.patient_id
-
+    
     def schedule_appointment(self):
         pass
 
