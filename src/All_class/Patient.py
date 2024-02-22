@@ -18,3 +18,10 @@ class Patient(Person):
 
     def update_medical_history(self):
         pass
+
+    def update_attributes(self, new_data):
+        # ['John', 'Doe', '123 Main St', '123-456-7890', '12345']
+        self.set_fname(new_data[0])
+        self.set_lname(new_data[1])
+        self.set_address(new_data[2])
+        self.set_phone_number(new_data[3])
