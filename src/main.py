@@ -434,6 +434,7 @@ class MainWindowUI(QMainWindow):
         #Doctor
         self.ui.Speciality.currentIndexChanged.connect(self.updateDoctorList)
         self.updateDoctorList(self.ui.Speciality.currentIndex())
+        self.populate_appointments_table()
         
         
     def updateDoctorList(self, index):
@@ -478,27 +479,46 @@ class MainWindowUI(QMainWindow):
             QMessageBox.warning(self, "Appointment Conflict", "You already have an appointment at this time.")
             return
 
-        appointment_id = self.create_and_store_appointment(selected_date, start_time, end_time, doctor_id, specialty, patient_id)
+        appointment_id = self.create_and_store_appointment(selected_date, start_time, end_time, doctor_id, patient_id, False)
         print(f"Appointment {appointment_id} created successfully.")
    
-    def create_and_store_appointment(self, date, start_time, end_time, doctor_id, specialty, patient_id):
+    def create_and_store_appointment(self, date, start_time, end_time, doctor_id, patient_id, confirmation):
         print("create and store appointment")
         appointment_id = self.generate_new_appointment_id()
-        new_appointment = Appointment(appointment_id, date, start_time, end_time, doctor_id, specialty, patient_id, False)
+        new_appointment = Appointment(appointment_id, date, start_time, end_time, doctor_id, patient_id, confirmation)
         root.appointments[appointment_id] = new_appointment
         root.appointment_id_list.append(appointment_id)
+        self.populate_appointments_table()
         transaction.commit()
         return appointment_id
     
     def has_conflicting_appointment(self, patient_id, date, start_time, end_time):
         for appointment_id, appointment in root.appointments.items():
-            if (appointment.patient_id == patient_id and
+            if (appointment.patient == patient_id and
                 appointment.date == date and
                 (appointment.start_time == start_time or appointment.end_time == end_time)):
                 return True
         return False
 
-    
+    def populate_appointments_table(self):
+        self.ui.tableWidget.clear()
+        self.ui.tableWidget.setColumnCount(5)
+        self.ui.tableWidget.setHorizontalHeaderLabels(['Doctor', 'Date', 'Start Time', 'End Time', 'Confirmation'])
+        patient_id = current_user.get_id()
+
+        patient_appointments = [appointment for appointment_id, appointment in root.appointments.items() if appointment.patient == patient_id]
+
+        self.ui.tableWidget.setRowCount(len(patient_appointments))
+
+        for row, appointment in enumerate(patient_appointments):
+            doctor_name = f"{root.users[appointment.doctor].fname} {root.users[appointment.doctor].lname}"
+            confirmation = "Yes" if appointment.confirm else "No"
+            self.ui.tableWidget.setItem(row, 0, QTableWidgetItem(doctor_name))
+            self.ui.tableWidget.setItem(row, 1, QTableWidgetItem(appointment.date))
+            self.ui.tableWidget.setItem(row, 2, QTableWidgetItem(appointment.start_time))
+            self.ui.tableWidget.setItem(row, 3, QTableWidgetItem(appointment.end_time))
+            self.ui.tableWidget.setItem(row, 4, QTableWidgetItem(confirmation))
+        
     def generate_new_appointment_id(self):
         print("generate appointment id")
         root.last_appointment_id += 1
@@ -536,14 +556,14 @@ def print_appointment_info():
         print(f"Date: {appointment.date}")
         print(f"Start Time: {appointment.start_time}")
         print(f"End Time: {appointment.end_time}")
-        print(f"Doctor ID: {appointment.doctor_id}")
-        if appointment.doctor_id in root.users:
-            doctor = root.users[appointment.doctor_id]
+        print(f"Doctor ID: {appointment.doctor}")
+        if appointment.doctor in root.users:
+            doctor = root.users[appointment.doctor]
             print(f"Doctor Name: {doctor.fname} {doctor.lname}")
         else:
             print("Doctor ID not found in users")
-        print(f"Specialty: {appointment.specialty}")
-        print(f"Patient ID: {appointment.patient_id} \n")
+        print(f"Confirmation: {appointment.confirm}")
+        print(f"Patient ID: {appointment.patient} \n")
 if __name__ == "__main__":
 
     # add_doctor("doctor1")
