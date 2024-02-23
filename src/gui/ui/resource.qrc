@@ -1,13 +1,18 @@
 <RCC>
   <qresource prefix="icon">
-    <file>image/account.png</file>
+    <file>image/medical-symbol (1).png</file>
+    <file>image/account2.png</file>
+    <file>image/appointment.png</file>
+    <file>image/bill.png</file>
+    <file>image/history2.png</file>
+    <file>image/logout (1).png</file>
+    <file>image/medical-symbol (1).png</file>
+    <file>image/menu.png</file>
     <file>image/healthcare (1).png</file>
     <file>image/healthcare.png</file>
-    <file>image/history.png</file>
-    <file>image/hospital.png</file>
     <file>image/logout.png</file>
-    <file>image/menu.png</file>
-    <file>image/profile-user.png</file>
     <file>image/schedule.png</file>
+    <file>image/profile-user.png</file>
+    <file>image/hospital.png</file>
   </qresource>
 </RCC>
