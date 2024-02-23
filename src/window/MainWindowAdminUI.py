@@ -42,6 +42,11 @@ class MainWindowAdminUI(QMainWindow):
 
     def showLogPage(self):
         self.ui.stackedWidget.setCurrentIndex(3)
+        logs = get_logs()
+        self.ui.listWidget.clear()
+        for log in logs:
+            self.ui.listWidget.addItem(log.get_details())
+        
 
     def showListDoctorPage(self):
         self.ui.stackedWidget.setCurrentIndex(1)
@@ -71,17 +76,7 @@ class MainWindowAdminUI(QMainWindow):
         self.search_patient()
     
     def search_user(self, role, search_text, search_attribute, sort_attribute, sort_attribute_by):
-        users_to_display = []
-
-        if role == "Doctor" or role == "Nurse":
-            for i in root.employee_id_list:
-                if root.users[i].role == role and search_text in str(getattr(root.users[i], search_attribute)).lower():
-                    users_to_display.append(root.users[i])
-        else:
-            for i in root.users:
-                if root.users[i].__class__.__name__ == role:
-                    if search_text in str(getattr(root.users[i], search_attribute)).lower():
-                        users_to_display.append(root.users[i])
+        users_to_display = getUserToDisplay(role, search_text, search_attribute)
 
         # Sorting the doctors based on the chosen attribute
         if sort_attribute:
@@ -211,7 +206,7 @@ class MainWindowAdminUI(QMainWindow):
         if index.isValid():
             row = index.row()
             user_id = int(tableWidget.item(row, 0).text())
-            delete_user_db_by_id(user_id)
+            delete_user_db_by_id(self.current_user, user_id)
 
     def edit_doctor(self):
         self.edit_user(self.ui.tableWidget, self.save_edited_doctor)
@@ -276,9 +271,8 @@ class MainWindowAdminUI(QMainWindow):
             data.append(value)
 
         # Update the user object and database
-        print(data)
-        root.users[user_id].update_attributes(data)  # Assuming a method to update attributes
-        transaction.commit()
+        print(self.current_user.get_fname())
+        update_user_attributes(self.current_user, user_id, data)
 
         # Refresh the table to reflect the changes
         refresh_function()

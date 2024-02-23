@@ -16,9 +16,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QGridLayout, QHBoxLayout,
-    QHeaderView, QLabel, QMainWindow, QPushButton,
-    QSizePolicy, QSpacerItem, QStackedWidget, QTableWidget,
-    QTableWidgetItem, QTextEdit, QVBoxLayout, QWidget)
+    QHeaderView, QLabel, QListWidget, QListWidgetItem,
+    QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
+    QStackedWidget, QTableWidget, QTableWidgetItem, QTextEdit,
+    QVBoxLayout, QWidget)
 from . import resource_rc
 
 class Ui_MainWindow(object):
@@ -221,11 +222,15 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.page_2)
         self.page_3 = QWidget()
         self.page_3.setObjectName(u"page_3")
-        self.log_page = QLabel(self.page_3)
+        self.log_page = QWidget(self.page_3)
         self.log_page.setObjectName(u"log_page")
-        self.log_page.setGeometry(QRect(0, 20, 1021, 651))
-        self.log_page.setStyleSheet(u"color: black;")
-        self.log_page.setAlignment(Qt.AlignCenter)
+        self.log_page.setGeometry(QRect(-10, -10, 1051, 721))
+        self.listWidget = QListWidget(self.log_page)
+        self.listWidget.setObjectName(u"listWidget")
+        self.listWidget.setGeometry(QRect(170, 170, 721, 431))
+        self.textEdit_2 = QTextEdit(self.log_page)
+        self.textEdit_2.setObjectName(u"textEdit_2")
+        self.textEdit_2.setGeometry(QRect(170, 70, 371, 41))
         self.stackedWidget.addWidget(self.page_3)
         self.page_5 = QWidget()
         self.page_5.setObjectName(u"page_5")
@@ -648,7 +653,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(5)
+        self.stackedWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -714,7 +719,6 @@ class Ui_MainWindow(object):
         self.comboBox_2.setItemText(7, QCoreApplication.translate("MainWindow", u"salary", None))
 
         self.appointment_page.setText(QCoreApplication.translate("MainWindow", u"Appointment", None))
-        self.log_page.setText(QCoreApplication.translate("MainWindow", u"Logs", None))
         ___qtablewidgetitem10 = self.tableWidget_3.horizontalHeaderItem(0)
         ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Id", None));
         ___qtablewidgetitem11 = self.tableWidget_3.horizontalHeaderItem(1)

@@ -9,6 +9,7 @@ from src.All_class.Doctor import Doctor
 from src.All_class.Nurse import Nurse
 from src.All_class.Admin import Admin
 from src.All_class.Appointment import Appointment
+from src.All_class.Log import Log
 
 class TestClass:
     def test_person(self):
@@ -72,16 +73,23 @@ class TestClass:
         assert a.start_time == "2021-10-10 10:00"
         assert a.end_time == "2021-10-10 11:00"
         print("Appointment test passed")
+    
+    def test_log(self):
+        admin = Admin("admin100", "admin", "123 Main St", "123-456-7890", "password", 100, "System Management", "Admin")
+        patient = Patient("p101", "lname", "123 Main St", "123-456-7890", "password", 101)
+        log = Log(1, admin, "create", patient)
+        print(log.get_details())
 
 if __name__ == "__main__":
     tc = TestClass()
-    tc.test_person()
-    tc.test_patient()
-    tc.test_staff()
-    tc.test_doctor()
-    tc.test_nurse()
-    tc.test_admin()
-    tc.test_appointment()
-    from datetime import datetime
-    print(datetime.now())
-    print("Everything passed")  
+    # tc.test_person()
+    # tc.test_patient()
+    # tc.test_staff()
+    # tc.test_doctor()
+    # tc.test_nurse()
+    # tc.test_admin()
+    # tc.test_appointment()
+    # from datetime import datetime
+    # print(datetime.now())
+    # print("Everything passed")
+    tc.test_log()
