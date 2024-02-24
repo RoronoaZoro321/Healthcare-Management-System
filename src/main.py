@@ -472,7 +472,6 @@ class MainWindowUI(QMainWindow):
         start_time = "6:00 am" if self.ui.checkBox.isChecked() else "13:00 pm"
         end_time = "12:00 pm" if self.ui.checkBox.isChecked() else "18:00 pm"
         doctor_id = self.ui.Doctor.currentData()
-        specialty = self.ui.Speciality.currentText()
         patient_id = current_user.get_id()
 
         if self.has_conflicting_appointment(patient_id, selected_date, start_time, end_time):
@@ -502,7 +501,7 @@ class MainWindowUI(QMainWindow):
 
     def populate_appointments_table(self):
         self.ui.tableWidget.clear()
-        self.ui.tableWidget.setColumnCount(5)
+        self.ui.tableWidget.setColumnCount(6)
         self.ui.tableWidget.setHorizontalHeaderLabels(['Doctor', 'Date', 'Start Time', 'End Time', 'Confirmation'])
         patient_id = current_user.get_id()
 
@@ -518,7 +517,22 @@ class MainWindowUI(QMainWindow):
             self.ui.tableWidget.setItem(row, 2, QTableWidgetItem(appointment.start_time))
             self.ui.tableWidget.setItem(row, 3, QTableWidgetItem(appointment.end_time))
             self.ui.tableWidget.setItem(row, 4, QTableWidgetItem(confirmation))
-        
+
+            cancel_btn = QPushButton('Cancel')
+            cancel_btn.setStyleSheet("QPushButton {background-color: #ff4d4d; color: white;}")
+            cancel_btn.clicked.connect(lambda _: self.cancel_appointment(appointment.id))
+            self.ui.tableWidget.setCellWidget(row, 5, cancel_btn)
+    
+    def cancel_appointment(self, appointment_id):
+        if appointment_id in root.appointments:
+            del root.appointments[appointment_id]
+            root.appointment_id_list.remove(appointment_id)
+            transaction.commit()
+            self.populate_appointments_table()
+            QMessageBox.information(self, "Appointment Cancelled", "The appointment has been successfully cancelled.")
+        else:
+            QMessageBox.warning(self, "Error", "Could not find the appointment to cancel.")
+    
     def generate_new_appointment_id(self):
         print("generate appointment id")
         root.last_appointment_id += 1
@@ -564,6 +578,16 @@ def print_appointment_info():
             print("Doctor ID not found in users")
         print(f"Confirmation: {appointment.confirm}")
         print(f"Patient ID: {appointment.patient} \n")
+        
+def delete_all_appointments():
+    appointment_ids = list(root.appointments.keys())
+    for appointment_id in appointment_ids:
+        del root.appointments[appointment_id]
+    transaction.commit()
+
+    root.last_appointment_id = 0
+    root.appointment_id_list = PersistentList()
+    transaction.commit()
 if __name__ == "__main__":
 
     # add_doctor("doctor1")
@@ -573,8 +597,8 @@ if __name__ == "__main__":
     # add_doctor("cat")
 
     # add_admin()
-    # add_nurse("nurse1")
-
+    # add_nurse("nurse1")\
+    # delete_all_appointments()
     print_appointment_info()
     printInfo()
 
