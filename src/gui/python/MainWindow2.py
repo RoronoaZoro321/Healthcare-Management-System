@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'MainWindow2.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.2
+## Created by: Qt User Interface Compiler version 6.6.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -129,44 +129,44 @@ class Ui_MainWindow(object):
         self.page_2.setObjectName(u"page_2")
         self.widget_5 = QWidget(self.page_2)
         self.widget_5.setObjectName(u"widget_5")
-        self.widget_5.setGeometry(QRect(20, 20, 1001, 671))
+        self.widget_5.setGeometry(QRect(-30, -10, 1041, 721))
         self.widget_5.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.Calendar = QCalendarWidget(self.widget_5)
         self.Calendar.setObjectName(u"Calendar")
-        self.Calendar.setGeometry(QRect(40, 400, 481, 181))
+        self.Calendar.setGeometry(QRect(110, 410, 481, 181))
         self.Calendar.setStyleSheet(u"border: 1px solid black;\n"
-"font: 75 8pt \"Cambria\";\n"
+"font: 8pt \"Cambria\";\n"
 "\n"
 "")
         self.Calendar.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.Submit = QPushButton(self.widget_5)
         self.Submit.setObjectName(u"Submit")
-        self.Submit.setGeometry(QRect(840, 550, 75, 24))
-        self.Submit.setStyleSheet(u"font: 75 8pt \"Cambria\";\n"
+        self.Submit.setGeometry(QRect(870, 550, 75, 24))
+        self.Submit.setStyleSheet(u"font: 8pt \"Cambria\";\n"
 "")
         self.layoutWidget = QWidget(self.widget_5)
         self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(600, 440, 279, 99))
+        self.layoutWidget.setGeometry(QRect(660, 440, 279, 99))
         self.verticalLayout_3 = QVBoxLayout(self.layoutWidget)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.checkBox = QCheckBox(self.layoutWidget)
         self.checkBox.setObjectName(u"checkBox")
-        self.checkBox.setStyleSheet(u"font: 75 10pt \"Cambria\";\n"
+        self.checkBox.setStyleSheet(u"font: 10pt \"Cambria\";\n"
 "")
 
         self.verticalLayout_3.addWidget(self.checkBox)
 
         self.checkBox_2 = QCheckBox(self.layoutWidget)
         self.checkBox_2.setObjectName(u"checkBox_2")
-        self.checkBox_2.setStyleSheet(u"font: 75 10pt \"Cambria\";\n"
+        self.checkBox_2.setStyleSheet(u"font: 10pt \"Cambria\";\n"
 "")
 
         self.verticalLayout_3.addWidget(self.checkBox_2)
 
         self.widget_8 = QWidget(self.widget_5)
         self.widget_8.setObjectName(u"widget_8")
-        self.widget_8.setGeometry(QRect(400, 40, 521, 271))
+        self.widget_8.setGeometry(QRect(450, 40, 521, 271))
         self.widget_8.setStyleSheet(u"border: 1px solid black;\n"
 "background: #F8FAFC;")
         self.tableWidget = QTableWidget(self.widget_8)
@@ -185,27 +185,27 @@ class Ui_MainWindow(object):
         self.label_7 = QLabel(self.widget_9)
         self.label_7.setObjectName(u"label_7")
         self.label_7.setGeometry(QRect(210, 10, 191, 31))
-        self.label_7.setStyleSheet(u"font: 75 14pt \"Cambria\";\n"
+        self.label_7.setStyleSheet(u"font: 14pt \"Cambria\";\n"
 "color: black;\n"
 "border: None;")
         self.label_6 = QLabel(self.widget_5)
         self.label_6.setObjectName(u"label_6")
-        self.label_6.setGeometry(QRect(40, 350, 321, 41))
-        self.label_6.setStyleSheet(u"font: 75 12pt \"Cambria\";")
-        self.layoutWidget1 = QWidget(self.widget_5)
-        self.layoutWidget1.setObjectName(u"layoutWidget1")
-        self.layoutWidget1.setGeometry(QRect(70, 120, 271, 141))
-        self.verticalLayout_4 = QVBoxLayout(self.layoutWidget1)
+        self.label_6.setGeometry(QRect(110, 370, 321, 41))
+        self.label_6.setStyleSheet(u"font: 12pt \"Cambria\";")
+        self.layoutWidget_1 = QWidget(self.widget_5)
+        self.layoutWidget_1.setObjectName(u"layoutWidget_1")
+        self.layoutWidget_1.setGeometry(QRect(110, 120, 302, 141))
+        self.verticalLayout_4 = QVBoxLayout(self.layoutWidget_1)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.label_2 = QLabel(self.layoutWidget1)
+        self.label_2 = QLabel(self.layoutWidget_1)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setStyleSheet(u"font: 75 12pt \"Cambria\";\n"
+        self.label_2.setStyleSheet(u"font: 12pt \"Cambria\";\n"
 "")
 
         self.verticalLayout_4.addWidget(self.label_2)
 
-        self.Speciality = QComboBox(self.layoutWidget1)
+        self.Speciality = QComboBox(self.layoutWidget_1)
         self.Speciality.addItem("")
         self.Speciality.addItem("")
         self.Speciality.addItem("")
@@ -219,17 +219,17 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4.addWidget(self.Speciality)
 
-        self.verticalSpacer_2 = QSpacerItem(296, 13, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.verticalSpacer_2 = QSpacerItem(296, 13, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout_4.addItem(self.verticalSpacer_2)
 
-        self.label_3 = QLabel(self.layoutWidget1)
+        self.label_3 = QLabel(self.layoutWidget_1)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setStyleSheet(u"font: 12pt \"Cambria\";")
 
         self.verticalLayout_4.addWidget(self.label_3)
 
-        self.Doctor = QComboBox(self.layoutWidget1)
+        self.Doctor = QComboBox(self.layoutWidget_1)
         self.Doctor.setObjectName(u"Doctor")
         self.Doctor.setStyleSheet(u"font: 12pt \"Cambria\";\n"
 "background: #ACACAC;\n"
@@ -261,7 +261,7 @@ class Ui_MainWindow(object):
         self.widget_4.setObjectName(u"widget_4")
         self.horizontalLayout = QHBoxLayout(self.widget_4)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalSpacer_2 = QSpacerItem(64, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_2 = QSpacerItem(64, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer_2)
 
@@ -277,26 +277,31 @@ class Ui_MainWindow(object):
         self.label = QLabel(self.widget_4)
         self.label.setObjectName(u"label")
         self.label.setMaximumSize(QSize(40, 40))
-        self.label.setPixmap(QPixmap(u":/icon/image/hospital.png"))
+        self.label.setPixmap(QPixmap(u":/icon/image/medical-symbol (1).png"))
         self.label.setScaledContents(True)
         self.label.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout.addWidget(self.label)
 
-        self.horizontalSpacer_3 = QSpacerItem(63, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_3 = QSpacerItem(63, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer_3)
 
 
         self.verticalLayout_2.addWidget(self.widget_4)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.verticalLayout_2.addItem(self.horizontalSpacer)
 
         self.pushButton_2 = QPushButton(self.widget)
         self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setFont(font)
+        font1 = QFont()
+        font1.setFamilies([u"Cambria"])
+        font1.setPointSize(16)
+        font1.setBold(False)
+        font1.setItalic(False)
+        self.pushButton_2.setFont(font1)
         self.pushButton_2.setStyleSheet(u"QPushButton {\n"
 "	color: white;\n"
 "	padding: 17%;\n"
@@ -304,6 +309,7 @@ class Ui_MainWindow(object):
 "	border: none;\n"
 "	text-align:left;\n"
 "	font-size: 18px;\n"
+"	font: 16pt \"Cambria\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -313,7 +319,7 @@ class Ui_MainWindow(object):
 "	background: #00847B;\n"
 "}")
         icon = QIcon()
-        icon.addFile(u":/icon/account2.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u":/icon/image/account2.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_2.setIcon(icon)
         self.pushButton_2.setIconSize(QSize(25, 25))
 
@@ -321,7 +327,7 @@ class Ui_MainWindow(object):
 
         self.pushButton_3 = QPushButton(self.widget)
         self.pushButton_3.setObjectName(u"pushButton_3")
-        self.pushButton_3.setFont(font)
+        self.pushButton_3.setFont(font1)
         self.pushButton_3.setStyleSheet(u"QPushButton {\n"
 "	color: white;\n"
 "	padding: 17%;\n"
@@ -329,6 +335,7 @@ class Ui_MainWindow(object):
 "	padding-left: 40%;\n"
 "	text-align:left;\n"
 "	font-size: 18px;\n"
+"	font: 16pt \"Cambria\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -339,7 +346,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon1 = QIcon()
-        icon1.addFile(u":/icon/appointment.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u":/icon/image/appointment.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_3.setIcon(icon1)
         self.pushButton_3.setIconSize(QSize(25, 25))
 
@@ -347,7 +354,7 @@ class Ui_MainWindow(object):
 
         self.pushButton = QPushButton(self.widget)
         self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setFont(font)
+        self.pushButton.setFont(font1)
         self.pushButton.setStyleSheet(u"QPushButton {\n"
 "	color: white;\n"
 "	padding: 17%;\n"
@@ -355,6 +362,7 @@ class Ui_MainWindow(object):
 "	padding-left: 40%;\n"
 "	text-align:left;\n"
 "	font-size: 18px;\n"
+"	font: 16pt \"Cambria\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -365,7 +373,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon2 = QIcon()
-        icon2.addFile(u":/icon/history2.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(u":/icon/image/history2.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton.setIcon(icon2)
         self.pushButton.setIconSize(QSize(25, 25))
 
@@ -373,7 +381,7 @@ class Ui_MainWindow(object):
 
         self.pushButton_9 = QPushButton(self.widget)
         self.pushButton_9.setObjectName(u"pushButton_9")
-        self.pushButton_9.setFont(font)
+        self.pushButton_9.setFont(font1)
         self.pushButton_9.setStyleSheet(u"QPushButton {\n"
 "	color: white;\n"
 "	padding: 17%;\n"
@@ -381,6 +389,7 @@ class Ui_MainWindow(object):
 "	padding-left: 40%;\n"
 "	text-align:left;\n"
 "	font-size: 18px;\n"
+"	font: 16pt \"Cambria\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -391,13 +400,13 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon3 = QIcon()
-        icon3.addFile(u":/icon/bill.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon3.addFile(u":/icon/image/bill.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_9.setIcon(icon3)
         self.pushButton_9.setIconSize(QSize(25, 25))
 
         self.verticalLayout_2.addWidget(self.pushButton_9)
 
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout_2.addItem(self.verticalSpacer)
 
@@ -410,6 +419,7 @@ class Ui_MainWindow(object):
 "	padding-left: 40%;\n"
 "	text-align:left;\n"
 "	font-size: 18px;\n"
+"	font: 16pt \"Cambria\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -419,7 +429,7 @@ class Ui_MainWindow(object):
 "	background: #00847B;\n"
 "}")
         icon4 = QIcon()
-        icon4.addFile(u":/icon/logout (1).png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u":/icon/image/logout (1).png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_4.setIcon(icon4)
 
         self.verticalLayout_2.addWidget(self.pushButton_4)

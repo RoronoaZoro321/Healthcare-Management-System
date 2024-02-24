@@ -56,7 +56,6 @@ color: #353535;</string>
              <font>
               <family>Osaka</family>
               <pointsize>-1</pointsize>
-              <weight>50</weight>
               <italic>false</italic>
               <bold>false</bold>
              </font>
@@ -173,10 +172,10 @@ margin-bottom: 30%;</string>
         <widget class="QWidget" name="widget_5" native="true">
          <property name="geometry">
           <rect>
-           <x>20</x>
-           <y>20</y>
-           <width>1001</width>
-           <height>671</height>
+           <x>-30</x>
+           <y>-10</y>
+           <width>1041</width>
+           <height>721</height>
           </rect>
          </property>
          <property name="locale">
@@ -185,15 +184,15 @@ margin-bottom: 30%;</string>
          <widget class="QCalendarWidget" name="Calendar">
           <property name="geometry">
            <rect>
-            <x>40</x>
-            <y>400</y>
+            <x>110</x>
+            <y>410</y>
             <width>481</width>
             <height>181</height>
            </rect>
           </property>
           <property name="styleSheet">
            <string notr="true">border: 1px solid black;
-font: 75 8pt &quot;Cambria&quot;;
+font: 8pt &quot;Cambria&quot;;
 
 </string>
           </property>
@@ -204,14 +203,14 @@ font: 75 8pt &quot;Cambria&quot;;
          <widget class="QPushButton" name="Submit">
           <property name="geometry">
            <rect>
-            <x>840</x>
+            <x>870</x>
             <y>550</y>
             <width>75</width>
             <height>24</height>
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: 75 8pt &quot;Cambria&quot;;
+           <string notr="true">font: 8pt &quot;Cambria&quot;;
 </string>
           </property>
           <property name="text">
@@ -221,7 +220,7 @@ font: 75 8pt &quot;Cambria&quot;;
          <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
-            <x>600</x>
+            <x>660</x>
             <y>440</y>
             <width>279</width>
             <height>99</height>
@@ -231,7 +230,7 @@ font: 75 8pt &quot;Cambria&quot;;
            <item>
             <widget class="QCheckBox" name="checkBox">
              <property name="styleSheet">
-              <string notr="true">font: 75 10pt &quot;Cambria&quot;;
+              <string notr="true">font: 10pt &quot;Cambria&quot;;
 </string>
              </property>
              <property name="text">
@@ -242,7 +241,7 @@ font: 75 8pt &quot;Cambria&quot;;
            <item>
             <widget class="QCheckBox" name="checkBox_2">
              <property name="styleSheet">
-              <string notr="true">font: 75 10pt &quot;Cambria&quot;;
+              <string notr="true">font: 10pt &quot;Cambria&quot;;
 </string>
              </property>
              <property name="text">
@@ -255,7 +254,7 @@ font: 75 8pt &quot;Cambria&quot;;
          <widget class="QWidget" name="widget_8" native="true">
           <property name="geometry">
            <rect>
-            <x>400</x>
+            <x>450</x>
             <y>40</y>
             <width>521</width>
             <height>271</height>
@@ -306,7 +305,7 @@ border: None;</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">font: 75 14pt &quot;Cambria&quot;;
+             <string notr="true">font: 14pt &quot;Cambria&quot;;
 color: black;
 border: None;</string>
             </property>
@@ -319,25 +318,25 @@ border: None;</string>
          <widget class="QLabel" name="label_6">
           <property name="geometry">
            <rect>
-            <x>40</x>
-            <y>350</y>
+            <x>110</x>
+            <y>370</y>
             <width>321</width>
             <height>41</height>
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: 75 12pt &quot;Cambria&quot;;</string>
+           <string notr="true">font: 12pt &quot;Cambria&quot;;</string>
           </property>
           <property name="text">
            <string>Appointment Date</string>
           </property>
          </widget>
-         <widget class="QWidget" name="layoutWidget">
+         <widget class="QWidget" name="layoutWidget_1">
           <property name="geometry">
            <rect>
-            <x>70</x>
+            <x>110</x>
             <y>120</y>
-            <width>271</width>
+            <width>302</width>
             <height>141</height>
            </rect>
           </property>
@@ -345,7 +344,7 @@ border: None;</string>
            <item>
             <widget class="QLabel" name="label_2">
              <property name="styleSheet">
-              <string notr="true">font: 75 12pt &quot;Cambria&quot;;
+              <string notr="true">font: 12pt &quot;Cambria&quot;;
 </string>
              </property>
              <property name="text">
@@ -497,7 +496,7 @@ color: white;</string>
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="resource.qrc">:/icon/medical-symbol (1).png</pixmap>
+           <pixmap>:/icon/medical-symbol (1).png</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
@@ -519,7 +518,7 @@ color: white;</string>
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>:/icon/image/hospital.png</pixmap>
+           <pixmap resource="resource.qrc">:/icon/image/medical-symbol (1).png</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
@@ -562,9 +561,8 @@ color: white;</string>
       <widget class="QPushButton" name="pushButton_2">
        <property name="font">
         <font>
-         <family>Osaka</family>
-         <pointsize>-1</pointsize>
-         <weight>50</weight>
+         <family>Cambria</family>
+         <pointsize>16</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -577,6 +575,7 @@ color: white;</string>
 	border: none;
 	text-align:left;
 	font-size: 18px;
+	font: 16pt &quot;Cambria&quot;;
 }
 
 QPushButton:hover {
@@ -591,7 +590,7 @@ QPushButton:hover {
        </property>
        <property name="icon">
         <iconset resource="resource.qrc">
-         <normaloff>:/icon/account2.png</normaloff>:/icon/account2.png</iconset>
+         <normaloff>:/icon/image/account2.png</normaloff>:/icon/image/account2.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -605,9 +604,8 @@ QPushButton:hover {
       <widget class="QPushButton" name="pushButton_3">
        <property name="font">
         <font>
-         <family>Osaka</family>
-         <pointsize>-1</pointsize>
-         <weight>50</weight>
+         <family>Cambria</family>
+         <pointsize>16</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -620,6 +618,7 @@ QPushButton:hover {
 	padding-left: 40%;
 	text-align:left;
 	font-size: 18px;
+	font: 16pt &quot;Cambria&quot;;
 }
 
 QPushButton:hover {
@@ -635,7 +634,7 @@ QPushButton:hover {
        </property>
        <property name="icon">
         <iconset resource="resource.qrc">
-         <normaloff>:/icon/appointment.png</normaloff>:/icon/appointment.png</iconset>
+         <normaloff>:/icon/image/appointment.png</normaloff>:/icon/image/appointment.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -649,9 +648,8 @@ QPushButton:hover {
       <widget class="QPushButton" name="pushButton">
        <property name="font">
         <font>
-         <family>Osaka</family>
-         <pointsize>-1</pointsize>
-         <weight>50</weight>
+         <family>Cambria</family>
+         <pointsize>16</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -664,6 +662,7 @@ QPushButton:hover {
 	padding-left: 40%;
 	text-align:left;
 	font-size: 18px;
+	font: 16pt &quot;Cambria&quot;;
 }
 
 QPushButton:hover {
@@ -679,7 +678,7 @@ QPushButton:hover {
        </property>
        <property name="icon">
         <iconset resource="resource.qrc">
-         <normaloff>:/icon/history2.png</normaloff>:/icon/history2.png</iconset>
+         <normaloff>:/icon/image/history2.png</normaloff>:/icon/image/history2.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -693,9 +692,8 @@ QPushButton:hover {
       <widget class="QPushButton" name="pushButton_9">
        <property name="font">
         <font>
-         <family>Osaka</family>
-         <pointsize>-1</pointsize>
-         <weight>50</weight>
+         <family>Cambria</family>
+         <pointsize>16</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -708,6 +706,7 @@ QPushButton:hover {
 	padding-left: 40%;
 	text-align:left;
 	font-size: 18px;
+	font: 16pt &quot;Cambria&quot;;
 }
 
 QPushButton:hover {
@@ -723,7 +722,7 @@ QPushButton:hover {
        </property>
        <property name="icon">
         <iconset resource="resource.qrc">
-         <normaloff>:/icon/bill.png</normaloff>:/icon/bill.png</iconset>
+         <normaloff>:/icon/image/bill.png</normaloff>:/icon/image/bill.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -756,6 +755,7 @@ QPushButton:hover {
 	padding-left: 40%;
 	text-align:left;
 	font-size: 18px;
+	font: 16pt &quot;Cambria&quot;;
 }
 
 QPushButton:hover {
@@ -770,7 +770,7 @@ QPushButton:hover {
        </property>
        <property name="icon">
         <iconset resource="resource.qrc">
-         <normaloff>:/icon/logout (1).png</normaloff>:/icon/logout (1).png</iconset>
+         <normaloff>:/icon/image/logout (1).png</normaloff>:/icon/image/logout (1).png</iconset>
        </property>
       </widget>
      </item>
