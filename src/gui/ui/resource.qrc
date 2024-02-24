@@ -1,19 +1,19 @@
 <RCC>
   <qresource prefix="icon">
-    <file>search.png</file>
-    <file>sorting.png</file>
-    <file>add-user.png</file>
-    <file>id-card.png</file>
-    <file>doctor.png</file>
-    <file>hospitalisation.png</file>
-    <file>nurse.png</file>
+    <file>image/search.png</file>
+    <file>image/sorting.png</file>
+    <file>image/add-user.png</file>
+    <file>image/id-card.png</file>
+    <file>image/doctor.png</file>
+    <file>image/hospitalisation.png</file>
+    <file>image/nurse.png</file>
     <file>image/account.png</file>
-    <file>account2.png</file>
-    <file>bill.png</file>
-    <file>appointment.png</file>
-    <file>history2.png</file>
-    <file>logout (1).png</file>
-    <file>medical-symbol (1).png</file>
+    <file>image/account2.png</file>
+    <file>image/bill.png</file>
+    <file>image/appointment.png</file>
+    <file>image/history2.png</file>
+    <file>image/logout (1).png</file>
+    <file>image/medical-symbol (1).png</file>
     <file>image/healthcare (1).png</file>
     <file>image/healthcare.png</file>
     <file>image/history.png</file>

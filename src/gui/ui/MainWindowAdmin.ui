@@ -622,7 +622,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
            </property>
            <property name="styleSheet">
             <string notr="true">background: #E0E0E0;
-color: white;</string>
+</string>
            </property>
            <item>
             <property name="text">
@@ -758,7 +758,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="resource.qrc">:/icon/search.png</pixmap>
+            <pixmap>:/icon/search.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -1049,11 +1049,30 @@ li.checked::marker { content: &quot;\2612&quot;; }
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>61</width>
+          <width>57</width>
           <height>54</height>
          </size>
         </property>
        </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="maximumSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resource.qrc">:/icon/image/medical-symbol (1).png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QLabel" name="label">
@@ -1067,7 +1086,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="resource.qrc">:/icon/medical-symbol (1).png</pixmap>
+         <pixmap>:/icon/medical-symbol (1).png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
@@ -1084,7 +1103,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>60</width>
+          <width>56</width>
           <height>54</height>
          </size>
         </property>
@@ -1128,7 +1147,7 @@ QPushButton:hover {
         </property>
         <property name="icon">
          <iconset resource="resource.qrc">
-          <normaloff>:/icon/account2.png</normaloff>:/icon/account2.png</iconset>
+          <normaloff>:/icon/image/account2.png</normaloff>:/icon/image/account2.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1164,7 +1183,7 @@ QPushButton:hover {
         </property>
         <property name="icon">
          <iconset resource="resource.qrc">
-          <normaloff>:/icon/appointment.png</normaloff>:/icon/appointment.png</iconset>
+          <normaloff>:/icon/image/appointment.png</normaloff>:/icon/image/appointment.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1200,7 +1219,7 @@ QPushButton:hover {
         </property>
         <property name="icon">
          <iconset resource="resource.qrc">
-          <normaloff>:/icon/bill.png</normaloff>:/icon/bill.png</iconset>
+          <normaloff>:/icon/image/bill.png</normaloff>:/icon/image/bill.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1236,7 +1255,7 @@ QPushButton:hover {
         </property>
         <property name="icon">
          <iconset resource="resource.qrc">
-          <normaloff>:/icon/history2.png</normaloff>:/icon/history2.png</iconset>
+          <normaloff>:/icon/image/history2.png</normaloff>:/icon/image/history2.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1272,7 +1291,7 @@ QPushButton:hover {
         </property>
         <property name="icon">
          <iconset resource="resource.qrc">
-          <normaloff>:/icon/id-card.png</normaloff>:/icon/id-card.png</iconset>
+          <normaloff>:/icon/image/id-card.png</normaloff>:/icon/image/id-card.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1308,7 +1327,7 @@ QPushButton:hover {
         </property>
         <property name="icon">
          <iconset resource="resource.qrc">
-          <normaloff>:/icon/doctor.png</normaloff>:/icon/doctor.png</iconset>
+          <normaloff>:/icon/image/doctor.png</normaloff>:/icon/image/doctor.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1344,7 +1363,7 @@ QPushButton:hover {
         </property>
         <property name="icon">
          <iconset resource="resource.qrc">
-          <normaloff>:/icon/nurse.png</normaloff>:/icon/nurse.png</iconset>
+          <normaloff>:/icon/image/nurse.png</normaloff>:/icon/image/nurse.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1380,7 +1399,7 @@ QPushButton:hover {
         </property>
         <property name="icon">
          <iconset resource="resource.qrc">
-          <normaloff>:/icon/hospitalisation.png</normaloff>:/icon/hospitalisation.png</iconset>
+          <normaloff>:/icon/image/hospitalisation.png</normaloff>:/icon/image/hospitalisation.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1416,7 +1435,7 @@ QPushButton:hover {
         </property>
         <property name="icon">
          <iconset resource="resource.qrc">
-          <normaloff>:/icon/add-user.png</normaloff>:/icon/add-user.png</iconset>
+          <normaloff>:/icon/image/add-user.png</normaloff>:/icon/image/add-user.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1465,7 +1484,7 @@ QPushButton:hover {
         </property>
         <property name="icon">
          <iconset resource="resource.qrc">
-          <normaloff>:/icon/logout (1).png</normaloff>:/icon/logout (1).png</iconset>
+          <normaloff>:/icon/image/logout (1).png</normaloff>:/icon/image/logout (1).png</iconset>
         </property>
         <property name="iconSize">
          <size>

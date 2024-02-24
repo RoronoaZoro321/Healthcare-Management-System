@@ -239,7 +239,8 @@ class Ui_MainWindow(object):
         self.widget_list_nurse.setGeometry(QRect(-10, -10, 1061, 721))
         self.widget_6 = QWidget(self.widget_list_nurse)
         self.widget_6.setObjectName(u"widget_6")
-        self.widget_6.setGeometry(QRect(60, 130, 921, 541))
+        self.widget_6.setGeometry(QRect(70, 100, 921, 571))
+        self.widget_6.setStyleSheet(u"font: 13pt \"Arial\";")
         self.tableWidget_3 = QTableWidget(self.widget_6)
         if (self.tableWidget_3.columnCount() < 10):
             self.tableWidget_3.setColumnCount(10)
@@ -280,24 +281,24 @@ class Ui_MainWindow(object):
         self.tableWidget_3.setObjectName(u"tableWidget_3")
         self.tableWidget_3.setGeometry(QRect(10, 100, 881, 421))
         self.tableWidget_3.setStyleSheet(u"            QTableWidget {\n"
-"                background-color: #f8f9fa;\n"
+"                background-color: #blue;\n"
 "                border: 2px solid #dee2e6;\n"
 "                border-radius: 8px;\n"
 "                selection-background-color: #007bff;\n"
 "            }\n"
 "\n"
 "            QTableWidget::item {\n"
-"                color: #495057;\n"
+"                color: #green;\n"
 "                border-bottom: 1px solid #dee2e6;\n"
 "            }\n"
 "\n"
 "            QTableWidget::item:selected {\n"
-"                background-color: #007bff;\n"
+"                background-color: #red;\n"
 "                color: #ffffff;\n"
 "            }\n"
 "\n"
 "            QTableWidget::item:hover {\n"
-"                background-color: #e0e0e0;\n"
+"                background-color: #orange;\n"
 "            }\n"
 "\n"
 "            QHeaderView::section {\n"
@@ -310,11 +311,15 @@ class Ui_MainWindow(object):
 "\n"
 "            QHeaderView::section:hover {\n"
 "                background-color: #495057;\n"
-"       "
-                        "     }")
-        self.label_10 = QLabel(self.widget_6)
-        self.label_10.setObjectName(u"label_10")
-        self.label_10.setGeometry(QRect(20, 20, 65, 17))
+"            }")
+        self.label_9 = QLabel(self.widget_6)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setGeometry(QRect(390, 20, 122, 17))
+        self.comboBox_8 = QComboBox(self.widget_6)
+        self.comboBox_8.addItem("")
+        self.comboBox_8.addItem("")
+        self.comboBox_8.setObjectName(u"comboBox_8")
+        self.comboBox_8.setGeometry(QRect(600, 50, 221, 25))
         self.comboBox_7 = QComboBox(self.widget_6)
         self.comboBox_7.addItem("")
         self.comboBox_7.addItem("")
@@ -325,13 +330,9 @@ class Ui_MainWindow(object):
         self.comboBox_7.addItem("")
         self.comboBox_7.addItem("")
         self.comboBox_7.setObjectName(u"comboBox_7")
-        self.comboBox_7.setGeometry(QRect(100, 20, 227, 19))
-        self.textEdit_3 = QTextEdit(self.widget_6)
-        self.textEdit_3.setObjectName(u"textEdit_3")
-        self.textEdit_3.setGeometry(QRect(100, 50, 231, 41))
-        self.label_9 = QLabel(self.widget_6)
-        self.label_9.setObjectName(u"label_9")
-        self.label_9.setGeometry(QRect(350, 20, 122, 17))
+        self.comboBox_7.setGeometry(QRect(200, 10, 121, 31))
+        self.comboBox_7.setStyleSheet(u"background: #E0E0E0;\n"
+"")
         self.comboBox_9 = QComboBox(self.widget_6)
         self.comboBox_9.addItem("")
         self.comboBox_9.addItem("")
@@ -342,16 +343,28 @@ class Ui_MainWindow(object):
         self.comboBox_9.addItem("")
         self.comboBox_9.addItem("")
         self.comboBox_9.setObjectName(u"comboBox_9")
-        self.comboBox_9.setGeometry(QRect(410, 20, 195, 19))
-        self.comboBox_8 = QComboBox(self.widget_6)
-        self.comboBox_8.addItem("")
-        self.comboBox_8.addItem("")
-        self.comboBox_8.setObjectName(u"comboBox_8")
-        self.comboBox_8.setGeometry(QRect(410, 50, 393, 19))
-        self.label_4 = QLabel(self.widget_list_nurse)
+        self.comboBox_9.setGeometry(QRect(390, 50, 195, 25))
+        self.textEdit_3 = QTextEdit(self.widget_6)
+        self.textEdit_3.setObjectName(u"textEdit_3")
+        self.textEdit_3.setGeometry(QRect(10, 50, 311, 31))
+        self.textEdit_3.setStyleSheet(u"border: 1px solid black;\n"
+"border-radius: 15px;")
+        self.label_10 = QLabel(self.widget_6)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setGeometry(QRect(20, 60, 15, 15))
+        self.label_10.setMaximumSize(QSize(15, 15))
+        self.label_10.setPixmap(QPixmap(u":/icon/search.png"))
+        self.label_10.setScaledContents(True)
+        self.widget_7 = QWidget(self.widget_list_nurse)
+        self.widget_7.setObjectName(u"widget_7")
+        self.widget_7.setGeometry(QRect(840, 30, 131, 91))
+        self.widget_7.setStyleSheet(u"border: 1px solid black;\n"
+"border-radius: 20px")
+        self.label_4 = QLabel(self.widget_7)
         self.label_4.setObjectName(u"label_4")
-        self.label_4.setGeometry(QRect(780, 60, 161, 31))
-        self.label_4.setStyleSheet(u"border: None")
+        self.label_4.setGeometry(QRect(10, 30, 111, 31))
+        self.label_4.setStyleSheet(u"border: None;\n"
+"font: 700 13pt \"Arial\";")
         self.stackedWidget.addWidget(self.page_5)
         self.page_6 = QWidget()
         self.page_6.setObjectName(u"page_6")
@@ -475,9 +488,17 @@ class Ui_MainWindow(object):
         self.widget_4.setGeometry(QRect(12, 12, 209, 81))
         self.horizontalLayout = QHBoxLayout(self.widget_4)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalSpacer_2 = QSpacerItem(61, 54, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_2 = QSpacerItem(57, 54, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer_2)
+
+        self.label_3 = QLabel(self.widget_4)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setMaximumSize(QSize(40, 40))
+        self.label_3.setPixmap(QPixmap(u":/icon/image/medical-symbol (1).png"))
+        self.label_3.setScaledContents(True)
+
+        self.horizontalLayout.addWidget(self.label_3)
 
         self.label = QLabel(self.widget_4)
         self.label.setObjectName(u"label")
@@ -488,7 +509,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.label)
 
-        self.horizontalSpacer_3 = QSpacerItem(60, 54, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_3 = QSpacerItem(56, 54, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer_3)
 
@@ -518,7 +539,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon = QIcon()
-        icon.addFile(u":/icon/account2.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u":/icon/image/account2.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_2.setIcon(icon)
         self.pushButton_2.setIconSize(QSize(25, 25))
 
@@ -544,7 +565,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon1 = QIcon()
-        icon1.addFile(u":/icon/appointment.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u":/icon/image/appointment.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_3.setIcon(icon1)
         self.pushButton_3.setIconSize(QSize(25, 25))
 
@@ -570,7 +591,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon2 = QIcon()
-        icon2.addFile(u":/icon/bill.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(u":/icon/image/bill.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_9.setIcon(icon2)
         self.pushButton_9.setIconSize(QSize(25, 25))
 
@@ -596,7 +617,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon3 = QIcon()
-        icon3.addFile(u":/icon/history2.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon3.addFile(u":/icon/image/history2.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton.setIcon(icon3)
         self.pushButton.setIconSize(QSize(25, 25))
 
@@ -622,7 +643,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon4 = QIcon()
-        icon4.addFile(u":/icon/id-card.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u":/icon/image/id-card.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_10.setIcon(icon4)
         self.pushButton_10.setIconSize(QSize(25, 25))
 
@@ -648,7 +669,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon5 = QIcon()
-        icon5.addFile(u":/icon/doctor.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon5.addFile(u":/icon/image/doctor.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_5.setIcon(icon5)
         self.pushButton_5.setIconSize(QSize(25, 25))
 
@@ -674,7 +695,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon6 = QIcon()
-        icon6.addFile(u":/icon/nurse.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon6.addFile(u":/icon/image/nurse.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_6.setIcon(icon6)
         self.pushButton_6.setIconSize(QSize(25, 25))
 
@@ -700,7 +721,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon7 = QIcon()
-        icon7.addFile(u":/icon/hospitalisation.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon7.addFile(u":/icon/image/hospitalisation.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_7.setIcon(icon7)
         self.pushButton_7.setIconSize(QSize(25, 25))
 
@@ -726,7 +747,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon8 = QIcon()
-        icon8.addFile(u":/icon/add-user.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon8.addFile(u":/icon/image/add-user.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_8.setIcon(icon8)
         self.pushButton_8.setIconSize(QSize(20, 20))
 
@@ -756,7 +777,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon9 = QIcon()
-        icon9.addFile(u":/icon/logout (1).png", QSize(), QIcon.Normal, QIcon.Off)
+        icon9.addFile(u":/icon/image/logout (1).png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_4.setIcon(icon9)
         self.pushButton_4.setIconSize(QSize(20, 20))
 
@@ -770,7 +791,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -873,7 +894,10 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"ww", None));
         self.tableWidget_3.setSortingEnabled(__sortingEnabled)
 
-        self.label_10.setText(QCoreApplication.translate("MainWindow", u"Search by ", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Sort by", None))
+        self.comboBox_8.setItemText(0, QCoreApplication.translate("MainWindow", u"Ascending", None))
+        self.comboBox_8.setItemText(1, QCoreApplication.translate("MainWindow", u"Descending", None))
+
         self.comboBox_7.setItemText(0, QCoreApplication.translate("MainWindow", u"employee_id", None))
         self.comboBox_7.setItemText(1, QCoreApplication.translate("MainWindow", u"fname", None))
         self.comboBox_7.setItemText(2, QCoreApplication.translate("MainWindow", u"lname", None))
@@ -883,15 +907,6 @@ class Ui_MainWindow(object):
         self.comboBox_7.setItemText(6, QCoreApplication.translate("MainWindow", u"qualifications", None))
         self.comboBox_7.setItemText(7, QCoreApplication.translate("MainWindow", u"salary", None))
 
-        self.textEdit_3.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Osaka'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Sort by", None))
         self.comboBox_9.setItemText(0, QCoreApplication.translate("MainWindow", u"employee_id", None))
         self.comboBox_9.setItemText(1, QCoreApplication.translate("MainWindow", u"fname", None))
         self.comboBox_9.setItemText(2, QCoreApplication.translate("MainWindow", u"lname", None))
@@ -901,9 +916,15 @@ class Ui_MainWindow(object):
         self.comboBox_9.setItemText(6, QCoreApplication.translate("MainWindow", u"qualifications", None))
         self.comboBox_9.setItemText(7, QCoreApplication.translate("MainWindow", u"salary", None))
 
-        self.comboBox_8.setItemText(0, QCoreApplication.translate("MainWindow", u"Ascending", None))
-        self.comboBox_8.setItemText(1, QCoreApplication.translate("MainWindow", u"Descending", None))
-
+        self.textEdit_3.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Osaka';\"><br /></p></body></html>", None))
+        self.label_10.setText("")
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Total Nurse : ", None))
         ___qtablewidgetitem26 = self.tableWidget_4.horizontalHeaderItem(0)
         ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"Id", None));
@@ -945,6 +966,7 @@ class Ui_MainWindow(object):
         self.comboBox_12.setItemText(3, QCoreApplication.translate("MainWindow", u"address", None))
         self.comboBox_12.setItemText(4, QCoreApplication.translate("MainWindow", u"phone_number", None))
 
+        self.label_3.setText("")
         self.label.setText("")
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Appointment", None))
