@@ -20,8 +20,6 @@ class LoginUI(QMainWindow):
     def authenticate_user(self):
         username = self.ui.lineEdit.text()
         password = self.ui.lineEdit_2.text()
-        print("username: ", username)
-        print("password: ", password)
 
         current_user = authenticate_user_db(username, password)
 

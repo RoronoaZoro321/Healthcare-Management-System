@@ -3,12 +3,7 @@ from PySide6.QtCore import *
 
 from gui.python.Add_User import Ui_Form as Add_User
 
-from database.db import root, transaction
-
-from All_class.Doctor import Doctor
-from All_class.Admin import Admin
-from All_class.Nurse import Nurse
-from All_class.Patient import Patient
+from database.db import *
 
 
 class Add_UserUI(QMainWindow):
@@ -62,39 +57,21 @@ class Add_UserUI(QMainWindow):
             specialty = self.ui.lineEdit_7.text()
             degree = self.ui.lineEdit_8.text()
             salary = int(self.ui.lineEdit_9.text())
-            root.user_id_count += 1
-            specialty = specialty.split(",")
-            doctor = Doctor(fname, lname, address, phone_number, password, root.user_id_count, department, role, specialty, degree, salary)
-            root.users[root.user_id_count] = doctor
-            root.employee_id_list.append(root.user_id_count)
-            transaction.commit()
-            print("doctor added")
+            add_doctor(self.current_user, fname, lname, address, phone_number, password, department, specialty, degree, salary)
+        
         elif role == "Admin":
             department = self.ui.lineEdit_6.text()
-            root.user_id_count += 1
-            admin = Admin(fname, lname, address, phone_number, password, root.user_id_count, department, role)
-            root.users[root.user_id_count] = admin
-            root.employee_id_list.append(root.user_id_count)
-            transaction.commit()
-            print("admin added")
+            add_admin(self.current_user, fname, lname, address, phone_number, password, department)
+        
         elif role == "Nurse":
             department = self.ui.lineEdit_6.text()
             assigned_wards = self.ui.lineEdit_7.text()
             qualifications = self.ui.lineEdit_8.text()
             salary = int(self.ui.lineEdit_9.text())
-            root.user_id_count += 1
-            assigned_wards = assigned_wards.split(",")
-            nurse = Nurse(fname, lname, address, phone_number, password, root.user_id_count, department, role, assigned_wards, qualifications, salary)
-            root.users[root.user_id_count] = nurse
-            root.employee_id_list.append(root.user_id_count)
-            transaction.commit()
-            print("nurse added")
+            add_nurse(self.current_user, fname, lname, address, phone_number, password, department, assigned_wards, qualifications, salary)
+
         else:
-            root.user_id_count += 1
-            patient = Patient(fname, lname, address, phone_number, password, root.user_id_count)
-            root.users[root.user_id_count] = patient
-            transaction.commit()
-            print("patient added")
+            add_patient(self.current_user, fname, lname, address, phone_number, password)
 
         from window.MainWindowAdminUI import MainWindowAdminUI
         self.main_window = MainWindowAdminUI(self.current_user)
