@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'MainWindowAdmin.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.1
+## Created by: Qt User Interface Compiler version 6.6.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -20,7 +20,7 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QGridLayout, QHBoxLayout
     QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
     QStackedWidget, QTableWidget, QTableWidgetItem, QTextEdit,
     QVBoxLayout, QWidget)
-from . import resource_rc
+from.import resource_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -237,7 +237,10 @@ class Ui_MainWindow(object):
         self.widget_list_nurse = QWidget(self.page_5)
         self.widget_list_nurse.setObjectName(u"widget_list_nurse")
         self.widget_list_nurse.setGeometry(QRect(-10, -10, 1061, 721))
-        self.tableWidget_3 = QTableWidget(self.widget_list_nurse)
+        self.widget_6 = QWidget(self.widget_list_nurse)
+        self.widget_6.setObjectName(u"widget_6")
+        self.widget_6.setGeometry(QRect(60, 130, 921, 541))
+        self.tableWidget_3 = QTableWidget(self.widget_6)
         if (self.tableWidget_3.columnCount() < 10):
             self.tableWidget_3.setColumnCount(10)
         __qtablewidgetitem10 = QTableWidgetItem()
@@ -260,8 +263,22 @@ class Ui_MainWindow(object):
         self.tableWidget_3.setHorizontalHeaderItem(8, __qtablewidgetitem18)
         __qtablewidgetitem19 = QTableWidgetItem()
         self.tableWidget_3.setHorizontalHeaderItem(9, __qtablewidgetitem19)
+        if (self.tableWidget_3.rowCount() < 2):
+            self.tableWidget_3.setRowCount(2)
+        __qtablewidgetitem20 = QTableWidgetItem()
+        self.tableWidget_3.setVerticalHeaderItem(0, __qtablewidgetitem20)
+        __qtablewidgetitem21 = QTableWidgetItem()
+        self.tableWidget_3.setVerticalHeaderItem(1, __qtablewidgetitem21)
+        __qtablewidgetitem22 = QTableWidgetItem()
+        self.tableWidget_3.setItem(0, 0, __qtablewidgetitem22)
+        __qtablewidgetitem23 = QTableWidgetItem()
+        self.tableWidget_3.setItem(0, 1, __qtablewidgetitem23)
+        __qtablewidgetitem24 = QTableWidgetItem()
+        self.tableWidget_3.setItem(1, 0, __qtablewidgetitem24)
+        __qtablewidgetitem25 = QTableWidgetItem()
+        self.tableWidget_3.setItem(1, 1, __qtablewidgetitem25)
         self.tableWidget_3.setObjectName(u"tableWidget_3")
-        self.tableWidget_3.setGeometry(QRect(100, 170, 871, 521))
+        self.tableWidget_3.setGeometry(QRect(10, 100, 881, 421))
         self.tableWidget_3.setStyleSheet(u"            QTableWidget {\n"
 "                background-color: #f8f9fa;\n"
 "                border: 2px solid #dee2e6;\n"
@@ -295,25 +312,10 @@ class Ui_MainWindow(object):
 "                background-color: #495057;\n"
 "       "
                         "     }")
-        self.label_4 = QLabel(self.widget_list_nurse)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setGeometry(QRect(680, 80, 181, 31))
-        self.widget_7 = QWidget(self.widget_list_nurse)
-        self.widget_7.setObjectName(u"widget_7")
-        self.widget_7.setGeometry(QRect(110, 30, 411, 121))
-        self.gridLayout_5 = QGridLayout(self.widget_7)
-        self.gridLayout_5.setObjectName(u"gridLayout_5")
-        self.label_9 = QLabel(self.widget_7)
-        self.label_9.setObjectName(u"label_9")
-
-        self.gridLayout_5.addWidget(self.label_9, 2, 0, 1, 1)
-
-        self.label_10 = QLabel(self.widget_7)
+        self.label_10 = QLabel(self.widget_6)
         self.label_10.setObjectName(u"label_10")
-
-        self.gridLayout_5.addWidget(self.label_10, 0, 0, 1, 1)
-
-        self.comboBox_7 = QComboBox(self.widget_7)
+        self.label_10.setGeometry(QRect(20, 20, 65, 17))
+        self.comboBox_7 = QComboBox(self.widget_6)
         self.comboBox_7.addItem("")
         self.comboBox_7.addItem("")
         self.comboBox_7.addItem("")
@@ -323,22 +325,14 @@ class Ui_MainWindow(object):
         self.comboBox_7.addItem("")
         self.comboBox_7.addItem("")
         self.comboBox_7.setObjectName(u"comboBox_7")
-
-        self.gridLayout_5.addWidget(self.comboBox_7, 0, 1, 1, 1)
-
-        self.comboBox_8 = QComboBox(self.widget_7)
-        self.comboBox_8.addItem("")
-        self.comboBox_8.addItem("")
-        self.comboBox_8.setObjectName(u"comboBox_8")
-
-        self.gridLayout_5.addWidget(self.comboBox_8, 2, 2, 1, 1)
-
-        self.textEdit_3 = QTextEdit(self.widget_7)
+        self.comboBox_7.setGeometry(QRect(100, 20, 227, 19))
+        self.textEdit_3 = QTextEdit(self.widget_6)
         self.textEdit_3.setObjectName(u"textEdit_3")
-
-        self.gridLayout_5.addWidget(self.textEdit_3, 1, 0, 1, 3)
-
-        self.comboBox_9 = QComboBox(self.widget_7)
+        self.textEdit_3.setGeometry(QRect(100, 50, 231, 41))
+        self.label_9 = QLabel(self.widget_6)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setGeometry(QRect(350, 20, 122, 17))
+        self.comboBox_9 = QComboBox(self.widget_6)
         self.comboBox_9.addItem("")
         self.comboBox_9.addItem("")
         self.comboBox_9.addItem("")
@@ -348,9 +342,16 @@ class Ui_MainWindow(object):
         self.comboBox_9.addItem("")
         self.comboBox_9.addItem("")
         self.comboBox_9.setObjectName(u"comboBox_9")
-
-        self.gridLayout_5.addWidget(self.comboBox_9, 2, 1, 1, 1)
-
+        self.comboBox_9.setGeometry(QRect(410, 20, 195, 19))
+        self.comboBox_8 = QComboBox(self.widget_6)
+        self.comboBox_8.addItem("")
+        self.comboBox_8.addItem("")
+        self.comboBox_8.setObjectName(u"comboBox_8")
+        self.comboBox_8.setGeometry(QRect(410, 50, 393, 19))
+        self.label_4 = QLabel(self.widget_list_nurse)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setGeometry(QRect(780, 60, 161, 31))
+        self.label_4.setStyleSheet(u"border: None")
         self.stackedWidget.addWidget(self.page_5)
         self.page_6 = QWidget()
         self.page_6.setObjectName(u"page_6")
@@ -360,20 +361,20 @@ class Ui_MainWindow(object):
         self.tableWidget_4 = QTableWidget(self.widget_list_patient)
         if (self.tableWidget_4.columnCount() < 7):
             self.tableWidget_4.setColumnCount(7)
-        __qtablewidgetitem20 = QTableWidgetItem()
-        self.tableWidget_4.setHorizontalHeaderItem(0, __qtablewidgetitem20)
-        __qtablewidgetitem21 = QTableWidgetItem()
-        self.tableWidget_4.setHorizontalHeaderItem(1, __qtablewidgetitem21)
-        __qtablewidgetitem22 = QTableWidgetItem()
-        self.tableWidget_4.setHorizontalHeaderItem(2, __qtablewidgetitem22)
-        __qtablewidgetitem23 = QTableWidgetItem()
-        self.tableWidget_4.setHorizontalHeaderItem(3, __qtablewidgetitem23)
-        __qtablewidgetitem24 = QTableWidgetItem()
-        self.tableWidget_4.setHorizontalHeaderItem(4, __qtablewidgetitem24)
-        __qtablewidgetitem25 = QTableWidgetItem()
-        self.tableWidget_4.setHorizontalHeaderItem(5, __qtablewidgetitem25)
         __qtablewidgetitem26 = QTableWidgetItem()
-        self.tableWidget_4.setHorizontalHeaderItem(6, __qtablewidgetitem26)
+        self.tableWidget_4.setHorizontalHeaderItem(0, __qtablewidgetitem26)
+        __qtablewidgetitem27 = QTableWidgetItem()
+        self.tableWidget_4.setHorizontalHeaderItem(1, __qtablewidgetitem27)
+        __qtablewidgetitem28 = QTableWidgetItem()
+        self.tableWidget_4.setHorizontalHeaderItem(2, __qtablewidgetitem28)
+        __qtablewidgetitem29 = QTableWidgetItem()
+        self.tableWidget_4.setHorizontalHeaderItem(3, __qtablewidgetitem29)
+        __qtablewidgetitem30 = QTableWidgetItem()
+        self.tableWidget_4.setHorizontalHeaderItem(4, __qtablewidgetitem30)
+        __qtablewidgetitem31 = QTableWidgetItem()
+        self.tableWidget_4.setHorizontalHeaderItem(5, __qtablewidgetitem31)
+        __qtablewidgetitem32 = QTableWidgetItem()
+        self.tableWidget_4.setHorizontalHeaderItem(6, __qtablewidgetitem32)
         self.tableWidget_4.setObjectName(u"tableWidget_4")
         self.tableWidget_4.setGeometry(QRect(100, 170, 871, 521))
         self.tableWidget_4.setStyleSheet(u"            QTableWidget {\n"
@@ -465,189 +466,305 @@ class Ui_MainWindow(object):
 
         self.widget = QWidget(self.centralwidget)
         self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(0, 0, 231, 721))
-        self.widget.setStyleSheet(u"background-color: #02A499;\n"
+        self.widget.setGeometry(QRect(0, 0, 233, 740))
+        self.widget.setStyleSheet(u"background-color: #CFC071;\n"
 "\n"
 "")
-        self.verticalLayout_2 = QVBoxLayout(self.widget)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.widget_4 = QWidget(self.widget)
         self.widget_4.setObjectName(u"widget_4")
+        self.widget_4.setGeometry(QRect(12, 12, 209, 81))
         self.horizontalLayout = QHBoxLayout(self.widget_4)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalSpacer_2 = QSpacerItem(64, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_2 = QSpacerItem(61, 54, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer_2)
 
         self.label = QLabel(self.widget_4)
         self.label.setObjectName(u"label")
         self.label.setMaximumSize(QSize(40, 40))
-        self.label.setPixmap(QPixmap(u":/icon/image/hospital.png"))
+        self.label.setPixmap(QPixmap(u":/icon/medical-symbol (1).png"))
         self.label.setScaledContents(True)
         self.label.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout.addWidget(self.label)
 
-        self.horizontalSpacer_3 = QSpacerItem(63, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_3 = QSpacerItem(60, 54, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer_3)
 
-
-        self.verticalLayout_2.addWidget(self.widget_4)
-
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.verticalLayout_2.addItem(self.horizontalSpacer)
-
-        self.pushButton_2 = QPushButton(self.widget)
+        self.widget1 = QWidget(self.widget)
+        self.widget1.setObjectName(u"widget1")
+        self.widget1.setGeometry(QRect(0, 90, 241, 633))
+        self.verticalLayout_2 = QVBoxLayout(self.widget1)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.pushButton_2 = QPushButton(self.widget1)
         self.pushButton_2.setObjectName(u"pushButton_2")
         self.pushButton_2.setStyleSheet(u"QPushButton {\n"
-"	color: rgb(203, 203, 203);\n"
-"	margin: 20px;\n"
+"	color: white;\n"
+"	padding: 10%;\n"
 "	border: none;\n"
+"	padding-left: 50%;\n"
+"	text-align:left;\n"
+"	font-size: 16px;\n"
+"	font: 16pt \"Cambria\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"	color: white;\n"
-"}")
+"	padding: 10%;\n"
+"	padding-left: 45%;\n"
+"	text-align:left;\n"
+"	background: #A5995B;\n"
+"}\n"
+"")
         icon = QIcon()
-        icon.addFile(u":/icon/image/account.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u":/icon/account2.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_2.setIcon(icon)
         self.pushButton_2.setIconSize(QSize(25, 25))
 
         self.verticalLayout_2.addWidget(self.pushButton_2)
 
-        self.pushButton_3 = QPushButton(self.widget)
+        self.pushButton_3 = QPushButton(self.widget1)
         self.pushButton_3.setObjectName(u"pushButton_3")
         self.pushButton_3.setStyleSheet(u"QPushButton {\n"
-"	color: rgb(203, 203, 203);\n"
-"	margin: 20px;\n"
+"	color: white;\n"
+"	padding: 10%;\n"
 "	border: none;\n"
+"	padding-left: 50%;\n"
+"	text-align:left;\n"
+"	font-size: 16px;\n"
+"	font: 16pt \"Cambria\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"	color: white;\n"
-"}")
+"	padding: 10%;\n"
+"	padding-left: 45%;\n"
+"	text-align:left;\n"
+"	background: #A5995B;\n"
+"}\n"
+"")
         icon1 = QIcon()
-        icon1.addFile(u":/icon/image/schedule.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u":/icon/appointment.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_3.setIcon(icon1)
         self.pushButton_3.setIconSize(QSize(25, 25))
 
         self.verticalLayout_2.addWidget(self.pushButton_3)
 
-        self.pushButton = QPushButton(self.widget)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setStyleSheet(u"QPushButton {\n"
-"	color: rgb(203, 203, 203);\n"
-"	margin: 20px;\n"
-"	border: none;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	color: white;\n"
-"}")
-        icon2 = QIcon()
-        icon2.addFile(u":/icon/image/history.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton.setIcon(icon2)
-        self.pushButton.setIconSize(QSize(25, 25))
-
-        self.verticalLayout_2.addWidget(self.pushButton)
-
-        self.pushButton_5 = QPushButton(self.widget)
-        self.pushButton_5.setObjectName(u"pushButton_5")
-        self.pushButton_5.setStyleSheet(u"QPushButton {\n"
-"	color: rgb(203, 203, 203);\n"
-"	margin: 20px;\n"
-"	border: none;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	color: white;\n"
-"}")
-        self.pushButton_5.setIconSize(QSize(25, 25))
-
-        self.verticalLayout_2.addWidget(self.pushButton_5)
-
-        self.pushButton_6 = QPushButton(self.widget)
-        self.pushButton_6.setObjectName(u"pushButton_6")
-        self.pushButton_6.setStyleSheet(u"QPushButton {\n"
-"	color: rgb(203, 203, 203);\n"
-"	margin: 20px;\n"
-"	border: none;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	color: white;\n"
-"}")
-        self.pushButton_6.setIconSize(QSize(25, 25))
-
-        self.verticalLayout_2.addWidget(self.pushButton_6)
-
-        self.pushButton_7 = QPushButton(self.widget)
-        self.pushButton_7.setObjectName(u"pushButton_7")
-        self.pushButton_7.setStyleSheet(u"QPushButton {\n"
-"	color: rgb(203, 203, 203);\n"
-"	margin: 20px;\n"
-"	border: none;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	color: white;\n"
-"}")
-        self.pushButton_7.setIconSize(QSize(25, 25))
-
-        self.verticalLayout_2.addWidget(self.pushButton_7)
-
-        self.pushButton_8 = QPushButton(self.widget)
-        self.pushButton_8.setObjectName(u"pushButton_8")
-        self.pushButton_8.setStyleSheet(u"QPushButton {\n"
-"	color: rgb(203, 203, 203);\n"
-"	margin: 20px;\n"
-"	border: none;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	color: white;\n"
-"}")
-        self.pushButton_8.setIconSize(QSize(25, 25))
-
-        self.verticalLayout_2.addWidget(self.pushButton_8)
-
-        self.pushButton_9 = QPushButton(self.widget)
+        self.pushButton_9 = QPushButton(self.widget1)
         self.pushButton_9.setObjectName(u"pushButton_9")
         self.pushButton_9.setStyleSheet(u"QPushButton {\n"
-"	color: rgb(203, 203, 203);\n"
-"	margin: 20px;\n"
+"	color: white;\n"
+"	padding: 10%;\n"
 "	border: none;\n"
+"	padding-left: 50%;\n"
+"	text-align:left;\n"
+"	font-size: 16px;\n"
+"	font: 16pt \"Cambria\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"	color: white;\n"
-"}")
+"	padding: 10%;\n"
+"	padding-left: 45%;\n"
+"	text-align:left;\n"
+"	background: #A5995B;\n"
+"}\n"
+"")
+        icon2 = QIcon()
+        icon2.addFile(u":/icon/bill.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_9.setIcon(icon2)
         self.pushButton_9.setIconSize(QSize(25, 25))
 
         self.verticalLayout_2.addWidget(self.pushButton_9)
 
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_2.addItem(self.verticalSpacer)
-
-        self.pushButton_4 = QPushButton(self.widget)
-        self.pushButton_4.setObjectName(u"pushButton_4")
-        self.pushButton_4.setStyleSheet(u"QPushButton {\n"
-"	color: rgb(203, 203, 203);\n"
-"	margin: 20px;\n"
+        self.pushButton = QPushButton(self.widget1)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setStyleSheet(u"QPushButton {\n"
+"	color: white;\n"
+"	padding: 10%;\n"
 "	border: none;\n"
+"	padding-left: 50%;\n"
+"	text-align:left;\n"
+"	font-size: 16px;\n"
+"	font: 16pt \"Cambria\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"	color: white;\n"
-"}")
+"	padding: 10%;\n"
+"	padding-left: 45%;\n"
+"	text-align:left;\n"
+"	background: #A5995B;\n"
+"}\n"
+"")
         icon3 = QIcon()
-        icon3.addFile(u":/icon/image/logout.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_4.setIcon(icon3)
+        icon3.addFile(u":/icon/history2.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton.setIcon(icon3)
+        self.pushButton.setIconSize(QSize(25, 25))
+
+        self.verticalLayout_2.addWidget(self.pushButton)
+
+        self.pushButton_10 = QPushButton(self.widget1)
+        self.pushButton_10.setObjectName(u"pushButton_10")
+        self.pushButton_10.setStyleSheet(u"QPushButton {\n"
+"	color: white;\n"
+"	padding: 10%;\n"
+"	border: none;\n"
+"	padding-left: 50%;\n"
+"	text-align:left;\n"
+"	font-size: 16px;\n"
+"	font: 16pt \"Cambria\";\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	padding: 10%;\n"
+"	padding-left: 45%;\n"
+"	text-align:left;\n"
+"	background: #A5995B;\n"
+"}\n"
+"")
+        icon4 = QIcon()
+        icon4.addFile(u":/icon/id-card.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_10.setIcon(icon4)
+        self.pushButton_10.setIconSize(QSize(25, 25))
+
+        self.verticalLayout_2.addWidget(self.pushButton_10)
+
+        self.pushButton_5 = QPushButton(self.widget1)
+        self.pushButton_5.setObjectName(u"pushButton_5")
+        self.pushButton_5.setStyleSheet(u"QPushButton {\n"
+"	color: white;\n"
+"	padding: 10%;\n"
+"	border: none;\n"
+"	padding-left: 75%;\n"
+"	text-align:left;\n"
+"	font-size: 16px;\n"
+"	font: 16pt \"Cambria\";\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	padding: 10%;\n"
+"	padding-left: 70%;\n"
+"	text-align:left;\n"
+"	background: #A5995B;\n"
+"}\n"
+"")
+        icon5 = QIcon()
+        icon5.addFile(u":/icon/doctor.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_5.setIcon(icon5)
+        self.pushButton_5.setIconSize(QSize(25, 25))
+
+        self.verticalLayout_2.addWidget(self.pushButton_5)
+
+        self.pushButton_6 = QPushButton(self.widget1)
+        self.pushButton_6.setObjectName(u"pushButton_6")
+        self.pushButton_6.setStyleSheet(u"QPushButton {\n"
+"	color: white;\n"
+"	padding: 10%;\n"
+"	border: none;\n"
+"	padding-left: 75%;\n"
+"	text-align:left;\n"
+"	font-size: 16px;\n"
+"	font: 16pt \"Cambria\";\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	padding: 10%;\n"
+"	padding-left: 70%;\n"
+"	text-align:left;\n"
+"	background: #A5995B;\n"
+"}\n"
+"")
+        icon6 = QIcon()
+        icon6.addFile(u":/icon/nurse.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_6.setIcon(icon6)
+        self.pushButton_6.setIconSize(QSize(25, 25))
+
+        self.verticalLayout_2.addWidget(self.pushButton_6)
+
+        self.pushButton_7 = QPushButton(self.widget1)
+        self.pushButton_7.setObjectName(u"pushButton_7")
+        self.pushButton_7.setStyleSheet(u"QPushButton {\n"
+"	color: white;\n"
+"	padding: 10%;\n"
+"	border: none;\n"
+"	padding-left: 75%;\n"
+"	text-align:left;\n"
+"	font-size: 16px;\n"
+"	font: 16pt \"Cambria\";\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	padding: 10%;\n"
+"	padding-left: 70%;\n"
+"	text-align:left;\n"
+"	background: #A5995B;\n"
+"}\n"
+"")
+        icon7 = QIcon()
+        icon7.addFile(u":/icon/hospitalisation.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_7.setIcon(icon7)
+        self.pushButton_7.setIconSize(QSize(25, 25))
+
+        self.verticalLayout_2.addWidget(self.pushButton_7)
+
+        self.pushButton_8 = QPushButton(self.widget1)
+        self.pushButton_8.setObjectName(u"pushButton_8")
+        self.pushButton_8.setStyleSheet(u"QPushButton {\n"
+"	color: white;\n"
+"	padding: 10%;\n"
+"	border: none;\n"
+"	padding-left: 50%;\n"
+"	text-align:left;\n"
+"	font-size: 16px;\n"
+"	font: 16pt \"Cambria\";\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	padding: 10%;\n"
+"	padding-left: 45%;\n"
+"	text-align:left;\n"
+"	background: #A5995B;\n"
+"}\n"
+"")
+        icon8 = QIcon()
+        icon8.addFile(u":/icon/add-user.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_8.setIcon(icon8)
+        self.pushButton_8.setIconSize(QSize(20, 20))
+
+        self.verticalLayout_2.addWidget(self.pushButton_8)
+
+        self.verticalSpacer = QSpacerItem(20, 17, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_2.addItem(self.verticalSpacer)
+
+        self.pushButton_4 = QPushButton(self.widget1)
+        self.pushButton_4.setObjectName(u"pushButton_4")
+        self.pushButton_4.setStyleSheet(u"QPushButton {\n"
+"	color: white;\n"
+"	padding: 10%;\n"
+"	border: none;\n"
+"	padding-left: 50%;\n"
+"	text-align:left;\n"
+"	font-size: 16px;\n"
+"	font: 16pt \"Cambria\";\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	padding: 10%;\n"
+"	padding-left: 45%;\n"
+"	text-align:left;\n"
+"	background: #A5995B;\n"
+"}\n"
+"")
+        icon9 = QIcon()
+        icon9.addFile(u":/icon/logout (1).png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_4.setIcon(icon9)
+        self.pushButton_4.setIconSize(QSize(20, 20))
 
         self.verticalLayout_2.addWidget(self.pushButton_4)
+
+        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.verticalLayout_2.addItem(self.horizontalSpacer_4)
 
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -739,8 +856,23 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"Action", None));
         ___qtablewidgetitem19 = self.tableWidget_3.horizontalHeaderItem(9)
         ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"Edit", None));
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Total Nurse : ", None))
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Sort by", None))
+        ___qtablewidgetitem20 = self.tableWidget_3.verticalHeaderItem(0)
+        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem21 = self.tableWidget_3.verticalHeaderItem(1)
+        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+
+        __sortingEnabled = self.tableWidget_3.isSortingEnabled()
+        self.tableWidget_3.setSortingEnabled(False)
+        ___qtablewidgetitem22 = self.tableWidget_3.item(0, 0)
+        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"2", None));
+        ___qtablewidgetitem23 = self.tableWidget_3.item(0, 1)
+        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"ww", None));
+        ___qtablewidgetitem24 = self.tableWidget_3.item(1, 0)
+        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"2", None));
+        ___qtablewidgetitem25 = self.tableWidget_3.item(1, 1)
+        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"ww", None));
+        self.tableWidget_3.setSortingEnabled(__sortingEnabled)
+
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Search by ", None))
         self.comboBox_7.setItemText(0, QCoreApplication.translate("MainWindow", u"employee_id", None))
         self.comboBox_7.setItemText(1, QCoreApplication.translate("MainWindow", u"fname", None))
@@ -751,9 +883,6 @@ class Ui_MainWindow(object):
         self.comboBox_7.setItemText(6, QCoreApplication.translate("MainWindow", u"qualifications", None))
         self.comboBox_7.setItemText(7, QCoreApplication.translate("MainWindow", u"salary", None))
 
-        self.comboBox_8.setItemText(0, QCoreApplication.translate("MainWindow", u"Ascending", None))
-        self.comboBox_8.setItemText(1, QCoreApplication.translate("MainWindow", u"Descending", None))
-
         self.textEdit_3.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -762,6 +891,7 @@ class Ui_MainWindow(object):
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Osaka'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Sort by", None))
         self.comboBox_9.setItemText(0, QCoreApplication.translate("MainWindow", u"employee_id", None))
         self.comboBox_9.setItemText(1, QCoreApplication.translate("MainWindow", u"fname", None))
         self.comboBox_9.setItemText(2, QCoreApplication.translate("MainWindow", u"lname", None))
@@ -771,20 +901,24 @@ class Ui_MainWindow(object):
         self.comboBox_9.setItemText(6, QCoreApplication.translate("MainWindow", u"qualifications", None))
         self.comboBox_9.setItemText(7, QCoreApplication.translate("MainWindow", u"salary", None))
 
-        ___qtablewidgetitem20 = self.tableWidget_4.horizontalHeaderItem(0)
-        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Id", None));
-        ___qtablewidgetitem21 = self.tableWidget_4.horizontalHeaderItem(1)
-        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem22 = self.tableWidget_4.horizontalHeaderItem(2)
-        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"Last Name", None));
-        ___qtablewidgetitem23 = self.tableWidget_4.horizontalHeaderItem(3)
-        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Address", None));
-        ___qtablewidgetitem24 = self.tableWidget_4.horizontalHeaderItem(4)
-        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"Phone Number", None));
-        ___qtablewidgetitem25 = self.tableWidget_4.horizontalHeaderItem(5)
-        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"Action", None));
-        ___qtablewidgetitem26 = self.tableWidget_4.horizontalHeaderItem(6)
-        ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"Edit", None));
+        self.comboBox_8.setItemText(0, QCoreApplication.translate("MainWindow", u"Ascending", None))
+        self.comboBox_8.setItemText(1, QCoreApplication.translate("MainWindow", u"Descending", None))
+
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Total Nurse : ", None))
+        ___qtablewidgetitem26 = self.tableWidget_4.horizontalHeaderItem(0)
+        ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"Id", None));
+        ___qtablewidgetitem27 = self.tableWidget_4.horizontalHeaderItem(1)
+        ___qtablewidgetitem27.setText(QCoreApplication.translate("MainWindow", u"Name", None));
+        ___qtablewidgetitem28 = self.tableWidget_4.horizontalHeaderItem(2)
+        ___qtablewidgetitem28.setText(QCoreApplication.translate("MainWindow", u"Last Name", None));
+        ___qtablewidgetitem29 = self.tableWidget_4.horizontalHeaderItem(3)
+        ___qtablewidgetitem29.setText(QCoreApplication.translate("MainWindow", u"Address", None));
+        ___qtablewidgetitem30 = self.tableWidget_4.horizontalHeaderItem(4)
+        ___qtablewidgetitem30.setText(QCoreApplication.translate("MainWindow", u"Phone Number", None));
+        ___qtablewidgetitem31 = self.tableWidget_4.horizontalHeaderItem(5)
+        ___qtablewidgetitem31.setText(QCoreApplication.translate("MainWindow", u"Action", None));
+        ___qtablewidgetitem32 = self.tableWidget_4.horizontalHeaderItem(6)
+        ___qtablewidgetitem32.setText(QCoreApplication.translate("MainWindow", u"Edit", None));
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Total Patient : ", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"Sort by", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"Search by ", None))
@@ -814,12 +948,13 @@ class Ui_MainWindow(object):
         self.label.setText("")
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Appointment", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Log", None))
-        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"List Doctor", None))
-        self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"List Nurse", None))
-        self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"List Patient", None))
-        self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"Add User", None))
         self.pushButton_9.setText(QCoreApplication.translate("MainWindow", u"Payment", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"History", None))
+        self.pushButton_10.setText(QCoreApplication.translate("MainWindow", u"Staff List", None))
+        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"Doctor", None))
+        self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"Nurse", None))
+        self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"Patient ", None))
+        self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"Add User", None))
         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"Logout", None))
     # retranslateUi
 
