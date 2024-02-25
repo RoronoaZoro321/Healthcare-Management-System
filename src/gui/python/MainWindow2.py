@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'MainWindow2.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.0
+## Created by: Qt User Interface Compiler version 6.6.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -20,7 +20,7 @@ from PySide6.QtWidgets import (QApplication, QCalendarWidget, QCheckBox, QComboB
     QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
     QStackedWidget, QTableWidget, QTableWidgetItem, QVBoxLayout,
     QWidget)
-from.import resource_rc
+from . import resource_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -194,7 +194,7 @@ class Ui_MainWindow(object):
         self.label_6.setStyleSheet(u"font: 12pt \"Cambria\";")
         self.layoutWidget_1 = QWidget(self.widget_5)
         self.layoutWidget_1.setObjectName(u"layoutWidget_1")
-        self.layoutWidget_1.setGeometry(QRect(110, 120, 302, 141))
+        self.layoutWidget_1.setGeometry(QRect(110, 90, 302, 171))
         self.verticalLayout_4 = QVBoxLayout(self.layoutWidget_1)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -205,19 +205,21 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4.addWidget(self.label_2)
 
-        self.Speciality = QComboBox(self.layoutWidget_1)
-        self.Speciality.addItem("")
-        self.Speciality.addItem("")
-        self.Speciality.addItem("")
-        self.Speciality.addItem("")
-        self.Speciality.addItem("")
-        self.Speciality.setObjectName(u"Speciality")
-        self.Speciality.setStyleSheet(u"background: #ACACAC;\n"
+        self.Department = QComboBox(self.layoutWidget_1)
+        self.Department.addItem("")
+        self.Department.addItem("")
+        self.Department.addItem("")
+        self.Department.addItem("")
+        self.Department.addItem("")
+        self.Department.addItem("")
+        self.Department.addItem("")
+        self.Department.setObjectName(u"Department")
+        self.Department.setStyleSheet(u"background: #ACACAC;\n"
 "font: 12pt \"Cambria\";\n"
 "color: white;")
-        self.Speciality.setEditable(False)
+        self.Department.setEditable(False)
 
-        self.verticalLayout_4.addWidget(self.Speciality)
+        self.verticalLayout_4.addWidget(self.Department)
 
         self.verticalSpacer_2 = QSpacerItem(296, 13, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
@@ -236,6 +238,20 @@ class Ui_MainWindow(object):
 "color: white;")
 
         self.verticalLayout_4.addWidget(self.Doctor)
+
+        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_4.addItem(self.verticalSpacer_3)
+
+        self.label_8 = QLabel(self.layoutWidget_1)
+        self.label_8.setObjectName(u"label_8")
+
+        self.verticalLayout_4.addWidget(self.label_8)
+
+        self.Speciality = QComboBox(self.layoutWidget_1)
+        self.Speciality.setObjectName(u"Speciality")
+
+        self.verticalLayout_4.addWidget(self.Speciality)
 
         self.stackedWidget.addWidget(self.page_2)
         self.page_3 = QWidget()
@@ -460,14 +476,17 @@ class Ui_MainWindow(object):
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"My Appointment", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Appointment Date", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Speciality", None))
-        self.Speciality.setItemText(0, QCoreApplication.translate("MainWindow", u"Dentist", None))
-        self.Speciality.setItemText(1, QCoreApplication.translate("MainWindow", u"Cardiology", None))
-        self.Speciality.setItemText(2, QCoreApplication.translate("MainWindow", u"Pediatrics", None))
-        self.Speciality.setItemText(3, QCoreApplication.translate("MainWindow", u"Surgery", None))
-        self.Speciality.setItemText(4, QCoreApplication.translate("MainWindow", u"Obsterics and Gynaecology", None))
+        self.Department.setItemText(0, QCoreApplication.translate("MainWindow", u"Dentist", None))
+        self.Department.setItemText(1, QCoreApplication.translate("MainWindow", u"Neurology", None))
+        self.Department.setItemText(2, QCoreApplication.translate("MainWindow", u"Orthopedics", None))
+        self.Department.setItemText(3, QCoreApplication.translate("MainWindow", u"Cardiology", None))
+        self.Department.setItemText(4, QCoreApplication.translate("MainWindow", u"Pediatrics", None))
+        self.Department.setItemText(5, QCoreApplication.translate("MainWindow", u"Surgery", None))
+        self.Department.setItemText(6, QCoreApplication.translate("MainWindow", u"Obsterics and Gynaecology", None))
 
-        self.Speciality.setCurrentText(QCoreApplication.translate("MainWindow", u"Dentist", None))
+        self.Department.setCurrentText(QCoreApplication.translate("MainWindow", u"Dentist", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Doctor", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Speciality", None))
         self.history_page.setText(QCoreApplication.translate("MainWindow", u"Medical History", None))
         self.label_4.setText("")
         self.label.setText("")

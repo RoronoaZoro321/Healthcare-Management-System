@@ -335,9 +335,9 @@ border: None;</string>
           <property name="geometry">
            <rect>
             <x>110</x>
-            <y>120</y>
+            <y>90</y>
             <width>302</width>
-            <height>141</height>
+            <height>171</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -353,7 +353,7 @@ border: None;</string>
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="Speciality">
+            <widget class="QComboBox" name="Department">
              <property name="styleSheet">
               <string notr="true">background: #ACACAC;
 font: 12pt &quot;Cambria&quot;;
@@ -368,6 +368,16 @@ color: white;</string>
              <item>
               <property name="text">
                <string>Dentist</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Neurology</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Orthopedics</string>
               </property>
              </item>
              <item>
@@ -423,6 +433,29 @@ background: #ACACAC;
 color: white;</string>
              </property>
             </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>Speciality</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="Speciality"/>
            </item>
           </layout>
          </widget>

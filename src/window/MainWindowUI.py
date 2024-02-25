@@ -8,6 +8,8 @@ from database.db import *
 from datetime import datetime, timedelta
 
 from All_class.Appointment import Appointment
+from All_class.Doctor import Doctor
+from All_class.Patient import Patient
 
 class MainWindowUI(QMainWindow):
     def __init__(self, current_user):
@@ -20,6 +22,7 @@ class MainWindowUI(QMainWindow):
         self.ui.pushButton_3.clicked.connect(self.showAppointmentPage)
         self.ui.pushButton_4.clicked.connect(self.logout)
         self.ui.pushButton.clicked.connect(self.showHistoryPage)
+        self.ui.Doctor.currentIndexChanged.connect(self.updateSpeciality)
         
         self.ui.Calendar.selectionChanged.connect(self.onDateChanged)
         self.ui.checkBox.stateChanged.connect(lambda: self.onCheckboxStateChanged(self.ui.checkBox))
@@ -44,19 +47,32 @@ class MainWindowUI(QMainWindow):
     def showAppointmentPage(self):
         self.ui.stackedWidget.setCurrentIndex(1)
         #Doctor
-        self.ui.Speciality.currentIndexChanged.connect(self.updateDoctorList)
-        self.updateDoctorList(self.ui.Speciality.currentIndex())
+        self.ui.Department.currentIndexChanged.connect(self.updateDoctorList)
+        self.updateDoctorList(self.ui.Department.currentIndex())
         self.populate_appointments_table()
         
     def updateDoctorList(self, index):
-        print("triggered")
+        print("Update Doctor List triggered")
         self.ui.Doctor.clear()
-        selected_specialty = self.ui.Speciality.currentText()
-
+        selected_department = self.ui.Department.currentText()
+        print(f"Selected Specialty: {selected_department}")
         for user_id, user in root.users.items():
-            if isinstance(user, Doctor) and selected_specialty in user.specialty:
-                self.ui.Doctor.addItem(f"{user.fname} {user.lname}", user_id)
-    
+            if isinstance(user, Doctor):
+                print(f"Checking Doctor: {user.fname} with specialties {user.department}")
+                if selected_department in user.department:
+                    print(f"Adding Doctor: {user.fname}")
+                    self.ui.Doctor.addItem(f"{user.fname} {user.lname}", user_id)
+
+    def updateSpeciality(self, index):
+        self.ui.Speciality.clear()
+        doctor_id = self.ui.Doctor.itemData(index)
+        
+        if doctor_id is not None:
+            doctor = root.users.get(doctor_id)
+            if doctor and isinstance(doctor, Doctor):
+                for specialty in doctor.get_specialty():
+                    self.ui.Speciality.addItem(specialty)
+                    
     def onDateChanged(self):
         selected_date = self.ui.Calendar.selectedDate().toPython()
         today = datetime.now().date()
@@ -83,19 +99,20 @@ class MainWindowUI(QMainWindow):
         start_time = "6:00 am" if self.ui.checkBox.isChecked() else "13:00 pm"
         end_time = "12:00 pm" if self.ui.checkBox.isChecked() else "18:00 pm"
         doctor_id = self.ui.Doctor.currentData()
+        doctor_speciality_selected = self.ui.Speciality.currentText()
         patient_id = self.current_user.get_id()
 
         if self.has_conflicting_appointment(patient_id, selected_date, start_time, end_time):
             QMessageBox.warning(self, "Appointment Conflict", "You already have an appointment at this time.")
             return
 
-        appointment_id = self.create_and_store_appointment(selected_date, start_time, end_time, doctor_id, patient_id, False)
+        appointment_id = self.create_and_store_appointment(selected_date, start_time, end_time, doctor_id, doctor_speciality_selected, patient_id, False)
         print(f"Appointment {appointment_id} created successfully.")
    
-    def create_and_store_appointment(self, date, start_time, end_time, doctor_id, patient_id, confirmation):
+    def create_and_store_appointment(self, date, start_time, end_time, doctor_id, doctor_speciality_selected, patient_id, confirmation):
         print("create and store appointment")
         appointment_id = self.generate_new_appointment_id()
-        new_appointment = Appointment(appointment_id, date, start_time, end_time, doctor_id, patient_id, confirmation)
+        new_appointment = Appointment(appointment_id, date, start_time, end_time, doctor_id, doctor_speciality_selected, patient_id, confirmation)
         root.appointments[appointment_id] = new_appointment
         root.appointment_id_list.append(appointment_id)
         self.populate_appointments_table()
@@ -112,8 +129,8 @@ class MainWindowUI(QMainWindow):
 
     def populate_appointments_table(self):
         self.ui.tableWidget.clear()
-        self.ui.tableWidget.setColumnCount(6)
-        self.ui.tableWidget.setHorizontalHeaderLabels(['Doctor', 'Date', 'Start Time', 'End Time', 'Confirmation'])
+        self.ui.tableWidget.setColumnCount(7)
+        self.ui.tableWidget.setHorizontalHeaderLabels(['Doctor', 'Speciality Selected', 'Date', 'Start Time', 'End Time', 'Confirmation', 'Cancle'])
         patient_id = self.current_user.get_id()
 
         patient_appointments = [appointment for appointment_id, appointment in root.appointments.items() if appointment.patient == patient_id]
@@ -122,17 +139,19 @@ class MainWindowUI(QMainWindow):
 
         for row, appointment in enumerate(patient_appointments):
             doctor_name = f"{root.users[appointment.doctor].fname} {root.users[appointment.doctor].lname}"
+            doctor_speciality = appointment.speciality
             confirmation = "Yes" if appointment.confirm else "No"
             self.ui.tableWidget.setItem(row, 0, QTableWidgetItem(doctor_name))
-            self.ui.tableWidget.setItem(row, 1, QTableWidgetItem(appointment.date))
-            self.ui.tableWidget.setItem(row, 2, QTableWidgetItem(appointment.start_time))
-            self.ui.tableWidget.setItem(row, 3, QTableWidgetItem(appointment.end_time))
-            self.ui.tableWidget.setItem(row, 4, QTableWidgetItem(confirmation))
+            self.ui.tableWidget.setItem(row, 1, QTableWidgetItem(doctor_speciality))
+            self.ui.tableWidget.setItem(row, 2, QTableWidgetItem(appointment.date))
+            self.ui.tableWidget.setItem(row, 3, QTableWidgetItem(appointment.start_time))
+            self.ui.tableWidget.setItem(row, 4, QTableWidgetItem(appointment.end_time))
+            self.ui.tableWidget.setItem(row, 5, QTableWidgetItem(confirmation))
 
             cancel_btn = QPushButton('Cancel')
             cancel_btn.setStyleSheet("QPushButton {background-color: #ff4d4d; color: white;}")
             cancel_btn.clicked.connect(lambda _: self.cancel_appointment(appointment.id))
-            self.ui.tableWidget.setCellWidget(row, 5, cancel_btn)
+            self.ui.tableWidget.setCellWidget(row, 6, cancel_btn)
     
     def cancel_appointment(self, appointment_id):
         if appointment_id in root.appointments:

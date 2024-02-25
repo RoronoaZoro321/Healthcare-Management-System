@@ -1,11 +1,12 @@
 import persistent
 
 class Appointment(persistent.Persistent):
-    def __init__(self, id, date, start_time, end_time, doctor, patient, confirm):
+    def __init__(self, id, date, start_time, end_time, doctor, speciality, patient, confirm):
         self.id = id
         self.date = date
         self.patient = patient
         self.doctor = doctor
+        self.speciality = speciality
         self.confirm = confirm
         self.start_time = start_time
         self.end_time = end_time

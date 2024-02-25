@@ -3,6 +3,7 @@ from PySide6.QtCore import *
 from gui.python.Login import Ui_Form as Login
 from database.db import *
 
+
 class LoginUI(QMainWindow):
     def __init__(self):
         super(LoginUI, self).__init__()
