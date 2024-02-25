@@ -19,6 +19,7 @@ class Add_UserUI(QMainWindow):
         self.ui.lineEdit_7.hide()
         self.ui.lineEdit_8.hide()
         self.ui.lineEdit_9.hide()
+        self.ui.lineEdit_10.hide()
 
     def show_fields(self):
         role = self.ui.comboBox.currentText()
@@ -27,23 +28,26 @@ class Add_UserUI(QMainWindow):
             self.ui.lineEdit_7.show()
             self.ui.lineEdit_8.show()
             self.ui.lineEdit_9.show()
+            self.ui.lineEdit_10.show()
         elif role == "Nurse":
             self.ui.lineEdit_6.show()
             self.ui.lineEdit_7.placeholderText = "Assigned Wards"
             self.ui.lineEdit_7.show()
             self.ui.lineEdit_8.show()
             self.ui.lineEdit_9.show()
+            self.ui.lineEdit_10.show()
         elif role == "Admin":
             self.ui.lineEdit_6.show()
             self.ui.lineEdit_7.hide()
             self.ui.lineEdit_8.hide()
             self.ui.lineEdit_9.hide()
+            self.ui.lineEdit_10.hide()
         else:
             self.ui.lineEdit_6.hide()
             self.ui.lineEdit_7.hide()
             self.ui.lineEdit_8.hide()
             self.ui.lineEdit_9.hide()
-
+            self.ui.lineEdit_10.hide()
     def add_user(self):
         fname = self.ui.lineEdit.text()
         lname = self.ui.lineEdit_2.text()
@@ -57,7 +61,8 @@ class Add_UserUI(QMainWindow):
             specialty = self.ui.lineEdit_7.text()
             degree = self.ui.lineEdit_8.text()
             salary = int(self.ui.lineEdit_9.text())
-            add_doctor(self.current_user, fname, lname, address, phone_number, password, department, specialty, degree, salary)
+            working_time = self.ui.lineEdit_10.text()
+            add_doctor(self.current_user, fname, lname, address, phone_number, password, department, specialty, degree, salary, working_time)
         
         elif role == "Admin":
             department = self.ui.lineEdit_6.text()
@@ -68,7 +73,7 @@ class Add_UserUI(QMainWindow):
             assigned_wards = self.ui.lineEdit_7.text()
             qualifications = self.ui.lineEdit_8.text()
             salary = int(self.ui.lineEdit_9.text())
-            add_nurse(self.current_user, fname, lname, address, phone_number, password, department, assigned_wards, qualifications, salary)
+            add_nurse(self.current_user, fname, lname, address, phone_number, password, department, assigned_wards, qualifications, salary, working_time)
 
         else:
             add_patient(self.current_user, fname, lname, address, phone_number, password)

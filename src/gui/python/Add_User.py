@@ -23,10 +23,10 @@ class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(491, 674)
+        Form.resize(491, 729)
         self.widget = QWidget(Form)
         self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(0, 0, 491, 671))
+        self.widget.setGeometry(QRect(0, 0, 491, 731))
         self.widget.setStyleSheet(u"font: 700 11pt \"Microsoft YaHei UI\";\n"
 "color: rgb(2, 164, 153);\n"
 "background-color: rgb(248, 250, 252);")
@@ -45,6 +45,15 @@ class Ui_Form(object):
         self.label.setAlignment(Qt.AlignCenter)
 
         self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
+
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.gridLayout.addItem(self.verticalSpacer, 4, 0, 1, 1)
+
+        self.pushButton_2 = QPushButton(self.widget)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+
+        self.gridLayout.addWidget(self.pushButton_2, 5, 0, 1, 1)
 
         self.pushButton = QPushButton(self.widget)
         self.pushButton.setObjectName(u"pushButton")
@@ -205,17 +214,22 @@ class Ui_Form(object):
 
         self.verticalLayout.addWidget(self.lineEdit_9)
 
+        self.lineEdit_10 = QLineEdit(self.widget_2)
+        self.lineEdit_10.setObjectName(u"lineEdit_10")
+        self.lineEdit_10.setStyleSheet(u"QLineEdit {\n"
+"	background-color: rgb(211, 237, 237);\n"
+"	border: 2px solid #353535;\n"
+"	border-radius: 20px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"	border: 2px solid #02A499;\n"
+"}")
+
+        self.verticalLayout.addWidget(self.lineEdit_10)
+
 
         self.gridLayout.addWidget(self.widget_2, 1, 0, 1, 1)
-
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout.addItem(self.verticalSpacer, 4, 0, 1, 1)
-
-        self.pushButton_2 = QPushButton(self.widget)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-
-        self.gridLayout.addWidget(self.pushButton_2, 5, 0, 1, 1)
 
 
         self.retranslateUi(Form)
@@ -226,6 +240,7 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
         self.label.setText(QCoreApplication.translate("Form", u"Add User", None))
+        self.pushButton_2.setText(QCoreApplication.translate("Form", u"Cancel", None))
         self.pushButton.setText(QCoreApplication.translate("Form", u"Done", None))
         self.lineEdit.setText("")
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("Form", u"First Name", None))
@@ -250,6 +265,7 @@ class Ui_Form(object):
         self.lineEdit_8.setPlaceholderText(QCoreApplication.translate("Form", u"Qualifications", None))
         self.lineEdit_9.setText("")
         self.lineEdit_9.setPlaceholderText(QCoreApplication.translate("Form", u"Salary", None))
-        self.pushButton_2.setText(QCoreApplication.translate("Form", u"Cancel", None))
+        self.lineEdit_10.setText("")
+        self.lineEdit_10.setPlaceholderText(QCoreApplication.translate("Form", u"Working Time", None))
     # retranslateUi
 
