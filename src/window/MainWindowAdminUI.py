@@ -42,10 +42,35 @@ class MainWindowAdminUI(QMainWindow):
 
     def showLogPage(self):
         self.ui.stackedWidget.setCurrentIndex(3)
+        self.ui.tableWidget_2.setRowCount(0)
+        # self.historyTable.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
+        self.ui.tableWidget_2.setColumnWidth(0, 300)
+        self.ui.tableWidget_2.setColumnWidth(1, 100)
+        self.ui.tableWidget_2.setColumnWidth(2, 200)
+        self.ui.tableWidget_2.setColumnWidth(3, 100)
+        self.show_logs()
+        self.ui.textEdit_logs.textChanged.connect(self.show_logs)
+        self.ui.textEdit_logs_2.textChanged.connect(self.show_logs)
+        self.ui.textEdit_logs_3.textChanged.connect(self.show_logs)
+        self.ui.textEdit_logs_4.textChanged.connect(self.show_logs)
+
+    def show_logs(self):
+        # textEdit_logs
         logs = get_logs()
-        self.ui.listWidget.clear()
+        self.ui.tableWidget_2.setRowCount(0)
+        time_stamp = self.ui.textEdit_logs.toPlainText()
+        actor = self.ui.textEdit_logs_2.toPlainText()
+        action = self.ui.textEdit_logs_3.toPlainText()  
+        target = self.ui.textEdit_logs_4.toPlainText()
         for log in logs:
-            self.ui.listWidget.addItem(log.get_details())
+            if time_stamp in log.get_time() and actor in log.get_actor_fname() and action in log.get_action() and target in log.get_target_fname():
+                row_position = self.ui.tableWidget_2.rowCount()
+                self.ui.tableWidget_2.insertRow(row_position)
+                self.ui.tableWidget_2.setItem(row_position, 0, QTableWidgetItem(log.get_time()))
+                self.ui.tableWidget_2.setItem(row_position, 1, QTableWidgetItem(log.get_actor_fname()))
+                self.ui.tableWidget_2.setItem(row_position, 2, QTableWidgetItem(log.get_action()))
+                self.ui.tableWidget_2.setItem(row_position, 3, QTableWidgetItem(log.get_target_fname()))
+        
         
 
     def showListDoctorPage(self):
