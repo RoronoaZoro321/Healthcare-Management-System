@@ -30,10 +30,10 @@ class Nurse(Staff):
     def get_salary(self):
         return self.salary
     
-    def set_woking_time(self, working_time):
+    def set_working_time(self, working_time):
         self.working_time = working_time
     
-    def get_woking_time(self):
+    def get_working_time(self):
         return self.working_time
     
     def add_appointment(self, id):
@@ -49,4 +49,5 @@ class Nurse(Staff):
         self.set_department(new_data[4])
         self.set_qualifications(new_data[5])
         self.set_salary(int(new_data[6]))
+        self.set_working_time(new_data[7])
         

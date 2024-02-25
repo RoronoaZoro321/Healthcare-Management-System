@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'MainWindowAdmin.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.0
+## Created by: Qt User Interface Compiler version 6.6.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -20,7 +20,7 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QGridLayout, QHBoxLayout
     QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
     QStackedWidget, QTableWidget, QTableWidgetItem, QTextEdit,
     QVBoxLayout, QWidget)
-from.import resource_rc
+from . import resource_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -98,8 +98,8 @@ class Ui_MainWindow(object):
         self.widget_list_doctor.setObjectName(u"widget_list_doctor")
         self.widget_list_doctor.setGeometry(QRect(-10, -10, 1061, 721))
         self.tableWidget = QTableWidget(self.widget_list_doctor)
-        if (self.tableWidget.columnCount() < 10):
-            self.tableWidget.setColumnCount(10)
+        if (self.tableWidget.columnCount() < 11):
+            self.tableWidget.setColumnCount(11)
         __qtablewidgetitem = QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
@@ -120,6 +120,8 @@ class Ui_MainWindow(object):
         self.tableWidget.setHorizontalHeaderItem(8, __qtablewidgetitem8)
         __qtablewidgetitem9 = QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(9, __qtablewidgetitem9)
+        __qtablewidgetitem10 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(10, __qtablewidgetitem10)
         self.tableWidget.setObjectName(u"tableWidget")
         self.tableWidget.setGeometry(QRect(100, 170, 871, 521))
         self.tableWidget.setStyleSheet(u"            QTableWidget {\n"
@@ -182,6 +184,7 @@ class Ui_MainWindow(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
+        self.comboBox.addItem("")
         self.comboBox.setObjectName(u"comboBox")
 
         self.gridLayout_3.addWidget(self.comboBox, 0, 1, 1, 1)
@@ -199,6 +202,7 @@ class Ui_MainWindow(object):
         self.gridLayout_3.addWidget(self.textEdit, 1, 0, 1, 3)
 
         self.comboBox_2 = QComboBox(self.widget_5)
+        self.comboBox_2.addItem("")
         self.comboBox_2.addItem("")
         self.comboBox_2.addItem("")
         self.comboBox_2.addItem("")
@@ -242,42 +246,30 @@ class Ui_MainWindow(object):
         self.widget_6.setGeometry(QRect(70, 100, 921, 571))
         self.widget_6.setStyleSheet(u"font: 13pt \"Arial\";")
         self.tableWidget_3 = QTableWidget(self.widget_6)
-        if (self.tableWidget_3.columnCount() < 10):
-            self.tableWidget_3.setColumnCount(10)
-        __qtablewidgetitem10 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(0, __qtablewidgetitem10)
+        if (self.tableWidget_3.columnCount() < 11):
+            self.tableWidget_3.setColumnCount(11)
         __qtablewidgetitem11 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(1, __qtablewidgetitem11)
+        self.tableWidget_3.setHorizontalHeaderItem(0, __qtablewidgetitem11)
         __qtablewidgetitem12 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(2, __qtablewidgetitem12)
+        self.tableWidget_3.setHorizontalHeaderItem(1, __qtablewidgetitem12)
         __qtablewidgetitem13 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(3, __qtablewidgetitem13)
+        self.tableWidget_3.setHorizontalHeaderItem(2, __qtablewidgetitem13)
         __qtablewidgetitem14 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(4, __qtablewidgetitem14)
+        self.tableWidget_3.setHorizontalHeaderItem(3, __qtablewidgetitem14)
         __qtablewidgetitem15 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(5, __qtablewidgetitem15)
+        self.tableWidget_3.setHorizontalHeaderItem(4, __qtablewidgetitem15)
         __qtablewidgetitem16 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(6, __qtablewidgetitem16)
+        self.tableWidget_3.setHorizontalHeaderItem(5, __qtablewidgetitem16)
         __qtablewidgetitem17 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(7, __qtablewidgetitem17)
+        self.tableWidget_3.setHorizontalHeaderItem(6, __qtablewidgetitem17)
         __qtablewidgetitem18 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(8, __qtablewidgetitem18)
+        self.tableWidget_3.setHorizontalHeaderItem(7, __qtablewidgetitem18)
         __qtablewidgetitem19 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(9, __qtablewidgetitem19)
-        if (self.tableWidget_3.rowCount() < 2):
-            self.tableWidget_3.setRowCount(2)
+        self.tableWidget_3.setHorizontalHeaderItem(8, __qtablewidgetitem19)
         __qtablewidgetitem20 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(0, __qtablewidgetitem20)
+        self.tableWidget_3.setHorizontalHeaderItem(9, __qtablewidgetitem20)
         __qtablewidgetitem21 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(1, __qtablewidgetitem21)
-        __qtablewidgetitem22 = QTableWidgetItem()
-        self.tableWidget_3.setItem(0, 0, __qtablewidgetitem22)
-        __qtablewidgetitem23 = QTableWidgetItem()
-        self.tableWidget_3.setItem(0, 1, __qtablewidgetitem23)
-        __qtablewidgetitem24 = QTableWidgetItem()
-        self.tableWidget_3.setItem(1, 0, __qtablewidgetitem24)
-        __qtablewidgetitem25 = QTableWidgetItem()
-        self.tableWidget_3.setItem(1, 1, __qtablewidgetitem25)
+        self.tableWidget_3.setHorizontalHeaderItem(10, __qtablewidgetitem21)
         self.tableWidget_3.setObjectName(u"tableWidget_3")
         self.tableWidget_3.setGeometry(QRect(10, 100, 881, 421))
         self.tableWidget_3.setStyleSheet(u"            QTableWidget {\n"
@@ -329,11 +321,13 @@ class Ui_MainWindow(object):
         self.comboBox_7.addItem("")
         self.comboBox_7.addItem("")
         self.comboBox_7.addItem("")
+        self.comboBox_7.addItem("")
         self.comboBox_7.setObjectName(u"comboBox_7")
         self.comboBox_7.setGeometry(QRect(200, 10, 121, 31))
         self.comboBox_7.setStyleSheet(u"background: #E0E0E0;\n"
 "")
         self.comboBox_9 = QComboBox(self.widget_6)
+        self.comboBox_9.addItem("")
         self.comboBox_9.addItem("")
         self.comboBox_9.addItem("")
         self.comboBox_9.addItem("")
@@ -362,7 +356,7 @@ class Ui_MainWindow(object):
 "border-radius: 20px")
         self.label_4 = QLabel(self.widget_7)
         self.label_4.setObjectName(u"label_4")
-        self.label_4.setGeometry(QRect(10, 30, 111, 31))
+        self.label_4.setGeometry(QRect(10, 30, 131, 31))
         self.label_4.setStyleSheet(u"border: None;\n"
 "font: 700 13pt \"Arial\";")
         self.stackedWidget.addWidget(self.page_5)
@@ -374,20 +368,20 @@ class Ui_MainWindow(object):
         self.tableWidget_4 = QTableWidget(self.widget_list_patient)
         if (self.tableWidget_4.columnCount() < 7):
             self.tableWidget_4.setColumnCount(7)
+        __qtablewidgetitem22 = QTableWidgetItem()
+        self.tableWidget_4.setHorizontalHeaderItem(0, __qtablewidgetitem22)
+        __qtablewidgetitem23 = QTableWidgetItem()
+        self.tableWidget_4.setHorizontalHeaderItem(1, __qtablewidgetitem23)
+        __qtablewidgetitem24 = QTableWidgetItem()
+        self.tableWidget_4.setHorizontalHeaderItem(2, __qtablewidgetitem24)
+        __qtablewidgetitem25 = QTableWidgetItem()
+        self.tableWidget_4.setHorizontalHeaderItem(3, __qtablewidgetitem25)
         __qtablewidgetitem26 = QTableWidgetItem()
-        self.tableWidget_4.setHorizontalHeaderItem(0, __qtablewidgetitem26)
+        self.tableWidget_4.setHorizontalHeaderItem(4, __qtablewidgetitem26)
         __qtablewidgetitem27 = QTableWidgetItem()
-        self.tableWidget_4.setHorizontalHeaderItem(1, __qtablewidgetitem27)
+        self.tableWidget_4.setHorizontalHeaderItem(5, __qtablewidgetitem27)
         __qtablewidgetitem28 = QTableWidgetItem()
-        self.tableWidget_4.setHorizontalHeaderItem(2, __qtablewidgetitem28)
-        __qtablewidgetitem29 = QTableWidgetItem()
-        self.tableWidget_4.setHorizontalHeaderItem(3, __qtablewidgetitem29)
-        __qtablewidgetitem30 = QTableWidgetItem()
-        self.tableWidget_4.setHorizontalHeaderItem(4, __qtablewidgetitem30)
-        __qtablewidgetitem31 = QTableWidgetItem()
-        self.tableWidget_4.setHorizontalHeaderItem(5, __qtablewidgetitem31)
-        __qtablewidgetitem32 = QTableWidgetItem()
-        self.tableWidget_4.setHorizontalHeaderItem(6, __qtablewidgetitem32)
+        self.tableWidget_4.setHorizontalHeaderItem(6, __qtablewidgetitem28)
         self.tableWidget_4.setObjectName(u"tableWidget_4")
         self.tableWidget_4.setGeometry(QRect(100, 170, 871, 521))
         self.tableWidget_4.setStyleSheet(u"            QTableWidget {\n"
@@ -513,13 +507,13 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addItem(self.horizontalSpacer_3)
 
-        self.widget1 = QWidget(self.widget)
-        self.widget1.setObjectName(u"widget1")
-        self.widget1.setGeometry(QRect(0, 90, 241, 633))
-        self.verticalLayout_2 = QVBoxLayout(self.widget1)
+        self.layoutWidget = QWidget(self.widget)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.layoutWidget.setGeometry(QRect(0, 90, 241, 633))
+        self.verticalLayout_2 = QVBoxLayout(self.layoutWidget)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.pushButton_2 = QPushButton(self.widget1)
+        self.pushButton_2 = QPushButton(self.layoutWidget)
         self.pushButton_2.setObjectName(u"pushButton_2")
         self.pushButton_2.setStyleSheet(u"QPushButton {\n"
 "	color: white;\n"
@@ -545,7 +539,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.pushButton_2)
 
-        self.pushButton_3 = QPushButton(self.widget1)
+        self.pushButton_3 = QPushButton(self.layoutWidget)
         self.pushButton_3.setObjectName(u"pushButton_3")
         self.pushButton_3.setStyleSheet(u"QPushButton {\n"
 "	color: white;\n"
@@ -571,7 +565,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.pushButton_3)
 
-        self.pushButton_9 = QPushButton(self.widget1)
+        self.pushButton_9 = QPushButton(self.layoutWidget)
         self.pushButton_9.setObjectName(u"pushButton_9")
         self.pushButton_9.setStyleSheet(u"QPushButton {\n"
 "	color: white;\n"
@@ -597,7 +591,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.pushButton_9)
 
-        self.pushButton = QPushButton(self.widget1)
+        self.pushButton = QPushButton(self.layoutWidget)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setStyleSheet(u"QPushButton {\n"
 "	color: white;\n"
@@ -623,7 +617,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.pushButton)
 
-        self.pushButton_10 = QPushButton(self.widget1)
+        self.pushButton_10 = QPushButton(self.layoutWidget)
         self.pushButton_10.setObjectName(u"pushButton_10")
         self.pushButton_10.setStyleSheet(u"QPushButton {\n"
 "	color: white;\n"
@@ -649,7 +643,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.pushButton_10)
 
-        self.pushButton_5 = QPushButton(self.widget1)
+        self.pushButton_5 = QPushButton(self.layoutWidget)
         self.pushButton_5.setObjectName(u"pushButton_5")
         self.pushButton_5.setStyleSheet(u"QPushButton {\n"
 "	color: white;\n"
@@ -675,7 +669,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.pushButton_5)
 
-        self.pushButton_6 = QPushButton(self.widget1)
+        self.pushButton_6 = QPushButton(self.layoutWidget)
         self.pushButton_6.setObjectName(u"pushButton_6")
         self.pushButton_6.setStyleSheet(u"QPushButton {\n"
 "	color: white;\n"
@@ -701,7 +695,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.pushButton_6)
 
-        self.pushButton_7 = QPushButton(self.widget1)
+        self.pushButton_7 = QPushButton(self.layoutWidget)
         self.pushButton_7.setObjectName(u"pushButton_7")
         self.pushButton_7.setStyleSheet(u"QPushButton {\n"
 "	color: white;\n"
@@ -727,7 +721,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.pushButton_7)
 
-        self.pushButton_8 = QPushButton(self.widget1)
+        self.pushButton_8 = QPushButton(self.layoutWidget)
         self.pushButton_8.setObjectName(u"pushButton_8")
         self.pushButton_8.setStyleSheet(u"QPushButton {\n"
 "	color: white;\n"
@@ -757,7 +751,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addItem(self.verticalSpacer)
 
-        self.pushButton_4 = QPushButton(self.widget1)
+        self.pushButton_4 = QPushButton(self.layoutWidget)
         self.pushButton_4.setObjectName(u"pushButton_4")
         self.pushButton_4.setStyleSheet(u"QPushButton {\n"
 "	color: white;\n"
@@ -821,9 +815,11 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem7 = self.tableWidget.horizontalHeaderItem(7)
         ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"Salary", None));
         ___qtablewidgetitem8 = self.tableWidget.horizontalHeaderItem(8)
-        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Action", None));
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Working Time", None));
         ___qtablewidgetitem9 = self.tableWidget.horizontalHeaderItem(9)
-        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Edit", None));
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Action", None));
+        ___qtablewidgetitem10 = self.tableWidget.horizontalHeaderItem(10)
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Edit", None));
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Total Doctors : ", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Sort by", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Search by ", None))
@@ -835,6 +831,7 @@ class Ui_MainWindow(object):
         self.comboBox.setItemText(5, QCoreApplication.translate("MainWindow", u"department", None))
         self.comboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"qualifications", None))
         self.comboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"salary", None))
+        self.comboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"working_time", None))
 
         self.comboBox_3.setItemText(0, QCoreApplication.translate("MainWindow", u"Ascending", None))
         self.comboBox_3.setItemText(1, QCoreApplication.translate("MainWindow", u"Descending", None))
@@ -855,45 +852,31 @@ class Ui_MainWindow(object):
         self.comboBox_2.setItemText(5, QCoreApplication.translate("MainWindow", u"department", None))
         self.comboBox_2.setItemText(6, QCoreApplication.translate("MainWindow", u"qualifications", None))
         self.comboBox_2.setItemText(7, QCoreApplication.translate("MainWindow", u"salary", None))
+        self.comboBox_2.setItemText(8, QCoreApplication.translate("MainWindow", u"working_time", None))
 
         self.appointment_page.setText(QCoreApplication.translate("MainWindow", u"Appointment", None))
-        ___qtablewidgetitem10 = self.tableWidget_3.horizontalHeaderItem(0)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Id", None));
-        ___qtablewidgetitem11 = self.tableWidget_3.horizontalHeaderItem(1)
-        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem12 = self.tableWidget_3.horizontalHeaderItem(2)
-        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"Last Name", None));
-        ___qtablewidgetitem13 = self.tableWidget_3.horizontalHeaderItem(3)
-        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"Address", None));
-        ___qtablewidgetitem14 = self.tableWidget_3.horizontalHeaderItem(4)
-        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"Phone Number", None));
-        ___qtablewidgetitem15 = self.tableWidget_3.horizontalHeaderItem(5)
-        ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"Department", None));
-        ___qtablewidgetitem16 = self.tableWidget_3.horizontalHeaderItem(6)
-        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"Degree", None));
-        ___qtablewidgetitem17 = self.tableWidget_3.horizontalHeaderItem(7)
-        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"Salary", None));
-        ___qtablewidgetitem18 = self.tableWidget_3.horizontalHeaderItem(8)
-        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"Action", None));
-        ___qtablewidgetitem19 = self.tableWidget_3.horizontalHeaderItem(9)
-        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"Edit", None));
-        ___qtablewidgetitem20 = self.tableWidget_3.verticalHeaderItem(0)
-        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem21 = self.tableWidget_3.verticalHeaderItem(1)
-        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-
-        __sortingEnabled = self.tableWidget_3.isSortingEnabled()
-        self.tableWidget_3.setSortingEnabled(False)
-        ___qtablewidgetitem22 = self.tableWidget_3.item(0, 0)
-        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"2", None));
-        ___qtablewidgetitem23 = self.tableWidget_3.item(0, 1)
-        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"ww", None));
-        ___qtablewidgetitem24 = self.tableWidget_3.item(1, 0)
-        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"2", None));
-        ___qtablewidgetitem25 = self.tableWidget_3.item(1, 1)
-        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"ww", None));
-        self.tableWidget_3.setSortingEnabled(__sortingEnabled)
-
+        ___qtablewidgetitem11 = self.tableWidget_3.horizontalHeaderItem(0)
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Id", None));
+        ___qtablewidgetitem12 = self.tableWidget_3.horizontalHeaderItem(1)
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"Name", None));
+        ___qtablewidgetitem13 = self.tableWidget_3.horizontalHeaderItem(2)
+        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"Last Name", None));
+        ___qtablewidgetitem14 = self.tableWidget_3.horizontalHeaderItem(3)
+        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"Address", None));
+        ___qtablewidgetitem15 = self.tableWidget_3.horizontalHeaderItem(4)
+        ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"Phone Number", None));
+        ___qtablewidgetitem16 = self.tableWidget_3.horizontalHeaderItem(5)
+        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"Department", None));
+        ___qtablewidgetitem17 = self.tableWidget_3.horizontalHeaderItem(6)
+        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"Degree", None));
+        ___qtablewidgetitem18 = self.tableWidget_3.horizontalHeaderItem(7)
+        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"Salary", None));
+        ___qtablewidgetitem19 = self.tableWidget_3.horizontalHeaderItem(8)
+        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"Working Time", None));
+        ___qtablewidgetitem20 = self.tableWidget_3.horizontalHeaderItem(9)
+        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Action", None));
+        ___qtablewidgetitem21 = self.tableWidget_3.horizontalHeaderItem(10)
+        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Edit", None));
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Sort by", None))
         self.comboBox_8.setItemText(0, QCoreApplication.translate("MainWindow", u"Ascending", None))
         self.comboBox_8.setItemText(1, QCoreApplication.translate("MainWindow", u"Descending", None))
@@ -906,6 +889,7 @@ class Ui_MainWindow(object):
         self.comboBox_7.setItemText(5, QCoreApplication.translate("MainWindow", u"department", None))
         self.comboBox_7.setItemText(6, QCoreApplication.translate("MainWindow", u"qualifications", None))
         self.comboBox_7.setItemText(7, QCoreApplication.translate("MainWindow", u"salary", None))
+        self.comboBox_7.setItemText(8, QCoreApplication.translate("MainWindow", u"working_time", None))
 
         self.comboBox_9.setItemText(0, QCoreApplication.translate("MainWindow", u"employee_id", None))
         self.comboBox_9.setItemText(1, QCoreApplication.translate("MainWindow", u"fname", None))
@@ -915,6 +899,7 @@ class Ui_MainWindow(object):
         self.comboBox_9.setItemText(5, QCoreApplication.translate("MainWindow", u"department", None))
         self.comboBox_9.setItemText(6, QCoreApplication.translate("MainWindow", u"qualifications", None))
         self.comboBox_9.setItemText(7, QCoreApplication.translate("MainWindow", u"salary", None))
+        self.comboBox_9.setItemText(8, QCoreApplication.translate("MainWindow", u"working_time", None))
 
         self.textEdit_3.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
@@ -926,20 +911,20 @@ class Ui_MainWindow(object):
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Osaka';\"><br /></p></body></html>", None))
         self.label_10.setText("")
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Total Nurse : ", None))
-        ___qtablewidgetitem26 = self.tableWidget_4.horizontalHeaderItem(0)
-        ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"Id", None));
-        ___qtablewidgetitem27 = self.tableWidget_4.horizontalHeaderItem(1)
-        ___qtablewidgetitem27.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem28 = self.tableWidget_4.horizontalHeaderItem(2)
-        ___qtablewidgetitem28.setText(QCoreApplication.translate("MainWindow", u"Last Name", None));
-        ___qtablewidgetitem29 = self.tableWidget_4.horizontalHeaderItem(3)
-        ___qtablewidgetitem29.setText(QCoreApplication.translate("MainWindow", u"Address", None));
-        ___qtablewidgetitem30 = self.tableWidget_4.horizontalHeaderItem(4)
-        ___qtablewidgetitem30.setText(QCoreApplication.translate("MainWindow", u"Phone Number", None));
-        ___qtablewidgetitem31 = self.tableWidget_4.horizontalHeaderItem(5)
-        ___qtablewidgetitem31.setText(QCoreApplication.translate("MainWindow", u"Action", None));
-        ___qtablewidgetitem32 = self.tableWidget_4.horizontalHeaderItem(6)
-        ___qtablewidgetitem32.setText(QCoreApplication.translate("MainWindow", u"Edit", None));
+        ___qtablewidgetitem22 = self.tableWidget_4.horizontalHeaderItem(0)
+        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"Id", None));
+        ___qtablewidgetitem23 = self.tableWidget_4.horizontalHeaderItem(1)
+        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Name", None));
+        ___qtablewidgetitem24 = self.tableWidget_4.horizontalHeaderItem(2)
+        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"Last Name", None));
+        ___qtablewidgetitem25 = self.tableWidget_4.horizontalHeaderItem(3)
+        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"Address", None));
+        ___qtablewidgetitem26 = self.tableWidget_4.horizontalHeaderItem(4)
+        ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"Phone Number", None));
+        ___qtablewidgetitem27 = self.tableWidget_4.horizontalHeaderItem(5)
+        ___qtablewidgetitem27.setText(QCoreApplication.translate("MainWindow", u"Action", None));
+        ___qtablewidgetitem28 = self.tableWidget_4.horizontalHeaderItem(6)
+        ___qtablewidgetitem28.setText(QCoreApplication.translate("MainWindow", u"Edit", None));
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Total Patient : ", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"Sort by", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"Search by ", None))

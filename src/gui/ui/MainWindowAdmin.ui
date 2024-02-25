@@ -213,6 +213,11 @@ color: #353535;</string>
           </column>
           <column>
            <property name="text">
+            <string>Working Time</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
             <string>Action</string>
            </property>
           </column>
@@ -301,6 +306,11 @@ color: #353535;</string>
                <string>salary</string>
               </property>
              </item>
+             <item>
+              <property name="text">
+               <string>working_time</string>
+              </property>
+             </item>
             </widget>
            </item>
            <item row="2" column="2">
@@ -371,6 +381,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
              <item>
               <property name="text">
                <string>salary</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>working_time</string>
               </property>
              </item>
             </widget>
@@ -497,16 +512,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
                 background-color: #495057;
             }</string>
            </property>
-           <row>
-            <property name="text">
-             <string>New Row</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>New Row</string>
-            </property>
-           </row>
            <column>
             <property name="text">
              <string>Id</string>
@@ -549,6 +554,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
            </column>
            <column>
             <property name="text">
+             <string>Working Time</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
              <string>Action</string>
             </property>
            </column>
@@ -557,26 +567,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
              <string>Edit</string>
             </property>
            </column>
-           <item row="0" column="0">
-            <property name="text">
-             <string>2</string>
-            </property>
-           </item>
-           <item row="0" column="1">
-            <property name="text">
-             <string>ww</string>
-            </property>
-           </item>
-           <item row="1" column="0">
-            <property name="text">
-             <string>2</string>
-            </property>
-           </item>
-           <item row="1" column="1">
-            <property name="text">
-             <string>ww</string>
-            </property>
-           </item>
           </widget>
           <widget class="QLabel" name="label_9">
            <property name="geometry">
@@ -664,6 +654,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
              <string>salary</string>
             </property>
            </item>
+           <item>
+            <property name="text">
+             <string>working_time</string>
+            </property>
+           </item>
           </widget>
           <widget class="QComboBox" name="comboBox_9">
            <property name="geometry">
@@ -712,6 +707,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <property name="text">
              <string>salary</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>working_time</string>
             </property>
            </item>
           </widget>
@@ -783,7 +783,7 @@ border-radius: 20px</string>
             <rect>
              <x>10</x>
              <y>30</y>
-             <width>111</width>
+             <width>131</width>
              <height>31</height>
             </rect>
            </property>
@@ -1111,7 +1111,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>0</x>
