@@ -11,10 +11,12 @@ class Person(persistent.Persistent):
         self.phone_number = phone_number
         self.photo = photo
         self.password = password
-    def update_detail(self, new_address: str, new_phone_number: str):
-        self.phone_number = new_phone_number
-        self.address = new_address
-        return True
+    
+    def update_attributes(self, fname: str, lname: str, address: str, phone_number: str):
+        self.fname = fname
+        self.lname = lname
+        self.address = address
+        self.phone_number = phone_number
     
     def get_fname(self):
         return self.fname

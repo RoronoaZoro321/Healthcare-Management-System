@@ -48,7 +48,6 @@ class MainWindowUI(QMainWindow):
         self.updateDoctorList(self.ui.Speciality.currentIndex())
         self.populate_appointments_table()
         
-        
     def updateDoctorList(self, index):
         print("triggered")
         self.ui.Doctor.clear()

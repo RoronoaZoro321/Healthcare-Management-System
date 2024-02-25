@@ -89,15 +89,15 @@ def delete_all_appointments():
 
 def add_first_admin():
     root.user_id_count += 1
-    admin = Admin("admin1", "Admin1", "Admin1", "Admin1", "password", root.user_id_count, "Main Head", "Admin")
+    admin = Admin("admin", "Admin1", "Admin1", "Admin1", "password", root.user_id_count, "Main Head", "Admin")
     root.users[root.user_id_count] = admin
     root.employee_id_list.append(root.user_id_count)
     transaction.commit()
 
-def add_doctor(current_user, fname, lname, address, phone_number, password, department, specialty, degree, salary):
+def add_doctor(current_user, fname, lname, address, phone_number, password, department, specialty, degree, salary, working_time):
     root.user_id_count += 1
     specialty = specialty.split(",")
-    doctor = Doctor(fname, lname, address, phone_number, password, root.user_id_count, department, "Doctor", specialty, degree, salary)
+    doctor = Doctor(fname, lname, address, phone_number, password, root.user_id_count, department, "Doctor", specialty, degree, salary, working_time)
     root.users[root.user_id_count] = doctor
     root.employee_id_list.append(root.user_id_count)
     add_log_db(current_user, "added Doctor", doctor)
@@ -111,10 +111,10 @@ def add_admin(current_user, fname, lname, address, phone_number, password, depar
     add_log_db(current_user, "added Admin", admin)
     transaction.commit()
 
-def add_nurse(current_user, fname, lname, address, phone_number, password, department, assigned_wards, qualifications, salary):
+def add_nurse(current_user, fname, lname, address, phone_number, password, department, assigned_wards, qualifications, salary, working_time):
     root.user_id_count += 1
     assigned_wards = assigned_wards.split(",")
-    nurse = Nurse(fname, lname, address, phone_number, password, root.user_id_count, department, "Nurse", assigned_wards, qualifications, salary)
+    nurse = Nurse(fname, lname, address, phone_number, password, root.user_id_count, department, "Nurse", assigned_wards, qualifications, salary, working_time)
     root.users[root.user_id_count] = nurse
     root.employee_id_list.append(root.user_id_count)
     add_log_db(current_user, "added Nurse", nurse)
@@ -134,21 +134,21 @@ def add_admin_if_no_admin():
 def add_doctor_if_no_doctor():
     if not any(isinstance(user, Doctor) for user in root.users.values()):
         print("Adding 3 doctors")
-        add_doctor(root.users[1],"doctor1", "doe", "123 street", "1234567890", "password", "Cardiology", "Heart", "MD", 100000)
-        add_doctor(root.users[1],"doctor2", "doe", "123 street", "1234567890", "password", "Neurology", "Brain", "DD", 290000)
-        add_doctor(root.users[1],"doctor3", "doe", "123 street", "1234567890", "password", "Orthopedics", "Bone", "MD", 150000)
+        add_doctor(root.users[1],"doctor1", "doe", "123 street", "1234567890", "password", "Cardiology", "Heart", "MD", 100000, "8:00-17:00")
+        add_doctor(root.users[1],"doctor2", "doe", "123 street", "1234567890", "password", "Neurology", "Brain", "DD", 290000, "10:00-19:00")
+        add_doctor(root.users[1],"doctor3", "doe", "123 street", "1234567890", "password", "Orthopedics", "Bone", "MD", 150000, "12:00-21:00")
 
 def add_nurse_if_no_nurse():
     if not any(isinstance(user, Nurse) for user in root.users.values()):
         print("Adding 3 nurses")
-        add_nurse(root.users[1],"nurse1", "doe", "123 street", "1234567890", "password", "Cardiology", "1,2,3", "BSc", 50000)
-        add_nurse(root.users[1],"nurse2", "doe", "123 street", "1234567890", "password", "Neurology", "4,5,6", "BSc", 50000)
-        add_nurse(root.users[1],"nurse3", "doe", "123 street", "1234567890", "password", "Orthopedics", "7,8,9", "BSc", 50000)
+        add_nurse(root.users[1],"nurse1", "doe", "123 street", "1234567890", "password", "Cardiology", "1,2,3", "BSc", 50000, "8:00-17:00")
+        add_nurse(root.users[1],"nurse2", "doe", "123 street", "1234567890", "password", "Neurology", "4,5,6", "BSc", 50000, "11:00-20:00")
+        add_nurse(root.users[1],"nurse3", "doe", "123 street", "1234567890", "password", "Orthopedics", "7,8,9", "BSc", 50000, "8:00-24:00")
 
 def add_patient_if_no_patient():
     if not any(isinstance(user, Patient) for user in root.users.values()):
         print("Adding 3 patients")
-        add_patient(root.users[1],"patient1", "doe", "123 street", "1234567890", "password")
+        add_patient(root.users[1],"p1", "doe", "123 street", "1234567890", "password")
         add_patient(root.users[1],"patient2", "doe", "123 street", "1234567890", "password")
         add_patient(root.users[1],"patient3", "doe", "123 street", "1234567890", "password")
 

@@ -24,13 +24,9 @@ class Patient(Person):
 
     def update_attributes(self, new_data):
         # ['John', 'Doe', '123 Main St', '123-456-7890', '12345']
-        self.set_fname(new_data[0])
-        self.set_lname(new_data[1])
-        self.set_address(new_data[2])
-        self.set_phone_number(new_data[3])
+        super().update_attributes(new_data[0], new_data[1], new_data[2], new_data[3])
     
-    # def add_appointment(self, appointment):
-    #     self.appointments.append(appointment)
-    #     self._p_changed = True
-    #     trans
+    def add_appointment(self, id):
+        self.appointments.append(id)
+        self._p_changed = True
 
