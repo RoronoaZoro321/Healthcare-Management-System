@@ -1,4 +1,6 @@
 from .Person import Person
+from persistent.list import PersistentList
+# from .db
 
 class Patient(Person):
     def __init__(self, fname: str, lname: str, address: str, 
@@ -9,6 +11,7 @@ class Patient(Person):
                          photo=photo)
         self.patient_id = patient_id
         self.medical_history = {}
+        self.appointments = PersistentList()
     
     def get_id(self):
         return self.patient_id
@@ -25,3 +28,9 @@ class Patient(Person):
         self.set_lname(new_data[1])
         self.set_address(new_data[2])
         self.set_phone_number(new_data[3])
+    
+    # def add_appointment(self, appointment):
+    #     self.appointments.append(appointment)
+    #     self._p_changed = True
+    #     trans
+

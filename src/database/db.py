@@ -39,6 +39,18 @@ def initialize_database():
     print("has attr log id count: ", hasattr(root, "log_id_count"))
     if not hasattr(root, "log_id_count"):
         root.log_id_count = 0
+    
+    print("has attr appointment", hasattr(root, "appointments"))
+    if not hasattr(root, 'appointments'):
+        root.appointments = BTrees.OOBTree.BTree()
+
+    print("appointment id count", hasattr(root, "last_appointment_id"))
+    if not hasattr(root, 'last_appointment_id'):
+        root.last_appointment_id = 0 
+        
+    print("appointment id list: ", hasattr(root, "appointment_id_list"))
+    if not hasattr(root, "appointment_id_list"):
+        root.appointment_id_list = PersistentList()
 
 def printInfo():
     print("user id count: ", root.user_id_count)
@@ -48,6 +60,32 @@ def printInfo():
         # if user.role == "Doctor":
         #     print(type(user.salary))
     print("log id count: ", root.log_id_count)
+
+def print_appointment_info():
+    for appointment_id, appointment in root.appointments.items():
+        print(f"Appointment ID: {appointment_id}")
+        print(f"Date: {appointment.date}")
+        print(f"Start Time: {appointment.start_time}")
+        print(f"End Time: {appointment.end_time}")
+        print(f"Doctor ID: {appointment.doctor}")
+        if appointment.doctor in root.users:
+            doctor = root.users[appointment.doctor]
+            print(f"Doctor Name: {doctor.fname} {doctor.lname}")
+        else:
+            print("Doctor ID not found in users")
+        print(f"Confirmation: {appointment.confirm}")
+        print(f"Patient ID: {appointment.patient} \n")
+        
+def delete_all_appointments():
+    appointment_ids = list(root.appointments.keys())
+    for appointment_id in appointment_ids:
+        del root.appointments[appointment_id]
+    transaction.commit()
+
+    root.last_appointment_id = 0
+    root.appointment_id_list = PersistentList()
+    transaction.commit()
+
 
 def add_first_admin():
     root.user_id_count += 1
