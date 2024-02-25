@@ -135,8 +135,8 @@ def add_admin_if_no_admin():
 def add_doctor_if_no_doctor():
     if not any(isinstance(user, Doctor) for user in root.users.values()):
         print("Adding 3 doctors")
-        add_doctor(root.users[1],"doctor1", "doe", "123 street", "1234567890", "password", "Cardiology", "Heart", "MD", 100000, "8:00-17:00")
-        add_doctor(root.users[1],"doctor2", "doe", "123 street", "1234567890", "password", "Neurology", "Brain", "DD", 290000, "10:00-19:00")
+        add_doctor(root.users[1],"doctor1", "doe", "123 street", "1234567890", "password", "Surgery", "Heart,Brain", "MD", 100000, "8:00-17:00")
+        add_doctor(root.users[1],"doctor2", "doe", "123 street", "1234567890", "password", "Surgery", "Face", "DD", 290000, "10:00-19:00")
         add_doctor(root.users[1],"doctor3", "doe", "123 street", "1234567890", "password", "Orthopedics", "Bone", "MD", 150000, "12:00-21:00")
 
 def add_nurse_if_no_nurse():

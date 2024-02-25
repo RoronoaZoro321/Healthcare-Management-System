@@ -30,10 +30,10 @@ class Doctor(Staff):
     def set_salary(self, salary):
         self.salary = salary
     
-    def set_woking_time(self, working_time):
+    def set_working_time(self, working_time):
         self.working_time = working_time
     
-    def get_woking_time(self):
+    def get_working_time(self):
         return self.working_time
 
     def add_appointment(self, id):
@@ -44,11 +44,12 @@ class Doctor(Staff):
         return self.appointments
 
     def update_attributes(self, new_data):
-        # ['doctor1', 'lname', '123 Main St', '123-456-7890', 'Cardiology', 'MDu', '80000']
+        # ['doctor1', 'lname', '123 Main St', '123-456-7890', 'Cardiology', 'MDu', '80000', '8:00-17:00']
         super().update_attributes(new_data[0], new_data[1], new_data[2], new_data[3])
         self.set_specialty(new_data[4])
         self.set_qualifications(new_data[5])
         self.set_salary(int(new_data[6]))
+        self.set_working_time(new_data[7])
     
     def update_schedule(self):
         pass

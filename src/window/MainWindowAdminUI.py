@@ -42,10 +42,35 @@ class MainWindowAdminUI(QMainWindow):
 
     def showLogPage(self):
         self.ui.stackedWidget.setCurrentIndex(3)
+        self.ui.tableWidget_2.setRowCount(0)
+        # self.historyTable.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
+        self.ui.tableWidget_2.setColumnWidth(0, 300)
+        self.ui.tableWidget_2.setColumnWidth(1, 100)
+        self.ui.tableWidget_2.setColumnWidth(2, 200)
+        self.ui.tableWidget_2.setColumnWidth(3, 100)
+        self.show_logs()
+        self.ui.textEdit_logs.textChanged.connect(self.show_logs)
+        self.ui.textEdit_logs_2.textChanged.connect(self.show_logs)
+        self.ui.textEdit_logs_3.textChanged.connect(self.show_logs)
+        self.ui.textEdit_logs_4.textChanged.connect(self.show_logs)
+
+    def show_logs(self):
+        # textEdit_logs
         logs = get_logs()
-        self.ui.listWidget.clear()
+        self.ui.tableWidget_2.setRowCount(0)
+        time_stamp = self.ui.textEdit_logs.toPlainText()
+        actor = self.ui.textEdit_logs_2.toPlainText()
+        action = self.ui.textEdit_logs_3.toPlainText()  
+        target = self.ui.textEdit_logs_4.toPlainText()
         for log in logs:
-            self.ui.listWidget.addItem(log.get_details())
+            if time_stamp in log.get_time() and actor in log.get_actor_fname() and action in log.get_action() and target in log.get_target_fname():
+                row_position = self.ui.tableWidget_2.rowCount()
+                self.ui.tableWidget_2.insertRow(row_position)
+                self.ui.tableWidget_2.setItem(row_position, 0, QTableWidgetItem(log.get_time()))
+                self.ui.tableWidget_2.setItem(row_position, 1, QTableWidgetItem(log.get_actor_fname()))
+                self.ui.tableWidget_2.setItem(row_position, 2, QTableWidgetItem(log.get_action()))
+                self.ui.tableWidget_2.setItem(row_position, 3, QTableWidgetItem(log.get_target_fname()))
+        
         
 
     def showListDoctorPage(self):
@@ -119,15 +144,16 @@ class MainWindowAdminUI(QMainWindow):
             self.ui.tableWidget.setItem(row_position, 2, QTableWidgetItem(doctor.get_lname()))
             self.ui.tableWidget.setItem(row_position, 3, QTableWidgetItem(doctor.get_address()))
             self.ui.tableWidget.setItem(row_position, 4, QTableWidgetItem(doctor.get_phone_number()))
-            self.ui.tableWidget.setItem(row_position, 5, QTableWidgetItem(doctor.department))
-            self.ui.tableWidget.setItem(row_position, 6, QTableWidgetItem(doctor.qualifications))
-            self.ui.tableWidget.setItem(row_position, 7, QTableWidgetItem(str(doctor.salary)))
+            self.ui.tableWidget.setItem(row_position, 5, QTableWidgetItem(doctor.get_department()))
+            self.ui.tableWidget.setItem(row_position, 6, QTableWidgetItem(doctor.get_qualifications()))
+            self.ui.tableWidget.setItem(row_position, 7, QTableWidgetItem(str(doctor.get_salary())))
+            self.ui.tableWidget.setItem(row_position, 8, QTableWidgetItem(str(doctor.get_working_time())))
 
             delete_button, edit_button = self.addDeleteandEditButton(self.ui.tableWidget)
             delete_button.clicked.connect(self.delete_doctor)
-            self.ui.tableWidget.setCellWidget(row_position, 8, delete_button)
+            self.ui.tableWidget.setCellWidget(row_position, 9, delete_button)
             edit_button.clicked.connect(self.edit_doctor)
-            self.ui.tableWidget.setCellWidget(row_position, 9, edit_button)
+            self.ui.tableWidget.setCellWidget(row_position, 10, edit_button)
     
     def search_nurse(self):
         self.ui.tableWidget_3.setRowCount(0)
@@ -149,15 +175,17 @@ class MainWindowAdminUI(QMainWindow):
             self.ui.tableWidget_3.setItem(row_position, 2, QTableWidgetItem(nurse.get_lname()))
             self.ui.tableWidget_3.setItem(row_position, 3, QTableWidgetItem(nurse.get_address()))
             self.ui.tableWidget_3.setItem(row_position, 4, QTableWidgetItem(nurse.get_phone_number()))
-            self.ui.tableWidget_3.setItem(row_position, 5, QTableWidgetItem(nurse.department))
-            self.ui.tableWidget_3.setItem(row_position, 6, QTableWidgetItem(nurse.qualifications))
-            self.ui.tableWidget_3.setItem(row_position, 7, QTableWidgetItem(str(nurse.salary)))
+            self.ui.tableWidget_3.setItem(row_position, 5, QTableWidgetItem(nurse.get_department()))
+            self.ui.tableWidget_3.setItem(row_position, 6, QTableWidgetItem(nurse.get_qualifications()))
+            self.ui.tableWidget_3.setItem(row_position, 7, QTableWidgetItem(str(nurse.get_salary())))
+            self.ui.tableWidget_3.setItem(row_position, 8, QTableWidgetItem(str(nurse.get_working_time())))
+
 
             delete_button, edit_button = self.addDeleteandEditButton(self.ui.tableWidget_3)
             delete_button.clicked.connect(self.delete_nurse)
             edit_button.clicked.connect(self.edit_nurse)
-            self.ui.tableWidget_3.setCellWidget(row_position, 8, delete_button)
-            self.ui.tableWidget_3.setCellWidget(row_position, 9, edit_button)
+            self.ui.tableWidget_3.setCellWidget(row_position, 9, delete_button)
+            self.ui.tableWidget_3.setCellWidget(row_position, 10, edit_button)
 
     def search_patient(self):
         self.ui.tableWidget_4.setRowCount(0)
@@ -271,7 +299,6 @@ class MainWindowAdminUI(QMainWindow):
             data.append(value)
 
         # Update the user object and database
-        print(self.current_user.get_fname())
         update_user_attributes(self.current_user, user_id, data)
 
         # Refresh the table to reflect the changes

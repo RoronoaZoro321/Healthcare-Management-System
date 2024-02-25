@@ -15,7 +15,7 @@ class Log(persistent.Persistent):
         return self.id
     
     def get_time(self):
-        return self.time
+        return self.time.strftime("%m/%d/%Y, %H:%M:%S")
 
     def get_actor(self):
         return self.actor    
@@ -28,3 +28,9 @@ class Log(persistent.Persistent):
     
     def get_details(self):
         return f"{self.id} {self.time} {self.actor.get_fname()} {self.action} {self.target.get_fname()}"
+    
+    def get_actor_fname(self):
+        return self.actor.get_fname()
+    
+    def get_target_fname(self):
+        return self.target.get_fname()
