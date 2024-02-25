@@ -9,6 +9,7 @@ from All_class.Doctor import Doctor
 from All_class.Patient import Patient
 from All_class.Nurse import Nurse
 from All_class.Log import Log
+from All_class.Appointment import Appointment
 
 storage = FileStorage.FileStorage('src/database/healthcare_management.fs')
 db = DB(storage)
