@@ -34,7 +34,7 @@ color: #353535;</string>
      <item row="0" column="0">
       <widget class="QStackedWidget" name="stackedWidget">
        <property name="currentIndex">
-        <number>3</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="page">
         <layout class="QGridLayout" name="gridLayout">
@@ -54,18 +54,31 @@ color: #353535;</string>
             </property>
             <property name="styleSheet">
              <string notr="true">QWidget {
-	border: 3px solid #353535;
-	border-radius: 15px;
+	border: 1px solid #353535;
 	font: 18px;
 	padding: 20px;
 }
 </string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout">
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QLabel" name="label_5">
+               <property name="styleSheet">
+                <string notr="true">font: 28px;
+border: None;
+</string>
+               </property>
+               <property name="text">
+                <string>PROFILE</string>
+               </property>
+              </widget>
+             </item>
              <item>
               <widget class="QLabel" name="profile_label">
                <property name="styleSheet">
-                <string notr="true">border-style: none;</string>
+                <string notr="true">border-style: none;
+font-size: 16px;
+margin-left: 90%;</string>
                </property>
                <property name="text">
                 <string>Name: </string>
@@ -75,7 +88,9 @@ color: #353535;</string>
              <item>
               <widget class="QLabel" name="profile_label_2">
                <property name="styleSheet">
-                <string notr="true">border-style: none;</string>
+                <string notr="true">border-style: none;
+font-size: 16px;
+margin-left: 90%;</string>
                </property>
                <property name="text">
                 <string>Last name:</string>
@@ -85,7 +100,9 @@ color: #353535;</string>
              <item>
               <widget class="QLabel" name="profile_label_3">
                <property name="styleSheet">
-                <string notr="true">border-style: none;</string>
+                <string notr="true">border-style: none;
+font-size: 16px;
+margin-left: 90%;</string>
                </property>
                <property name="text">
                 <string>Role:</string>
@@ -95,7 +112,9 @@ color: #353535;</string>
              <item>
               <widget class="QLabel" name="profile_label_4">
                <property name="styleSheet">
-                <string notr="true">border-style: none;</string>
+                <string notr="true">border-style: none;
+font-size: 16px;
+margin-left: 90%;</string>
                </property>
                <property name="text">
                 <string>Address:</string>
@@ -105,7 +124,9 @@ color: #353535;</string>
              <item>
               <widget class="QLabel" name="profile_label_5">
                <property name="styleSheet">
-                <string notr="true">border-style: none;</string>
+                <string notr="true">border-style: none;
+font-size: 16px;
+margin-left: 90%;</string>
                </property>
                <property name="text">
                 <string>Phone number:</string>
@@ -128,269 +149,340 @@ color: #353535;</string>
            <height>721</height>
           </rect>
          </property>
-         <widget class="QTableWidget" name="tableWidget">
+         <widget class="QWidget" name="widget_15" native="true">
           <property name="geometry">
            <rect>
-            <x>100</x>
-            <y>170</y>
-            <width>871</width>
-            <height>521</height>
+            <x>30</x>
+            <y>190</y>
+            <width>991</width>
+            <height>461</height>
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">            QTableWidget {
-                background-color: #f8f9fa;
-                border: 2px solid #dee2e6;
-                border-radius: 8px;
-                selection-background-color: #007bff;
-            }
-
-            QTableWidget::item {
-                color: #495057;
-                border-bottom: 1px solid #dee2e6;
-            }
-
-            QTableWidget::item:selected {
-                background-color: #007bff;
-                color: #ffffff;
-            }
-
-            QTableWidget::item:hover {
-                background-color: #e0e0e0;
-            }
-
-            QHeaderView::section {
-                background-color: #343a40;
-                color: #ffffff;
-                border: 1px solid #343a40;
-                border-radius: 4px;
-                padding: 8px;
-            }
-
-            QHeaderView::section:hover {
-                background-color: #495057;
-            }</string>
+           <string notr="true">border: 1px solid black;</string>
           </property>
-          <column>
-           <property name="text">
-            <string>Id</string>
+          <widget class="QWidget" name="widget_5" native="true">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>10</y>
+             <width>411</width>
+             <height>51</height>
+            </rect>
            </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Name</string>
+           <property name="styleSheet">
+            <string notr="true">border: None;</string>
            </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Last Name</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Address</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Phone Number</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Department</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Degree</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Salary</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Working Time</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Action</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Edit</string>
-           </property>
-          </column>
-         </widget>
-         <widget class="QLabel" name="label_2">
-          <property name="geometry">
-           <rect>
-            <x>680</x>
-            <y>80</y>
-            <width>181</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Total Doctors : </string>
-          </property>
-         </widget>
-         <widget class="QWidget" name="widget_5" native="true">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>30</y>
-            <width>411</width>
-            <height>121</height>
-           </rect>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_3">
-           <item row="2" column="0">
-            <widget class="QLabel" name="label_6">
+           <widget class="QComboBox" name="comboBox">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>129</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <item>
              <property name="text">
-              <string>Sort by</string>
+              <string>employee_id</string>
              </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_5">
+            </item>
+            <item>
              <property name="text">
-              <string>Search by </string>
+              <string>fname</string>
              </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QComboBox" name="comboBox">
-             <item>
-              <property name="text">
-               <string>employee_id</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>fname</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>lname</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>address</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>phone_number</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>department</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>qualifications</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>salary</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>working_time</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="2" column="2">
-            <widget class="QComboBox" name="comboBox_3">
-             <item>
-              <property name="text">
-               <string>Ascending</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Descending</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="1" column="0" colspan="3">
-            <widget class="QTextEdit" name="textEdit">
-             <property name="html">
-              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+            </item>
+            <item>
+             <property name="text">
+              <string>lname</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>address</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>phone_number</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>department</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>qualifications</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>salary</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>working_time</string>
+             </property>
+            </item>
+           </widget>
+           <widget class="QTextEdit" name="textEdit">
+            <property name="geometry">
+             <rect>
+              <x>148</x>
+              <y>10</y>
+              <width>251</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #ACACAC;
+border: 1px solid grey;</string>
+            </property>
+            <property name="html">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Osaka'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Search by ...&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QTableWidget" name="tableWidget">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>60</y>
+             <width>971</width>
+             <height>381</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: 1px solid black;</string>
+           </property>
+           <row/>
+           <row/>
+           <row/>
+           <column>
+            <property name="text">
+             <string>Id</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Name</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Last Name</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Address</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Phone Number</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Department</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Degree</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Salary</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Working Time</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Action</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Edit</string>
+            </property>
+           </column>
+          </widget>
+          <widget class="QWidget" name="widget_16" native="true">
+           <property name="geometry">
+            <rect>
+             <x>720</x>
+             <y>20</y>
+             <width>261</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: None;</string>
+           </property>
+           <widget class="QComboBox" name="comboBox_2">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>0</y>
+              <width>129</width>
+              <height>19</height>
+             </rect>
+            </property>
+            <item>
+             <property name="text">
+              <string>employee_id</string>
              </property>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="QComboBox" name="comboBox_2">
-             <item>
-              <property name="text">
-               <string>employee_id</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>fname</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>lname</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>address</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>phone_number</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>department</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>qualifications</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>salary</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>working_time</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-          </layout>
+            </item>
+            <item>
+             <property name="text">
+              <string>fname</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>lname</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>address</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>phone_number</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>department</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>qualifications</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>salary</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>working_time</string>
+             </property>
+            </item>
+           </widget>
+           <widget class="QComboBox" name="comboBox_3">
+            <property name="geometry">
+             <rect>
+              <x>150</x>
+              <y>0</y>
+              <width>106</width>
+              <height>19</height>
+             </rect>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ascending</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Descending</string>
+             </property>
+            </item>
+           </widget>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="widget_17" native="true">
+          <property name="geometry">
+           <rect>
+            <x>830</x>
+            <y>80</y>
+            <width>191</width>
+            <height>81</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 2px solid black;
+border-radius: 20px</string>
+          </property>
+          <widget class="QLabel" name="label_13">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>41</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: None;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="resource.qrc">:/icon/image/doctor (1).png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_2">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>30</y>
+             <width>121</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: None;
+font: 700 13pt &quot;Arial&quot;;
+</string>
+           </property>
+           <property name="text">
+            <string>Total Doctors : </string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QLabel" name="label_14">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>90</y>
+            <width>131</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 700 20pt &quot;Geneva&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Doctor List </string>
+          </property>
          </widget>
         </widget>
        </widget>
@@ -469,7 +561,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <rect>
             <x>80</x>
             <y>10</y>
-            <width>331</width>
+            <width>421</width>
             <height>171</height>
            </rect>
           </property>
@@ -507,7 +599,372 @@ li.checked::marker { content: &quot;\2612&quot;; }
         </widget>
        </widget>
        <widget class="QWidget" name="page_5">
-        <widget class="QWidget" name="widget_list_nurse" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QWidget" name="widget_list_nurse" native="true">
+           <widget class="QWidget" name="widget_6" native="true">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>140</y>
+              <width>931</width>
+              <height>511</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 13pt &quot;Arial&quot;;
+border: 1px solid black;</string>
+            </property>
+            <widget class="QTableWidget" name="tableWidget_3">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>70</y>
+               <width>890</width>
+               <height>421</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border: 1px solid black;</string>
+             </property>
+             <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+              <bool>false</bool>
+             </attribute>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>false</bool>
+             </attribute>
+             <row/>
+             <row/>
+             <column>
+              <property name="text">
+               <string>Id</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Name</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Last Name</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Address</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Phone Number</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Department</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Degree</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Salary</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Working Time</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Action</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Edit</string>
+              </property>
+             </column>
+            </widget>
+            <widget class="QWidget" name="widget_11" native="true">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>10</y>
+               <width>411</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border: None;
+</string>
+             </property>
+             <widget class="QComboBox" name="comboBox_7">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>10</y>
+                <width>121</width>
+                <height>31</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <item>
+               <property name="text">
+                <string>employee_id</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>fname</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>lname</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>address</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>phone_number</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>department</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>qualifications</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>salary</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>working_time</string>
+               </property>
+              </item>
+             </widget>
+             <widget class="QTextEdit" name="textEdit_3">
+              <property name="geometry">
+               <rect>
+                <x>130</x>
+                <y>10</y>
+                <width>241</width>
+                <height>31</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border: 1px solid grey;
+color: #ACACAC;</string>
+              </property>
+              <property name="html">
+               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Osaka';&quot;&gt;Search by ...&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Osaka';&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="widget_10" native="true">
+             <property name="geometry">
+              <rect>
+               <x>580</x>
+               <y>10</y>
+               <width>341</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border: None;</string>
+             </property>
+             <widget class="QComboBox" name="comboBox_9">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>10</y>
+                <width>195</width>
+                <height>25</height>
+               </rect>
+              </property>
+              <item>
+               <property name="text">
+                <string>employee_id</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>fname</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>lname</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>address</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>phone_number</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>department</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>qualifications</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>salary</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>working_time</string>
+               </property>
+              </item>
+             </widget>
+             <widget class="QComboBox" name="comboBox_8">
+              <property name="geometry">
+               <rect>
+                <x>220</x>
+                <y>10</y>
+                <width>111</width>
+                <height>25</height>
+               </rect>
+              </property>
+              <item>
+               <property name="text">
+                <string>Ascending</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Descending</string>
+               </property>
+              </item>
+             </widget>
+            </widget>
+           </widget>
+           <widget class="QWidget" name="widget_7" native="true">
+            <property name="geometry">
+             <rect>
+              <x>790</x>
+              <y>40</y>
+              <width>181</width>
+              <height>81</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 2px solid black;
+border-radius: 20px</string>
+            </property>
+            <widget class="QLabel" name="label_4">
+             <property name="geometry">
+              <rect>
+               <x>60</x>
+               <y>20</y>
+               <width>111</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border: None;
+font: 700 13pt &quot;Arial&quot;;</string>
+             </property>
+             <property name="text">
+              <string>Total Nurse:</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_9">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>20</y>
+               <width>41</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border: None;</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="resource.qrc">:/icon/image/nurse (1).png</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QLabel" name="label_8">
+            <property name="geometry">
+             <rect>
+              <x>70</x>
+              <y>50</y>
+              <width>101</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 700 20pt &quot;Geneva&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Nurse List </string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_7">
+            <property name="geometry">
+             <rect>
+              <x>520</x>
+              <y>100</y>
+              <width>58</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page_6">
+        <widget class="QWidget" name="widget_list_patient" native="true">
          <property name="geometry">
           <rect>
            <x>-10</x>
@@ -516,67 +973,85 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <height>721</height>
           </rect>
          </property>
-         <widget class="QWidget" name="widget_6" native="true">
+         <widget class="QWidget" name="widget_12" native="true">
           <property name="geometry">
            <rect>
-            <x>70</x>
-            <y>100</y>
-            <width>921</width>
-            <height>571</height>
+            <x>710</x>
+            <y>60</y>
+            <width>201</width>
+            <height>81</height>
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: 13pt &quot;Arial&quot;;</string>
+           <string notr="true">border: 2px solid black;
+border-radius: 20px</string>
           </property>
-          <widget class="QTableWidget" name="tableWidget_3">
+          <widget class="QLabel" name="label_11">
            <property name="geometry">
             <rect>
-             <x>10</x>
-             <y>100</y>
-             <width>881</width>
-             <height>421</height>
+             <x>70</x>
+             <y>30</y>
+             <width>121</width>
+             <height>31</height>
             </rect>
            </property>
            <property name="styleSheet">
-            <string notr="true">            QTableWidget {
-                background-color: #blue;
-                border: 2px solid #dee2e6;
-                border-radius: 8px;
-                selection-background-color: #007bff;
-            }
-
-            QTableWidget::item {
-                color: #green;
-                border-bottom: 1px solid #dee2e6;
-            }
-
-            QTableWidget::item:selected {
-                background-color: #red;
-                color: #ffffff;
-            }
-
-            QTableWidget::item:hover {
-                background-color: #orange;
-            }
-
-            QHeaderView::section {
-                background-color: #343a40;
-                color: #ffffff;
-                border: 1px solid #343a40;
-                border-radius: 4px;
-                padding: 8px;
-            }
-
-            QHeaderView::section:hover {
-                background-color: #495057;
-            }</string>
+            <string notr="true">border: None;
+font: 700 13pt &quot;Arial&quot;;</string>
            </property>
-           <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
-            <bool>false</bool>
-           </attribute>
-           <attribute name="horizontalHeaderStretchLastSection">
-            <bool>false</bool>
-           </attribute>
+           <property name="text">
+            <string>Total Patient : </string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_12">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>20</y>
+             <width>40</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: None;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="resource.qrc">:/icon/image/hospitalisation (1).png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="widget_13" native="true">
+          <property name="geometry">
+           <rect>
+            <x>140</x>
+            <y>160</y>
+            <width>771</width>
+            <height>511</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid black;</string>
+          </property>
+          <widget class="QTableWidget" name="tableWidget_4">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>60</y>
+             <width>731</width>
+             <height>431</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: 1px solid black;</string>
+           </property>
+           <row/>
+           <row/>
            <column>
             <property name="text">
              <string>Id</string>
@@ -604,26 +1079,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
            </column>
            <column>
             <property name="text">
-             <string>Department</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Degree</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Salary</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Working Time</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
              <string>Action</string>
             </property>
            </column>
@@ -633,449 +1088,162 @@ li.checked::marker { content: &quot;\2612&quot;; }
             </property>
            </column>
           </widget>
-          <widget class="QLabel" name="label_9">
+          <widget class="QWidget" name="widget_14" native="true">
            <property name="geometry">
             <rect>
-             <x>390</x>
-             <y>20</y>
-             <width>122</width>
-             <height>17</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Sort by</string>
-           </property>
-          </widget>
-          <widget class="QComboBox" name="comboBox_8">
-           <property name="geometry">
-            <rect>
-             <x>600</x>
-             <y>50</y>
-             <width>221</width>
-             <height>25</height>
-            </rect>
-           </property>
-           <item>
-            <property name="text">
-             <string>Ascending</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Descending</string>
-            </property>
-           </item>
-          </widget>
-          <widget class="QComboBox" name="comboBox_7">
-           <property name="geometry">
-            <rect>
-             <x>200</x>
+             <x>490</x>
              <y>10</y>
-             <width>121</width>
+             <width>271</width>
              <height>31</height>
             </rect>
            </property>
            <property name="styleSheet">
-            <string notr="true">background: #E0E0E0;
-</string>
+            <string notr="true">border: None;</string>
            </property>
-           <item>
-            <property name="text">
-             <string>employee_id</string>
+           <widget class="QComboBox" name="comboBox_11">
+            <property name="geometry">
+             <rect>
+              <x>150</x>
+              <y>10</y>
+              <width>106</width>
+              <height>20</height>
+             </rect>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>fname</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>lname</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>address</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>phone_number</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>department</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>qualifications</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>salary</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>working_time</string>
-            </property>
-           </item>
-          </widget>
-          <widget class="QComboBox" name="comboBox_9">
-           <property name="geometry">
-            <rect>
-             <x>390</x>
-             <y>50</y>
-             <width>195</width>
-             <height>25</height>
-            </rect>
-           </property>
-           <item>
-            <property name="text">
-             <string>employee_id</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>fname</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>lname</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>address</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>phone_number</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>department</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>qualifications</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>salary</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>working_time</string>
-            </property>
-           </item>
-          </widget>
-          <widget class="QTextEdit" name="textEdit_3">
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>50</y>
-             <width>311</width>
-             <height>31</height>
-            </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">border: 1px solid black;
-border-radius: 15px;</string>
-           </property>
-           <property name="html">
-            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Osaka';&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_10">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>60</y>
-             <width>15</width>
-             <height>15</height>
-            </rect>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>15</width>
-             <height>15</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap>:/icon/search.png</pixmap>
-           </property>
-           <property name="scaledContents">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </widget>
-         <widget class="QWidget" name="widget_7" native="true">
-          <property name="geometry">
-           <rect>
-            <x>840</x>
-            <y>30</y>
-            <width>131</width>
-            <height>91</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">border: 1px solid black;
-border-radius: 20px</string>
-          </property>
-          <widget class="QLabel" name="label_4">
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>30</y>
-             <width>131</width>
-             <height>31</height>
-            </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">border: None;
-font: 700 13pt &quot;Arial&quot;;</string>
-           </property>
-           <property name="text">
-            <string>Total Nurse : </string>
-           </property>
-          </widget>
-         </widget>
-        </widget>
-       </widget>
-       <widget class="QWidget" name="page_6">
-        <widget class="QWidget" name="widget_list_patient" native="true">
-         <property name="geometry">
-          <rect>
-           <x>-10</x>
-           <y>-10</y>
-           <width>1061</width>
-           <height>721</height>
-          </rect>
-         </property>
-         <widget class="QTableWidget" name="tableWidget_4">
-          <property name="geometry">
-           <rect>
-            <x>100</x>
-            <y>170</y>
-            <width>871</width>
-            <height>521</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">            QTableWidget {
-                background-color: #f8f9fa;
-                border: 2px solid #dee2e6;
-                border-radius: 8px;
-                selection-background-color: #007bff;
-            }
-
-            QTableWidget::item {
-                color: #495057;
-                border-bottom: 1px solid #dee2e6;
-            }
-
-            QTableWidget::item:selected {
-                background-color: #007bff;
-                color: #ffffff;
-            }
-
-            QTableWidget::item:hover {
-                background-color: #e0e0e0;
-            }
-
-            QHeaderView::section {
-                background-color: #343a40;
-                color: #ffffff;
-                border: 1px solid #343a40;
-                border-radius: 4px;
-                padding: 8px;
-            }
-
-            QHeaderView::section:hover {
-                background-color: #495057;
-            }</string>
-          </property>
-          <column>
-           <property name="text">
-            <string>Id</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Name</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Last Name</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Address</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Phone Number</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Action</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Edit</string>
-           </property>
-          </column>
-         </widget>
-         <widget class="QLabel" name="label_11">
-          <property name="geometry">
-           <rect>
-            <x>680</x>
-            <y>80</y>
-            <width>181</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Total Patient : </string>
-          </property>
-         </widget>
-         <widget class="QWidget" name="widget_8" native="true">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>30</y>
-            <width>411</width>
-            <height>121</height>
-           </rect>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_6">
-           <item row="2" column="0">
-            <widget class="QLabel" name="label_12">
+            <item>
              <property name="text">
-              <string>Sort by</string>
+              <string>Ascending</string>
              </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_13">
+            </item>
+            <item>
              <property name="text">
-              <string>Search by </string>
+              <string>Descending</string>
              </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QComboBox" name="comboBox_10">
-             <item>
-              <property name="text">
-               <string>patient_id</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>fname</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>lname</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>address</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>phone_number</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="2" column="2">
-            <widget class="QComboBox" name="comboBox_11">
-             <item>
-              <property name="text">
-               <string>Ascending</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Descending</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="1" column="0" colspan="3">
-            <widget class="QTextEdit" name="textEdit_4">
-             <property name="html">
-              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+            </item>
+           </widget>
+           <widget class="QComboBox" name="comboBox_12">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>129</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <item>
+             <property name="text">
+              <string>patient_id</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>fname</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>lname</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>address</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>phone_number</string>
+             </property>
+            </item>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="widget_8" native="true">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>10</y>
+             <width>330</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: None;</string>
+           </property>
+           <widget class="QComboBox" name="comboBox_10">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>10</y>
+              <width>111</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <item>
+             <property name="text">
+              <string>patient_id</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>fname</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>lname</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>address</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>phone_number</string>
+             </property>
+            </item>
+           </widget>
+           <widget class="QTextEdit" name="textEdit_4">
+            <property name="geometry">
+             <rect>
+              <x>117</x>
+              <y>10</y>
+              <width>201</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 1px solid grey;
+color: #ACACAC;</string>
+            </property>
+            <property name="html">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Osaka'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="QComboBox" name="comboBox_12">
-             <item>
-              <property name="text">
-               <string>patient_id</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>fname</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>lname</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>address</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>phone_number</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-          </layout>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Search by ...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+         <widget class="QLabel" name="label_10">
+          <property name="geometry">
+           <rect>
+            <x>100</x>
+            <y>80</y>
+            <width>121</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 700 20pt &quot;Geneva&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Patient List </string>
+          </property>
          </widget>
         </widget>
        </widget>

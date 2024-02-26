@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'MainWindowAdmin.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.1
+## Created by: Qt User Interface Compiler version 6.6.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QGridLayout, QHBoxLayout
     QHeaderView, QLabel, QMainWindow, QPushButton,
     QSizePolicy, QSpacerItem, QStackedWidget, QTableWidget,
     QTableWidgetItem, QTextEdit, QVBoxLayout, QWidget)
-from . import resource_rc
+from.import resource_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -49,41 +49,58 @@ class Ui_MainWindow(object):
         self.profile_widget.setObjectName(u"profile_widget")
         self.profile_widget.setGeometry(QRect(100, 90, 781, 461))
         self.profile_widget.setStyleSheet(u"QWidget {\n"
-"	border: 3px solid #353535;\n"
-"	border-radius: 15px;\n"
+"	border: 1px solid #353535;\n"
 "	font: 18px;\n"
 "	padding: 20px;\n"
 "}\n"
 "")
         self.verticalLayout = QVBoxLayout(self.profile_widget)
         self.verticalLayout.setObjectName(u"verticalLayout")
+        self.label_5 = QLabel(self.profile_widget)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setStyleSheet(u"font: 28px;\n"
+"border: None;\n"
+"")
+
+        self.verticalLayout.addWidget(self.label_5, 0, Qt.AlignHCenter)
+
         self.profile_label = QLabel(self.profile_widget)
         self.profile_label.setObjectName(u"profile_label")
-        self.profile_label.setStyleSheet(u"border-style: none;")
+        self.profile_label.setStyleSheet(u"border-style: none;\n"
+"font-size: 16px;\n"
+"margin-left: 90%;")
 
         self.verticalLayout.addWidget(self.profile_label)
 
         self.profile_label_2 = QLabel(self.profile_widget)
         self.profile_label_2.setObjectName(u"profile_label_2")
-        self.profile_label_2.setStyleSheet(u"border-style: none;")
+        self.profile_label_2.setStyleSheet(u"border-style: none;\n"
+"font-size: 16px;\n"
+"margin-left: 90%;")
 
         self.verticalLayout.addWidget(self.profile_label_2)
 
         self.profile_label_3 = QLabel(self.profile_widget)
         self.profile_label_3.setObjectName(u"profile_label_3")
-        self.profile_label_3.setStyleSheet(u"border-style: none;")
+        self.profile_label_3.setStyleSheet(u"border-style: none;\n"
+"font-size: 16px;\n"
+"margin-left: 90%;")
 
         self.verticalLayout.addWidget(self.profile_label_3)
 
         self.profile_label_4 = QLabel(self.profile_widget)
         self.profile_label_4.setObjectName(u"profile_label_4")
-        self.profile_label_4.setStyleSheet(u"border-style: none;")
+        self.profile_label_4.setStyleSheet(u"border-style: none;\n"
+"font-size: 16px;\n"
+"margin-left: 90%;")
 
         self.verticalLayout.addWidget(self.profile_label_4)
 
         self.profile_label_5 = QLabel(self.profile_widget)
         self.profile_label_5.setObjectName(u"profile_label_5")
-        self.profile_label_5.setStyleSheet(u"border-style: none;")
+        self.profile_label_5.setStyleSheet(u"border-style: none;\n"
+"font-size: 16px;\n"
+"margin-left: 90%;")
 
         self.verticalLayout.addWidget(self.profile_label_5)
 
@@ -96,7 +113,32 @@ class Ui_MainWindow(object):
         self.widget_list_doctor = QWidget(self.page_4)
         self.widget_list_doctor.setObjectName(u"widget_list_doctor")
         self.widget_list_doctor.setGeometry(QRect(-10, -10, 1061, 721))
-        self.tableWidget = QTableWidget(self.widget_list_doctor)
+        self.widget_15 = QWidget(self.widget_list_doctor)
+        self.widget_15.setObjectName(u"widget_15")
+        self.widget_15.setGeometry(QRect(30, 190, 991, 461))
+        self.widget_15.setStyleSheet(u"border: 1px solid black;")
+        self.widget_5 = QWidget(self.widget_15)
+        self.widget_5.setObjectName(u"widget_5")
+        self.widget_5.setGeometry(QRect(10, 10, 411, 51))
+        self.widget_5.setStyleSheet(u"border: None;")
+        self.comboBox = QComboBox(self.widget_5)
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.setObjectName(u"comboBox")
+        self.comboBox.setGeometry(QRect(10, 10, 129, 21))
+        self.textEdit = QTextEdit(self.widget_5)
+        self.textEdit.setObjectName(u"textEdit")
+        self.textEdit.setGeometry(QRect(148, 10, 251, 31))
+        self.textEdit.setStyleSheet(u"color: #ACACAC;\n"
+"border: 1px solid grey;")
+        self.tableWidget = QTableWidget(self.widget_15)
         if (self.tableWidget.columnCount() < 11):
             self.tableWidget.setColumnCount(11)
         __qtablewidgetitem = QTableWidgetItem()
@@ -121,86 +163,16 @@ class Ui_MainWindow(object):
         self.tableWidget.setHorizontalHeaderItem(9, __qtablewidgetitem9)
         __qtablewidgetitem10 = QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(10, __qtablewidgetitem10)
+        if (self.tableWidget.rowCount() < 3):
+            self.tableWidget.setRowCount(3)
         self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setGeometry(QRect(100, 170, 871, 521))
-        self.tableWidget.setStyleSheet(u"            QTableWidget {\n"
-"                background-color: #f8f9fa;\n"
-"                border: 2px solid #dee2e6;\n"
-"                border-radius: 8px;\n"
-"                selection-background-color: #007bff;\n"
-"            }\n"
-"\n"
-"            QTableWidget::item {\n"
-"                color: #495057;\n"
-"                border-bottom: 1px solid #dee2e6;\n"
-"            }\n"
-"\n"
-"            QTableWidget::item:selected {\n"
-"                background-color: #007bff;\n"
-"                color: #ffffff;\n"
-"            }\n"
-"\n"
-"            QTableWidget::item:hover {\n"
-"                background-color: #e0e0e0;\n"
-"            }\n"
-"\n"
-"            QHeaderView::section {\n"
-"                background-color: #343a40;\n"
-"                color: #ffffff;\n"
-"                border: 1px solid #343a40;\n"
-"                border-radius: 4px;\n"
-"                padding: 8px;\n"
-"            }\n"
-"\n"
-"            QHeaderView::section:hover {\n"
-"                background-color: #495057;\n"
-"       "
-                        "     }")
-        self.label_2 = QLabel(self.widget_list_doctor)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(680, 80, 181, 31))
-        self.widget_5 = QWidget(self.widget_list_doctor)
-        self.widget_5.setObjectName(u"widget_5")
-        self.widget_5.setGeometry(QRect(110, 30, 411, 121))
-        self.gridLayout_3 = QGridLayout(self.widget_5)
-        self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.label_6 = QLabel(self.widget_5)
-        self.label_6.setObjectName(u"label_6")
-
-        self.gridLayout_3.addWidget(self.label_6, 2, 0, 1, 1)
-
-        self.label_5 = QLabel(self.widget_5)
-        self.label_5.setObjectName(u"label_5")
-
-        self.gridLayout_3.addWidget(self.label_5, 0, 0, 1, 1)
-
-        self.comboBox = QComboBox(self.widget_5)
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.setObjectName(u"comboBox")
-
-        self.gridLayout_3.addWidget(self.comboBox, 0, 1, 1, 1)
-
-        self.comboBox_3 = QComboBox(self.widget_5)
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.setObjectName(u"comboBox_3")
-
-        self.gridLayout_3.addWidget(self.comboBox_3, 2, 2, 1, 1)
-
-        self.textEdit = QTextEdit(self.widget_5)
-        self.textEdit.setObjectName(u"textEdit")
-
-        self.gridLayout_3.addWidget(self.textEdit, 1, 0, 1, 3)
-
-        self.comboBox_2 = QComboBox(self.widget_5)
+        self.tableWidget.setGeometry(QRect(10, 60, 971, 381))
+        self.tableWidget.setStyleSheet(u"border: 1px solid black;")
+        self.widget_16 = QWidget(self.widget_15)
+        self.widget_16.setObjectName(u"widget_16")
+        self.widget_16.setGeometry(QRect(720, 20, 261, 31))
+        self.widget_16.setStyleSheet(u"border: None;")
+        self.comboBox_2 = QComboBox(self.widget_16)
         self.comboBox_2.addItem("")
         self.comboBox_2.addItem("")
         self.comboBox_2.addItem("")
@@ -211,9 +183,33 @@ class Ui_MainWindow(object):
         self.comboBox_2.addItem("")
         self.comboBox_2.addItem("")
         self.comboBox_2.setObjectName(u"comboBox_2")
-
-        self.gridLayout_3.addWidget(self.comboBox_2, 2, 1, 1, 1)
-
+        self.comboBox_2.setGeometry(QRect(10, 0, 129, 19))
+        self.comboBox_3 = QComboBox(self.widget_16)
+        self.comboBox_3.addItem("")
+        self.comboBox_3.addItem("")
+        self.comboBox_3.setObjectName(u"comboBox_3")
+        self.comboBox_3.setGeometry(QRect(150, 0, 106, 19))
+        self.widget_17 = QWidget(self.widget_list_doctor)
+        self.widget_17.setObjectName(u"widget_17")
+        self.widget_17.setGeometry(QRect(830, 80, 191, 81))
+        self.widget_17.setStyleSheet(u"border: 2px solid black;\n"
+"border-radius: 20px")
+        self.label_13 = QLabel(self.widget_17)
+        self.label_13.setObjectName(u"label_13")
+        self.label_13.setGeometry(QRect(10, 20, 41, 41))
+        self.label_13.setStyleSheet(u"border: None;")
+        self.label_13.setPixmap(QPixmap(u":/icon/image/doctor (1).png"))
+        self.label_13.setScaledContents(True)
+        self.label_2 = QLabel(self.widget_17)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setGeometry(QRect(60, 30, 121, 31))
+        self.label_2.setStyleSheet(u"border: None;\n"
+"font: 700 13pt \"Arial\";\n"
+"")
+        self.label_14 = QLabel(self.widget_list_doctor)
+        self.label_14.setObjectName(u"label_14")
+        self.label_14.setGeometry(QRect(80, 90, 131, 41))
+        self.label_14.setStyleSheet(u"font: 700 20pt \"Geneva\";")
         self.stackedWidget.addWidget(self.page_4)
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
@@ -246,7 +242,7 @@ class Ui_MainWindow(object):
         self.tableWidget_2.verticalHeader().setStretchLastSection(False)
         self.widget_9 = QWidget(self.log_page)
         self.widget_9.setObjectName(u"widget_9")
-        self.widget_9.setGeometry(QRect(80, 10, 331, 171))
+        self.widget_9.setGeometry(QRect(80, 10, 421, 171))
         self.verticalLayout_3 = QVBoxLayout(self.widget_9)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.textEdit_logs = QTextEdit(self.widget_9)
@@ -272,13 +268,15 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.page_3)
         self.page_5 = QWidget()
         self.page_5.setObjectName(u"page_5")
+        self.horizontalLayout_2 = QHBoxLayout(self.page_5)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.widget_list_nurse = QWidget(self.page_5)
         self.widget_list_nurse.setObjectName(u"widget_list_nurse")
-        self.widget_list_nurse.setGeometry(QRect(-10, -10, 1061, 721))
         self.widget_6 = QWidget(self.widget_list_nurse)
         self.widget_6.setObjectName(u"widget_6")
-        self.widget_6.setGeometry(QRect(70, 100, 921, 571))
-        self.widget_6.setStyleSheet(u"font: 13pt \"Arial\";")
+        self.widget_6.setGeometry(QRect(40, 140, 931, 511))
+        self.widget_6.setStyleSheet(u"font: 13pt \"Arial\";\n"
+"border: 1px solid black;")
         self.tableWidget_3 = QTableWidget(self.widget_6)
         if (self.tableWidget_3.columnCount() < 11):
             self.tableWidget_3.setColumnCount(11)
@@ -304,51 +302,19 @@ class Ui_MainWindow(object):
         self.tableWidget_3.setHorizontalHeaderItem(9, __qtablewidgetitem24)
         __qtablewidgetitem25 = QTableWidgetItem()
         self.tableWidget_3.setHorizontalHeaderItem(10, __qtablewidgetitem25)
+        if (self.tableWidget_3.rowCount() < 2):
+            self.tableWidget_3.setRowCount(2)
         self.tableWidget_3.setObjectName(u"tableWidget_3")
-        self.tableWidget_3.setGeometry(QRect(10, 100, 881, 421))
-        self.tableWidget_3.setStyleSheet(u"            QTableWidget {\n"
-"                background-color: #blue;\n"
-"                border: 2px solid #dee2e6;\n"
-"                border-radius: 8px;\n"
-"                selection-background-color: #007bff;\n"
-"            }\n"
-"\n"
-"            QTableWidget::item {\n"
-"                color: #green;\n"
-"                border-bottom: 1px solid #dee2e6;\n"
-"            }\n"
-"\n"
-"            QTableWidget::item:selected {\n"
-"                background-color: #red;\n"
-"                color: #ffffff;\n"
-"            }\n"
-"\n"
-"            QTableWidget::item:hover {\n"
-"                background-color: #orange;\n"
-"            }\n"
-"\n"
-"            QHeaderView::section {\n"
-"                background-color: #343a40;\n"
-"                color: #ffffff;\n"
-"                border: 1px solid #343a40;\n"
-"                border-radius: 4px;\n"
-"                padding: 8px;\n"
-"            }\n"
-"\n"
-"            QHeaderView::section:hover {\n"
-"                background-color: #495057;\n"
-"            }")
+        self.tableWidget_3.setGeometry(QRect(20, 70, 890, 421))
+        self.tableWidget_3.setStyleSheet(u"border: 1px solid black;")
         self.tableWidget_3.horizontalHeader().setProperty("showSortIndicator", False)
         self.tableWidget_3.horizontalHeader().setStretchLastSection(False)
-        self.label_9 = QLabel(self.widget_6)
-        self.label_9.setObjectName(u"label_9")
-        self.label_9.setGeometry(QRect(390, 20, 122, 17))
-        self.comboBox_8 = QComboBox(self.widget_6)
-        self.comboBox_8.addItem("")
-        self.comboBox_8.addItem("")
-        self.comboBox_8.setObjectName(u"comboBox_8")
-        self.comboBox_8.setGeometry(QRect(600, 50, 221, 25))
-        self.comboBox_7 = QComboBox(self.widget_6)
+        self.widget_11 = QWidget(self.widget_6)
+        self.widget_11.setObjectName(u"widget_11")
+        self.widget_11.setGeometry(QRect(10, 10, 411, 51))
+        self.widget_11.setStyleSheet(u"border: None;\n"
+"")
+        self.comboBox_7 = QComboBox(self.widget_11)
         self.comboBox_7.addItem("")
         self.comboBox_7.addItem("")
         self.comboBox_7.addItem("")
@@ -359,10 +325,18 @@ class Ui_MainWindow(object):
         self.comboBox_7.addItem("")
         self.comboBox_7.addItem("")
         self.comboBox_7.setObjectName(u"comboBox_7")
-        self.comboBox_7.setGeometry(QRect(200, 10, 121, 31))
-        self.comboBox_7.setStyleSheet(u"background: #E0E0E0;\n"
-"")
-        self.comboBox_9 = QComboBox(self.widget_6)
+        self.comboBox_7.setGeometry(QRect(0, 10, 121, 31))
+        self.comboBox_7.setStyleSheet(u"")
+        self.textEdit_3 = QTextEdit(self.widget_11)
+        self.textEdit_3.setObjectName(u"textEdit_3")
+        self.textEdit_3.setGeometry(QRect(130, 10, 241, 31))
+        self.textEdit_3.setStyleSheet(u"border: 1px solid grey;\n"
+"color: #ACACAC;")
+        self.widget_10 = QWidget(self.widget_6)
+        self.widget_10.setObjectName(u"widget_10")
+        self.widget_10.setGeometry(QRect(580, 10, 341, 41))
+        self.widget_10.setStyleSheet(u"border: None;")
+        self.comboBox_9 = QComboBox(self.widget_10)
         self.comboBox_9.addItem("")
         self.comboBox_9.addItem("")
         self.comboBox_9.addItem("")
@@ -373,35 +347,65 @@ class Ui_MainWindow(object):
         self.comboBox_9.addItem("")
         self.comboBox_9.addItem("")
         self.comboBox_9.setObjectName(u"comboBox_9")
-        self.comboBox_9.setGeometry(QRect(390, 50, 195, 25))
-        self.textEdit_3 = QTextEdit(self.widget_6)
-        self.textEdit_3.setObjectName(u"textEdit_3")
-        self.textEdit_3.setGeometry(QRect(10, 50, 311, 31))
-        self.textEdit_3.setStyleSheet(u"border: 1px solid black;\n"
-"border-radius: 15px;")
-        self.label_10 = QLabel(self.widget_6)
-        self.label_10.setObjectName(u"label_10")
-        self.label_10.setGeometry(QRect(20, 60, 15, 15))
-        self.label_10.setMaximumSize(QSize(15, 15))
-        self.label_10.setPixmap(QPixmap(u":/icon/search.png"))
-        self.label_10.setScaledContents(True)
+        self.comboBox_9.setGeometry(QRect(20, 10, 195, 25))
+        self.comboBox_8 = QComboBox(self.widget_10)
+        self.comboBox_8.addItem("")
+        self.comboBox_8.addItem("")
+        self.comboBox_8.setObjectName(u"comboBox_8")
+        self.comboBox_8.setGeometry(QRect(220, 10, 111, 25))
         self.widget_7 = QWidget(self.widget_list_nurse)
         self.widget_7.setObjectName(u"widget_7")
-        self.widget_7.setGeometry(QRect(840, 30, 131, 91))
-        self.widget_7.setStyleSheet(u"border: 1px solid black;\n"
+        self.widget_7.setGeometry(QRect(790, 40, 181, 81))
+        self.widget_7.setStyleSheet(u"border: 2px solid black;\n"
 "border-radius: 20px")
         self.label_4 = QLabel(self.widget_7)
         self.label_4.setObjectName(u"label_4")
-        self.label_4.setGeometry(QRect(10, 30, 131, 31))
+        self.label_4.setGeometry(QRect(60, 20, 111, 41))
         self.label_4.setStyleSheet(u"border: None;\n"
 "font: 700 13pt \"Arial\";")
+        self.label_9 = QLabel(self.widget_7)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setGeometry(QRect(10, 20, 41, 41))
+        self.label_9.setStyleSheet(u"border: None;")
+        self.label_9.setPixmap(QPixmap(u":/icon/image/nurse (1).png"))
+        self.label_9.setScaledContents(True)
+        self.label_8 = QLabel(self.widget_list_nurse)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setGeometry(QRect(70, 50, 101, 41))
+        self.label_8.setStyleSheet(u"font: 700 20pt \"Geneva\";")
+        self.label_7 = QLabel(self.widget_list_nurse)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setGeometry(QRect(520, 100, 58, 16))
+
+        self.horizontalLayout_2.addWidget(self.widget_list_nurse)
+
         self.stackedWidget.addWidget(self.page_5)
         self.page_6 = QWidget()
         self.page_6.setObjectName(u"page_6")
         self.widget_list_patient = QWidget(self.page_6)
         self.widget_list_patient.setObjectName(u"widget_list_patient")
         self.widget_list_patient.setGeometry(QRect(-10, -10, 1061, 721))
-        self.tableWidget_4 = QTableWidget(self.widget_list_patient)
+        self.widget_12 = QWidget(self.widget_list_patient)
+        self.widget_12.setObjectName(u"widget_12")
+        self.widget_12.setGeometry(QRect(710, 60, 201, 81))
+        self.widget_12.setStyleSheet(u"border: 2px solid black;\n"
+"border-radius: 20px")
+        self.label_11 = QLabel(self.widget_12)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setGeometry(QRect(70, 30, 121, 31))
+        self.label_11.setStyleSheet(u"border: None;\n"
+"font: 700 13pt \"Arial\";")
+        self.label_12 = QLabel(self.widget_12)
+        self.label_12.setObjectName(u"label_12")
+        self.label_12.setGeometry(QRect(20, 20, 40, 40))
+        self.label_12.setStyleSheet(u"border: None;")
+        self.label_12.setPixmap(QPixmap(u":/icon/image/hospitalisation (1).png"))
+        self.label_12.setScaledContents(True)
+        self.widget_13 = QWidget(self.widget_list_patient)
+        self.widget_13.setObjectName(u"widget_13")
+        self.widget_13.setGeometry(QRect(140, 160, 771, 511))
+        self.widget_13.setStyleSheet(u"border: 1px solid black;")
+        self.tableWidget_4 = QTableWidget(self.widget_13)
         if (self.tableWidget_4.columnCount() < 7):
             self.tableWidget_4.setColumnCount(7)
         __qtablewidgetitem26 = QTableWidgetItem()
@@ -418,59 +422,32 @@ class Ui_MainWindow(object):
         self.tableWidget_4.setHorizontalHeaderItem(5, __qtablewidgetitem31)
         __qtablewidgetitem32 = QTableWidgetItem()
         self.tableWidget_4.setHorizontalHeaderItem(6, __qtablewidgetitem32)
+        if (self.tableWidget_4.rowCount() < 2):
+            self.tableWidget_4.setRowCount(2)
         self.tableWidget_4.setObjectName(u"tableWidget_4")
-        self.tableWidget_4.setGeometry(QRect(100, 170, 871, 521))
-        self.tableWidget_4.setStyleSheet(u"            QTableWidget {\n"
-"                background-color: #f8f9fa;\n"
-"                border: 2px solid #dee2e6;\n"
-"                border-radius: 8px;\n"
-"                selection-background-color: #007bff;\n"
-"            }\n"
-"\n"
-"            QTableWidget::item {\n"
-"                color: #495057;\n"
-"                border-bottom: 1px solid #dee2e6;\n"
-"            }\n"
-"\n"
-"            QTableWidget::item:selected {\n"
-"                background-color: #007bff;\n"
-"                color: #ffffff;\n"
-"            }\n"
-"\n"
-"            QTableWidget::item:hover {\n"
-"                background-color: #e0e0e0;\n"
-"            }\n"
-"\n"
-"            QHeaderView::section {\n"
-"                background-color: #343a40;\n"
-"                color: #ffffff;\n"
-"                border: 1px solid #343a40;\n"
-"                border-radius: 4px;\n"
-"                padding: 8px;\n"
-"            }\n"
-"\n"
-"            QHeaderView::section:hover {\n"
-"                background-color: #495057;\n"
-"       "
-                        "     }")
-        self.label_11 = QLabel(self.widget_list_patient)
-        self.label_11.setObjectName(u"label_11")
-        self.label_11.setGeometry(QRect(680, 80, 181, 31))
-        self.widget_8 = QWidget(self.widget_list_patient)
+        self.tableWidget_4.setGeometry(QRect(20, 60, 731, 431))
+        self.tableWidget_4.setStyleSheet(u"border: 1px solid black;")
+        self.widget_14 = QWidget(self.widget_13)
+        self.widget_14.setObjectName(u"widget_14")
+        self.widget_14.setGeometry(QRect(490, 10, 271, 31))
+        self.widget_14.setStyleSheet(u"border: None;")
+        self.comboBox_11 = QComboBox(self.widget_14)
+        self.comboBox_11.addItem("")
+        self.comboBox_11.addItem("")
+        self.comboBox_11.setObjectName(u"comboBox_11")
+        self.comboBox_11.setGeometry(QRect(150, 10, 106, 20))
+        self.comboBox_12 = QComboBox(self.widget_14)
+        self.comboBox_12.addItem("")
+        self.comboBox_12.addItem("")
+        self.comboBox_12.addItem("")
+        self.comboBox_12.addItem("")
+        self.comboBox_12.addItem("")
+        self.comboBox_12.setObjectName(u"comboBox_12")
+        self.comboBox_12.setGeometry(QRect(10, 10, 129, 20))
+        self.widget_8 = QWidget(self.widget_13)
         self.widget_8.setObjectName(u"widget_8")
-        self.widget_8.setGeometry(QRect(110, 30, 411, 121))
-        self.gridLayout_6 = QGridLayout(self.widget_8)
-        self.gridLayout_6.setObjectName(u"gridLayout_6")
-        self.label_12 = QLabel(self.widget_8)
-        self.label_12.setObjectName(u"label_12")
-
-        self.gridLayout_6.addWidget(self.label_12, 2, 0, 1, 1)
-
-        self.label_13 = QLabel(self.widget_8)
-        self.label_13.setObjectName(u"label_13")
-
-        self.gridLayout_6.addWidget(self.label_13, 0, 0, 1, 1)
-
+        self.widget_8.setGeometry(QRect(30, 10, 330, 41))
+        self.widget_8.setStyleSheet(u"border: None;")
         self.comboBox_10 = QComboBox(self.widget_8)
         self.comboBox_10.addItem("")
         self.comboBox_10.addItem("")
@@ -478,31 +455,16 @@ class Ui_MainWindow(object):
         self.comboBox_10.addItem("")
         self.comboBox_10.addItem("")
         self.comboBox_10.setObjectName(u"comboBox_10")
-
-        self.gridLayout_6.addWidget(self.comboBox_10, 0, 1, 1, 1)
-
-        self.comboBox_11 = QComboBox(self.widget_8)
-        self.comboBox_11.addItem("")
-        self.comboBox_11.addItem("")
-        self.comboBox_11.setObjectName(u"comboBox_11")
-
-        self.gridLayout_6.addWidget(self.comboBox_11, 2, 2, 1, 1)
-
+        self.comboBox_10.setGeometry(QRect(0, 10, 111, 20))
         self.textEdit_4 = QTextEdit(self.widget_8)
         self.textEdit_4.setObjectName(u"textEdit_4")
-
-        self.gridLayout_6.addWidget(self.textEdit_4, 1, 0, 1, 3)
-
-        self.comboBox_12 = QComboBox(self.widget_8)
-        self.comboBox_12.addItem("")
-        self.comboBox_12.addItem("")
-        self.comboBox_12.addItem("")
-        self.comboBox_12.addItem("")
-        self.comboBox_12.addItem("")
-        self.comboBox_12.setObjectName(u"comboBox_12")
-
-        self.gridLayout_6.addWidget(self.comboBox_12, 2, 1, 1, 1)
-
+        self.textEdit_4.setGeometry(QRect(117, 10, 201, 31))
+        self.textEdit_4.setStyleSheet(u"border: 1px solid grey;\n"
+"color: #ACACAC;")
+        self.label_10 = QLabel(self.widget_list_patient)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setGeometry(QRect(100, 80, 121, 41))
+        self.label_10.setStyleSheet(u"font: 700 20pt \"Geneva\";")
         self.stackedWidget.addWidget(self.page_6)
 
         self.gridLayout_2.addWidget(self.stackedWidget, 0, 0, 1, 1)
@@ -821,7 +783,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -829,11 +791,31 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"PROFILE", None))
         self.profile_label.setText(QCoreApplication.translate("MainWindow", u"Name: ", None))
         self.profile_label_2.setText(QCoreApplication.translate("MainWindow", u"Last name:", None))
         self.profile_label_3.setText(QCoreApplication.translate("MainWindow", u"Role:", None))
         self.profile_label_4.setText(QCoreApplication.translate("MainWindow", u"Address:", None))
         self.profile_label_5.setText(QCoreApplication.translate("MainWindow", u"Phone number:", None))
+        self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"employee_id", None))
+        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"fname", None))
+        self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"lname", None))
+        self.comboBox.setItemText(3, QCoreApplication.translate("MainWindow", u"address", None))
+        self.comboBox.setItemText(4, QCoreApplication.translate("MainWindow", u"phone_number", None))
+        self.comboBox.setItemText(5, QCoreApplication.translate("MainWindow", u"department", None))
+        self.comboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"qualifications", None))
+        self.comboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"salary", None))
+        self.comboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"working_time", None))
+
+        self.textEdit.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Osaka'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Search by ...</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Id", None));
         ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
@@ -856,30 +838,6 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Action", None));
         ___qtablewidgetitem10 = self.tableWidget.horizontalHeaderItem(10)
         ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Edit", None));
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Total Doctors : ", None))
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Sort by", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Search by ", None))
-        self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"employee_id", None))
-        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"fname", None))
-        self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"lname", None))
-        self.comboBox.setItemText(3, QCoreApplication.translate("MainWindow", u"address", None))
-        self.comboBox.setItemText(4, QCoreApplication.translate("MainWindow", u"phone_number", None))
-        self.comboBox.setItemText(5, QCoreApplication.translate("MainWindow", u"department", None))
-        self.comboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"qualifications", None))
-        self.comboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"salary", None))
-        self.comboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"working_time", None))
-
-        self.comboBox_3.setItemText(0, QCoreApplication.translate("MainWindow", u"Ascending", None))
-        self.comboBox_3.setItemText(1, QCoreApplication.translate("MainWindow", u"Descending", None))
-
-        self.textEdit.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Osaka'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.comboBox_2.setItemText(0, QCoreApplication.translate("MainWindow", u"employee_id", None))
         self.comboBox_2.setItemText(1, QCoreApplication.translate("MainWindow", u"fname", None))
         self.comboBox_2.setItemText(2, QCoreApplication.translate("MainWindow", u"lname", None))
@@ -890,6 +848,12 @@ class Ui_MainWindow(object):
         self.comboBox_2.setItemText(7, QCoreApplication.translate("MainWindow", u"salary", None))
         self.comboBox_2.setItemText(8, QCoreApplication.translate("MainWindow", u"working_time", None))
 
+        self.comboBox_3.setItemText(0, QCoreApplication.translate("MainWindow", u"Ascending", None))
+        self.comboBox_3.setItemText(1, QCoreApplication.translate("MainWindow", u"Descending", None))
+
+        self.label_13.setText("")
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Total Doctors : ", None))
+        self.label_14.setText(QCoreApplication.translate("MainWindow", u"Doctor List ", None))
         self.appointment_page.setText(QCoreApplication.translate("MainWindow", u"Appointment", None))
         ___qtablewidgetitem11 = self.tableWidget_2.horizontalHeaderItem(0)
         ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Time Stamp", None));
@@ -925,10 +889,6 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"Action", None));
         ___qtablewidgetitem25 = self.tableWidget_3.horizontalHeaderItem(10)
         ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"Edit", None));
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Sort by", None))
-        self.comboBox_8.setItemText(0, QCoreApplication.translate("MainWindow", u"Ascending", None))
-        self.comboBox_8.setItemText(1, QCoreApplication.translate("MainWindow", u"Descending", None))
-
         self.comboBox_7.setItemText(0, QCoreApplication.translate("MainWindow", u"employee_id", None))
         self.comboBox_7.setItemText(1, QCoreApplication.translate("MainWindow", u"fname", None))
         self.comboBox_7.setItemText(2, QCoreApplication.translate("MainWindow", u"lname", None))
@@ -939,6 +899,15 @@ class Ui_MainWindow(object):
         self.comboBox_7.setItemText(7, QCoreApplication.translate("MainWindow", u"salary", None))
         self.comboBox_7.setItemText(8, QCoreApplication.translate("MainWindow", u"working_time", None))
 
+        self.textEdit_3.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Osaka';\">Search by ...</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Osaka';\"><br /></p></body></html>", None))
         self.comboBox_9.setItemText(0, QCoreApplication.translate("MainWindow", u"employee_id", None))
         self.comboBox_9.setItemText(1, QCoreApplication.translate("MainWindow", u"fname", None))
         self.comboBox_9.setItemText(2, QCoreApplication.translate("MainWindow", u"lname", None))
@@ -949,16 +918,15 @@ class Ui_MainWindow(object):
         self.comboBox_9.setItemText(7, QCoreApplication.translate("MainWindow", u"salary", None))
         self.comboBox_9.setItemText(8, QCoreApplication.translate("MainWindow", u"working_time", None))
 
-        self.textEdit_3.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Osaka';\"><br /></p></body></html>", None))
-        self.label_10.setText("")
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Total Nurse : ", None))
+        self.comboBox_8.setItemText(0, QCoreApplication.translate("MainWindow", u"Ascending", None))
+        self.comboBox_8.setItemText(1, QCoreApplication.translate("MainWindow", u"Descending", None))
+
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Total Nurse:", None))
+        self.label_9.setText("")
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Nurse List ", None))
+        self.label_7.setText("")
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Total Patient : ", None))
+        self.label_12.setText("")
         ___qtablewidgetitem26 = self.tableWidget_4.horizontalHeaderItem(0)
         ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"Id", None));
         ___qtablewidgetitem27 = self.tableWidget_4.horizontalHeaderItem(1)
@@ -973,17 +941,20 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem31.setText(QCoreApplication.translate("MainWindow", u"Action", None));
         ___qtablewidgetitem32 = self.tableWidget_4.horizontalHeaderItem(6)
         ___qtablewidgetitem32.setText(QCoreApplication.translate("MainWindow", u"Edit", None));
-        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Total Patient : ", None))
-        self.label_12.setText(QCoreApplication.translate("MainWindow", u"Sort by", None))
-        self.label_13.setText(QCoreApplication.translate("MainWindow", u"Search by ", None))
+        self.comboBox_11.setItemText(0, QCoreApplication.translate("MainWindow", u"Ascending", None))
+        self.comboBox_11.setItemText(1, QCoreApplication.translate("MainWindow", u"Descending", None))
+
+        self.comboBox_12.setItemText(0, QCoreApplication.translate("MainWindow", u"patient_id", None))
+        self.comboBox_12.setItemText(1, QCoreApplication.translate("MainWindow", u"fname", None))
+        self.comboBox_12.setItemText(2, QCoreApplication.translate("MainWindow", u"lname", None))
+        self.comboBox_12.setItemText(3, QCoreApplication.translate("MainWindow", u"address", None))
+        self.comboBox_12.setItemText(4, QCoreApplication.translate("MainWindow", u"phone_number", None))
+
         self.comboBox_10.setItemText(0, QCoreApplication.translate("MainWindow", u"patient_id", None))
         self.comboBox_10.setItemText(1, QCoreApplication.translate("MainWindow", u"fname", None))
         self.comboBox_10.setItemText(2, QCoreApplication.translate("MainWindow", u"lname", None))
         self.comboBox_10.setItemText(3, QCoreApplication.translate("MainWindow", u"address", None))
         self.comboBox_10.setItemText(4, QCoreApplication.translate("MainWindow", u"phone_number", None))
-
-        self.comboBox_11.setItemText(0, QCoreApplication.translate("MainWindow", u"Ascending", None))
-        self.comboBox_11.setItemText(1, QCoreApplication.translate("MainWindow", u"Descending", None))
 
         self.textEdit_4.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
@@ -992,13 +963,8 @@ class Ui_MainWindow(object):
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Osaka'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
-        self.comboBox_12.setItemText(0, QCoreApplication.translate("MainWindow", u"patient_id", None))
-        self.comboBox_12.setItemText(1, QCoreApplication.translate("MainWindow", u"fname", None))
-        self.comboBox_12.setItemText(2, QCoreApplication.translate("MainWindow", u"lname", None))
-        self.comboBox_12.setItemText(3, QCoreApplication.translate("MainWindow", u"address", None))
-        self.comboBox_12.setItemText(4, QCoreApplication.translate("MainWindow", u"phone_number", None))
-
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Search by ...</p></body></html>", None))
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"Patient List ", None))
         self.label_3.setText("")
         self.label.setText("")
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
