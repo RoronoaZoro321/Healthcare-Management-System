@@ -15,7 +15,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
-    <string notr="true">font: 13pt &quot;Osaka&quot;;</string>
+    <string notr="true">font: 13pt &quot;Microsoft Sans Serif&quot;;</string>
    </property>
    <widget class="QWidget" name="widget_2" native="true">
     <property name="geometry">
@@ -67,7 +67,7 @@ background-color: #F8FAFC;
               <widget class="QLabel" name="label_5">
                <property name="styleSheet">
                 <string notr="true">border: None;
-font: 28pt &quot;Arial&quot;;
+font: 28pt &quot;Microsoft Sans Serif&quot;;
 </string>
                </property>
                <property name="text">
@@ -80,7 +80,7 @@ font: 28pt &quot;Arial&quot;;
                <property name="styleSheet">
                 <string notr="true">border-style: none;
 margin-left: 90%;
-font: 16pt &quot;Arial&quot;;</string>
+font: 16pt &quot;Microsoft Sans Serif&quot;;</string>
                </property>
                <property name="text">
                 <string>Name : </string>
@@ -91,7 +91,7 @@ font: 16pt &quot;Arial&quot;;</string>
               <widget class="QLabel" name="profile_label_2">
                <property name="styleSheet">
                 <string notr="true">border-style: none;
-font: 16pt &quot;Arial&quot;;
+font: 16pt &quot;Microsoft Sans Serif&quot;;
 margin-left: 90%;</string>
                </property>
                <property name="text">
@@ -103,7 +103,7 @@ margin-left: 90%;</string>
               <widget class="QLabel" name="profile_label_3">
                <property name="styleSheet">
                 <string notr="true">border-style: none;
-font: 16pt &quot;Arial&quot;;
+font: 16pt &quot;Microsoft Sans Serif&quot;;
 margin-left: 90%;</string>
                </property>
                <property name="text">
@@ -115,7 +115,7 @@ margin-left: 90%;</string>
               <widget class="QLabel" name="profile_label_4">
                <property name="styleSheet">
                 <string notr="true">border-style: none;
-font: 16pt &quot;Arial&quot;;
+font: 16pt &quot;Microsoft Sans Serif&quot;;
 margin-left: 90%;</string>
                </property>
                <property name="text">
@@ -127,7 +127,7 @@ margin-left: 90%;</string>
               <widget class="QLabel" name="profile_label_5">
                <property name="styleSheet">
                 <string notr="true">border-style: none;
-font: 16pt &quot;Arial&quot;;
+font: 16pt &quot;Microsoft Sans Serif&quot;;
 margin-left: 90%;</string>
                </property>
                <property name="text">
@@ -165,7 +165,7 @@ margin-left: 90%;</string>
           </property>
           <property name="styleSheet">
            <string notr="true">border: 1px solid black;
-font: 13pt &quot;Arial&quot;;
+font: 13pt &quot;Microsoft Sans Serif&quot;;
 background-color: #F8FAFC;</string>
           </property>
           <widget class="QWidget" name="widget_5" native="true">
@@ -462,7 +462,7 @@ border-radius: 20px</string>
            </property>
            <property name="styleSheet">
             <string notr="true">border: None;
-font: 700 13pt &quot;Arial&quot;;
+font: 700 13pt &quot;Microsoft Sans Serif&quot;;
 </string>
            </property>
            <property name="text">
@@ -480,7 +480,7 @@ font: 700 13pt &quot;Arial&quot;;
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: 700 20pt &quot;Geneva&quot;;</string>
+           <string notr="true">font: 700 20pt &quot;Microsoft Sans Serif&quot;;</string>
           </property>
           <property name="text">
            <string>Doctor List </string>
@@ -534,7 +534,7 @@ font: 700 13pt &quot;Arial&quot;;
           <property name="styleSheet">
            <string notr="true">border: 1px solid black;
 selection-color: rgb(255, 234, 56);
-font: 14pt &quot;Arial&quot;;
+font: 14pt &quot;Microsoft Sans Serif&quot;;
 background-color: #F8FAFC;</string>
           </property>
           <attribute name="horizontalHeaderStretchLastSection">
@@ -618,7 +618,7 @@ background-color: #F8FAFC;</string>
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: 700 20pt &quot;Arial&quot;;</string>
+           <string notr="true">font: 700 20pt &quot;Microsoft Sans Serif&quot;;</string>
           </property>
           <property name="text">
            <string>Action History</string>
@@ -685,7 +685,7 @@ background-color: #F8FAFC;</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">font: 13pt &quot;Arial&quot;;
+             <string notr="true">font: 13pt &quot;Microsoft Sans Serif&quot;;
 border: 1px solid black;
 background-color: #F8FAFC;</string>
             </property>
@@ -969,7 +969,7 @@ border-radius: 20px</string>
              </property>
              <property name="styleSheet">
               <string notr="true">border: None;
-font: 700 13pt &quot;Arial&quot;;</string>
+font: 700 13pt &quot;Microsoft Sans Serif&quot;;</string>
              </property>
              <property name="text">
               <string>Total Nurse:</string>
@@ -1008,7 +1008,7 @@ font: 700 13pt &quot;Arial&quot;;</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">font: 700 20pt &quot;Geneva&quot;;</string>
+             <string notr="true">font: 700 20pt &quot;Microsoft Sans Serif&quot;;</string>
             </property>
             <property name="text">
              <string>Nurse List </string>
@@ -1068,7 +1068,7 @@ border-radius: 20px</string>
            </property>
            <property name="styleSheet">
             <string notr="true">border: None;
-font: 700 13pt &quot;Arial&quot;;</string>
+font: 700 13pt &quot;Microsoft Sans Serif&quot;;</string>
            </property>
            <property name="text">
             <string>Total Patient : </string>
@@ -1108,7 +1108,7 @@ font: 700 13pt &quot;Arial&quot;;</string>
           </property>
           <property name="styleSheet">
            <string notr="true">border: 1px solid black;
-font: 13pt &quot;Arial&quot;;
+font: 13pt &quot;Microsoft Sans Serif&quot;;
 background-color: #F8FAFC;</string>
           </property>
           <widget class="QTableWidget" name="tableWidget_4">
@@ -1307,7 +1307,7 @@ color: #ACACAC;</string>
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: 700 20pt &quot;Arial&quot;;</string>
+           <string notr="true">font: 700 20pt &quot;Microsoft Sans Serif&quot;;</string>
           </property>
           <property name="text">
            <string>Patient List </string>
@@ -1432,7 +1432,7 @@ color: #ACACAC;</string>
 	padding-left: 50%;
 	text-align:left;
 	font-size: 16px;
-	font: 16pt &quot;Cambria&quot;;
+	font: 16pt &quot;Microsoft Sans Serif&quot;;
 }
 
 QPushButton:hover {
@@ -1468,7 +1468,7 @@ QPushButton:hover {
 	padding-left: 50%;
 	text-align:left;
 	font-size: 16px;
-	font: 16pt &quot;Cambria&quot;;
+	font: 16pt &quot;Microsoft Sans Serif&quot;;
 }
 
 QPushButton:hover {
@@ -1504,7 +1504,7 @@ QPushButton:hover {
 	padding-left: 50%;
 	text-align:left;
 	font-size: 16px;
-	font: 16pt &quot;Cambria&quot;;
+	font: 16pt &quot;Microsoft Sans Serif&quot;;
 }
 
 QPushButton:hover {
@@ -1540,7 +1540,7 @@ QPushButton:hover {
 	padding-left: 50%;
 	text-align:left;
 	font-size: 16px;
-	font: 16pt &quot;Cambria&quot;;
+	font: 16pt &quot;Microsoft Sans Serif&quot;;
 }
 
 QPushButton:hover {
@@ -1576,7 +1576,7 @@ QPushButton:hover {
 	padding-left: 50%;
 	text-align:left;
 	font-size: 16px;
-	font: 16pt &quot;Cambria&quot;;
+	font: 16pt &quot;Microsoft Sans Serif&quot;;
 }
 
 QPushButton:hover {
@@ -1612,7 +1612,7 @@ QPushButton:hover {
 	padding-left: 75%;
 	text-align:left;
 	font-size: 16px;
-	font: 16pt &quot;Cambria&quot;;
+	font: 16pt &quot;Microsoft Sans Serif&quot;;
 }
 
 QPushButton:hover {
@@ -1648,7 +1648,7 @@ QPushButton:hover {
 	padding-left: 75%;
 	text-align:left;
 	font-size: 16px;
-	font: 16pt &quot;Cambria&quot;;
+	font: 16pt &quot;Microsoft Sans Serif&quot;;
 }
 
 QPushButton:hover {
@@ -1684,7 +1684,7 @@ QPushButton:hover {
 	padding-left: 75%;
 	text-align:left;
 	font-size: 16px;
-	font: 16pt &quot;Cambria&quot;;
+	font: 16pt &quot;Microsoft Sans Serif&quot;;
 }
 
 QPushButton:hover {
@@ -1720,7 +1720,7 @@ QPushButton:hover {
 	padding-left: 50%;
 	text-align:left;
 	font-size: 16px;
-	font: 16pt &quot;Cambria&quot;;
+	font: 16pt &quot;Microsoft Sans Serif&quot;;
 }
 
 QPushButton:hover {
@@ -1769,7 +1769,7 @@ QPushButton:hover {
 	padding-left: 50%;
 	text-align:left;
 	font-size: 16px;
-	font: 16pt &quot;Cambria&quot;;
+	font: 16pt &quot;Microsoft Sans Serif&quot;;
 }
 
 QPushButton:hover {
