@@ -34,14 +34,14 @@ color: #353535;</string>
      <item row="0" column="0">
       <widget class="QStackedWidget" name="stackedWidget">
        <property name="currentIndex">
-        <number>3</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="page">
         <layout class="QGridLayout" name="gridLayout">
          <item row="0" column="0">
           <widget class="QWidget" name="widget_3" native="true">
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">background-color: #F8FAFC;</string>
            </property>
            <widget class="QWidget" name="profile_widget" native="true">
             <property name="geometry">
@@ -58,14 +58,16 @@ color: #353535;</string>
 	font: 18px;
 	padding: 20px;
 }
+background-color: #F8FAFC;
+
 </string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout">
              <item alignment="Qt::AlignHCenter">
               <widget class="QLabel" name="label_5">
                <property name="styleSheet">
-                <string notr="true">font: 28px;
-border: None;
+                <string notr="true">border: None;
+font: 28pt &quot;Arial&quot;;
 </string>
                </property>
                <property name="text">
@@ -77,11 +79,11 @@ border: None;
               <widget class="QLabel" name="profile_label">
                <property name="styleSheet">
                 <string notr="true">border-style: none;
-font-size: 16px;
-margin-left: 90%;</string>
+margin-left: 90%;
+font: 16pt &quot;Arial&quot;;</string>
                </property>
                <property name="text">
-                <string>Name: </string>
+                <string>Name : </string>
                </property>
               </widget>
              </item>
@@ -89,11 +91,11 @@ margin-left: 90%;</string>
               <widget class="QLabel" name="profile_label_2">
                <property name="styleSheet">
                 <string notr="true">border-style: none;
-font-size: 16px;
+font: 16pt &quot;Arial&quot;;
 margin-left: 90%;</string>
                </property>
                <property name="text">
-                <string>Last name:</string>
+                <string>Last name :</string>
                </property>
               </widget>
              </item>
@@ -101,11 +103,11 @@ margin-left: 90%;</string>
               <widget class="QLabel" name="profile_label_3">
                <property name="styleSheet">
                 <string notr="true">border-style: none;
-font-size: 16px;
+font: 16pt &quot;Arial&quot;;
 margin-left: 90%;</string>
                </property>
                <property name="text">
-                <string>Role:</string>
+                <string>Role :</string>
                </property>
               </widget>
              </item>
@@ -113,11 +115,11 @@ margin-left: 90%;</string>
               <widget class="QLabel" name="profile_label_4">
                <property name="styleSheet">
                 <string notr="true">border-style: none;
-font-size: 16px;
+font: 16pt &quot;Arial&quot;;
 margin-left: 90%;</string>
                </property>
                <property name="text">
-                <string>Address:</string>
+                <string>Address :</string>
                </property>
               </widget>
              </item>
@@ -125,11 +127,11 @@ margin-left: 90%;</string>
               <widget class="QLabel" name="profile_label_5">
                <property name="styleSheet">
                 <string notr="true">border-style: none;
-font-size: 16px;
+font: 16pt &quot;Arial&quot;;
 margin-left: 90%;</string>
                </property>
                <property name="text">
-                <string>Phone number:</string>
+                <string>Phone number :</string>
                </property>
               </widget>
              </item>
@@ -149,6 +151,9 @@ margin-left: 90%;</string>
            <height>721</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: #F8FAFC;</string>
+         </property>
          <widget class="QWidget" name="widget_15" native="true">
           <property name="geometry">
            <rect>
@@ -159,7 +164,9 @@ margin-left: 90%;</string>
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">border: 1px solid black;</string>
+           <string notr="true">border: 1px solid black;
+font: 13pt &quot;Arial&quot;;
+background-color: #F8FAFC;</string>
           </property>
           <widget class="QWidget" name="widget_5" native="true">
            <property name="geometry">
@@ -257,7 +264,9 @@ margin-left: 90%;</string>
             </rect>
            </property>
            <property name="styleSheet">
-            <string notr="true">border: 1px solid black;</string>
+            <string notr="true">border: 1px solid black;
+background-color: #F8FAFC;
+font-size: 14pt;</string>
            </property>
            <row/>
            <row/>
@@ -510,6 +519,9 @@ font: 700 13pt &quot;Arial&quot;;
            <height>721</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: #F8FAFC;</string>
+         </property>
          <widget class="QTableWidget" name="tableWidget_2">
           <property name="geometry">
            <rect>
@@ -521,7 +533,9 @@ font: 700 13pt &quot;Arial&quot;;
           </property>
           <property name="styleSheet">
            <string notr="true">border: 1px solid black;
-selection-color: rgb(255, 234, 56);</string>
+selection-color: rgb(255, 234, 56);
+font: 14pt &quot;Arial&quot;;
+background-color: #F8FAFC;</string>
           </property>
           <attribute name="horizontalHeaderStretchLastSection">
            <bool>true</bool>
@@ -604,7 +618,7 @@ selection-color: rgb(255, 234, 56);</string>
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: 700 20pt &quot;Geneva&quot;;</string>
+           <string notr="true">font: 700 20pt &quot;Arial&quot;;</string>
           </property>
           <property name="text">
            <string>Action History</string>
@@ -658,6 +672,9 @@ selection-color: rgb(255, 234, 56);</string>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
           <widget class="QWidget" name="widget_list_nurse" native="true">
+           <property name="styleSheet">
+            <string notr="true">background-color: #F8FAFC;</string>
+           </property>
            <widget class="QWidget" name="widget_6" native="true">
             <property name="geometry">
              <rect>
@@ -669,7 +686,8 @@ selection-color: rgb(255, 234, 56);</string>
             </property>
             <property name="styleSheet">
              <string notr="true">font: 13pt &quot;Arial&quot;;
-border: 1px solid black;</string>
+border: 1px solid black;
+background-color: #F8FAFC;</string>
             </property>
             <widget class="QTableWidget" name="tableWidget_3">
              <property name="geometry">
@@ -681,7 +699,9 @@ border: 1px solid black;</string>
               </rect>
              </property>
              <property name="styleSheet">
-              <string notr="true">border: 1px solid black;</string>
+              <string notr="true">border: 1px solid black;
+font-size: 14pt;
+background-color: #F8FAFC;</string>
              </property>
              <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
               <bool>false</bool>
@@ -1021,6 +1041,9 @@ font: 700 13pt &quot;Arial&quot;;</string>
            <height>721</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: #F8FAFC;</string>
+         </property>
          <widget class="QWidget" name="widget_12" native="true">
           <property name="geometry">
            <rect>
@@ -1084,7 +1107,9 @@ font: 700 13pt &quot;Arial&quot;;</string>
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">border: 1px solid black;</string>
+           <string notr="true">border: 1px solid black;
+font: 13pt &quot;Arial&quot;;
+background-color: #F8FAFC;</string>
           </property>
           <widget class="QTableWidget" name="tableWidget_4">
            <property name="geometry">
@@ -1096,7 +1121,9 @@ font: 700 13pt &quot;Arial&quot;;</string>
             </rect>
            </property>
            <property name="styleSheet">
-            <string notr="true">border: 1px solid black;</string>
+            <string notr="true">border: 1px solid black;
+font-size: 14pt;
+background-color: #F8FAFC;</string>
            </property>
            <row/>
            <row/>
@@ -1274,13 +1301,13 @@ color: #ACACAC;</string>
           <property name="geometry">
            <rect>
             <x>100</x>
-            <y>80</y>
+            <y>90</y>
             <width>121</width>
             <height>41</height>
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: 700 20pt &quot;Geneva&quot;;</string>
+           <string notr="true">font: 700 20pt &quot;Arial&quot;;</string>
           </property>
           <property name="text">
            <string>Patient List </string>

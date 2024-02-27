@@ -44,7 +44,7 @@ class Ui_MainWindow(object):
         self.gridLayout.setObjectName(u"gridLayout")
         self.widget_3 = QWidget(self.page)
         self.widget_3.setObjectName(u"widget_3")
-        self.widget_3.setStyleSheet(u"")
+        self.widget_3.setStyleSheet(u"background-color: #F8FAFC;")
         self.profile_widget = QWidget(self.widget_3)
         self.profile_widget.setObjectName(u"profile_widget")
         self.profile_widget.setGeometry(QRect(100, 90, 781, 461))
@@ -53,13 +53,15 @@ class Ui_MainWindow(object):
 "	font: 18px;\n"
 "	padding: 20px;\n"
 "}\n"
+"background-color: #F8FAFC;\n"
+"\n"
 "")
         self.verticalLayout = QVBoxLayout(self.profile_widget)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.label_5 = QLabel(self.profile_widget)
         self.label_5.setObjectName(u"label_5")
-        self.label_5.setStyleSheet(u"font: 28px;\n"
-"border: None;\n"
+        self.label_5.setStyleSheet(u"border: None;\n"
+"font: 28pt \"Arial\";\n"
 "")
 
         self.verticalLayout.addWidget(self.label_5, 0, Qt.AlignHCenter)
@@ -67,15 +69,15 @@ class Ui_MainWindow(object):
         self.profile_label = QLabel(self.profile_widget)
         self.profile_label.setObjectName(u"profile_label")
         self.profile_label.setStyleSheet(u"border-style: none;\n"
-"font-size: 16px;\n"
-"margin-left: 90%;")
+"margin-left: 90%;\n"
+"font: 16pt \"Arial\";")
 
         self.verticalLayout.addWidget(self.profile_label)
 
         self.profile_label_2 = QLabel(self.profile_widget)
         self.profile_label_2.setObjectName(u"profile_label_2")
         self.profile_label_2.setStyleSheet(u"border-style: none;\n"
-"font-size: 16px;\n"
+"font: 16pt \"Arial\";\n"
 "margin-left: 90%;")
 
         self.verticalLayout.addWidget(self.profile_label_2)
@@ -83,7 +85,7 @@ class Ui_MainWindow(object):
         self.profile_label_3 = QLabel(self.profile_widget)
         self.profile_label_3.setObjectName(u"profile_label_3")
         self.profile_label_3.setStyleSheet(u"border-style: none;\n"
-"font-size: 16px;\n"
+"font: 16pt \"Arial\";\n"
 "margin-left: 90%;")
 
         self.verticalLayout.addWidget(self.profile_label_3)
@@ -91,7 +93,7 @@ class Ui_MainWindow(object):
         self.profile_label_4 = QLabel(self.profile_widget)
         self.profile_label_4.setObjectName(u"profile_label_4")
         self.profile_label_4.setStyleSheet(u"border-style: none;\n"
-"font-size: 16px;\n"
+"font: 16pt \"Arial\";\n"
 "margin-left: 90%;")
 
         self.verticalLayout.addWidget(self.profile_label_4)
@@ -99,7 +101,7 @@ class Ui_MainWindow(object):
         self.profile_label_5 = QLabel(self.profile_widget)
         self.profile_label_5.setObjectName(u"profile_label_5")
         self.profile_label_5.setStyleSheet(u"border-style: none;\n"
-"font-size: 16px;\n"
+"font: 16pt \"Arial\";\n"
 "margin-left: 90%;")
 
         self.verticalLayout.addWidget(self.profile_label_5)
@@ -113,10 +115,13 @@ class Ui_MainWindow(object):
         self.widget_list_doctor = QWidget(self.page_4)
         self.widget_list_doctor.setObjectName(u"widget_list_doctor")
         self.widget_list_doctor.setGeometry(QRect(-10, -10, 1061, 721))
+        self.widget_list_doctor.setStyleSheet(u"background-color: #F8FAFC;")
         self.widget_15 = QWidget(self.widget_list_doctor)
         self.widget_15.setObjectName(u"widget_15")
         self.widget_15.setGeometry(QRect(30, 190, 991, 461))
-        self.widget_15.setStyleSheet(u"border: 1px solid black;")
+        self.widget_15.setStyleSheet(u"border: 1px solid black;\n"
+"font: 13pt \"Arial\";\n"
+"background-color: #F8FAFC;")
         self.widget_5 = QWidget(self.widget_15)
         self.widget_5.setObjectName(u"widget_5")
         self.widget_5.setGeometry(QRect(10, 10, 421, 51))
@@ -168,7 +173,9 @@ class Ui_MainWindow(object):
             self.tableWidget.setRowCount(3)
         self.tableWidget.setObjectName(u"tableWidget")
         self.tableWidget.setGeometry(QRect(10, 60, 971, 381))
-        self.tableWidget.setStyleSheet(u"border: 1px solid black;")
+        self.tableWidget.setStyleSheet(u"border: 1px solid black;\n"
+"background-color: #F8FAFC;\n"
+"font-size: 14pt;")
         self.widget_16 = QWidget(self.widget_15)
         self.widget_16.setObjectName(u"widget_16")
         self.widget_16.setGeometry(QRect(700, 20, 281, 31))
@@ -225,6 +232,7 @@ class Ui_MainWindow(object):
         self.log_page = QWidget(self.page_3)
         self.log_page.setObjectName(u"log_page")
         self.log_page.setGeometry(QRect(-10, -10, 1051, 721))
+        self.log_page.setStyleSheet(u"background-color: #F8FAFC;")
         self.tableWidget_2 = QTableWidget(self.log_page)
         if (self.tableWidget_2.columnCount() < 4):
             self.tableWidget_2.setColumnCount(4)
@@ -241,7 +249,9 @@ class Ui_MainWindow(object):
         self.tableWidget_2.setObjectName(u"tableWidget_2")
         self.tableWidget_2.setGeometry(QRect(50, 200, 951, 461))
         self.tableWidget_2.setStyleSheet(u"border: 1px solid black;\n"
-"selection-color: rgb(255, 234, 56);")
+"selection-color: rgb(255, 234, 56);\n"
+"font: 14pt \"Arial\";\n"
+"background-color: #F8FAFC;")
         self.tableWidget_2.horizontalHeader().setStretchLastSection(True)
         self.tableWidget_2.verticalHeader().setStretchLastSection(False)
         self.widget_9 = QWidget(self.log_page)
@@ -258,7 +268,7 @@ class Ui_MainWindow(object):
         self.label_15 = QLabel(self.log_page)
         self.label_15.setObjectName(u"label_15")
         self.label_15.setGeometry(QRect(70, 100, 141, 41))
-        self.label_15.setStyleSheet(u"font: 700 20pt \"Geneva\";")
+        self.label_15.setStyleSheet(u"font: 700 20pt \"Arial\";")
         self.widget_18 = QWidget(self.log_page)
         self.widget_18.setObjectName(u"widget_18")
         self.widget_18.setGeometry(QRect(690, 110, 311, 71))
@@ -277,11 +287,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.widget_list_nurse = QWidget(self.page_5)
         self.widget_list_nurse.setObjectName(u"widget_list_nurse")
+        self.widget_list_nurse.setStyleSheet(u"background-color: #F8FAFC;")
         self.widget_6 = QWidget(self.widget_list_nurse)
         self.widget_6.setObjectName(u"widget_6")
         self.widget_6.setGeometry(QRect(10, 160, 981, 461))
         self.widget_6.setStyleSheet(u"font: 13pt \"Arial\";\n"
-"border: 1px solid black;")
+"border: 1px solid black;\n"
+"background-color: #F8FAFC;")
         self.tableWidget_3 = QTableWidget(self.widget_6)
         if (self.tableWidget_3.columnCount() < 11):
             self.tableWidget_3.setColumnCount(11)
@@ -311,7 +323,9 @@ class Ui_MainWindow(object):
             self.tableWidget_3.setRowCount(2)
         self.tableWidget_3.setObjectName(u"tableWidget_3")
         self.tableWidget_3.setGeometry(QRect(20, 70, 941, 381))
-        self.tableWidget_3.setStyleSheet(u"border: 1px solid black;")
+        self.tableWidget_3.setStyleSheet(u"border: 1px solid black;\n"
+"font-size: 14pt;\n"
+"background-color: #F8FAFC;")
         self.tableWidget_3.horizontalHeader().setProperty("showSortIndicator", False)
         self.tableWidget_3.horizontalHeader().setStretchLastSection(False)
         self.widget_11 = QWidget(self.widget_6)
@@ -390,6 +404,7 @@ class Ui_MainWindow(object):
         self.widget_list_patient = QWidget(self.page_6)
         self.widget_list_patient.setObjectName(u"widget_list_patient")
         self.widget_list_patient.setGeometry(QRect(-10, -10, 1061, 721))
+        self.widget_list_patient.setStyleSheet(u"background-color: #F8FAFC;")
         self.widget_12 = QWidget(self.widget_list_patient)
         self.widget_12.setObjectName(u"widget_12")
         self.widget_12.setGeometry(QRect(710, 60, 201, 81))
@@ -409,7 +424,9 @@ class Ui_MainWindow(object):
         self.widget_13 = QWidget(self.widget_list_patient)
         self.widget_13.setObjectName(u"widget_13")
         self.widget_13.setGeometry(QRect(140, 170, 771, 501))
-        self.widget_13.setStyleSheet(u"border: 1px solid black;")
+        self.widget_13.setStyleSheet(u"border: 1px solid black;\n"
+"font: 13pt \"Arial\";\n"
+"background-color: #F8FAFC;")
         self.tableWidget_4 = QTableWidget(self.widget_13)
         if (self.tableWidget_4.columnCount() < 7):
             self.tableWidget_4.setColumnCount(7)
@@ -431,7 +448,9 @@ class Ui_MainWindow(object):
             self.tableWidget_4.setRowCount(2)
         self.tableWidget_4.setObjectName(u"tableWidget_4")
         self.tableWidget_4.setGeometry(QRect(20, 50, 731, 431))
-        self.tableWidget_4.setStyleSheet(u"border: 1px solid black;")
+        self.tableWidget_4.setStyleSheet(u"border: 1px solid black;\n"
+"font-size: 14pt;\n"
+"background-color: #F8FAFC;")
         self.widget_14 = QWidget(self.widget_13)
         self.widget_14.setObjectName(u"widget_14")
         self.widget_14.setGeometry(QRect(470, 10, 291, 31))
@@ -468,8 +487,8 @@ class Ui_MainWindow(object):
 "color: #ACACAC;")
         self.label_10 = QLabel(self.widget_list_patient)
         self.label_10.setObjectName(u"label_10")
-        self.label_10.setGeometry(QRect(100, 80, 121, 41))
-        self.label_10.setStyleSheet(u"font: 700 20pt \"Geneva\";")
+        self.label_10.setGeometry(QRect(100, 90, 121, 41))
+        self.label_10.setStyleSheet(u"font: 700 20pt \"Arial\";")
         self.stackedWidget.addWidget(self.page_6)
 
         self.gridLayout_2.addWidget(self.stackedWidget, 0, 0, 1, 1)
@@ -788,7 +807,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -797,11 +816,11 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"PROFILE", None))
-        self.profile_label.setText(QCoreApplication.translate("MainWindow", u"Name: ", None))
-        self.profile_label_2.setText(QCoreApplication.translate("MainWindow", u"Last name:", None))
-        self.profile_label_3.setText(QCoreApplication.translate("MainWindow", u"Role:", None))
-        self.profile_label_4.setText(QCoreApplication.translate("MainWindow", u"Address:", None))
-        self.profile_label_5.setText(QCoreApplication.translate("MainWindow", u"Phone number:", None))
+        self.profile_label.setText(QCoreApplication.translate("MainWindow", u"Name : ", None))
+        self.profile_label_2.setText(QCoreApplication.translate("MainWindow", u"Last name :", None))
+        self.profile_label_3.setText(QCoreApplication.translate("MainWindow", u"Role :", None))
+        self.profile_label_4.setText(QCoreApplication.translate("MainWindow", u"Address :", None))
+        self.profile_label_5.setText(QCoreApplication.translate("MainWindow", u"Phone number :", None))
         self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"employee_id", None))
         self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"fname", None))
         self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"lname", None))
