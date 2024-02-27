@@ -250,3 +250,17 @@ def delete_log_db():
         del root.logs[i]
     root.log_id_count = 0
     transaction.commit()
+
+def get_all_patients():
+    patients = []
+    for i in root.users:
+        if root.users[i].__class__.__name__ == "Patient":
+            patients.append(root.users[i])
+    return patients
+
+def get_patient_by_name(name):
+    for i in root.users:
+        if root.users[i].__class__.__name__ == "Patient":
+            if root.users[i].get_fname() == name:
+                return root.users[i]
+    return None

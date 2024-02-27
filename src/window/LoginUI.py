@@ -31,6 +31,11 @@ class LoginUI(QMainWindow):
             from window.MainWindowAdminUI import MainWindowAdminUI
             self.main_window_admin = MainWindowAdminUI(current_user)
             self.main_window_admin.show()
+        elif current_user.__class__.__name__ == "Doctor" or current_user.__class__.__name__ == "Nurse":
+            self.hide()
+            from window.MainWindowDoctorUI import MainWindowDoctorUI
+            self.main_window = MainWindowDoctorUI(current_user)
+            self.main_window.show()
         else:
             self.hide()
             from window.MainWindowUI import MainWindowUI

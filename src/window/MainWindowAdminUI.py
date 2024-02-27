@@ -311,7 +311,10 @@ class MainWindowAdminUI(QMainWindow):
         tableWidget.setCellWidget(row, tableWidget.columnCount() - 1, edit_button)
 
     # def showPaymentPage(self):
-    #     self.ui.stackedWidget.setCurrentIndex(6)
+        # self.ui.stackedWidget.setCurrentIndex(6)
+        # get_all_doctors()
+        # get_all_nurses()
+
 
     def addUser(self):
         from window.Add_UserUI import Add_UserUI

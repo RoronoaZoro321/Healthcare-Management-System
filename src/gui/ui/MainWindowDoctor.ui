@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1251</width>
+    <width>1286</width>
     <height>720</height>
    </rect>
   </property>
@@ -34,7 +34,7 @@ color: #353535;</string>
      <item row="0" column="1">
       <widget class="QStackedWidget" name="stackedWidget">
        <property name="currentIndex">
-        <number>1</number>
+        <number>3</number>
        </property>
        <widget class="QWidget" name="page">
         <layout class="QGridLayout" name="gridLayout">
@@ -174,279 +174,342 @@ margin-bottom: 30%;</string>
           <rect>
            <x>-30</x>
            <y>-10</y>
-           <width>1041</width>
+           <width>1051</width>
            <height>721</height>
           </rect>
          </property>
          <property name="locale">
           <locale language="English" country="UnitedStates"/>
          </property>
-         <widget class="QCalendarWidget" name="Calendar">
+         <widget class="QLabel" name="label_2">
           <property name="geometry">
            <rect>
-            <x>110</x>
-            <y>410</y>
-            <width>481</width>
-            <height>181</height>
+            <x>420</x>
+            <y>300</y>
+            <width>141</width>
+            <height>101</height>
            </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">border: 1px solid black;
-font: 8pt &quot;Cambria&quot;;
-
-</string>
-          </property>
-          <property name="locale">
-           <locale language="English" country="UnitedStates"/>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="Submit">
-          <property name="geometry">
-           <rect>
-            <x>870</x>
-            <y>550</y>
-            <width>75</width>
-            <height>24</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">font: 8pt &quot;Cambria&quot;;
-</string>
           </property>
           <property name="text">
-           <string>Submit</string>
+           <string>appointment</string>
           </property>
-         </widget>
-         <widget class="QWidget" name="layoutWidget">
-          <property name="geometry">
-           <rect>
-            <x>660</x>
-            <y>440</y>
-            <width>279</width>
-            <height>99</height>
-           </rect>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_3">
-           <item>
-            <widget class="QCheckBox" name="checkBox">
-             <property name="styleSheet">
-              <string notr="true">font: 10pt &quot;Cambria&quot;;
-</string>
-             </property>
-             <property name="text">
-              <string>6:00 am.- 12:00 pm.</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="checkBox_2">
-             <property name="styleSheet">
-              <string notr="true">font: 10pt &quot;Cambria&quot;;
-</string>
-             </property>
-             <property name="text">
-              <string>13:00 pm.- 18:00 pm.</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="widget_8" native="true">
-          <property name="geometry">
-           <rect>
-            <x>450</x>
-            <y>40</y>
-            <width>521</width>
-            <height>271</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">border: 1px solid black;
-background: #F8FAFC;</string>
-          </property>
-          <widget class="QTableWidget" name="tableWidget">
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>90</y>
-             <width>501</width>
-             <height>171</height>
-            </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">font: 12pt &quot;Cambria&quot;;
-border: None;</string>
-           </property>
-           <row>
-            <property name="text">
-             <string>Appointment</string>
-            </property>
-           </row>
-          </widget>
-          <widget class="QWidget" name="widget_9" native="true">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>40</y>
-             <width>521</width>
-             <height>51</height>
-            </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background: #ACACAC;</string>
-           </property>
-           <widget class="QLabel" name="label_7">
-            <property name="geometry">
-             <rect>
-              <x>210</x>
-              <y>10</y>
-              <width>191</width>
-              <height>31</height>
-             </rect>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">font: 14pt &quot;Cambria&quot;;
-color: black;
-border: None;</string>
-            </property>
-            <property name="text">
-             <string>My Appointment</string>
-            </property>
-           </widget>
-          </widget>
-         </widget>
-         <widget class="QLabel" name="label_6">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>370</y>
-            <width>321</width>
-            <height>41</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">font: 12pt &quot;Cambria&quot;;</string>
-          </property>
-          <property name="text">
-           <string>Appointment Date</string>
-          </property>
-         </widget>
-         <widget class="QWidget" name="layoutWidget_1">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>120</y>
-            <width>302</width>
-            <height>141</height>
-           </rect>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_4">
-           <item>
-            <widget class="QLabel" name="label_2">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Cambria&quot;;
-</string>
-             </property>
-             <property name="text">
-              <string>Speciality</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="Speciality">
-             <property name="styleSheet">
-              <string notr="true">background: #ACACAC;
-font: 12pt &quot;Cambria&quot;;
-color: white;</string>
-             </property>
-             <property name="editable">
-              <bool>false</bool>
-             </property>
-             <property name="currentText">
-              <string>Dentist</string>
-             </property>
-             <item>
-              <property name="text">
-               <string>Dentist</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Cardiology</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Pediatrics</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Surgery</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Obsterics and Gynaecology</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item>
-            <spacer name="verticalSpacer_2">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>296</width>
-               <height>13</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_3">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Cambria&quot;;</string>
-             </property>
-             <property name="text">
-              <string>Doctor</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="Doctor">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Cambria&quot;;
-background: #ACACAC;
-color: white;</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
          </widget>
         </widget>
        </widget>
        <widget class="QWidget" name="page_3">
-        <widget class="QLabel" name="history_page">
+        <widget class="QWidget" name="widget_8" native="true">
          <property name="geometry">
           <rect>
-           <x>0</x>
-           <y>60</y>
-           <width>1011</width>
-           <height>611</height>
+           <x>-10</x>
+           <y>-10</y>
+           <width>1051</width>
+           <height>721</height>
           </rect>
          </property>
-         <property name="styleSheet">
-          <string notr="true">color: black;</string>
+         <widget class="QTextEdit" name="textEdit">
+          <property name="geometry">
+           <rect>
+            <x>570</x>
+            <y>80</y>
+            <width>301</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="placeholderText">
+           <string>Enter Patient ID</string>
+          </property>
+         </widget>
+         <widget class="QTableWidget" name="tableWidget">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>170</y>
+            <width>761</width>
+            <height>431</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: none;</string>
+          </property>
+          <property name="showGrid">
+           <bool>false</bool>
+          </property>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="verticalHeaderStretchLastSection">
+           <bool>false</bool>
+          </attribute>
+          <row>
+           <property name="text">
+            <string>New Row</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>New Row</string>
+           </property>
+          </row>
+          <column>
+           <property name="text">
+            <string>Patient id</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Patient Name</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Doctor</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string/>
+           </property>
+          </column>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="page_4">
+        <widget class="QWidget" name="widget_7" native="true">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>-10</y>
+           <width>1051</width>
+           <height>721</height>
+          </rect>
          </property>
-         <property name="text">
-          <string>Medical History</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
+         <widget class="QWidget" name="widget_9" native="true">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>20</y>
+            <width>551</width>
+            <height>691</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="7" column="3">
+            <widget class="QLineEdit" name="lineEdit_6"/>
+           </item>
+           <item row="10" column="0">
+            <widget class="QLabel" name="label_13">
+             <property name="text">
+              <string>Problem Description</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="0">
+            <widget class="QLabel" name="label_11">
+             <property name="text">
+              <string>Problem Title</string>
+             </property>
+            </widget>
+           </item>
+           <item row="18" column="2" colspan="2">
+            <widget class="QTextEdit" name="textEdit_2"/>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>BP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="3">
+            <widget class="QLineEdit" name="lineEdit_5"/>
+           </item>
+           <item row="7" column="0">
+            <widget class="QLabel" name="label_14">
+             <property name="text">
+              <string>Allegies</string>
+             </property>
+            </widget>
+           </item>
+           <item row="18" column="0">
+            <widget class="QLabel" name="label_12">
+             <property name="text">
+              <string>Details</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QComboBox" name="comboBox"/>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_15">
+             <property name="text">
+              <string>Sex</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="3">
+            <widget class="QLineEdit" name="lineEdit_3"/>
+           </item>
+           <item row="3" column="1" colspan="3">
+            <widget class="QLineEdit" name="lineEdit_2"/>
+           </item>
+           <item row="9" column="3">
+            <widget class="QLineEdit" name="lineEdit_7"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>Height</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1" colspan="3">
+            <widget class="QLineEdit" name="lineEdit"/>
+           </item>
+           <item row="0" column="0" colspan="3">
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Patient Name:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="3">
+            <widget class="QLineEdit" name="lineEdit_8"/>
+           </item>
+           <item row="5" column="3">
+            <widget class="QLineEdit" name="lineEdit_4"/>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>Weight</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>Pulse rate</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="widget_10" native="true">
+          <property name="geometry">
+           <rect>
+            <x>590</x>
+            <y>70</y>
+            <width>431</width>
+            <height>331</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QLabel" name="label_17">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_18">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_19">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_20">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_21">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QPushButton" name="pushButton_5">
+          <property name="geometry">
+           <rect>
+            <x>760</x>
+            <y>590</y>
+            <width>131</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Done</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_6">
+          <property name="geometry">
+           <rect>
+            <x>770</x>
+            <y>420</y>
+            <width>121</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Medicine</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_7">
+          <property name="geometry">
+           <rect>
+            <x>770</x>
+            <y>500</y>
+            <width>111</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Billing</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_6">
+          <property name="geometry">
+           <rect>
+            <x>590</x>
+            <y>40</y>
+            <width>131</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>From Doctor :</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_16">
+          <property name="geometry">
+           <rect>
+            <x>720</x>
+            <y>40</y>
+            <width>131</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
         </widget>
        </widget>
       </widget>
@@ -718,7 +781,7 @@ QPushButton:hover {
 </string>
        </property>
        <property name="text">
-        <string>Payment</string>
+        <string>Write Report</string>
        </property>
        <property name="icon">
         <iconset resource="resource.qrc">

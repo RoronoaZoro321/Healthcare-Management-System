@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainWindow2.ui'
+## Form generated from reading UI file 'MainWindowDoctor.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.0
+## Created by: Qt User Interface Compiler version 6.6.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -15,18 +15,18 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCalendarWidget, QCheckBox, QComboBox,
-    QGridLayout, QHBoxLayout, QHeaderView, QLabel,
-    QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
-    QStackedWidget, QTableWidget, QTableWidgetItem, QVBoxLayout,
+from PySide6.QtWidgets import (QApplication, QComboBox, QGridLayout, QHBoxLayout,
+    QHeaderView, QLabel, QLineEdit, QMainWindow,
+    QPushButton, QSizePolicy, QSpacerItem, QStackedWidget,
+    QTableWidget, QTableWidgetItem, QTextEdit, QVBoxLayout,
     QWidget)
-from.import resource_rc
+from . import resource_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1251, 720)
+        MainWindow.resize(1286, 720)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"font: 13pt \"Osaka\";")
@@ -129,123 +129,201 @@ class Ui_MainWindow(object):
         self.page_2.setObjectName(u"page_2")
         self.widget_5 = QWidget(self.page_2)
         self.widget_5.setObjectName(u"widget_5")
-        self.widget_5.setGeometry(QRect(-30, -10, 1041, 721))
+        self.widget_5.setGeometry(QRect(-30, -10, 1051, 721))
         self.widget_5.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
-        self.Calendar = QCalendarWidget(self.widget_5)
-        self.Calendar.setObjectName(u"Calendar")
-        self.Calendar.setGeometry(QRect(110, 410, 481, 181))
-        self.Calendar.setStyleSheet(u"border: 1px solid black;\n"
-"font: 8pt \"Cambria\";\n"
-"\n"
-"")
-        self.Calendar.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
-        self.Submit = QPushButton(self.widget_5)
-        self.Submit.setObjectName(u"Submit")
-        self.Submit.setGeometry(QRect(870, 550, 75, 24))
-        self.Submit.setStyleSheet(u"font: 8pt \"Cambria\";\n"
-"")
-        self.layoutWidget = QWidget(self.widget_5)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(660, 440, 279, 99))
-        self.verticalLayout_3 = QVBoxLayout(self.layoutWidget)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.checkBox = QCheckBox(self.layoutWidget)
-        self.checkBox.setObjectName(u"checkBox")
-        self.checkBox.setStyleSheet(u"font: 10pt \"Cambria\";\n"
-"")
-
-        self.verticalLayout_3.addWidget(self.checkBox)
-
-        self.checkBox_2 = QCheckBox(self.layoutWidget)
-        self.checkBox_2.setObjectName(u"checkBox_2")
-        self.checkBox_2.setStyleSheet(u"font: 10pt \"Cambria\";\n"
-"")
-
-        self.verticalLayout_3.addWidget(self.checkBox_2)
-
-        self.widget_8 = QWidget(self.widget_5)
-        self.widget_8.setObjectName(u"widget_8")
-        self.widget_8.setGeometry(QRect(450, 40, 521, 271))
-        self.widget_8.setStyleSheet(u"border: 1px solid black;\n"
-"background: #F8FAFC;")
-        self.tableWidget = QTableWidget(self.widget_8)
-        if (self.tableWidget.rowCount() < 1):
-            self.tableWidget.setRowCount(1)
-        __qtablewidgetitem = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(0, __qtablewidgetitem)
-        self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setGeometry(QRect(10, 90, 501, 171))
-        self.tableWidget.setStyleSheet(u"font: 12pt \"Cambria\";\n"
-"border: None;")
-        self.widget_9 = QWidget(self.widget_8)
-        self.widget_9.setObjectName(u"widget_9")
-        self.widget_9.setGeometry(QRect(0, 40, 521, 51))
-        self.widget_9.setStyleSheet(u"background: #ACACAC;")
-        self.label_7 = QLabel(self.widget_9)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setGeometry(QRect(210, 10, 191, 31))
-        self.label_7.setStyleSheet(u"font: 14pt \"Cambria\";\n"
-"color: black;\n"
-"border: None;")
-        self.label_6 = QLabel(self.widget_5)
-        self.label_6.setObjectName(u"label_6")
-        self.label_6.setGeometry(QRect(110, 370, 321, 41))
-        self.label_6.setStyleSheet(u"font: 12pt \"Cambria\";")
-        self.layoutWidget_1 = QWidget(self.widget_5)
-        self.layoutWidget_1.setObjectName(u"layoutWidget_1")
-        self.layoutWidget_1.setGeometry(QRect(110, 120, 302, 141))
-        self.verticalLayout_4 = QVBoxLayout(self.layoutWidget_1)
-        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.label_2 = QLabel(self.layoutWidget_1)
+        self.label_2 = QLabel(self.widget_5)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setStyleSheet(u"font: 12pt \"Cambria\";\n"
-"")
-
-        self.verticalLayout_4.addWidget(self.label_2)
-
-        self.Speciality = QComboBox(self.layoutWidget_1)
-        self.Speciality.addItem("")
-        self.Speciality.addItem("")
-        self.Speciality.addItem("")
-        self.Speciality.addItem("")
-        self.Speciality.addItem("")
-        self.Speciality.setObjectName(u"Speciality")
-        self.Speciality.setStyleSheet(u"background: #ACACAC;\n"
-"font: 12pt \"Cambria\";\n"
-"color: white;")
-        self.Speciality.setEditable(False)
-
-        self.verticalLayout_4.addWidget(self.Speciality)
-
-        self.verticalSpacer_2 = QSpacerItem(296, 13, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_4.addItem(self.verticalSpacer_2)
-
-        self.label_3 = QLabel(self.layoutWidget_1)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setStyleSheet(u"font: 12pt \"Cambria\";")
-
-        self.verticalLayout_4.addWidget(self.label_3)
-
-        self.Doctor = QComboBox(self.layoutWidget_1)
-        self.Doctor.setObjectName(u"Doctor")
-        self.Doctor.setStyleSheet(u"font: 12pt \"Cambria\";\n"
-"background: #ACACAC;\n"
-"color: white;")
-
-        self.verticalLayout_4.addWidget(self.Doctor)
-
+        self.label_2.setGeometry(QRect(420, 300, 141, 101))
         self.stackedWidget.addWidget(self.page_2)
         self.page_3 = QWidget()
         self.page_3.setObjectName(u"page_3")
-        self.history_page = QLabel(self.page_3)
-        self.history_page.setObjectName(u"history_page")
-        self.history_page.setGeometry(QRect(0, 60, 1011, 611))
-        self.history_page.setStyleSheet(u"color: black;")
-        self.history_page.setAlignment(Qt.AlignCenter)
+        self.widget_8 = QWidget(self.page_3)
+        self.widget_8.setObjectName(u"widget_8")
+        self.widget_8.setGeometry(QRect(-10, -10, 1051, 721))
+        self.textEdit = QTextEdit(self.widget_8)
+        self.textEdit.setObjectName(u"textEdit")
+        self.textEdit.setGeometry(QRect(570, 80, 301, 41))
+        self.tableWidget = QTableWidget(self.widget_8)
+        if (self.tableWidget.columnCount() < 4):
+            self.tableWidget.setColumnCount(4)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        if (self.tableWidget.rowCount() < 2):
+            self.tableWidget.setRowCount(2)
+        __qtablewidgetitem4 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(0, __qtablewidgetitem4)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(1, __qtablewidgetitem5)
+        self.tableWidget.setObjectName(u"tableWidget")
+        self.tableWidget.setGeometry(QRect(120, 170, 761, 431))
+        self.tableWidget.setStyleSheet(u"border: none;")
+        self.tableWidget.setShowGrid(False)
+        self.tableWidget.horizontalHeader().setStretchLastSection(False)
+        self.tableWidget.verticalHeader().setVisible(False)
+        self.tableWidget.verticalHeader().setStretchLastSection(False)
         self.stackedWidget.addWidget(self.page_3)
+        self.page_4 = QWidget()
+        self.page_4.setObjectName(u"page_4")
+        self.widget_7 = QWidget(self.page_4)
+        self.widget_7.setObjectName(u"widget_7")
+        self.widget_7.setGeometry(QRect(-10, -10, 1051, 721))
+        self.widget_9 = QWidget(self.widget_7)
+        self.widget_9.setObjectName(u"widget_9")
+        self.widget_9.setGeometry(QRect(20, 20, 551, 691))
+        self.gridLayout_3 = QGridLayout(self.widget_9)
+        self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.lineEdit_6 = QLineEdit(self.widget_9)
+        self.lineEdit_6.setObjectName(u"lineEdit_6")
+
+        self.gridLayout_3.addWidget(self.lineEdit_6, 7, 3, 1, 1)
+
+        self.label_13 = QLabel(self.widget_9)
+        self.label_13.setObjectName(u"label_13")
+
+        self.gridLayout_3.addWidget(self.label_13, 10, 0, 1, 1)
+
+        self.label_11 = QLabel(self.widget_9)
+        self.label_11.setObjectName(u"label_11")
+
+        self.gridLayout_3.addWidget(self.label_11, 9, 0, 1, 1)
+
+        self.textEdit_2 = QTextEdit(self.widget_9)
+        self.textEdit_2.setObjectName(u"textEdit_2")
+
+        self.gridLayout_3.addWidget(self.textEdit_2, 18, 2, 1, 2)
+
+        self.label_10 = QLabel(self.widget_9)
+        self.label_10.setObjectName(u"label_10")
+
+        self.gridLayout_3.addWidget(self.label_10, 6, 0, 1, 1)
+
+        self.lineEdit_5 = QLineEdit(self.widget_9)
+        self.lineEdit_5.setObjectName(u"lineEdit_5")
+
+        self.gridLayout_3.addWidget(self.lineEdit_5, 6, 3, 1, 1)
+
+        self.label_14 = QLabel(self.widget_9)
+        self.label_14.setObjectName(u"label_14")
+
+        self.gridLayout_3.addWidget(self.label_14, 7, 0, 1, 1)
+
+        self.label_12 = QLabel(self.widget_9)
+        self.label_12.setObjectName(u"label_12")
+
+        self.gridLayout_3.addWidget(self.label_12, 18, 0, 1, 1)
+
+        self.comboBox = QComboBox(self.widget_9)
+        self.comboBox.setObjectName(u"comboBox")
+
+        self.gridLayout_3.addWidget(self.comboBox, 0, 3, 1, 1)
+
+        self.label_15 = QLabel(self.widget_9)
+        self.label_15.setObjectName(u"label_15")
+
+        self.gridLayout_3.addWidget(self.label_15, 4, 0, 1, 1)
+
+        self.lineEdit_3 = QLineEdit(self.widget_9)
+        self.lineEdit_3.setObjectName(u"lineEdit_3")
+
+        self.gridLayout_3.addWidget(self.lineEdit_3, 4, 3, 1, 1)
+
+        self.lineEdit_2 = QLineEdit(self.widget_9)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+
+        self.gridLayout_3.addWidget(self.lineEdit_2, 3, 1, 1, 3)
+
+        self.lineEdit_7 = QLineEdit(self.widget_9)
+        self.lineEdit_7.setObjectName(u"lineEdit_7")
+
+        self.gridLayout_3.addWidget(self.lineEdit_7, 9, 3, 1, 1)
+
+        self.label_7 = QLabel(self.widget_9)
+        self.label_7.setObjectName(u"label_7")
+
+        self.gridLayout_3.addWidget(self.label_7, 2, 0, 1, 1)
+
+        self.lineEdit = QLineEdit(self.widget_9)
+        self.lineEdit.setObjectName(u"lineEdit")
+
+        self.gridLayout_3.addWidget(self.lineEdit, 2, 1, 1, 3)
+
+        self.label_3 = QLabel(self.widget_9)
+        self.label_3.setObjectName(u"label_3")
+
+        self.gridLayout_3.addWidget(self.label_3, 0, 0, 1, 3)
+
+        self.lineEdit_8 = QLineEdit(self.widget_9)
+        self.lineEdit_8.setObjectName(u"lineEdit_8")
+
+        self.gridLayout_3.addWidget(self.lineEdit_8, 10, 3, 1, 1)
+
+        self.lineEdit_4 = QLineEdit(self.widget_9)
+        self.lineEdit_4.setObjectName(u"lineEdit_4")
+
+        self.gridLayout_3.addWidget(self.lineEdit_4, 5, 3, 1, 1)
+
+        self.label_8 = QLabel(self.widget_9)
+        self.label_8.setObjectName(u"label_8")
+
+        self.gridLayout_3.addWidget(self.label_8, 3, 0, 1, 1)
+
+        self.label_9 = QLabel(self.widget_9)
+        self.label_9.setObjectName(u"label_9")
+
+        self.gridLayout_3.addWidget(self.label_9, 5, 0, 1, 1)
+
+        self.widget_10 = QWidget(self.widget_7)
+        self.widget_10.setObjectName(u"widget_10")
+        self.widget_10.setGeometry(QRect(590, 70, 431, 331))
+        self.verticalLayout_3 = QVBoxLayout(self.widget_10)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.label_17 = QLabel(self.widget_10)
+        self.label_17.setObjectName(u"label_17")
+
+        self.verticalLayout_3.addWidget(self.label_17)
+
+        self.label_18 = QLabel(self.widget_10)
+        self.label_18.setObjectName(u"label_18")
+
+        self.verticalLayout_3.addWidget(self.label_18)
+
+        self.label_19 = QLabel(self.widget_10)
+        self.label_19.setObjectName(u"label_19")
+
+        self.verticalLayout_3.addWidget(self.label_19)
+
+        self.label_20 = QLabel(self.widget_10)
+        self.label_20.setObjectName(u"label_20")
+
+        self.verticalLayout_3.addWidget(self.label_20)
+
+        self.label_21 = QLabel(self.widget_10)
+        self.label_21.setObjectName(u"label_21")
+
+        self.verticalLayout_3.addWidget(self.label_21)
+
+        self.pushButton_5 = QPushButton(self.widget_7)
+        self.pushButton_5.setObjectName(u"pushButton_5")
+        self.pushButton_5.setGeometry(QRect(760, 590, 131, 51))
+        self.pushButton_6 = QPushButton(self.widget_7)
+        self.pushButton_6.setObjectName(u"pushButton_6")
+        self.pushButton_6.setGeometry(QRect(770, 420, 121, 51))
+        self.pushButton_7 = QPushButton(self.widget_7)
+        self.pushButton_7.setObjectName(u"pushButton_7")
+        self.pushButton_7.setGeometry(QRect(770, 500, 111, 51))
+        self.label_6 = QLabel(self.widget_7)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setGeometry(QRect(590, 40, 131, 16))
+        self.label_16 = QLabel(self.widget_7)
+        self.label_16.setObjectName(u"label_16")
+        self.label_16.setGeometry(QRect(720, 40, 131, 16))
+        self.stackedWidget.addWidget(self.page_4)
 
         self.gridLayout_2.addWidget(self.stackedWidget, 0, 1, 1, 1)
 
@@ -438,7 +516,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -452,29 +530,44 @@ class Ui_MainWindow(object):
         self.profile_label_3.setText(QCoreApplication.translate("MainWindow", u"Role:", None))
         self.profile_label_4.setText(QCoreApplication.translate("MainWindow", u"Address:", None))
         self.profile_label_5.setText(QCoreApplication.translate("MainWindow", u"Phone number:", None))
-        self.Submit.setText(QCoreApplication.translate("MainWindow", u"Submit", None))
-        self.checkBox.setText(QCoreApplication.translate("MainWindow", u"6:00 am.- 12:00 pm.", None))
-        self.checkBox_2.setText(QCoreApplication.translate("MainWindow", u"13:00 pm.- 18:00 pm.", None))
-        ___qtablewidgetitem = self.tableWidget.verticalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Appointment", None));
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"My Appointment", None))
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Appointment Date", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Speciality", None))
-        self.Speciality.setItemText(0, QCoreApplication.translate("MainWindow", u"Dentist", None))
-        self.Speciality.setItemText(1, QCoreApplication.translate("MainWindow", u"Cardiology", None))
-        self.Speciality.setItemText(2, QCoreApplication.translate("MainWindow", u"Pediatrics", None))
-        self.Speciality.setItemText(3, QCoreApplication.translate("MainWindow", u"Surgery", None))
-        self.Speciality.setItemText(4, QCoreApplication.translate("MainWindow", u"Obsterics and Gynaecology", None))
-
-        self.Speciality.setCurrentText(QCoreApplication.translate("MainWindow", u"Dentist", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Doctor", None))
-        self.history_page.setText(QCoreApplication.translate("MainWindow", u"Medical History", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"appointment", None))
+        self.textEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Enter Patient ID", None))
+        ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Patient id", None));
+        ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Patient Name", None));
+        ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Doctor", None));
+        ___qtablewidgetitem3 = self.tableWidget.verticalHeaderItem(0)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem4 = self.tableWidget.verticalHeaderItem(1)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        self.label_13.setText(QCoreApplication.translate("MainWindow", u"Problem Description", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Problem Title", None))
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"BP", None))
+        self.label_14.setText(QCoreApplication.translate("MainWindow", u"Allegies", None))
+        self.label_12.setText(QCoreApplication.translate("MainWindow", u"Details", None))
+        self.label_15.setText(QCoreApplication.translate("MainWindow", u"Sex", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Height", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Patient Name:", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Weight", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Pulse rate", None))
+        self.label_17.setText("")
+        self.label_18.setText("")
+        self.label_19.setText("")
+        self.label_20.setText("")
+        self.label_21.setText("")
+        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"Done", None))
+        self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"Medicine", None))
+        self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"Billing", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"From Doctor :", None))
+        self.label_16.setText("")
         self.label_4.setText("")
         self.label.setText("")
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Appointment", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Medical History", None))
-        self.pushButton_9.setText(QCoreApplication.translate("MainWindow", u"Payment", None))
+        self.pushButton_9.setText(QCoreApplication.translate("MainWindow", u"Write Report", None))
         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"Logout", None))
     # retranslateUi
 
