@@ -191,7 +191,7 @@ class Ui_MainWindow(object):
         self.comboBox_3.setGeometry(QRect(150, 0, 106, 19))
         self.widget_17 = QWidget(self.widget_list_doctor)
         self.widget_17.setObjectName(u"widget_17")
-        self.widget_17.setGeometry(QRect(830, 80, 191, 81))
+        self.widget_17.setGeometry(QRect(830, 80, 181, 81))
         self.widget_17.setStyleSheet(u"border: 2px solid black;\n"
 "border-radius: 20px")
         self.label_13 = QLabel(self.widget_17)
@@ -202,7 +202,7 @@ class Ui_MainWindow(object):
         self.label_13.setScaledContents(True)
         self.label_2 = QLabel(self.widget_17)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(60, 30, 121, 31))
+        self.label_2.setGeometry(QRect(60, 30, 111, 31))
         self.label_2.setStyleSheet(u"border: None;\n"
 "font: 700 13pt \"Arial\";\n"
 "")
@@ -235,36 +235,40 @@ class Ui_MainWindow(object):
         self.tableWidget_2.setHorizontalHeaderItem(2, __qtablewidgetitem13)
         __qtablewidgetitem14 = QTableWidgetItem()
         self.tableWidget_2.setHorizontalHeaderItem(3, __qtablewidgetitem14)
+        if (self.tableWidget_2.rowCount() < 2):
+            self.tableWidget_2.setRowCount(2)
         self.tableWidget_2.setObjectName(u"tableWidget_2")
-        self.tableWidget_2.setGeometry(QRect(80, 200, 791, 461))
-        self.tableWidget_2.setStyleSheet(u"")
+        self.tableWidget_2.setGeometry(QRect(50, 200, 951, 461))
+        self.tableWidget_2.setStyleSheet(u"border: 1px solid black;\n"
+"selection-color: rgb(255, 234, 56);")
         self.tableWidget_2.horizontalHeader().setStretchLastSection(True)
         self.tableWidget_2.verticalHeader().setStretchLastSection(False)
         self.widget_9 = QWidget(self.log_page)
         self.widget_9.setObjectName(u"widget_9")
-        self.widget_9.setGeometry(QRect(80, 10, 421, 171))
-        self.verticalLayout_3 = QVBoxLayout(self.widget_9)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.widget_9.setGeometry(QRect(380, 100, 311, 91))
         self.textEdit_logs = QTextEdit(self.widget_9)
         self.textEdit_logs.setObjectName(u"textEdit_logs")
-
-        self.verticalLayout_3.addWidget(self.textEdit_logs)
-
+        self.textEdit_logs.setGeometry(QRect(10, 20, 301, 27))
+        self.textEdit_logs.setStyleSheet(u"")
         self.textEdit_logs_2 = QTextEdit(self.widget_9)
         self.textEdit_logs_2.setObjectName(u"textEdit_logs_2")
-
-        self.verticalLayout_3.addWidget(self.textEdit_logs_2)
-
-        self.textEdit_logs_3 = QTextEdit(self.widget_9)
+        self.textEdit_logs_2.setGeometry(QRect(12, 49, 297, 27))
+        self.textEdit_logs_2.setStyleSheet(u"")
+        self.label_15 = QLabel(self.log_page)
+        self.label_15.setObjectName(u"label_15")
+        self.label_15.setGeometry(QRect(60, 80, 141, 41))
+        self.label_15.setStyleSheet(u"font: 700 20pt \"Geneva\";")
+        self.widget_18 = QWidget(self.log_page)
+        self.widget_18.setObjectName(u"widget_18")
+        self.widget_18.setGeometry(QRect(690, 110, 311, 71))
+        self.textEdit_logs_3 = QTextEdit(self.widget_18)
         self.textEdit_logs_3.setObjectName(u"textEdit_logs_3")
-
-        self.verticalLayout_3.addWidget(self.textEdit_logs_3)
-
-        self.textEdit_logs_4 = QTextEdit(self.widget_9)
+        self.textEdit_logs_3.setGeometry(QRect(10, 10, 297, 27))
+        self.textEdit_logs_3.setStyleSheet(u"")
+        self.textEdit_logs_4 = QTextEdit(self.widget_18)
         self.textEdit_logs_4.setObjectName(u"textEdit_logs_4")
-
-        self.verticalLayout_3.addWidget(self.textEdit_logs_4)
-
+        self.textEdit_logs_4.setGeometry(QRect(10, 40, 297, 26))
+        self.textEdit_logs_4.setStyleSheet(u"")
         self.stackedWidget.addWidget(self.page_3)
         self.page_5 = QWidget()
         self.page_5.setObjectName(u"page_5")
@@ -274,7 +278,7 @@ class Ui_MainWindow(object):
         self.widget_list_nurse.setObjectName(u"widget_list_nurse")
         self.widget_6 = QWidget(self.widget_list_nurse)
         self.widget_6.setObjectName(u"widget_6")
-        self.widget_6.setGeometry(QRect(40, 140, 931, 511))
+        self.widget_6.setGeometry(QRect(10, 140, 981, 511))
         self.widget_6.setStyleSheet(u"font: 13pt \"Arial\";\n"
 "border: 1px solid black;")
         self.tableWidget_3 = QTableWidget(self.widget_6)
@@ -305,7 +309,7 @@ class Ui_MainWindow(object):
         if (self.tableWidget_3.rowCount() < 2):
             self.tableWidget_3.setRowCount(2)
         self.tableWidget_3.setObjectName(u"tableWidget_3")
-        self.tableWidget_3.setGeometry(QRect(20, 70, 890, 421))
+        self.tableWidget_3.setGeometry(QRect(20, 70, 941, 421))
         self.tableWidget_3.setStyleSheet(u"border: 1px solid black;")
         self.tableWidget_3.horizontalHeader().setProperty("showSortIndicator", False)
         self.tableWidget_3.horizontalHeader().setStretchLastSection(False)
@@ -334,7 +338,7 @@ class Ui_MainWindow(object):
 "color: #ACACAC;")
         self.widget_10 = QWidget(self.widget_6)
         self.widget_10.setObjectName(u"widget_10")
-        self.widget_10.setGeometry(QRect(580, 10, 341, 41))
+        self.widget_10.setGeometry(QRect(630, 10, 341, 41))
         self.widget_10.setStyleSheet(u"border: None;")
         self.comboBox_9 = QComboBox(self.widget_10)
         self.comboBox_9.addItem("")
@@ -355,7 +359,7 @@ class Ui_MainWindow(object):
         self.comboBox_8.setGeometry(QRect(220, 10, 111, 25))
         self.widget_7 = QWidget(self.widget_list_nurse)
         self.widget_7.setObjectName(u"widget_7")
-        self.widget_7.setGeometry(QRect(790, 40, 181, 81))
+        self.widget_7.setGeometry(QRect(810, 40, 181, 81))
         self.widget_7.setStyleSheet(u"border: 2px solid black;\n"
 "border-radius: 20px")
         self.label_4 = QLabel(self.widget_7)
@@ -865,6 +869,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"Target", None));
         self.textEdit_logs.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Time Stamp", None))
         self.textEdit_logs_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Actor", None))
+        self.label_15.setText(QCoreApplication.translate("MainWindow", u"Action History", None))
         self.textEdit_logs_3.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Action", None))
         self.textEdit_logs_4.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Target", None))
         ___qtablewidgetitem15 = self.tableWidget_3.horizontalHeaderItem(0)

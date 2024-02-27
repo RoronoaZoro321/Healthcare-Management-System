@@ -419,7 +419,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <rect>
             <x>830</x>
             <y>80</y>
-            <width>191</width>
+            <width>181</width>
             <height>81</height>
            </rect>
           </property>
@@ -454,7 +454,7 @@ border-radius: 20px</string>
             <rect>
              <x>60</x>
              <y>30</y>
-             <width>121</width>
+             <width>111</width>
              <height>31</height>
             </rect>
            </property>
@@ -520,14 +520,15 @@ font: 700 13pt &quot;Arial&quot;;
          <widget class="QTableWidget" name="tableWidget_2">
           <property name="geometry">
            <rect>
-            <x>80</x>
+            <x>50</x>
             <y>200</y>
-            <width>791</width>
+            <width>951</width>
             <height>461</height>
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">border: 1px solid black;
+selection-color: rgb(255, 234, 56);</string>
           </property>
           <attribute name="horizontalHeaderStretchLastSection">
            <bool>true</bool>
@@ -535,6 +536,8 @@ font: 700 13pt &quot;Arial&quot;;
           <attribute name="verticalHeaderStretchLastSection">
            <bool>false</bool>
           </attribute>
+          <row/>
+          <row/>
           <column>
            <property name="text">
             <string>Time Stamp</string>
@@ -559,42 +562,102 @@ font: 700 13pt &quot;Arial&quot;;
          <widget class="QWidget" name="widget_9" native="true">
           <property name="geometry">
            <rect>
-            <x>80</x>
-            <y>10</y>
-            <width>421</width>
-            <height>171</height>
+            <x>380</x>
+            <y>100</y>
+            <width>311</width>
+            <height>91</height>
            </rect>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_3">
-           <item>
-            <widget class="QTextEdit" name="textEdit_logs">
-             <property name="placeholderText">
-              <string>Time Stamp</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QTextEdit" name="textEdit_logs_2">
-             <property name="placeholderText">
-              <string>Actor</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QTextEdit" name="textEdit_logs_3">
-             <property name="placeholderText">
-              <string>Action</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QTextEdit" name="textEdit_logs_4">
-             <property name="placeholderText">
-              <string>Target</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
+          <widget class="QTextEdit" name="textEdit_logs">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>301</width>
+             <height>27</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="placeholderText">
+            <string>Time Stamp</string>
+           </property>
+          </widget>
+          <widget class="QTextEdit" name="textEdit_logs_2">
+           <property name="geometry">
+            <rect>
+             <x>12</x>
+             <y>49</y>
+             <width>297</width>
+             <height>27</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="placeholderText">
+            <string>Actor</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QLabel" name="label_15">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>80</y>
+            <width>141</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 700 20pt &quot;Geneva&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Action History</string>
+          </property>
+         </widget>
+         <widget class="QWidget" name="widget_18" native="true">
+          <property name="geometry">
+           <rect>
+            <x>690</x>
+            <y>110</y>
+            <width>311</width>
+            <height>71</height>
+           </rect>
+          </property>
+          <widget class="QTextEdit" name="textEdit_logs_3">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>10</y>
+             <width>297</width>
+             <height>27</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="placeholderText">
+            <string>Action</string>
+           </property>
+          </widget>
+          <widget class="QTextEdit" name="textEdit_logs_4">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>40</y>
+             <width>297</width>
+             <height>26</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="placeholderText">
+            <string>Target</string>
+           </property>
+          </widget>
          </widget>
         </widget>
        </widget>
@@ -605,9 +668,9 @@ font: 700 13pt &quot;Arial&quot;;
            <widget class="QWidget" name="widget_6" native="true">
             <property name="geometry">
              <rect>
-              <x>40</x>
+              <x>10</x>
               <y>140</y>
-              <width>931</width>
+              <width>981</width>
               <height>511</height>
              </rect>
             </property>
@@ -620,7 +683,7 @@ border: 1px solid black;</string>
               <rect>
                <x>20</x>
                <y>70</y>
-               <width>890</width>
+               <width>941</width>
                <height>421</height>
               </rect>
              </property>
@@ -791,7 +854,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <widget class="QWidget" name="widget_10" native="true">
              <property name="geometry">
               <rect>
-               <x>580</x>
+               <x>630</x>
                <y>10</y>
                <width>341</width>
                <height>41</height>
@@ -880,7 +943,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <widget class="QWidget" name="widget_7" native="true">
             <property name="geometry">
              <rect>
-              <x>790</x>
+              <x>810</x>
               <y>40</y>
               <width>181</width>
               <height>81</height>
