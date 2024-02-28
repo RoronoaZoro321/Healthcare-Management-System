@@ -7,10 +7,6 @@ from database.db import *
 
 from datetime import datetime, timedelta
 
-from All_class.Appointment import Appointment
-from All_class.Doctor import Doctor
-from All_class.Patient import Patient
-
 class MainWindowDoctorUI(QMainWindow):
     def __init__(self, current_user):
         QMainWindow.__init__(self, None)
@@ -64,14 +60,5 @@ class MainWindowDoctorUI(QMainWindow):
         self.ui.label_18.setText(f"Lastname: {patient.get_lname()}")
         self.ui.label_19.setText(f"Address: {patient.get_address()}")
         self.ui.label_20.setText(f"Phone: {patient.get_phone_number()}")
-    
-    # def writeReport(self):
-    #     patient = get_patient_by_name(self.ui.comboBox.currentText().split()[0])
-    #     report = self.ui.textEdit.toPlainText()
-    #     date = datetime.now().strftime("%Y-%m-%d")
-    
-    #     add_report(self.current_user, patient, report, date)
-    #     self.ui.textEdit.clear()
-    #     self.ui.comboBox.clear()
-    #     self.showWriteReportPage()
+
     
