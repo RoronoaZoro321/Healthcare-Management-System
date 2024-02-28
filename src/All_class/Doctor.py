@@ -42,7 +42,7 @@ class Doctor(Staff):
     
     def get_appointments(self):
         return self.appointments
-
+    
     def update_attributes(self, new_data):
         # ['doctor1', 'lname', '123 Main St', '123-456-7890', 'Cardiology', 'MDu', '80000', '8:00-17:00']
         super().update_attributes(new_data[0], new_data[1], new_data[2], new_data[3])
@@ -59,3 +59,4 @@ class Doctor(Staff):
     
     def patient_report(self):
         pass
+    

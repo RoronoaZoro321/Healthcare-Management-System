@@ -30,3 +30,7 @@ class Patient(Person):
         self.appointments.append(id)
         self._p_changed = True
 
+    def display_reports(self):
+        for report in self.medical_history:
+            report.display_report()
+

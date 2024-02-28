@@ -52,6 +52,22 @@ def initialize_database():
     print("appointment id list: ", hasattr(root, "appointment_id_list"))
     if not hasattr(root, "appointment_id_list"):
         root.appointment_id_list = PersistentList()
+    
+    print("has attr reports: ", hasattr(root, "reports"))
+    if not hasattr(root, "reports"):
+        root.reports = BTrees.OOBTree.BTree()
+    
+    print("report id count: ", hasattr(root, "report_id_count"))
+    if not hasattr(root, "report_id_count"):
+        root.report_id_count = 0
+    
+    print("has attr medicines: ", hasattr(root, "medicines"))
+    if not hasattr(root, "medicines"):
+        root.medicines = BTrees.OOBTree.BTree()
+    
+    print("medicine id count: ", hasattr(root, "medicine_id_count"))
+    if not hasattr(root, "medicine_id_count"):
+        root.medicine_id_count = 0
 
 def printInfo():
     print("user id count: ", root.user_id_count)
@@ -155,10 +171,11 @@ def add_patient_if_no_patient():
 
 def authenticate_user_db(username, password):
     for user in root.users.values():
-        if user.get_fname() == username and user.get_password() == password:
-            current_user = user
-            add_log_db(current_user, "logged in", current_user)
-            return current_user
+        if user.get_fname() == username:
+            if user.verify_password(password):
+                current_user = user
+                add_log_db(current_user, "logged in", current_user)
+                return current_user
     return None
 
 def register_user_db(fname, lname, address, phone_number, password):
@@ -264,3 +281,16 @@ def get_patient_by_name(name):
             if root.users[i].get_fname() == name:
                 return root.users[i]
     return None
+
+def get_all_staffs():
+    staffs = []
+    for i in root.employee_id_list:
+        staffs.append(root.users[i])
+    return staffs
+
+def get_all_doctor_and_nurse():
+    staffs = []
+    for i in root.employee_id_list:
+        if root.users[i].__class__.__name__ == "Doctor" or root.users[i].__class__.__name__ == "Nurse":
+            staffs.append(root.users[i])
+    return staffs
