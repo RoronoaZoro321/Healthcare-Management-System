@@ -10,6 +10,7 @@ from All_class.Patient import Patient
 from All_class.Nurse import Nurse
 from All_class.Log import Log
 from All_class.Appointment import Appointment
+from All_class.Report import Medicine
 
 storage = FileStorage.FileStorage('src/database/healthcare_management.fs')
 db = DB(storage)
@@ -64,10 +65,6 @@ def initialize_database():
     print("has attr medicines: ", hasattr(root, "medicines"))
     if not hasattr(root, "medicines"):
         root.medicines = BTrees.OOBTree.BTree()
-    
-    print("medicine id count: ", hasattr(root, "medicine_id_count"))
-    if not hasattr(root, "medicine_id_count"):
-        root.medicine_id_count = 0
 
 def printInfo():
     print("user id count: ", root.user_id_count)
@@ -168,6 +165,17 @@ def add_patient_if_no_patient():
         add_patient(root.users[1],"p1", "doe", "123 street", "1234567890", "password")
         add_patient(root.users[1],"patient2", "doe", "123 street", "1234567890", "password")
         add_patient(root.users[1],"patient3", "doe", "123 street", "1234567890", "password")
+    
+def add_medicine_if_no_medicine():
+    if not any(isinstance(medicine, Medicine) for medicine in root.medicines.values()):
+        print("Adding 6 medicines")
+        add_medicine_db("u4083", "Parazetamol", "For fever", 100, "2 weeks", "after breakfast", 10)
+        add_medicine_db("gg083", "Sara", "For headache", 200, "1 week", "before sleep", 20)
+        add_medicine_db("ki083", "Serphony", "For cold", 300, "3 days", "2 capsule before dinner", 30)
+        add_medicine_db("lo083", "Tyraxynl", "For cough", 400, "1 week", "after breakfast", 40)
+        add_medicine_db("pou03", "Polymorzync", "For stomach pain", 500, "2 weeks", "when have fever", 50)
+        add_medicine_db("uu083", "Gyhofrewoqy", "For body pain", 600, "1 week", "3 capsule before dinner", 60)
+
 
 def authenticate_user_db(username, password):
     for user in root.users.values():
@@ -195,6 +203,7 @@ def addAdminAndDoctor():
     add_doctor_if_no_doctor() 
     add_nurse_if_no_nurse()
     add_patient_if_no_patient()
+    add_medicine_if_no_medicine()
 
 
 def delete_user_db(user_id):
@@ -294,3 +303,18 @@ def get_all_doctor_and_nurse():
         if root.users[i].__class__.__name__ == "Doctor" or root.users[i].__class__.__name__ == "Nurse":
             staffs.append(root.users[i])
     return staffs
+
+def add_medicine_db(medicine_id, name, description, quantity, duration, when, price_per_dose):
+    medicine = Medicine(medicine_id ,name, description, int(quantity), duration, when, int(price_per_dose))
+    root.medicines[medicine_id] = medicine
+    transaction.commit()
+
+def search_medicine_db(text):
+    medicines = []
+    for i in root.medicines:
+        if text.lower() in root.medicines[i].name.lower():
+            medicines.append(root.medicines[i])
+    return medicines
+
+def get_medicine(medicine_id):
+    return root.medicines[medicine_id]

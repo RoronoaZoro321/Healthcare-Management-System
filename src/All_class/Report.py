@@ -30,11 +30,11 @@ class Medicine(persistent.Persistent):
         return self.total_price
     
 class Report(persistent.Persistent):
-    def __init__(self, id: int, patient_id: int, doctor_id: int, data: str):
+    def __init__(self, id: int, patient_id: int, doctor_id: int, data: Data):
         self.id = id
         self.patient_id = patient_id
         self.doctor_id = doctor_id
         self.data = data
         self.date = datetime.now().strftime("%Y-%m-%d")
-
+        self.medicines = PersistentList()
 
