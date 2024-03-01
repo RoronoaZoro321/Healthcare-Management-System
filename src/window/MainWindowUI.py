@@ -38,11 +38,11 @@ class MainWindowUI(QMainWindow):
     def showProfilePage(self):
         self.ui.stackedWidget.setCurrentIndex(0)
         
-        self.ui.profile_label.setText(f"Name:".ljust(20) + f"{self.current_user.get_fname()}")
-        self.ui.profile_label_2.setText(f"Lastname:".ljust(20) + f"{self.current_user.get_lname()}")
-        self.ui.profile_label_3.setText(f"Role:".ljust(20) + f"{self.current_user.__class__.__name__}")
-        self.ui.profile_label_4.setText(f"Address:".ljust(20) + f"{self.current_user.get_address()}")
-        self.ui.profile_label_5.setText(f"Phone:".ljust(20) + f"{self.current_user.get_phone_number()}")
+        self.ui.profile_label.setText(f"{self.current_user.get_fname()}")
+        self.ui.profile_label_2.setText(f"{self.current_user.get_lname()}")
+        self.ui.profile_label_3.setText(f"{self.current_user.__class__.__name__}")
+        self.ui.profile_label_4.setText(f"{self.current_user.get_address()}")
+        self.ui.profile_label_5.setText(f"{self.current_user.get_phone_number()}")
 
     def showAppointmentPage(self):
         self.ui.stackedWidget.setCurrentIndex(1)
