@@ -19,6 +19,7 @@ class MainWindowDoctorUI(QMainWindow):
         self.ui.pushButton_4.clicked.connect(self.logout)
         self.ui.pushButton.clicked.connect(self.showHistoryPage)
         self.ui.pushButton_9.clicked.connect(self.showWriteReportPage)
+        self.medicine_list = []
 
     def logout(self):
         from window.LoginUI import LoginUI
@@ -68,7 +69,7 @@ class MainWindowDoctorUI(QMainWindow):
     
     def showMedicinePage(self):
         from window.MedicineUI import MedicineUI
-        self.medicine = MedicineUI(self.current_user)
+        self.medicine = MedicineUI(self.current_user, self.medicine_list)
         self.medicine.show()
 
 

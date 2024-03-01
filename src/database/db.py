@@ -65,6 +65,10 @@ def initialize_database():
     print("has attr medicines: ", hasattr(root, "medicines"))
     if not hasattr(root, "medicines"):
         root.medicines = BTrees.OOBTree.BTree()
+    
+    print("has attr current_medicine_selected: ", hasattr(root, "current_medicine_selected"))
+    if not hasattr(root, "current_medicine_selected"):
+        root.current_medicine_selected = PersistentList()
 
 def printInfo():
     print("user id count: ", root.user_id_count)
@@ -308,6 +312,7 @@ def add_medicine_db(medicine_id, name, description, quantity, duration, when, pr
     medicine = Medicine(medicine_id ,name, description, int(quantity), duration, when, int(price_per_dose))
     root.medicines[medicine_id] = medicine
     transaction.commit()
+    return medicine
 
 def search_medicine_db(text):
     medicines = []
@@ -318,3 +323,11 @@ def search_medicine_db(text):
 
 def get_medicine(medicine_id):
     return root.medicines[medicine_id]
+
+def save_list_of_medicine(medicine_list):
+    for medicine in medicine_list:
+        root.current_medicine_selected.append(medicine)
+    transaction.commit()
+
+def get_list_of_medicine():
+    return root.current_medicine_selected

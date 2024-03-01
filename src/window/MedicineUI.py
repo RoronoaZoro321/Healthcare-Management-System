@@ -9,6 +9,7 @@ from database.db import *
 class MedicineUI(QMainWindow):
     def __init__(self, current_user):
         super(MedicineUI, self).__init__()
+        self.medicine_list = []
         self.current_user = current_user
         self.ui = MedicinePY()
         self.ui.setupUi(self)
@@ -17,7 +18,6 @@ class MedicineUI(QMainWindow):
         self.ui.pushButton_2.clicked.connect(self.select_this_medicine)
         self.ui.pushButton_3.clicked.connect(self.done)
         self.search_medicine()
-        self.medicine_list = []
     
     def add_medicine(self):
         id = self.ui.lineEdit_2.text()
@@ -27,11 +27,12 @@ class MedicineUI(QMainWindow):
         duration = self.ui.lineEdit_6.text()
         when = self.ui.lineEdit_7.text()
         price_per_dose = self.ui.lineEdit_8.text()
-        add_medicine_db(id, name, description, quantity, duration, when, price_per_dose)
+        medicine = add_medicine_db(id, name, description, quantity, duration, when, price_per_dose)
         self.ui.lineEdit.setText("")
         # aleart added successfully
-        QMessageBox.about(self, "Success", "Medicine Added Successfully")
+        # QMessageBox.about(self, "Success", "Medicine Added Successfully")
         self.search_medicine()
+        return medicine
 
     def search_medicine(self):
         text = self.ui.lineEdit.text()
@@ -45,6 +46,7 @@ class MedicineUI(QMainWindow):
             self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount() - 1, 3, QTableWidgetItem(str(medicine.when_to_consume)))
             self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount() - 1, 4, QTableWidgetItem(str(medicine.price_per_dose)))
             button = QPushButton("Select")
+            button.row = self.ui.tableWidget.rowCount() - 1
             button.clicked.connect(self.select_medicine)
             self.ui.tableWidget.setCellWidget(self.ui.tableWidget.rowCount() - 1, 5, button)
         self.ui.tableWidget.resizeColumnsToContents()
@@ -55,7 +57,9 @@ class MedicineUI(QMainWindow):
         self.ui.tableWidget.setSortingEnabled(True)
     
     def select_medicine(self):
-        medicine = get_medicine(self.ui.tableWidget.item(self.ui.tableWidget.currentRow(), 0).text())
+        row = self.sender().row
+        id = self.ui.tableWidget.item(row, 0).text()
+        medicine = get_medicine(id)
         self.ui.lineEdit_2.setText(str(medicine.medicine_id))
         self.ui.lineEdit_3.setText(medicine.name)
         self.ui.lineEdit_4.setText(medicine.description)
@@ -65,12 +69,14 @@ class MedicineUI(QMainWindow):
         self.ui.lineEdit_8.setText(str(medicine.price_per_dose))
     
     def select_this_medicine(self):
-        name = self.ui.lineEdit_3.text()
-        if name not in self.medicine_list and name != "":
-            self.medicine_list.append(name)
-            self.ui.listWidget.addItem(name)
+        medicine = self.add_medicine()
+        name = medicine.name
+        if medicine not in self.medicine_list and name != "":
+            self.medicine_list.append(medicine)
+            self.ui.listWidget.addItem(medicine.name)
     
     def done(self):
+        save_list_of_medicine(self.medicine_list)
         self.hide()
 
 
