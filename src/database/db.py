@@ -10,7 +10,7 @@ from All_class.Patient import Patient
 from All_class.Nurse import Nurse
 from All_class.Log import Log
 from All_class.Appointment import Appointment
-from All_class.Report import Medicine
+from All_class.Report import Medicine, Service, Bill, MedicalRecord, Report
 
 storage = FileStorage.FileStorage('src/database/healthcare_management.fs')
 db = DB(storage)
@@ -69,6 +69,13 @@ def initialize_database():
     print("has attr current_medicine_selected: ", hasattr(root, "current_medicine_selected"))
     if not hasattr(root, "current_medicine_selected"):
         root.current_medicine_selected = PersistentList()
+    
+    print("has attr current_service_selected: ", hasattr(root, "current_service_selected"))
+    if not hasattr(root, "current_service_selected"):
+        root.current_service_selected = PersistentList()
+    
+    root.current_medicine_selected = []
+    root.current_service_selected = []
 
 def printInfo():
     print("user id count: ", root.user_id_count)
@@ -78,6 +85,7 @@ def printInfo():
         # if user.role == "Doctor":
         #     print(type(user.salary))
     print("log id count: ", root.log_id_count)
+    print("reports id count: ", root.report_id_count)
 
 def print_appointment_info():
     for appointment_id, appointment in root.appointments.items():
@@ -180,6 +188,25 @@ def add_medicine_if_no_medicine():
         add_medicine_db("pou03", "Polymorzync", "For stomach pain", 500, "2 weeks", "when have fever", 50)
         add_medicine_db("uu083", "Gyhofrewoqy", "For body pain", 600, "1 week", "3 capsule before dinner", 60)
 
+def add_report_if_no_report():
+    if not any(isinstance(report, Report) for report in root.reports.values()):
+        print("Adding 2 reports to patient 1 and 1 report to patient 2")
+        patient1 = get_patient_by_name("p1")
+        patient2 = get_patient_by_name("patient2")
+        
+        medical_record = MedicalRecord(180, 80, "male", 80, 120, "none", "Headage", "Having High Headage pain", "lorem ipsum dolor sit amet consectetuer adipiscing elit")
+        bill = Bill(0.1)
+        service_1 = Service("Checking", 100, 0.1, "Thai Care", 50)
+        service_2 = Service("X-ray", 100, 0.1, "Thai Care", 50)
+        medicine_1 = Medicine("u4083", "Parazetamol", "For fever", 100, "2 weeks", "after breakfast", 10)
+        medicine_2 = Medicine("gg083", "Sara", "For headache", 200, "1 week", "before sleep", 20)
+        bill.setServices([service_1, service_2])
+        bill.setMedicines([medicine_1, medicine_2])
+        add_report(patient1.get_id(), root.users[2], medical_record, bill)
+        add_report(patient2.get_id(), root.users[2], medical_record, bill)
+        bill.setServices([service_1])
+        bill.setMedicines([medicine_1])    
+        add_report(patient1.get_id(), root.users[2], medical_record, bill)
 
 def authenticate_user_db(username, password):
     for user in root.users.values():
@@ -202,12 +229,13 @@ def register_user_db(fname, lname, address, phone_number, password):
     return current_user
 
 
-def addAdminAndDoctor():
+def addUsersAndOthers():
     add_admin_if_no_admin()
     add_doctor_if_no_doctor() 
     add_nurse_if_no_nurse()
     add_patient_if_no_patient()
     add_medicine_if_no_medicine()
+    add_report_if_no_report()
 
 
 def delete_user_db(user_id):
@@ -288,6 +316,9 @@ def get_all_patients():
             patients.append(root.users[i])
     return patients
 
+def get_patient_by_id(patient_id):
+    return root.users[patient_id]
+
 def get_patient_by_name(name):
     for i in root.users:
         if root.users[i].__class__.__name__ == "Patient":
@@ -325,9 +356,48 @@ def get_medicine(medicine_id):
     return root.medicines[medicine_id]
 
 def save_list_of_medicine(medicine_list):
-    for medicine in medicine_list:
-        root.current_medicine_selected.append(medicine)
+    root.current_medicine_selected = medicine_list
     transaction.commit()
 
 def get_list_of_medicine():
     return root.current_medicine_selected
+
+def add_service_db(name, price, discount_percentage, insurance_name, insurance_coverage):
+    service = Service(name, float(price), float(discount_percentage), insurance_name, float(insurance_coverage))
+    transaction.commit()
+    return service
+
+def save_service_list(service_list):
+    root.current_service_selected = service_list
+    transaction.commit()
+
+def get_list_of_service():
+    return root.current_service_selected
+
+def createBill(overallDiscount):
+    bill = Bill(float(overallDiscount))
+    bill.setServices(root.current_service_selected)
+    bill.setMedicines(root.current_medicine_selected)
+    transaction.commit()
+    return bill
+
+def createMedicalRecord(height, weight, sex, pulse_rate, blood_pressure, allegies, title, description, details):
+    medical_record = MedicalRecord(float(height), float(weight), sex, float(pulse_rate), float(blood_pressure), allegies, title, description, details)
+    transaction.commit()
+    return medical_record
+
+def add_report(patient_id, current_user, medical_record, bill):
+    root.report_id_count += 1
+    report = Report(root.report_id_count, patient_id, current_user.get_id(), medical_record, bill)
+    root.reports[root.report_id_count] = report
+    # add report to patient
+    patient = root.users[patient_id]
+    patient.add_medical_history(report)
+    transaction.commit()
+    return report
+
+def get_all_reports():
+    reports = []
+    for i in root.reports:
+        reports.append(root.reports[i])
+    return reports

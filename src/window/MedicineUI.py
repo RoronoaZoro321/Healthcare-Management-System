@@ -71,14 +71,13 @@ class MedicineUI(QMainWindow):
     def select_this_medicine(self):
         medicine = self.add_medicine()
         name = medicine.name
-        if medicine not in self.medicine_list and name != "":
+        if name != "":
             self.medicine_list.append(medicine)
-            self.ui.listWidget.addItem(medicine.name)
-    
+            self.ui.listWidget.addItem(name)
+
     def done(self):
         save_list_of_medicine(self.medicine_list)
         self.hide()
-
 
         
 

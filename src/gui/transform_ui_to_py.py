@@ -1,7 +1,7 @@
 # run this file to convert the .ui file to .py file
 # Enter the UI file name here
 
-file_name = "Add_User.ui"
+file_name = "MainWindowDoctor.ui"
 
 
 # pyside6-uic ./src/gui/ui/Login.ui -o "src\gui\python\Login.py"

@@ -16,10 +16,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QGridLayout, QHBoxLayout,
-    QHeaderView, QLabel, QLineEdit, QMainWindow,
-    QPushButton, QSizePolicy, QSpacerItem, QStackedWidget,
-    QTableWidget, QTableWidgetItem, QTextEdit, QVBoxLayout,
-    QWidget)
+    QHeaderView, QLabel, QLineEdit, QListWidget,
+    QListWidgetItem, QMainWindow, QPushButton, QSizePolicy,
+    QSpacerItem, QStackedWidget, QTableWidget, QTableWidgetItem,
+    QTextEdit, QVBoxLayout, QWidget)
 from . import resource_rc
 
 class Ui_MainWindow(object):
@@ -172,7 +172,7 @@ class Ui_MainWindow(object):
         self.page_4.setObjectName(u"page_4")
         self.widget_7 = QWidget(self.page_4)
         self.widget_7.setObjectName(u"widget_7")
-        self.widget_7.setGeometry(QRect(-10, -10, 1051, 721))
+        self.widget_7.setGeometry(QRect(0, -20, 1051, 721))
         self.widget_9 = QWidget(self.widget_7)
         self.widget_9.setObjectName(u"widget_9")
         self.widget_9.setGeometry(QRect(20, 20, 551, 691))
@@ -280,7 +280,7 @@ class Ui_MainWindow(object):
 
         self.widget_10 = QWidget(self.widget_7)
         self.widget_10.setObjectName(u"widget_10")
-        self.widget_10.setGeometry(QRect(590, 70, 431, 331))
+        self.widget_10.setGeometry(QRect(590, 70, 431, 221))
         self.verticalLayout_3 = QVBoxLayout(self.widget_10)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.label_17 = QLabel(self.widget_10)
@@ -310,19 +310,34 @@ class Ui_MainWindow(object):
 
         self.pushButton_5 = QPushButton(self.widget_7)
         self.pushButton_5.setObjectName(u"pushButton_5")
-        self.pushButton_5.setGeometry(QRect(760, 590, 131, 51))
+        self.pushButton_5.setGeometry(QRect(800, 660, 131, 51))
         self.pushButton_6 = QPushButton(self.widget_7)
         self.pushButton_6.setObjectName(u"pushButton_6")
-        self.pushButton_6.setGeometry(QRect(770, 420, 121, 51))
+        self.pushButton_6.setGeometry(QRect(590, 320, 121, 51))
         self.pushButton_7 = QPushButton(self.widget_7)
         self.pushButton_7.setObjectName(u"pushButton_7")
-        self.pushButton_7.setGeometry(QRect(770, 500, 111, 51))
+        self.pushButton_7.setGeometry(QRect(600, 480, 111, 51))
         self.label_6 = QLabel(self.widget_7)
         self.label_6.setObjectName(u"label_6")
         self.label_6.setGeometry(QRect(590, 40, 131, 16))
         self.label_16 = QLabel(self.widget_7)
         self.label_16.setObjectName(u"label_16")
         self.label_16.setGeometry(QRect(720, 40, 131, 16))
+        self.listWidget = QListWidget(self.widget_7)
+        self.listWidget.setObjectName(u"listWidget")
+        self.listWidget.setGeometry(QRect(740, 320, 261, 131))
+        self.listWidget_2 = QListWidget(self.widget_7)
+        self.listWidget_2.setObjectName(u"listWidget_2")
+        self.listWidget_2.setGeometry(QRect(740, 480, 261, 141))
+        self.pushButton_8 = QPushButton(self.widget_7)
+        self.pushButton_8.setObjectName(u"pushButton_8")
+        self.pushButton_8.setGeometry(QRect(740, 450, 261, 21))
+        self.pushButton_10 = QPushButton(self.widget_7)
+        self.pushButton_10.setObjectName(u"pushButton_10")
+        self.pushButton_10.setGeometry(QRect(740, 622, 261, 20))
+        self.lineEdit_9 = QLineEdit(self.widget_7)
+        self.lineEdit_9.setObjectName(u"lineEdit_9")
+        self.lineEdit_9.setGeometry(QRect(590, 660, 181, 31))
         self.stackedWidget.addWidget(self.page_4)
 
         self.gridLayout_2.addWidget(self.stackedWidget, 0, 1, 1, 1)
@@ -516,7 +531,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -533,11 +548,11 @@ class Ui_MainWindow(object):
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"appointment", None))
         self.textEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Enter Patient ID", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Patient id", None));
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Patient Name", None));
         ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Patient Name", None));
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Title", None));
         ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Doctor", None));
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Date", None));
         ___qtablewidgetitem3 = self.tableWidget.verticalHeaderItem(0)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
         ___qtablewidgetitem4 = self.tableWidget.verticalHeaderItem(1)
@@ -562,6 +577,9 @@ class Ui_MainWindow(object):
         self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"Billing", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"From Doctor :", None))
         self.label_16.setText("")
+        self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"View Medicine Data", None))
+        self.pushButton_10.setText(QCoreApplication.translate("MainWindow", u"View Billing Data", None))
+        self.lineEdit_9.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Overall Discount %", None))
         self.label_4.setText("")
         self.label.setText("")
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Profile", None))

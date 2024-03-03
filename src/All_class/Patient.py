@@ -33,4 +33,8 @@ class Patient(Person):
     def display_reports(self):
         for report in self.medical_history:
             report.display_report()
+    
+    def add_medical_history(self, report):
+        self.medical_history[report.id] = report
+        self._p_changed = True
 
