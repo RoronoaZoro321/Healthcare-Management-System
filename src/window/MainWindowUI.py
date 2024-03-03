@@ -66,7 +66,6 @@ class MainWindowUI(QMainWindow):
     def updateSpeciality(self, index):
         self.ui.Speciality.clear()
         doctor_id = self.ui.Doctor.itemData(index)
-        
         if doctor_id is not None:
             doctor = root.users.get(doctor_id)
             if doctor and isinstance(doctor, Doctor):
@@ -115,10 +114,22 @@ class MainWindowUI(QMainWindow):
         new_appointment = Appointment(appointment_id, date, start_time, end_time, doctor_id, doctor_speciality_selected, patient_id, confirmation)
         root.appointments[appointment_id] = new_appointment
         root.appointment_id_list.append(appointment_id)
-        self.populate_appointments_table()
-        transaction.commit()
-        return appointment_id
-    
+        
+        patient = root.users.get(patient_id)
+        doctor = root.users.get(doctor_id)
+
+        if patient and isinstance(patient, Patient) and doctor and isinstance(doctor, Doctor):
+            patient.add_appointment(appointment_id)
+            doctor.add_appointment(appointment_id)
+            
+            transaction.commit()
+            self.populate_appointments_table()
+            
+            return appointment_id
+        else:
+            print("Error: Could not find the patient or doctor, or they were of the wrong type.")
+            return None
+        
     def has_conflicting_appointment(self, patient_id, date, start_time, end_time):
         for appointment_id, appointment in root.appointments.items():
             if (appointment.patient == patient_id and
@@ -155,13 +166,30 @@ class MainWindowUI(QMainWindow):
     
     def cancel_appointment(self, appointment_id):
         if appointment_id in root.appointments:
+            appointment = root.appointments[appointment_id]
+
+            patient = root.users.get(appointment.patient, None)
+            doctor = root.users.get(appointment.doctor, None)
+
+            if patient and isinstance(patient, Patient):
+                if appointment_id in patient.appointments:
+                    patient.appointments.remove(appointment_id)
+
+            if doctor and isinstance(doctor, Doctor):
+                if appointment_id in doctor.appointments:
+                    doctor.appointments.remove(appointment_id)
+
             del root.appointments[appointment_id]
-            root.appointment_id_list.remove(appointment_id)
+
+            if appointment_id in root.appointment_id_list:
+                root.appointment_id_list.remove(appointment_id)
+
             transaction.commit()
             self.populate_appointments_table()
             QMessageBox.information(self, "Appointment Cancelled", "The appointment has been successfully cancelled.")
         else:
             QMessageBox.warning(self, "Error", "Could not find the appointment to cancel.")
+
     
     def generate_new_appointment_id(self):
         print("generate appointment id")

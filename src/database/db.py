@@ -80,6 +80,7 @@ def initialize_database():
 def printInfo():
     print("user id count: ", root.user_id_count)
     print("employee id list: ", root.employee_id_list)
+    print("appointmen id list: ", root.appointment_id_list)
     for user in root.users.values():
         print(user.get_id(), user.__class__.__name__ ,user.fname, user.password)
         # if user.role == "Doctor":
@@ -87,6 +88,30 @@ def printInfo():
     print("log id count: ", root.log_id_count)
     print("reports id count: ", root.report_id_count)
 
+def print_all_doctor_appointments():
+    for user_id, user in root.users.items():
+        if isinstance(user, Doctor):
+            print(f"Doctor: {user.fname} {user.lname} (ID: {user_id}) has the following appointments:")
+            for appointment_id in user.get_appointments():
+                appointment = root.appointments.get(appointment_id)
+                if appointment:
+                    print(f"  Appointment ID: {appointment_id}, Date: {appointment.date}, Start Time: {appointment.start_time}, End Time: {appointment.end_time}, Patient ID: {appointment.patient}")
+                else:
+                    print("  Appointment not found.")
+            print()
+            
+def print_all_patient_appointments():
+    for user_id, user in root.users.items():
+        if isinstance(user, Patient):
+            print(f"Patient: {user.fname} {user.lname} (ID: {user_id}) has the following appointments:")
+            for appointment_id in user.get_appointments():
+                appointment = root.appointments.get(appointment_id)
+                if appointment:
+                    print(f"  Appointment ID: {appointment_id}, Date: {appointment.date}, Start Time: {appointment.start_time}, End Time: {appointment.end_time}, Doctor ID: {appointment.doctor}")
+                else:
+                    print("  Appointment not found.")
+            print()
+            
 def print_appointment_info():
     for appointment_id, appointment in root.appointments.items():
         print(f"Appointment ID: {appointment_id}")
@@ -111,7 +136,15 @@ def delete_all_appointments():
     root.last_appointment_id = 0
     root.appointment_id_list = PersistentList()
     transaction.commit()
-
+    
+def clear_all_appointments():
+    for user_id, user in root.users.items():
+        if isinstance(user, Doctor) or isinstance(user, Patient):
+            user.appointments = PersistentList()
+            print(f"Cleared appointments for {user.__class__.__name__} ID: {user_id}")
+    
+    transaction.commit()
+    print("All appointments cleared.")
 
 def add_first_admin():
     root.user_id_count += 1
