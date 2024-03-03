@@ -37,3 +37,8 @@ class Patient(Person):
 
     def get_appointments(self):
         return list(self.appointments)
+
+    def display_reports(self):
+        for report in self.medical_history:
+            report.display_report()
+

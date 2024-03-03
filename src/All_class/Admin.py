@@ -18,9 +18,3 @@ class Admin(Staff):
     def view_payment(self):
         pass
     
-    # def add_doctor():
-    #     doctor = Doctor("John", "Doe", "1234 Main St", "123-456-7890", "password", "123", "Cardiology", "Doctor", ["Heart"], "MD", 100000)
-    #     root.user_id_count += 1
-    #     root.users[root.user_id_count] = doctor
-    #     transaction.commit()
-    

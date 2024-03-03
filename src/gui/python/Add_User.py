@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'Add_User.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.1
+## Created by: Qt User Interface Compiler version 6.6.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -23,25 +23,27 @@ class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(491, 729)
+        Form.resize(550, 729)
         self.widget = QWidget(Form)
         self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(0, 0, 491, 731))
+        self.widget.setGeometry(QRect(0, 0, 551, 731))
         self.widget.setStyleSheet(u"font: 700 11pt \"Microsoft YaHei UI\";\n"
 "color: rgb(2, 164, 153);\n"
-"background-color: rgb(248, 250, 252);")
+"background-color: #F3EDCE;")
         self.gridLayout = QGridLayout(self.widget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.label = QLabel(self.widget)
         self.label.setObjectName(u"label")
         font = QFont()
-        font.setFamilies([u"Microsoft YaHei UI"])
+        font.setFamilies([u"Verdana"])
+        font.setPointSize(30)
         font.setBold(True)
         font.setItalic(False)
         self.label.setFont(font)
-        self.label.setStyleSheet(u"font-size: 30px;\n"
-"margin: 30px;\n"
-"color:  #353535;")
+        self.label.setStyleSheet(u"margin: 20%;\n"
+"font: 700 30pt \"Verdana\";\n"
+"color: #9B9057;\n"
+"")
         self.label.setAlignment(Qt.AlignCenter)
 
         self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
@@ -52,21 +54,25 @@ class Ui_Form(object):
 
         self.pushButton_2 = QPushButton(self.widget)
         self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pushButton_2.setStyleSheet(u"color: #A5995B;\n"
+"font-size: 14px;\n"
+"")
 
         self.gridLayout.addWidget(self.pushButton_2, 5, 0, 1, 1)
 
         self.pushButton = QPushButton(self.widget)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setStyleSheet(u"QPushButton {\n"
-"	background-color: rgb(2, 164, 153);\n"
+"	background-color: #A5995B;\n"
 "	color: #F8FAFC;\n"
 "	margin: 10px 160px;\n"
 "	padding: 10px;\n"
-"	border-radius: none;\n"
+"	border-radius: 15px;\n"
+"	font-size: 14px\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"	background-color: rgb(2, 131, 107);\n"
+"	background-color: #887E4A;\n"
 "}\n"
 "\n"
 "\n"
@@ -79,16 +85,36 @@ class Ui_Form(object):
         self.widget_2.setStyleSheet(u"padding: 7px;")
         self.verticalLayout = QVBoxLayout(self.widget_2)
         self.verticalLayout.setObjectName(u"verticalLayout")
+        self.comboBox = QComboBox(self.widget_2)
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.setObjectName(u"comboBox")
+        self.comboBox.setStyleSheet(u"QComboBox {\n"
+"	background-color: #F8FAFC;\n"
+"	border: 2px solid #A5995B;\n"
+"	border-radius: 20px;\n"
+"	color: grey;\n"
+"}\n"
+"\n"
+"QComboBox:focus {\n"
+"	border: 3px solid #A5995B;\n"
+"}")
+
+        self.verticalLayout.addWidget(self.comboBox)
+
         self.lineEdit = QLineEdit(self.widget_2)
         self.lineEdit.setObjectName(u"lineEdit")
         self.lineEdit.setStyleSheet(u"QLineEdit {\n"
-"	background-color: rgb(211, 237, 237);\n"
-"	border: 2px solid #353535;\n"
+"	background-color: #F8FAFC;\n"
+"	border: 2px solid #A5995B;\n"
 "	border-radius: 20px;\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QLineEdit:focus {\n"
-"	border: 2px solid #02A499;\n"
+"	border: 3px solid #A5995B;\n"
 "}")
 
         self.verticalLayout.addWidget(self.lineEdit)
@@ -96,13 +122,14 @@ class Ui_Form(object):
         self.lineEdit_2 = QLineEdit(self.widget_2)
         self.lineEdit_2.setObjectName(u"lineEdit_2")
         self.lineEdit_2.setStyleSheet(u"QLineEdit {\n"
-"	background-color: rgb(211, 237, 237);\n"
-"	border: 2px solid #353535;\n"
+"	background-color: #F8FAFC;\n"
+"	border: 2px solid #A5995B;\n"
 "	border-radius: 20px;\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QLineEdit:focus {\n"
-"	border: 2px solid #02A499;\n"
+"	border: 3px solid #A5995B;\n"
 "}")
 
         self.verticalLayout.addWidget(self.lineEdit_2)
@@ -110,13 +137,14 @@ class Ui_Form(object):
         self.lineEdit_3 = QLineEdit(self.widget_2)
         self.lineEdit_3.setObjectName(u"lineEdit_3")
         self.lineEdit_3.setStyleSheet(u"QLineEdit {\n"
-"	background-color: rgb(211, 237, 237);\n"
-"	border: 2px solid #353535;\n"
+"	background-color: #F8FAFC;\n"
+"	border: 2px solid #A5995B;\n"
 "	border-radius: 20px;\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QLineEdit:focus {\n"
-"	border: 2px solid #02A499;\n"
+"	border: 3px solid #A5995B;\n"
 "}")
 
         self.verticalLayout.addWidget(self.lineEdit_3)
@@ -124,36 +152,29 @@ class Ui_Form(object):
         self.lineEdit_4 = QLineEdit(self.widget_2)
         self.lineEdit_4.setObjectName(u"lineEdit_4")
         self.lineEdit_4.setStyleSheet(u"QLineEdit {\n"
-"	background-color: rgb(211, 237, 237);\n"
-"	border: 2px solid #353535;\n"
+"	background-color: #F8FAFC;\n"
+"	border: 2px solid #A5995B;\n"
 "	border-radius: 20px;\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QLineEdit:focus {\n"
-"	border: 2px solid #02A499;\n"
+"	border: 3px solid #A5995B;\n"
 "}")
 
         self.verticalLayout.addWidget(self.lineEdit_4)
 
-        self.comboBox = QComboBox(self.widget_2)
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.setObjectName(u"comboBox")
-
-        self.verticalLayout.addWidget(self.comboBox)
-
         self.lineEdit_5 = QLineEdit(self.widget_2)
         self.lineEdit_5.setObjectName(u"lineEdit_5")
         self.lineEdit_5.setStyleSheet(u"QLineEdit {\n"
-"	background-color: rgb(211, 237, 237);\n"
-"	border: 2px solid #353535;\n"
+"	background-color: #F8FAFC;\n"
+"	border: 2px solid #A5995B;\n"
 "	border-radius: 20px;\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QLineEdit:focus {\n"
-"	border: 2px solid #02A499;\n"
+"	border: 3px solid #A5995B;\n"
 "}")
 
         self.verticalLayout.addWidget(self.lineEdit_5)
@@ -161,13 +182,14 @@ class Ui_Form(object):
         self.lineEdit_6 = QLineEdit(self.widget_2)
         self.lineEdit_6.setObjectName(u"lineEdit_6")
         self.lineEdit_6.setStyleSheet(u"QLineEdit {\n"
-"	background-color: rgb(211, 237, 237);\n"
-"	border: 2px solid #353535;\n"
+"	background-color: #F8FAFC;\n"
+"	border: 2px solid #A5995B;\n"
 "	border-radius: 20px;\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QLineEdit:focus {\n"
-"	border: 2px solid #02A499;\n"
+"	border: 3px solid #A5995B;\n"
 "}")
 
         self.verticalLayout.addWidget(self.lineEdit_6)
@@ -175,13 +197,14 @@ class Ui_Form(object):
         self.lineEdit_7 = QLineEdit(self.widget_2)
         self.lineEdit_7.setObjectName(u"lineEdit_7")
         self.lineEdit_7.setStyleSheet(u"QLineEdit {\n"
-"	background-color: rgb(211, 237, 237);\n"
-"	border: 2px solid #353535;\n"
+"	background-color: #F8FAFC;\n"
+"	border: 2px solid #A5995B;\n"
 "	border-radius: 20px;\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QLineEdit:focus {\n"
-"	border: 2px solid #02A499;\n"
+"	border: 3px solid #A5995B;\n"
 "}")
 
         self.verticalLayout.addWidget(self.lineEdit_7)
@@ -189,13 +212,14 @@ class Ui_Form(object):
         self.lineEdit_8 = QLineEdit(self.widget_2)
         self.lineEdit_8.setObjectName(u"lineEdit_8")
         self.lineEdit_8.setStyleSheet(u"QLineEdit {\n"
-"	background-color: rgb(211, 237, 237);\n"
-"	border: 2px solid #353535;\n"
+"	background-color: #F8FAFC;\n"
+"	border: 2px solid #A5995B;\n"
 "	border-radius: 20px;\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QLineEdit:focus {\n"
-"	border: 2px solid #02A499;\n"
+"	border: 3px solid #A5995B;\n"
 "}")
 
         self.verticalLayout.addWidget(self.lineEdit_8)
@@ -203,13 +227,14 @@ class Ui_Form(object):
         self.lineEdit_9 = QLineEdit(self.widget_2)
         self.lineEdit_9.setObjectName(u"lineEdit_9")
         self.lineEdit_9.setStyleSheet(u"QLineEdit {\n"
-"	background-color: rgb(211, 237, 237);\n"
-"	border: 2px solid #353535;\n"
+"	background-color: #F8FAFC;\n"
+"	border: 2px solid #A5995B;\n"
 "	border-radius: 20px;\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QLineEdit:focus {\n"
-"	border: 2px solid #02A499;\n"
+"	border: 3px solid #A5995B;\n"
 "}")
 
         self.verticalLayout.addWidget(self.lineEdit_9)
@@ -217,13 +242,14 @@ class Ui_Form(object):
         self.lineEdit_10 = QLineEdit(self.widget_2)
         self.lineEdit_10.setObjectName(u"lineEdit_10")
         self.lineEdit_10.setStyleSheet(u"QLineEdit {\n"
-"	background-color: rgb(211, 237, 237);\n"
-"	border: 2px solid #353535;\n"
+"	background-color: #F8FAFC;\n"
+"	border: 2px solid #A5995B;\n"
 "	border-radius: 20px;\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QLineEdit:focus {\n"
-"	border: 2px solid #02A499;\n"
+"	border: 3px solid #A5995B;\n"
 "}")
 
         self.verticalLayout.addWidget(self.lineEdit_10)
@@ -242,6 +268,11 @@ class Ui_Form(object):
         self.label.setText(QCoreApplication.translate("Form", u"Add User", None))
         self.pushButton_2.setText(QCoreApplication.translate("Form", u"Cancel", None))
         self.pushButton.setText(QCoreApplication.translate("Form", u"Done", None))
+        self.comboBox.setItemText(0, QCoreApplication.translate("Form", u"Patient", None))
+        self.comboBox.setItemText(1, QCoreApplication.translate("Form", u"Doctor", None))
+        self.comboBox.setItemText(2, QCoreApplication.translate("Form", u"Nurse", None))
+        self.comboBox.setItemText(3, QCoreApplication.translate("Form", u"Admin", None))
+
         self.lineEdit.setText("")
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("Form", u"First Name", None))
         self.lineEdit_2.setText("")
@@ -250,11 +281,6 @@ class Ui_Form(object):
         self.lineEdit_3.setPlaceholderText(QCoreApplication.translate("Form", u"Address", None))
         self.lineEdit_4.setText("")
         self.lineEdit_4.setPlaceholderText(QCoreApplication.translate("Form", u"Phone Number", None))
-        self.comboBox.setItemText(0, QCoreApplication.translate("Form", u"Patient", None))
-        self.comboBox.setItemText(1, QCoreApplication.translate("Form", u"Doctor", None))
-        self.comboBox.setItemText(2, QCoreApplication.translate("Form", u"Nurse", None))
-        self.comboBox.setItemText(3, QCoreApplication.translate("Form", u"Admin", None))
-
         self.lineEdit_5.setText("")
         self.lineEdit_5.setPlaceholderText(QCoreApplication.translate("Form", u"Password", None))
         self.lineEdit_6.setText("")

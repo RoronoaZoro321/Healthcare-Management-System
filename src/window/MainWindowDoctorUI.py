@@ -19,6 +19,7 @@ class MainWindowDoctorUI(QMainWindow):
         self.ui.pushButton_4.clicked.connect(self.logout)
         self.ui.pushButton.clicked.connect(self.showHistoryPage)
         self.ui.pushButton_9.clicked.connect(self.showWriteReportPage)
+        self.medicine_list = []
 
     def logout(self):
         from window.LoginUI import LoginUI
@@ -48,17 +49,30 @@ class MainWindowDoctorUI(QMainWindow):
         # self.ui.pushButton_10.clicked.connect(self.writeReport) 
         self.addPatientToComboBox()
         self.ui.comboBox.currentTextChanged.connect(self.showPatientInfo)
+        self.ui.pushButton_6.clicked.connect(self.showMedicinePage)
     
     def addPatientToComboBox(self):
+        self.ui.comboBox.clear()
         patients = get_all_patients()
         for patient in patients:
             self.ui.comboBox.addItem(patient.get_fname() + " " + patient.get_lname())
     
     def showPatientInfo(self):
+        # print(self.ui.comboBox.currentText().split()[0])
+        if self.ui.comboBox.currentText() == "":
+            return
         patient = get_patient_by_name(self.ui.comboBox.currentText().split()[0])
         self.ui.label_17.setText(f"Name: {patient.get_fname()}")
         self.ui.label_18.setText(f"Lastname: {patient.get_lname()}")
         self.ui.label_19.setText(f"Address: {patient.get_address()}")
         self.ui.label_20.setText(f"Phone: {patient.get_phone_number()}")
+    
+    def showMedicinePage(self):
+        from window.MedicineUI import MedicineUI
+        self.medicine = MedicineUI(self.current_user, self.medicine_list)
+        self.medicine.show()
 
+
+
+    # def 
     

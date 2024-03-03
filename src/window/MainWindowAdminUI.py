@@ -18,7 +18,7 @@ class MainWindowAdminUI(QMainWindow):
         self.ui.pushButton_6.clicked.connect(self.showListNursePage)
         self.ui.pushButton_7.clicked.connect(self.showListPatientPage)
         self.ui.pushButton_8.clicked.connect(self.addUser)
-        # self.ui.pushButton_9.clicked.connect(self.showPaymentPage)
+        self.ui.pushButton_9.clicked.connect(self.showPaymentPage)
         self.ui.pushButton_4.clicked.connect(self.logout)
 
 
@@ -31,17 +31,17 @@ class MainWindowAdminUI(QMainWindow):
     def showProfilePage(self):
         self.ui.stackedWidget.setCurrentIndex(0)
         
-        self.ui.profile_label.setText(f"Name:".ljust(20) + f"{self.current_user.get_fname()}")
-        self.ui.profile_label_2.setText(f"Lastname:".ljust(20) + f"{self.current_user.get_lname()}")
-        self.ui.profile_label_3.setText(f"Role:".ljust(20) + f"{self.current_user.__class__.__name__}")
-        self.ui.profile_label_4.setText(f"Address:".ljust(20) + f"{self.current_user.get_address()}")
-        self.ui.profile_label_5.setText(f"Phone:".ljust(20) + f"{self.current_user.get_phone_number()}")
-
+        self.ui.profile_label_11.setText(f"{self.current_user.get_fname()}")
+        self.ui.profile_label_12.setText(f"{self.current_user.get_lname()}")
+        self.ui.profile_label_13.setText(f"{self.current_user.__class__.__name__}")
+        self.ui.profile_label_14.setText(f"{self.current_user.get_address()}")
+        self.ui.profile_label_15.setText(f"{self.current_user.get_phone_number()}")
+        
     def showAppointmentPage(self):
-        self.ui.stackedWidget.setCurrentIndex(2)
+        self.ui.stackedWidget.setCurrentIndex(3)
 
     def showLogPage(self):
-        self.ui.stackedWidget.setCurrentIndex(3)
+        self.ui.stackedWidget.setCurrentIndex(4)
         self.ui.tableWidget_2.setRowCount(0)
         # self.historyTable.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
         self.ui.tableWidget_2.setColumnWidth(0, 300)
@@ -74,7 +74,7 @@ class MainWindowAdminUI(QMainWindow):
         
 
     def showListDoctorPage(self):
-        self.ui.stackedWidget.setCurrentIndex(1)
+        self.ui.stackedWidget.setCurrentIndex(2)
         self.ui.comboBox.setCurrentIndex(1)
         self.ui.textEdit.textChanged.connect(self.search_doctor)
         self.ui.comboBox.currentTextChanged.connect(self.search_doctor)
@@ -83,7 +83,7 @@ class MainWindowAdminUI(QMainWindow):
         self.search_doctor()
     
     def showListNursePage(self):
-        self.ui.stackedWidget.setCurrentIndex(4)
+        self.ui.stackedWidget.setCurrentIndex(5)
         self.ui.comboBox_7.setCurrentIndex(1)
         self.ui.textEdit_3.textChanged.connect(self.search_nurse)
         self.ui.comboBox_7.currentTextChanged.connect(self.search_nurse)
@@ -92,7 +92,7 @@ class MainWindowAdminUI(QMainWindow):
         self.search_nurse()
 
     def showListPatientPage(self):
-        self.ui.stackedWidget.setCurrentIndex(5)
+        self.ui.stackedWidget.setCurrentIndex(6)
         self.ui.comboBox_10.setCurrentIndex(1)
         self.ui.textEdit_4.textChanged.connect(self.search_patient)
         self.ui.comboBox_10.currentTextChanged.connect(self.search_patient)
@@ -310,10 +310,18 @@ class MainWindowAdminUI(QMainWindow):
         edit_button.clicked.connect(edit_function)
         tableWidget.setCellWidget(row, tableWidget.columnCount() - 1, edit_button)
 
-    # def showPaymentPage(self):
-        # self.ui.stackedWidget.setCurrentIndex(6)
-        # get_all_doctors()
-        # get_all_nurses()
+    def showPaymentPage(self):
+        self.ui.stackedWidget.setCurrentIndex(1)
+        staffs = get_all_doctor_and_nurse()
+        self.ui.tableWidget_5.setRowCount(0)
+        total_salary = 0
+        for staff in staffs:
+            self.ui.tableWidget_5.insertRow(self.ui.tableWidget_5.rowCount())
+            self.ui.tableWidget_5.setItem(self.ui.tableWidget_5.rowCount() - 1, 0, QTableWidgetItem(staff.get_role()))
+            self.ui.tableWidget_5.setItem(self.ui.tableWidget_5.rowCount() - 1, 1, QTableWidgetItem(staff.get_fname()))
+            self.ui.tableWidget_5.setItem(self.ui.tableWidget_5.rowCount() - 1, 2, QTableWidgetItem(str(staff.get_salary())))
+            total_salary += float(staff.get_salary())
+        self.ui.label_17.setText(f"Total Salary: ${total_salary} / Month")
 
 
     def addUser(self):
