@@ -34,7 +34,7 @@ color: #353535;</string>
      <item row="0" column="1">
       <widget class="QStackedWidget" name="stackedWidget">
        <property name="currentIndex">
-        <number>3</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="page">
         <layout class="QGridLayout" name="gridLayout">
@@ -181,18 +181,59 @@ margin-bottom: 30%;</string>
          <property name="locale">
           <locale language="English" country="UnitedStates"/>
          </property>
-         <widget class="QLabel" name="label_2">
+         <widget class="QTableWidget" name="tableWidget_2">
           <property name="geometry">
            <rect>
-            <x>420</x>
-            <y>300</y>
-            <width>141</width>
-            <height>101</height>
+            <x>90</x>
+            <y>40</y>
+            <width>491</width>
+            <height>192</height>
            </rect>
           </property>
-          <property name="text">
-           <string>appointment</string>
+         </widget>
+         <widget class="QWidget" name="verticalLayoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>260</y>
+            <width>160</width>
+            <height>51</height>
+           </rect>
           </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Start Time</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="comboBox_2"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="verticalLayoutWidget_2">
+          <property name="geometry">
+           <rect>
+            <x>290</x>
+            <y>260</y>
+            <width>160</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QLabel" name="label_22">
+             <property name="text">
+              <string>End time</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="comboBox_3"/>
+           </item>
+          </layout>
          </widget>
         </widget>
        </widget>

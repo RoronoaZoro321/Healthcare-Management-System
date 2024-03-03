@@ -25,8 +25,15 @@ class Patient(Person):
     def update_attributes(self, new_data):
         # ['John', 'Doe', '123 Main St', '123-456-7890', '12345']
         super().update_attributes(new_data[0], new_data[1], new_data[2], new_data[3])
-    
-    def add_appointment(self, id):
-        self.appointments.append(id)
+
+    def add_appointment(self, appointment_id):
+        self.appointments.append(appointment_id)
         self._p_changed = True
 
+    def remove_appointment(self, appointment_id):
+        if appointment_id in self.appointments:
+            self.appointments.remove(appointment_id)
+            self._p_changed = True
+
+    def get_appointments(self):
+        return list(self.appointments)
