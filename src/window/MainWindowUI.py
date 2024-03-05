@@ -71,6 +71,39 @@ class MainWindowUI(QMainWindow):
             if doctor and isinstance(doctor, Doctor):
                 for specialty in doctor.get_specialty():
                     self.ui.Speciality.addItem(specialty)
+                self.updateCheckboxLabelsForDoctor(doctor.working_time)
+
+    def updateCheckboxLabelsForDoctor(self, working_time):
+        lunch_start = datetime.strptime("12:00", '%H:%M')
+        lunch_end = datetime.strptime("13:00", '%H:%M')
+
+        start_end = working_time.split('-')
+        start_time = datetime.strptime(start_end[0].strip(), '%H:%M')
+        end_time = datetime.strptime(start_end[1].strip(), '%H:%M')
+
+        if start_time < lunch_start and end_time > lunch_end:
+            total_working_seconds = (lunch_start - start_time).total_seconds() + (end_time - lunch_end).total_seconds()
+            midpoint_seconds = total_working_seconds / 2
+
+            if midpoint_seconds <= (lunch_start - start_time).total_seconds():
+                midpoint = start_time + timedelta(seconds=midpoint_seconds)
+                second_half_start = lunch_end
+            else:
+                midpoint_seconds -= (lunch_end - lunch_start).total_seconds()
+                midpoint = lunch_end
+                second_half_start = lunch_end + timedelta(seconds=midpoint_seconds - (lunch_start - start_time).total_seconds())
+                
+            first_half_label = f"{start_time.strftime('%H:%M')} - {midpoint.strftime('%H:%M')}"
+            second_half_label = f"{second_half_start.strftime('%H:%M')} - {end_time.strftime('%H:%M')}"
+        else:
+            midpoint = start_time + (end_time - start_time) / 2
+            first_half_label = f"{start_time.strftime('%H:%M')} - {midpoint.strftime('%H:%M')}"
+            second_half_label = f"{midpoint.strftime('%H:%M')} - {end_time.strftime('%H:%M')}"
+
+        self.ui.checkBox.setText(first_half_label)
+        self.ui.checkBox_2.setText(second_half_label)
+
+
                     
     def onDateChanged(self):
         selected_date = self.ui.Calendar.selectedDate().toPython()
@@ -95,8 +128,18 @@ class MainWindowUI(QMainWindow):
                 
     def handleSubmit(self):
         selected_date = self.ui.Calendar.selectedDate().toString(Qt.ISODate)
-        start_time = "6:00 am" if self.ui.checkBox.isChecked() else "13:00 pm"
-        end_time = "12:00 pm" if self.ui.checkBox.isChecked() else "18:00 pm"
+
+        if self.ui.checkBox.isChecked():
+            time_range = self.ui.checkBox.text().split('-')
+        elif self.ui.checkBox_2.isChecked():
+            time_range = self.ui.checkBox_2.text().split('-')
+        else:
+            QMessageBox.warning(self, "No Time Slot Selected", "Please select a time slot for the appointment.")
+            return
+
+        start_time = time_range[0].strip()
+        end_time = time_range[1].strip()
+
         doctor_id = self.ui.Doctor.currentData()
         doctor_speciality_selected = self.ui.Speciality.currentText()
         patient_id = self.current_user.get_id()
@@ -106,7 +149,12 @@ class MainWindowUI(QMainWindow):
             return
 
         appointment_id = self.create_and_store_appointment(selected_date, start_time, end_time, doctor_id, doctor_speciality_selected, patient_id, False)
-        print(f"Appointment {appointment_id} created successfully.")
+        
+        if appointment_id:
+            QMessageBox.information(self, "Appointment Scheduled", f"Appointment {appointment_id} created successfully.")
+        else:
+            QMessageBox.warning(self, "Appointment Error", "There was an error scheduling the appointment.")
+
    
     def create_and_store_appointment(self, date, start_time, end_time, doctor_id, doctor_speciality_selected, patient_id, confirmation):
         print("create and store appointment")

@@ -1,0 +1,70 @@
+def word_sleuth(grid: list[list[str]], words: list[str]) -> list[str]:
+    directions = [(0,1), (1,0), (1,-1), (-1,1)]
+
+    # left to right, directions[0]
+    leftrightlist = []
+    for i in range(len(grid)):
+        for j in range(len(grid[0])):
+            leftrightlist.append(grid[i][j])
+    word1 = ''
+    for index in leftrightlist:
+        word1 += index
+    print(word1)
+    # top to bottom, directions[1]
+    topbottomlist = []
+    for j in range(len(grid[0])):
+        for i in range(len(grid)):
+            topbottomlist.append(grid[i][j])
+    word2 = ''
+    for index in topbottomlist:
+        word2 += index
+    print(word2)
+
+    #LbRt top right to bottom left, directions[3]
+    LbRt = []
+    for i in range(len(grid)):
+        for j in range(i + 1):
+            LbRt.append(grid[i - j][j])
+
+    for i in range(1, len(grid)):
+        for j in range(len(grid) - i):
+            LbRt.append(grid[len(grid) - 1 - j][i +j]) #DONE
+
+    word3 = ''
+    for index in LbRt:
+        word3 += index
+    print(word3)
+
+
+    #LtRb top left to bottom right, directions[2]
+    RbLt = []
+    for i in range(1, len(grid)):
+        i, j = i, 0
+        while i < len(grid) and j < len(grid[0]):
+            RbLt.append(grid[i][j])
+            i += 1
+            j += 1
+    for j in range(len(grid[0])):
+        i, j = 0, j
+        while i < len(grid) and j < len(grid[0]):
+            RbLt.append(grid[i][j])
+            i += 1
+            j += 1
+    word4 = ''
+    for index in RbLt:
+        word4 += index
+    print(word4)
+
+    iteminlist = []
+    for item in words:
+        if (item in word1) or (item in word2) or (item in word3) or (item in word4) == True:
+            iteminlist.append(item)
+    return iteminlist
+
+print(word_sleuth([["r","a","w","b","i","t"],
+["x","a","y","z","c","h"],
+["p","q","b","e","i","e"],
+["t","r","s","b","o","g"],
+["u","w","x","v","i","t"],
+["n","m","r","w","o","u"]], ["bog", "moon", "rabbit", "the", "bit", "raw"]
+))
